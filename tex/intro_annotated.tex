@@ -1,0 +1,232 @@
+% intro_annotated.tex — annotated copy of tex/intro.tex with inline reviewer comments
+% NOTE: This is a copy for review and contains LaTeX comment annotations (lines prefixed with % COMMENT:)
+
+% Keep the original chapter command for context
+\chapter{Introduction}
+\label{chap:intro}
+
+The existence of dark matter is supported by multiple astronomical observations including galaxy rotation curves and gravitational lensing in the Bullet Cluster \cite{10.1046/j.1365-8711.2000.03075.x}. Despite the observational evidence, the nature of dark matter and its interactions with ordinary matter remain poorly understood.
+
+% COMMENT: The next paragraph lists WIMP candidates but could be shortened or reworded to avoid a long comma-separated list.
+Several theoretical frameworks attempt to explain dark matter, with Weakly Interacting Massive Particles (WIMPs) being one of the leading candidates. Proposed WIMP candidates include neutralinos, right-handed sneutrinos, and right-handed neutrinos in extra dimension theories \cite{donato2000antideuterons, donato2008antideuteron,cerdeno2009right, cerdeno2014low,baer2005low}. Astrophysics experiments to detect dark matter, both directly and indirectly, are ongoing, including satellite missions like the Alpha Magnetic Spectrometer-02 (AMS-02) and the Fermi Gamma-ray Space Telescope (Fermi), as well as balloon-borne experiments such as the Balloon-borne Experiment with a Superconducting Spectrometer (BESS) and the General Antiparticle Spectrometer (GAPS) \cite{aguilar2002alpha, lubelsmeyer2011upgrade, ajima2000superconducting, hailey2006accelerator}.
+
+\section{Indirect Dark Matter Searches}
+\label{chap:intro:IDMS}
+Unlike direct dark matter and collider searches, indirect dark matter searches measure the particles from the dark matter annihilation or decay, providing an effective method to test various dark matter models from a different perspective. In particular, indirect dark matter searches with antideuterons or antiheliums have been instrumental in broadening our understanding of the field. Dark matter interaction induced cosmic-ray (CRs) antideuterons and antiheliums fluxes predicted by many different models exceed the estimated astrophysical background in the energy range of GeV/n or sub-GeV/n by orders of magnitude \cite{PhysRevD.102.063004, Doetinchem_2020, PhysRevD.62.043003, Baer_2005, PhysRevD.78.043506, PhysRevD.71.083013, Alejandro_Ibarra_2013,PhysRevD.88.023014, N.Fornengo_2013, PhysRevD.89.103504, PhysRevD.97.103011, Tomassetti:2017DQ, lin2018expectationscosmicantideuteronflux, Ding_2019, 10.1007/jhep08(2014)009, PhysRevD.89.076005, PhysRevD.96.083020}. In our matter-dominated Universe, astrophysical production of antimatter is dominated by pair production from the collision of \ac{CRs} with \ac{ISM} particles, with protons being the largest component of both the \ac{CRs} and \ac{ISM} (in the form of hydrogen gas). Antinuclei can be formed in collisions with energy above their respective production thresholds. This threshold for light antinuclei increases steeply with antinucleon number because every additional antinucleon requires the production of a corresponding nucleon as well. The energy thresholds for \ac{ad}, \ac{aHe3}, and \ac{aHe4} in p-p interactions are about 17, 31, and 49 GeV, respectively, in the target frame or about 5.7, 7.5, and 9.7 GeV, respectively, in the center-of-mass frame. Through \ac{WIMP} type dark matter particel self-interactions, various Standard Model particles are expected to be generated. 
+
+In most cases, this flux from \ac{DM} interaction channels is buried in the cosmic background, whereas antideuteron and antihelium-3 fluxes remain distinct due to the natural difficulty of their formation from charged cosmic rays (CRs) interactions, which \ac{CRs} propagation is described by the Fokker-Planck equation, which can be written as:
+
+\begin{equation}
+    \frac{\partial\psi}{\partial t}=Q(\boldsymbol{r}, p)+\boldsymbol{\nabla}\cdot(D_{xx}\boldsymbol{\nabla}\psi-\boldsymbol{V}\psi)+\frac{\partial}{\partial p}p^2D_{pp}\frac{\partial}{\partial p}\frac{\psi}{p^2}-\frac{\partial}{\partial p}\bigg[\psi\frac{dp}{dt}-\frac{p}{3}(\boldsymbol{\nabla}\cdot\boldsymbol{V})\psi\bigg]-\frac{\psi}{\tau}
+    \end{equation}
+
+    \noindent where:
+    \begin{description}
+        \item[$\psi=\psi(\boldsymbol{r}, p, t)$] Time-dependent CR density per unit particle momentum at position $\boldsymbol{r}$
+        \item[$Q(\boldsymbol{r}, p)$] Source term accounting for dark matter annihilation and secondary background
+        \item[$D_{xx}, \boldsymbol{V}, D_{pp}$] Spatial diffusion coefficient, convection velocity, and diffusive re-acceleration coefficient (propagation parameters)
+        \item[$\psi/\tau$] Particle loss term due to decay, fragmentation, and inelastic interactions
+    \end{description}
+
+    This Fokker-Planck equation describes CR propagation through the Galaxy, where the source term $Q$ includes contributions from both dark matter interactions and secondary processes \cite{PhysRevD.105.083021}.
+    
+By projecting \ac{CRs} interacting with the \ac{ISM}, we can obtain the expected antideuteron and antihelium-3  background (Secondary) fluxes. Additionally, using a specific decay model, we can also predict the primary antideuteron and antihelium-3 fluxes from dark matter decays (see Fig.~\ref{fig:antideuteron_sensitivity},\ref{fig:antihelium3_sensitivity}). From the sub $GeV/n$ energy range, we will be able to detect rare antideuteron or antihelium-3 events whose fluxes are two orders of magnitude higher than the background, providing with background-free signatures. section.~\ref{chap:intro:IDMS:antideuteron} and section.~\ref{chap:intro:IDMS:antihelium} will introduce more about how to project primary flux from \ac{DM} interaction.
+
+\subsection{Indirect Dark Matter searches with antideuteron}
+\label{chap:intro:IDMS:antideuteron}
+The production mechanism of light antinuclei from hadronic interactions is not well understood. A number of models attempted to describe this process. One of these is the coalescence model, which has been successful in describing the light antinuclei formation so far, as the ALICE and other results have shown \cite{PhysRevD.98.023012}. In the simple coalescence model, the fusion of an antiproton and an antineutron into an antideuteron is based on the assumption that any antiproton-antineutron pair within a sphere of radius $p_0$ in momentum space will coalesce to produce an antinucleus. The coalescence momentum p0 is a phenomenological quantity and has to be determined through fits to experimental data \cite{PhysRev.129.854}. In this approach, the antideuteron spectrum is given by
+
+\begin{equation}\label{equ:antideuteron_spectrum}
+    \gamma_d \frac{d^3N_{\bar{d}}}{dp^3_{\bar{d}}}=\frac{4\pi}{3}p^3_0\bigg(\gamma_p \frac{d^3N_{\bar{p}}}{dp^3_{\bar{p}}}\bigg)\bigg(\gamma_n \frac{d^3N_{\bar{n}}}{dp^3_{\bar{n}}}\bigg)
+\end{equation}
+
+Here, $\gamma_i$ is the Lorentz factor for particle $i$, accounting for relativistic effects in the yield calculation. The analytical coalescence model assumes that antiprotons and antineutrons are produced independently (uncorrelated production) and that their momentum distributions are isotropic. These simplifications make the model tractable but may not fully capture the underlying physics. While $p_i$ and $dN_i/dp_i$ are, respectively, the momentum and the differential yield per event of particle i (\ac{ad}= antideuteron, \ac{ap} = antiproton, \textbf{$\bar{n}$} = antineutron). This is known as the analytical coalescence model. However, this is overly simplistic since it does not take into account effects like energy conservation, spin alignment etc., which have an important effect on deuteron and antideuteron formation. It also assumes that the production of antiprotons and antineutrons is uncorrelated \cite{CHARDONNET1997313} and expresses the momentum distribution of the coalesced particle as the product of two independent isotropic distributions. This is another simplification since correlations have an important effect on the coalescence process \cite{PhysRevD.88.023014, Alejandro_Ibarra_2013, KADASTIK2010248}.
+
+\begin{figure}
+\begin{center} 
+\includegraphics*[width=15cm]{fig/GRAMS_antideuteron.png}
+\end{center}
+The antideuteron flux in the $sub-GeV/n$ region exhibits a high signal-to-noise ratio \cite{aramaki2020dual}.
+\caption{The Antideuteron flux and sensitivity}
+\label{fig:antideuteron_sensitivity}
+
+\end{figure}
+
+\subsection{Indirect Dark Matter searches with antihelium}
+\label{chap:intro:IDMS:antihelium}
+
+
+\section{Cosmic-ray antiprotons}
+\label{chap:intro:antirpotons}
+Cosmic antiprotons have being measured from AMS and BESS experiment, leave puzzles about the origin and the mechanism of its flux \cite{PhysRevLett.117.091103, YAMAMOTO2013227, sakai2021new}. Antiproton flux is the largest components of all the cosmic antinucleus, which could be generated by energetic cosmic protons interacting with \ac{ISM} \cite{Moskalenko_2002, kiraly1981antiprotons} 
+
+\begin{equation}
+    E_{\bar{p}}\frac{d^3\sigma}{dp^3}=N_{\bar{p}} \frac{(1-x_R)^A}{(p_t^2+1.04)^{4.5}}
+\end{equation}
+$x_R$ is the ratio of antiproton energy to the maximum kinematically allowed energy, $p_t$ is the transverse momentum, $N_{\bar{p}}$ is a normalization factor, and this parametrization describes the invariant differential cross section for antiproton production in proton-proton collisions. See \cite{PhysRevD.90.085017} for details.
+
+\section{Balloon Experiments}
+\label{chap:intro:balloon}
+As a multi-decade scientific program, scientific ballooning offers a transformative platform for conducting cutting-edge observations at the stratosphere, providing a unique blend of capabilities that bridge the gap between ground-based instruments and orbital satellites. By deploying specific payloads to the stratosphere at altitudes exceeding 30 kilometers, these missions circumvent the atmospheric interference that limits ground astronomy while offering a cost-effective and rapidly deployable alternative to space-borne telescopes. This paradigm enables high-resolution studies across disciplines, from mapping the cosmic microwave background and characterizing exoplanet atmospheres to monitoring terrestrial ecological changes, all while serving as a vital testbed for technology maturation ahead of more costly spaceflight commitments.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/suborbital_figure2.jpg}
+    \caption{Typical development paths for suborbital experiments and technologies. \cite{nasa_suborbital}}
+    \label{fig:suborbital_balloon}
+\end{figure}
+
+Balloon experiments, serve as one of the suborbital platforms, offer numerous advantages and opportunities that enable researchers to collect valuable data, as well as advance their experiment and/or technology payloads for demanding space missions. Some of the advantages include the ability to:
+\begin{itemize}
+    \item Collect in-situ scientific data for particular space environments or phenomena.
+    \item Evaluate the performance and feasibility of payloads within relevant environments that cannot be readily replicated through ground-based testing. This includes exposure to high-altitude and near-space environments.
+    \item Collect valuable performance data to advance the overall Technology’s Readiness Level (TRL)
+    \item Refine the experiment/technology in order to significantly reduce technical risks and help ensure success of future missions.
+\end{itemize}
+
+To this end, suborbital flight testing can serve as an invaluable opportunity for conducting advanced scientific investigations as well as maturing novel technologies. Ultimately, suborbital flight testing can also assist in the development of robust payloads. In this manner, an experiment or technology can evolve from benchtop hardware onto a proven flight payload with suborbital heritage, therefore paving the way for potential mission infusion, see Fig.~\ref{fig:suborbital_balloon} \cite{nasa_suborbital}. 
+
+Particularly for Balloon-Borne Indirect Dark Matter Search Experiments that this thesis is focused on developing, the advantages are mainly low cost and reduced CR-induced shower backgrounds at stratospheric altitudes \cite{grieder2010extensive, PhysRev.76.1092}. To apply our charge particle detection technique and identify antinucleons, we must detect as many primary cosmic-ray particles as possible while minimizing shower-induced backgrounds. Additionally, balloon-borne experiments are cost-effective, allowing extensive laboratory research and development to prepare for future satellite missions that will achieve unprecedented sensitivity for \ac{CRs} measurements in the relevant energy range. With more than 25km altitude, \ac{CRs} shower backgrounds are reduced . Based on this we could choose a variety of balloon types to fulfill our request, see Fig.~\ref{fig:balloon_altitude}. Once selected balloon type, payload floating altitude will be related to the total suspended weight. The heavier the payload becomes, the lower the leveling flight altitude will be. For \ac{GAPS} experiment science flight, the Zero-Pressure Balloon: Long Duration Antarctic is chosen, detailed information see relative column in Chart.~\ref{table:NASA_Balloon}. As for \ac{GRAMS} experiment, particularly pGRAMS mission selected NASA-Contracted Commercial Flight Providers worldview, which has flight duration several hours to several days at a floating target altitude 15-30 km \cite{worldviewspace2025}. The nominal payload weight capacity could reach to 500 kg, which is also pGRAMS's design target.
+
+\begin{table}
+\centering
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{1.5cm}|>{\raggedright\arraybackslash}p{2.7cm}|>{\raggedright\arraybackslash}p{2.7cm}|>{\raggedright\arraybackslash}p{2.7cm}|>{\raggedright\arraybackslash}p{2.7cm}}
+\hline
+\textbf{Vehicle} & 
+\textbf{\makecell{Zero-Pressure\\Balloon:\\Conventional}} & 
+\textbf{\makecell{Zero-Pressure\\Balloon:\\Long Duration\\Antarctic}} & 
+\textbf{\makecell{Super Pressure\\Balloon:\\Mid-Latitude}} & 
+\textbf{\makecell{Zero-Pressure\\Balloon:\\High Altitude}} \\
+\hline
+Description & 
+Launches take place from Fort Sumner, NM or Palestine, TX with multiple balloon volumes available for short duration flights supporting scientific, engineering, technology, or educational missions and utilizing line of sight communications. & 
+Launches take place in Antarctica with multiple balloon volumes available for missions lasting from a few days to several weeks to support scientific missions and utilizing both line of sight and over the horizon communications. & 
+Launches takes place in New Zealand using the ~0.5 million cubic meter volume super-pressure balloon for missions lasting from a few days to several weeks at the southern hemisphere mid-latitude in support of scientific missions and utilizing line of sight and over the horizon communications. & 
+Launches take place at the conventional or Long Duration locations using a 1.7 million cubic meter volume zero-pressure balloon for short or long duration flights supporting scientific missions utilizing line of sight and over the horizon communications. \\
+\hline
+Flight Duration & 
+~2 hrs to 36 hrs & 
+~7 to 50+ days & 
+~7 up to 100 days & 
+~2 hrs to 21+ days \\
+\hline
+Target Altitude & 
+30 to 40 km & 
+30 to 40 km & 
+33.5 km & 
+47 to 50 km \\
+\hline
+Payload Weight & 
+Up to 2,948 kg & 
+Up to 2,948 kg & 
+900 to 1300 kg & 
+Up to 200 kg \\
+\hline
+Payload Dimensions & 
+Compatible with various payload dimensions (small, medium or large); details available from NASA BPO & 
+Compatible with various payload dimensions (small, medium or large); details available from NASA BPO & 
+Compatible with various payload dimensions (small, medium or large); details available from NASA BPO & 
+Compatible with various payload dimensions (small, medium or large); details available from NASA BPO \\
+\hline
+\end{tabular}
+\caption{NASA HIGH-ALTITUDE BALLOON PLATFORMS \cite{nasa_suborbital}}
+\label{table:NASA_Balloon}
+\end{table}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/NASA_standards_metric.jpg}
+    Once selected balloon type, payload floating altitude will be related to the total suspended weight. The heavier the payload accumulate, the lower the leveling flight altitude will be.
+    \caption{NASA Standard Design Balloon Load/Altitude Curves (Metric units) \cite{nasa_suborbital}}
+    \label{fig:balloon_altitude}
+\end{figure}
+
+\subsection{\ac{GAPS} Experiment}
+\label{chap:intro:GAPS}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GAPS_concept_with_payload.png}
+    The left picture shows GAPS payload at McMurdo Station. The right figure shows the GAPS detection concept.
+    \caption{GAPS payload and detection concept}
+    \label{fig:GAPS_payload}
+\end{figure}
+GAPS (General AntiParticle Spectrometer) is an Antarctic balloon mission designed to search for low-energy ($< 0.25 GeV/n$) cosmic-ray antinuclei in the austral summer of 2025, see fig.~\ref{fig:GAPS_payload}.
+GAPS is designed to precisely measure the flux of low-energy cosmic-ray antideuterons, antiprotons, and antihelium. To date, there has not been an unambiguous observation of cosmic-ray antideuterons or antihelium, and observation by GAPS of even a single antideuteron could tell us about the particle nature of dark matter.
+GAPS uses an exotic atom technique to identify antiparticles with a high degree of certainty. Low-energy antiparticles will be slowed in the material of the GAPS tracker and eventually captured by a nucleus, resulting in an exotic atom in an excited state. This exotic atom will then quickly decay, producing X-rays at uniquely defined energies and a correlated pion and proton signature from the subsequent nuclear annihilation.
+GAPS relies on a time-of-flight (ToF) system, which tags candidate events for the detector to save and makes a precise velocity measurement, and a tracker system, which serves as the target and tracker for the initial cosmic-ray particle and its annihilation products. The detection concept has been validated in an accelerator beam test at KEK, Japan in 2005 \cite{Hailey_2006}, as well as in a balloon-borne prototype experiment (pGAPS) with a ToF system and 6 Si(Li) detectors, successfully flown from the JAXA/ISAS balloon base in Taiki in June 2012, see Fig.~\ref{fig:pGAPS_payload} and Fig.~\ref{fig:pGAPS_launch} \cite{MOGNET201424, J_E_Koglin_2008}. Starting from the beginning of 2021, the GAPS team put together a smaller scale prototype payload called the GAPS functional prototype (\ac{GFP}) to validate system functionality. Beginning in spring 2022, a full-size GAPS payload has been constructed at multiple institutions for the purpose of integration and testing, including MIT Bates Lab, \ac{SSL}, \ac{NTS}, Columbia Nevis Laboratory, and \ac{CSBF}. In November 2024, the GAPS instrument was assembled and prepared for its first flight at the Long Duration Balloon facility at McMurdo Station, Antarctica. The launch is scheduled to occur during the austral summer of 2025.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/1206_detector_description_small1.jpg}
+    \caption{pGAPS payload and mission launched at Taiki, Japan}
+    \label{fig:pGAPS_payload}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/pGAPS_launch.jpg}
+    \caption{pGAPS launch site at Taiki, Japan}
+    \label{fig:pGAPS_launch}
+\end{figure}
+
+Detailed GAPS experiment apparatus and analysis will be presented in section.~\ref{chap:GAPS} and section.~\ref{chap:GAPSresult}.
+
+
+\subsection{\ac{GRAMS} Experiment}
+\label{chap:intro:GRAMS}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GRAMS_concept.png}
+    GRAMS detection concept. The LArTPC is segmented into “cells” to minimize coincident background events. The bottom figure shows the charged-particle and gamma-ray interactions inside the detector.
+    \caption{\ac{GRAMS} detection concept}
+    \label{fig:GRAMS_Concept}
+\end{figure}
+
+GRAMS is a novel project that simultaneously targeted both astrophysical observations with MeV gamma rays and an indirect dark matter search with antimatter detection \cite{aramaki2020dual}. The GRAMS instrument was designed with a cost-effective, large-scale LArTPC (Liquid Argon Time Projection Chamber) detector surrounded by plastic scintillators (see Fig.~\ref{fig:GRAMS_Concept}). With drifted electrons and a scintillation light trigger, the LArTPC was able to reconstruct the primary vertex and perform charged particle detection. Recently, GRAMS was funded to develop and launch a prototype payload, pGRAMS, to verify its detection concept and performance at the 35 km flight altitude. The author was in charge of designing and testing the detector system, including TPC and charge readout, and managing the pGRAMS launch schedule as an onsite coordinator.
+
+GRAMS has been proposed initially in 2019, followed with a continuous development of technology. GRAMS is funded for an engineer flight in Japan in 2022, and made a successful flight in 2023 \cite{Nakajima:2024fgx}. GRAMS then got funded for a prototype balloon flight from NASA \ac{APRA} in year 2023. Currently a smaller size detector miniGRAMS with $30\,\mathrm{cm} \times 30\,\mathrm{cm} \times 20\,\mathrm{cm}$ is designed and prepared at Northeastern University to be operated for coming pGRAMS mission that is going to launch at Tucson, Arizona. While at the same time, a compatible-sized $30\,\mathrm{cm} \times 30\,\mathrm{cm} \times 20\,\mathrm{cm}$ LArTPC detector is assembled and tested in Japan to perform $700\,\mathrm{MeV}/c$ antiproton beam test at J-PARC T98 experiment\cite{Yano:202503}. Some of the timeline show in Fig.~\ref{fig:timeline} and mission related pictures show in Fig.~\ref{fig:GRAMS_missions}. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig/timeline.png}
+    \caption{GRAMS timeline}
+    \label{fig:timeline}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GRAMS_hardware.png}
+    \textbf{(a)} Year 2023 eGRAMS payload, highlighted red box shows LArTPC carrier chamber. \textbf{(b)} Year 2025 antiproton beam test at J-PARC. Orange arrow shows $700MeV/n$ antiproton beam direction. Red xyz arrows shows LArTPC chamber orientation. \textbf{(c)} Detector that stays inside the beam test chamber. \textbf{(d)} Year 2023 eGRAMS launch site at Taiki Aerospace Research Field in Hokkaido, Japan. \textbf{(e)} pGRAMS payload design, in preparation for flight in 2026 at Tucson, Arizona.
+    \caption{GRAMS milestones}
+    \label{fig:GRAMS_missions}
+\end{figure}
+
+In the future, GRAMS will perform science balloon flight and progress to a satellite missio to deliver the science result we proposed and simulated.
+
+\noindent\textbf{What is the population of MeV-emitting astrophysical objects?}\\
+There are many sources which potentially emit photons in the MeV gamma-ray domain (e.g., active galactic nuclei, X-ray and gamma-ray binaries, pulsars/pulsar wind nebula, supernova remnants). % COMMENT: Good list; consider adding refs for each class where relevant.
+These objects in principle have nonthermal (continuum) emission in a broad energy band, ranging from radio to GeV gamma ray and above. %which can be probed with other very sensitive missions (e.g.,~Fermi and NuSTAR).
+Measurements of the nonthermal emission allow us to understand the mechanism of particle acceleration at different scales of shocks and jets in the aforementioned sources.
+$\sim$2000 and $\sim$7000 sources have been already identified in the hard X-ray and GeV gamma-ray bands, respectively, by missions with sensitive instruments such as NuSTAR, INTEGRAL, Swift, and Fermi \cite{}. Thus, some of them could be potential MeV gamma-ray emitters.\\
+
+\noindent\textbf{Where did the heavy elements form?}\\
+MeV gamma-ray line emission is the only direct probe of the formation of r-process elements \cite{korobkin-r-proc,metzger-r-proc}, %nuculei, 
+enabling us to explore the origin of matter.
+%Line emission from kilonova ejecta in MeV range
+The detection of nuclear gamma-ray lines from the decay of r-process radioactive elements in supernovae or kilonovae formed after neutron star mergers would would be a direct probe of the sites where neutron-rich elements that are essential for life did originate. %Main target in this study is nucleosynthesis in supernovae and neutron star mergers.
+% COMMENT: Duplicate "would would" -> remove one. Also clarify what spectral resolution is needed to detect such lines; leave as note to add.
+(need to better understand what kind of energy and angular resolution we can have with GRAMS)\\
+
+\noindent\textbf{What is the origin of galactic positrons?}\\
+MeV missions such as COMPTEL and INTEGRAL have detected a bright gamma-ray emission line at 511\,keV from the galactic bulge and disk that is associated with the annihilation of positrons. The origin of this positron population is unknown, with potential sites ranging from a population of millisecond pulsars to the decay of dark matter particles. The improved effective area of a GRAMS mission compared to predecessor efforts will improve the spatial characterization of the 511\,keV excess and distinguish between models for the origin of galactic positrons and their diffusion in the interstellar medium.\\ 
+
+\noindent\textbf{What is the origin of gamma-ray transients?}\\
+%Transient phenomena (e.g., NS-NS mergers and gamma-ray bursts) will be mainstream in the next decay.
+The Astro 2020 Decadal survey established that "the highest-priority in space is sustaining space-based activity of space-based time-domain and multi-messenger program with small- and medium-scale missions." % COMMENT: Quote is fine; include citation to Astro2020 white paper.
+GRAMS will play an important role in identifying transient phenomena such as gamma-ray burst and mergers of two neutron stars and the gamma-ray counterparts of gavitational wave and neutrino events. With its large effective area and instantaneous field of view, GRAMS will be sensitive to these short but luminous events %because its large effective area enables us to detect photons in a short time of transients and
+and provide their localizations to the astrophysics community to follow up at other wavelengths. %it has a good synergy with measurements of other messenger, such as neutrino and gravitational wave.
+(This requires on-board processing for real-time reconstruction and pointing)\\
+%It is also well aligned with the highest-priority in space as identified by the astro 2020 decadal survey, which is sustaining space-based activity of space-based time-domain and multi-messenger program with small- and medium-scale missions.
+
+Detailed GRAMS experiment apparatus and analysis will be showed in section.~\ref{chap:GRAMS} and section.~\ref{chap:GRAMSresult}.
+

@@ -1,0 +1,107 @@
+% a set of default macros (outsourced of main document for cleanliness
+
+\usepackage{amsfonts,amssymb,amsmath}			% special math characters
+\usepackage{times}		% use Postscript fonts
+\usepackage{bm}
+
+% make citation in sequence
+\usepackage{cite}
+
+% make table over pages
+\usepackage{longtable}
+\usepackage{booktabs}
+
+% For making a plot attached to certain location
+\usepackage{float}
+
+% For chart arrangement
+\usepackage{pdflscape}
+\usepackage{makecell}
+
+% reference macros (capitals!)
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\chapref}[1]{Chapter~\ref{#1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\appref}[1]{Appendix~\ref{#1}}
+\newcommand{\lineref}[1]{line~\ref{#1}}
+\newcommand{\Lineref}[1]{Line~\ref{#1}}
+\newcommand{\ifyes}[1]{#1}
+\newcommand{\ifno}[1]{}
+
+% local macro
+\usepackage{multirow}
+\clubpenalty=1000
+\widowpenalty=1000
+
+% misc. settings
+\setcounter{secnumdepth}{3}
+
+% enable index generation
+\makeindex
+\usepackage{makeidx}
+
+% Load acronym ONCE, before hyperref
+\usepackage{acronym}
+
+% format URLs
+\usepackage{url}
+% default style was sf but it produced a too big font in the reference section
+\urlstyle{tt}
+
+% graphics package depending on backend driver
+% are we directly producing pdf? ie. running pdflatex ?
+\ifnum\pdfoutput>0
+\usepackage[pdftex]{graphicx}
+% enable on the fly conversion of eps figures when using pdfLatex
+\usepackage{epstopdf}
+\else
+\usepackage{graphicx}
+\fi
+
+% ----------------------------------------------------------------- %
+% hyperref to create bookmarks in the PDF for easier navigation
+
+% either for pdflatex
+\ifnum\pdfoutput>0
+\usepackage[pdftex,
+    bookmarks=true,
+    bookmarksnumbered=true,
+    hypertexnames=false,
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=blue,     % Keep this - sets default link color to blue
+    citecolor=blue      % Keep this - sets default citation color to blue
+]{hyperref}
+% or for dvips ..
+\else
+\usepackage[hypertex,%                  % hyper-references for ps2pdf
+bookmarks=true,%                        % generate bookmarks ...
+bookmarksnumbered=true,%                % ... with numbers
+hypertexnames=false,%                   % needed for correct links to figures
+breaklinks=true,%                       % Allows link text to break across lines;
+linkcolor=blue,%                        % Make link color blue
+citecolor=blue%                         % Make citation color blue
+]{hyperref}
+\fi
+
+% Fix ONLY acronym links to be black (do this AFTER hyperref)
+\makeatletter
+\renewcommand*{\AC@hyperlink}[2]{%
+  \begingroup
+  \hypersetup{linkcolor=black}% Temporarily override to black for acronyms
+  \hyperlink{#1}{#2}%
+  \endgroup
+}
+\makeatother
+
+\hypersetup{				% setup PDF information fields
+pdfauthor = {\authorRef},
+pdftitle = {\titleRef},
+pdfsubject = {\expandafter{\degreeRef} thesis submitted to Northeastern University},
+pdfkeywords = {add keywords here}
+pdfcreator = {LaTeX with hyperref package},
+pdfproducer = {dvips + ps2pdf}}
+
+\usepackage{microtype}
+

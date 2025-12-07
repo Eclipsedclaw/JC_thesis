@@ -1,0 +1,392 @@
+\chapter{GAPS Experiment Apparatus}
+\label{chap:GAPS}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GAPS_instrument_v1.png}
+    \caption{Left figure shows GAPS payload design while right figure shows the actual payload hanging on flight vehicle at McMurdo station}
+    \label{fig:GAPS_antarctic}
+\end{figure}
+
+As introduction section.~\ref{chap:intro:GAPS} mentioned, \ac{GAPS} is an Antarctic balloon mission designed to search for low-energy ($< 0.25 GeV/n$) cosmic-ray antinuclei in the austral summer of 2025. It is designed to precisely measure the flux of low-energy cosmic-ray antideuterons, antiprotons, and antihelium. GAPS has being contributing to its science community since early 2000s, with several concrete milestones:
+\begin{itemize}
+    \item Year 2002 - Year 2004: First idea \cite{HAILEY2004122} and beam test \cite{Hailey_2006}.
+    \item Year 2012: pGAPS balloon flight \cite{MOGNET201424, J_E_Koglin_2008}. 
+    \item Year 2018 - Year 2019: Science flight detector fabrication \cite{Rogers_2019, KOZAI2022166820, scotti2019frontendelectronicsgapstracker, PEREZ201812, a5c7b362e95a41df8a83d91fe2100f18, OKAZAKI201820}.
+    \item Year 2020 - Year 2025: GAPS science flight payload assembly and testing\cite{10168972, Tiberio_2025, Aoyama:2025S0}.
+    \item Year 2025 - Year 2026: GAPS first \ac{LDB} flight in the austral summer of 2025, see fig.~\ref{fig:GAPS_antarctic}
+\end{itemize}
+
+As my major contribution for GAPS started from year 2021, this thesis will focus mainly on the GAPS science flight.
+The GAPS first science balloon flight design is displayed in fig.~\ref{fig:GAPS_antarctic}. The major detector instrument is built with two primary subsystems: a time-of-flight(\ac{TOF}) system for particle timing and a high-resolution tracker (\ac{Si(Li)}) for energy and tracking measurement. The \ac{TOF} system features inner and outer layers of EJ-200 plastic scintillator paddles. The outer ToF if made of an horizontal plane above the rest of the detector (named “umbrella”) and of four lateral vertical walls (named “cortina”). The inner ToF is a cube that surrounds the tracker system on top, bottom and lateral sides. All scintillators are 6.35 mm thick and 16 cm wide, with a length between 1.1 and 1.8 m. Each paddle is read out with silicon photomultipliers (Hamamatsu S13360-6050VE) on both ends. The tracker systems is made of 1008 Si(Li) detectors arranged in 7 planes evenly spaced by 10 cm \cite{PEREZ201812, KOZAI2019162695, KOZAI2022166820, SAFFOLD2021165015, 10168972}.
+ A tracker plane is made of 6×6 modules, where each module contains 2×2 detectors. Each detector has a cylindrical shape of $ 10cm$ diameter and $ 2.5mm$ thickness and it is segmented into eight strips of equal area. The required operational temperature of $ \sim -40^\circ C$ is achieved with an oscillating heat pipe system (\ac{OHP}) \cite{doi:10.1142/S2251171714400042, doi:10.1142/S2251171717400062, OKAZAKI201820, FUKE2023168102}. The readout is preformed with a dedicated application specific integrated integrated circuit (ASIC) which provides the specific required dynamic range between $ \sim10 keV$ and $ \sim100MeV$ \cite{9564082, RE2023167617, 10330133}. The resulting energy resolution of the \ac{Si(Li)} detector is better than $ 4keV$ at a measurement around $ 60keV$, fulfilling the requirement for X-ray discrimination \cite{Tiberio_2025}.
+
+ Aside from detector systems, a highly integrated thermal system goes into the center \ac{Si(Li)} tracker and dissipate heat through the radiator panels on one side of the payload. While the other side of the payload has 16 of the sun panels to provide required power during the flight as well as balancing the payload \ac{COM} on a mechanical perspective. On top of the payload, we put Iridium and TDRSS antenna on the BOOM to get best communication. At the very bottom we put all our electronics in the \ac{EBay}.
+
+\section{Detectors}
+\label{chap:GAPS:detectors}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/SiLi_module_display.png}
+    Left figure shows GAPS \ac{Si(Li)} module which contains 4 detectors, a custom 32-channel ASIC, and a front-end board. Right figure shows a close view of each detector which are wire-bounded from each 8 channels to the front-end board.
+    \caption{GAPS detector module}
+    \label{fig:GAPS_detector}
+\end{figure}
+To produce GAPS \ac{Si(Li)} detector, this thesis shows simple steps. For the detailed description, readers can refer to \cite{KOZAI2019162695}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GAPS_SiLi_fab.png}
+    \caption{GAPS \ac{Si(Li)} detector fabrication procedure \cite{KOZAI2022166820}.}
+    \label{fig:placeholder}
+\end{figure}
+
+(1) Procurement of p-type Si crystal
+Purity and uniformity of the Si crystal are essential for obtaining a uniform and large-area Li-drifted layer [30], [31]. It is also desirable to realize as light a boron doping as possible for sufficient and uniform compensation of the boron acceptors by Li ions. We developed a custom Si ingot with a diameter of 10 cm and featuring a carrier lifetime of 1 ms, resistivity of 1000 cm, and oxygen and carbon concentrations below the measurement limit (10 16 atoms/cm3). The floating-zone method was used for crystal growth to avoid contamination by impurities. The crystal orientation is <111>. Ingots are sliced into wafers with 10 cm diameters and 2.5 mm thicknesses.
+
+(2) Li evaporation and diffusion Li is evaporated and diffused to a shallow depth to form the Li-diffused layer or $ n^+$-layer. Custom Li evaporator and heater are developed to realize a uniform Li-diffused layer. Theoretical calculations and inspections of the wafer cross-section by copper-staining (see [32], [33] and Fig. A.3 in Appendix) confirm that the thickness of the Li-diffused layer is 0.1 mm.
+
+(3) Evaporation of n-electrode and top-hat machining Nickel and gold are evaporated on the n-side as an electrode with a thickness of 140 nm. The circumference of the n-side is then ground by ultrasonic impact grinding (UIG) to form a top-hat geometry. This geometry prevents avalanche breakdown and inhibits Li ions from drifting to the sides of the wafer during the Li-drift process.
+
+(4) Li drift A custom drift stage was developed to uniformly heat the large-area wafer. The wafer is put on the drift stage (hot plate in step 4 in Fig. 1), which is electrically grounded, with the p-side facing down. A positive bias voltage [V] is applied to the n-side by an electrode from a voltage supply. A temperature sensor (resistance temperature detector) is installed on the n-side of the wafer for feedback control of the heater built into the drift stage. The wafer is maintained at a constant temperature of T 100 °C. Li is drifted into the bulk of the wafer by the electric field induced by the bias voltage. The drifted depth W grows with drift time t, as \cite{osti_4532160}
+
+\begin{equation}
+    W = \sqrt{2V\mu_L T}
+\end{equation}
+
+where $ \mu_L $ is the Li mobility related to the diffusion constant (D) by the Einstein relation $ \mu_L=qD/k_B T $ with the elementary charge q and the Boltzmann constant $ k_B $. Fig. 13a displays the t-W relationship, which is used in Section 5 to discuss the interpretations of the analysis results in this study.
+
+(5) Machining grooves for the guard ring and strips
+The intrinsic layer exposed on the side surface of the top-hat is relatively easy to be contaminated and can become a source or path for surface LC. A circular groove of depth 0.3 mm and width 1 mm is cut into the n-side by UIG. This groove electrically isolates the perimeter, or guard-ring [6] electrode connected to the side surface, from the central area, or readout electrode. Grooves dividing the readout electrode into 8 strips of equal area are cut at the same time as machining the guard-ring groove, using the same groove depth and width.
+
+(6) Evaporation of p-electrode The metal contact on the p-side is evaporated in the same manner as the n-electrode.
+
+(7) Etching on side of the top-hat and grooves
+The side of the top-hat and the n-side grooves are etched after painting wax on the n- and p-electrodes. This etching not only removes the damaged layer on the surface formed by UIG, but also smooths the surfaces and removes contaminants from the exposed silicon crystal. Organic-solvent cleaning is then performed to remove the wax. This surface treatment is effective for reducing the surface LC, but unnecessarily long etching needs to be avoided because it expands the area of the grooves where the intrinsic layer is exposed. [18] deduced an optimum etching time at which the LC suppression begins to saturate. In some cases where the LC is not sufficiently suppressed by etching for the specified time, second and third etchings were additionally performed during mass production.
+
+
+\section{Detection Concept}
+\label{chap:GAPS:concept}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GAPS_event_display.png}
+    This is one typical single track event that GAPS detected with ground testing, activated \ac{TOF} and \ac{Si(Li)} system provided information for us to reconstruct the charge particle track.
+    \caption{3D event display of single track event 241213 0949 5452, recorded at LDB at 9:49am GMT, 24/12/13}
+    \label{fig:GAPS_event_display}
+\end{figure}
+
+Once an charged particle hit the detector active volume, the \ac{TOF} system will record timing and position information. With an advanced trigger selection, survived low-energy charged particles will be recorded inside \ac{Si(Li)} tracker and captured by all our detector strips which both operate as tracker and calorimeter. For normal standard model \ac{CRs} like proton and helium, they will leave an primary track with limited amount of charged secondary generated. While if there is an antiproton or antideuteron captured, the annihilation vertex will be constructed by adding all the charged secondary to construct an unique detector response. Detailed analysis see section.~\ref{chap:GAPSresult:flight:detector}.
+
+\section{GAPS Functional Prototype (GFP)}
+\label{chap:GAPS:GFP}
+To confirm GAPS functionality for the full payload, we have proposed and tested a smaller scale assembly called GAPS functional prototype (\ac{GFP}). GFP uses 3 layers of detector modules with $ 2\times6 $ modules installed on each layer. For \ac{TOF}, instead of full structure with "Umbrella", "Cortina" and "inner Cube", GFP constructed two largest panel as "top TOF" and "middle TOF" to trigger and reconstruct incoming charge particles. A samller scale thermal system \ac{OHP} is also designed and fabricated. The rest of the electronics remain the same as flight ones so we could test GAPS concept to an extensive level to prepare readiness of the first science flight during pandemic time. This section discusses the construction, design of the GFP. The performance of each individual sub-system and result including the thermal performance, the study of noise in the Si(Li) tracker, the measurement of the energy spectrum of minimum ionizing particles and the reconstruction of muon tracks are discussed in section.~\ref{chap:GAPSresult:GFP}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GAPS_GFP_config.png}
+    Overview of the GFP setup: Si(Li) tracker, TOF and Thermal. Instruments which are not shown in the photo: tracker power system (on the bottom of electronic rack) and tracker DAQ computer.
+    \caption{GAPS GFP setup at Bates lab}
+    \label{fig:GAPS_GFP_config}
+\end{figure}
+Since the aim of the \ac{GFP} is to demonstrate a ground-based system with a simplified configuration. Fig.~\ref{fig:GAPS_GFP_config} shows the GFP overall setup, and the major components are listed below,
+\begin{itemize}
+    \item TOF: two panels, each consisting of twelve paddles of plastic scintillator, separated by about one meter.
+    \item Si(Li) Tracker: three layers of two rows of Si(Li) detector modules, each row containing six 4-detector Si(Li) modules, which is $ \sim10\% $ of the GAPS full payload. A flight-representative high-voltage and low-voltage power supply (HV/LVPS) and back-end data acquisition system (DAQ) provide power and readout.
+    \item Thermal System: a heat exchanger and oscillating heat pipes, with a commercial chiller and liquid nitrogen as the cooling source.
+\end{itemize}
+
+The GFP construction started at Bates Research and Engineering Center of MIT early in 2021 and all the testing was accomplished in August of 2022.
+
+\subsection{GFP Time of Flight system}
+\label{chap:GAPS:GFP:TOF}
+The GAPS \ac{TOF} system provides essential particle identification input through its measurement of particle $ \beta $, $ dE/dx $, and trajectory. It also provides the primary trigger and serves as a veto for the tracker. The TOF system is required to have a timing resolution of $\leq400\ ps$ and a position resolution of $ \leq 6\ cm/layer $, as well as being as hermetic as possible (recording $>98\%$ of tracks stopping in the tracker).
+
+A high-speed digitizer (or readout board, see Fig.~\ref{fig:GFP_TOF}) is developed that demonstrates the required performance. This allows for separating multiple hits on the same paddle and energy deposition measurements up to 200 MeV, which is crucial to suppress events that annihilate in the outer TOF umbrella. The readout board uses the DRS-4 ASIC that samples the SiPM waveforms at 2 GS/s, with a buffer length of 1024 samples. Digital control is done via the Xilinx Zynq 7010 (part of Mars ZX2 digital back end) and data are sent to the TOF computer over Gbit Ethernet.
+
+The TOF trigger uses a two-level design, with a local trigger (L1) board mounted in a readout box close to the paddles and a single main trigger (L2) board located near the TOF computer. The trigger is based on the energy deposited in each paddle (slow-moving antiparticles will deposit more energy than almost all protons and He nuclei) and on the number of paddles hit. The local trigger board uses three levels of discrimination to determine whether a paddle is hit (minimum-ionizing or above) and which paddles have energy depositions consistent with low-energy antiparticles. This information is passed to the main board which makes a global trigger decision and alerts the tracker and TOF systems for readout. The anticipated L1 trigger rate is $\sim$50--100 kHz; L2 reduces this to 500 Hz.
+
+Full prototype construction and testing of the TOF paddles and SiPM preamps has been completed (Fig. 2). For a vertical muon, the SiPMs detect an average of 70 photoelectrons. The measured time resolution is <300 ps (Fig. 2), substantially better than the requirement. The position resolutions of 3.0 cm/4.6 cm in the longitudinal/transverse paddle directions translate into an angular resolution for the overall TOF system of $<3^\circ$. This performance is conservative, as low-energy antiparticles deposit significantly more energy than vertical \ac{MIP}.
+
+The GFP TOF system is designed to provide the capacity of tracking incoming muons by measuring the time and energy of particles passing through the two layers, and a muon trigger to the tracker and suitable information (i.e. event number, trigger type, etc.) to correctly tag events so that tracker and TOF data can be merged into a common event. The system consists of two 12-paddle layers, covering an area of $ 
+6\ ft \times 6\ ft $, with a separation of about one meter. Since the GFP tracker only contains two rows on one layer, the coverage of the GFP TOF provides a sufficient efficiency for the down-going muons. The top TOF panel simulates the flight TOF umbrella and the bottom panel simulates the cube. One meter separation between the two panels is same to the flight instrument. The two panels are identical at the GFP which saves the integration timing but provides a valuable validation of the TOF panel integration. The lower panel is $\sim30\ cm$ above the top layer of the tracker which is similar with the flight design.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GAPS_GFP_TOF.png}
+    Left photo shows actual TOF system geometry at Bates lab, with both top and middle panel mounted on a customized aluminum rack. Right photo shows one paddle that construct the \ac{TOF} panel, with \ac{SiPM} mounted on two side to readout the light signal. Histogram shows timing resolution of one of the paddle.
+    \caption{GFP \ac{TOF} system configuration.}
+    \label{fig:GFP_TOF}
+\end{figure}
+
+\subsection{Si(Li) detector and module}
+\label{chap:GAPS:GFP:detector}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig/GAPS_GFP_detector.jpg}
+    \caption{ A GFP Si(Li) detector module (a top aluminized polypropylene window is not shown).}
+    \label{fig:GFP_detector}
+\end{figure}
+Both the GFP and GAPS flight instrument use the same Si(Li) detector and module to build the tracker. The GAPS Si(Li) detector system must provide the absorption depth, energy resolution, tracking efficiency, and active area necessary for the GAPS antiparticle identification technique, all within the significant temperature, power, and cost constraints of an Antarctic long-duration balloon flight. A custom lithium-drifted silicon (Si(Li)) detector fabrication method was successfully developed to satisfy the GAPS requirements, see section.~\ref{chap:GAPS:detectors}. The mass-production of $\sim$1100 detectors for GAPS initial flight program was completed in March 2020. In addition, a passivation scheme has been established to ensure long-term stability of detector performance. A thermally-cured polyimide (with a silane adhesion promoter) protects the exposed silicon surfaces from environmental degradation and is robust to thermal and mechanical stress \cite{SAFFOLD2021165015}, as confirmed via thermal cycling tests, accelerated environmental exposure trials, and a multi-year detector performance monitoring program.
+
+The GAPS Si(Li) detector is 10 cm in diameter and 2.5 mm in thickness, segmented into eight strips and a guard ring. For both the flight and GFP, every four Si(Li) detectors are grouped together into one module. Fig.~\ref{fig:GFP_detector} shows the module geometry and its components, which are same between the GFP and flight instrument.
+
+An aluminum module frame provides the mechanical, electrical, and thermal interface for the detectors. The frame is $9.5'' \times 9.5''$ and $1/8''$ thick. Four holes with the diameter of $\phi = 9.2\ cm$ are cut out to host 4 Si(Li) detectors and a few small holes to interface with connectors on front-end board. Each detector is rigidly mounted into place using several fluorosilicone O-rings and G10 clamps, protecting the detectors from shock load at takeoff and cut-down. The guard ring of the detector directly touches the aluminium frame which makes the guard ring and aluminium frame (as well as the module windows) connect with the analog ground. Two corners of the frame are machined to interface with the thermal system and one of them is used to mount the cooling collar (the odd and even layer uses a different corner), which transfers heat to the OHP system. In addition, two purge fittings are mounted to the aluminium frame in order to maintain a good air conductance between two adjacent modules in the same row. During operation of the GFP, as well as the on-ground testing for the GAPS full payload, dry nitrogen gas is flushed inside the modules via these purge fittings in order to protect the Si(Li) detectors against the environmental humidity.
+
+On top and bottom of the module, a polypropylene window is placed to seal the detector volume using O-rings. These windows are $0.015''$ thick and the outer surface is aluminized. They provide additional environmental protection while maintaining high transmission efficiency for incoming and outgoing particles (exotic atomic x-rays and charged particles).
+
+To read out the signals from Si(Li) detectors, a PCB front-end board (FEB) \cite{Scotti:2019zu} is mounted on the aluminium frame inside the module. The FEB houses a core ASIC chip at center and provides the interface connections between the ASIC chip and back-end electronics via 50-pin ERNI connectors. It is also mounted with one HiRose connector for supplying the Si(Li) detectors with the high voltage bias, and assembled with a temperature sensor and electronic calibration system. To reduce the dead materials right above the silicon strips, two thin ($ 3\ \mu m$ diameter) aluminium wires are bonded between the FEB and Si(Li) strip surface.
+
+\subsection{Si(Li) detector electronics and DAQ}
+\label{chap:GAPS:GFP:DAQ}
+The Si(Li) detector electronics consist of three main subsystems: ASIC front-end electronics, back-end DAQ, and power system. The Si(Li) detector electronics must provide (i) high-resolution X-ray spectroscopy ($<4\ keV $ FWHM with $ 40\ pF$ capacitance and $<10\ nA$ leakage current) over the range $\sim20-100\ keV$, (ii) coarse-resolution spectroscopy ($\sim$10\% FWHM) and tracking over the range $ 1-100\ MeV $, (iii) coincidences of $ <1\ \mu s $ between TOF and tracker, and (iv) power consumption of $ <10\ mW/channel $ to meet power constraints for the balloon experiment.
+
+\subsubsection*{Front-end electronics}
+A custom ASIC has been designed, prototyped, and validated to meet above readout requirements [12]. The GAPS ASIC is called SLIDER-32 (32 channels Si(Li) DEtector Readout) while the prototype used for the GFP is pSLIDER-32. The ASIC is fabricated with a $ 180\ nm $ CMOS technology. The design is optimized for a working temperature of $\sim-40^\circ C $ and low power consumption. The core of GAPS ASIC electronics is a low-noise analog readout channel, featuring a charge-sensitive amplifier, dynamic signal compression, and a semi-Gaussian filter with eight selectable peaking times ($ 0.25-1.8\ \mu s$). The digital section of the ASIC communicates with the DAQ system through a serial peripheral interface (SPI). It configures the ASIC operation and handles event acquisition through a second interface with the DAQ. For both the GFP and flight, six FEBs are chained into one row and provide the ASIC with analog voltage, calibration settings, and digital communication with the back-end DAQ, and propagates signals through the row \cite{RE2023167617}.
+
+\subsubsection*{Back-end and DAQ}
+The back-end DAQ controls the ASICs and processes their data to send to the computer. There is one Back-end DAQ Module (BDM) per tracker layer, based on heritage designs from pGAPS [13, 24], NCT/COSI [23] and GRIPS [7]. Each BDM consists of a low voltage power supply board, a system interface board that relays information with the computer and the trigger interface unit, and a readout control board that interfaces with the ASICs. The back-end DAQ also consists of the tracker interface boards (IF boards) at the edge of each tracker layer that provide an interface between a tracker row and BDM.
+
+\subsubsection*{Power system}
+We custom made a low-power consumption power system to meet the requirements for the GAPS balloon flight. The GAPS power system consists of the high voltage power supply (HVPS) which provides the HV bias to the Si(Li) modules, and low voltage power supply (LVPS) which provides low voltages to the front-end and back-end electronics. It is equipped with an Ethernet interface in order to properly control the power on and off, handle the voltage and current set-up sequences, and monitor the telemetry data. The redundant Ethernet interface is performed by a controller board based on a MicroController. The MicroController is the main interface of the system with the DAQ system (via Ethernet protocol) and provides control of the HVPS and LVPS boards hosted in the sub-rack. Fig. 6 shows the schematic diagram of the GAPS power system. All the components of the power system are selected to make it work at a wide range of operative temperature and low atmospheric pressure.
+
+The GFP power system has the same design with the flight, but the crate only hosts three pairs of HV and LV cards while can be extended for ten pairs for flight. Each HV card contains 18 individual channels and each channel can supply the HV bias with the maximum voltage of $ 300\ V $ and an accuracy of $1\ V$. Every 6 channels from one HV card are grouped into a single connector and serve for one Si(Li) row, while each HV channel can be individually turned on and off, and operated with a ramp-up rate of $ <5\ V/s $. In addition, each HVPS channel can rate up to $ 6\ \mu A $ leak current including the current from the power system itself, which allows to bias the Si(Li) module with the leak current up to $ \sim 3\ \mu A $ at the operation temperature $ \sim-40^\circ C $. The LVPS provides four different voltages to the ASIC front-end and back-end electronics with a resolution of $ 1\ mV $: $ 2.8\ V $ for ASIC analog signal, $ 2.8\ V $ for ASIC digital signal, $ 3.3\ V $ for ASIC calibration electronics, and $ 3.3\ V $ for back-end DAQ via the interface board. The 6 modules in a row share the four LV rails with the total power consumption of $ \sim3\ W $. During the operation, the software is designed to monitor the leak current from HVPS with a precision of $ 1-2\ nA $ per channel, voltages and current draws from LVPS with an accuracy of $ 1\ mV $ and $ 0.7\ mA $, as well as the temperatures of the power cards. These measurements are sent to the flight computer for the system control.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GFP_module_row.png}
+    \caption{GFP Si(Li) detector electronics connection in the row configuration.}
+    \label{fig:GFP_module_row}
+\end{figure}
+Fig.~\ref{fig:GFP_module_row} illustrates the front-end and back-end electronics connection for one row at the GFP setup. Comparing to the flight instrument, the GFP electronics connection only adds two patch boards to adapt the connection between the ERNI connection between the Si(Li) module and the interface board (IF board). The back-end DAQ communicates with ASICs in the row scheme through SPI. An IF board is attached at the beginning of the row to connect the Si(Li) row and back-end electronics (back-end DAQ and low-voltage supplies). For the GAPS flight, the IF board is directly mounted on the row via a flex cable which is fabricated with two ERNI connectors. However, the flex cable is not ready during the GFP. So a patch board and ribbon cable is made as the solution. Six modules in a row are chained with flex-rigid cables which are made of Kapton ribbon cable with ERNI connector at two ends. At the other end of the row, a terminator with the resistance of $ 100 \Omega $ is mounted to terminate the row connection. Each Si(Li) module in the row is assigned with a unique physical address, numbering from 0 (beginning) to 5 (end) regarding the distance between the module and the readout board. In addition, a separate HV cable is attached to the row to provides the HV bias to each Si(Li) module individually.
+
+\subsection{GFP Thermal System}
+\label{chap:GAPS:GFP:thermal}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GFP_thermal.jpg}
+    Dual-phase trifluoromethane (\ac{R23}) filled in the reservoir and the rest of the swaglok tubings. With heat generated from the detector and electronics on the right side, liquid R23 will vaporize and push the flow moves up to return to the top and the radiator on the left. Then the R23 will dessipate heat and become liquid again, drop to the bottom of the radiator due to gravity. This will keep the cycle flowing inside each loop.
+    \caption{ The GFP thermal system design, with only one Si(Li) row shown (left) and the setup (right).}
+    \label{fig:GFP_thermal}
+\end{figure}
+\subsubsection*{System requirements}
+GFP thermal system required cooling down Si(Li) detectors down to required $ -40^\circ C $ while at the same time validate again the performance of this novel \ac{OHP} technique that doesn't have any active compressor to reduce the total weight of the payload. It is important for balloon experiment that we keep the payload weight sum as low as possible to reach higher flight altitude, detail information discussed in section.~\ref{chap:intro:balloon}. Detailed \ac{OHP} / \ac{MCHP} discussed in section.~\ref{chap:GAPS:thermal:OHP}. There is no weight requirement for GFP since it is on the ground, but the goal of validating the system make the design of the GFP thermal system as close to flight thermal system as possible.
+
+\subsubsection*{The GFP thermal design}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GFP_thermal_lines.png}
+    In this photo, two rows of detector L1C2 and L2C2 are tagged. As the time of this picture was taken, only these two rows of detectors are installed and the result from section.~\ref{chap:GAPSresult:GFP:thermal}, Fig.~\ref{fig:GFP_thermal_result} are based on this configuration dated back on December 1st, 2021.
+    \caption{GFP thermal design with each row of detector tagged.}
+    \label{fig:GFP_thermal_line}
+\end{figure}
+To accommodate the GFP tracker configuration, which has 12 modules per layer, the GFP OHP tubes are routed into 12 capillary loops in series, as illustrated in Fig.~\ref{fig:GFP_thermal} and Fig.~\ref{fig:GFP_thermal_line}. To simulate the flight radiator, a scaled down cold plate couples the cooling source and the OHP tubes. Same as flight, the OHP tubes are filled with dual-phase trifluoromethane (R23). The tubes were coupled with the Si(Li) modules with the aluminum cooling collars as discussed earlier. These cooling collars are anodized in order to electrically isolate the OHP tubes from the Si(Li) modules. In order to increase the thermal efficiency, the contact surfaces of the cooling collars are pasted with flight-representative thermal grease.
+
+By design, the cooling collars for the GAPS flight have 4 different lengths: (i) $ 9\ cm $ for the bottom layer since this layer is most open to the environment and anticipated to have a larger thermal leak, (ii) $ 4\ cm $ for the top layer to minimize the separation between the TOF cube and tracker, (iii) $ 10\ cm $ to connect the top and second top layer to increase the cooling for the top layer, and (iv) $ 6\ cm $ for other normal layers. The GFP instrument uses the first three types of cooling collars which present the worst thermal condition, to simulate the flight scenario to the maximum.
+
+To reduce thermal leaks, the entire GFP OHP system is insulated by at least $ 4'' $-thick foam from the environment and the tracker is wrapped by a two-layer plastic bag. A low-temperature commercial chiller or liquid nitrogen is used to provide the cooling source to the cold plate. A PID controls the heaters with the feedback of temperature readouts from sensors attached to the reservoir and OHP tubes.
+
+\section{GAPS flight Thermal System}
+\label{chap:GAPS:thermal}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GAPS_thermal_design.jpg}
+    Conceptual diagram of the GAPS instrument. To cool the Si(Li) tracker consisting of $ >1000 $ detectors, the heat to be removed is transported to a radiator, which is located outside the TOF system and pointed to the anti-solar azimuth direction, and then dissipated to space \cite{FUKE2023168102}.
+    \caption{GAPS flight instrument thermal design schematic}
+    \label{fig:GAPS_flight_thermal}
+\end{figure}
+
+The GAPS thermal system is required to cool down the tracker to below $ \sim-40^\circ C $ during the flight, with a designed cooling power $ \sim300\ W $. As the payload shows in Fig.~\ref{fig:GAPS_antarctic} and the thermal design schematic shows in Fig.~\ref{fig:GAPS_flight_thermal}, GAPS thermal system is designed and integrated closely with detector cube, with 2 major parts included, \ac{MCHP}/\ac{OHP} system and flight insulation package.
+
+The multi-loop capillary heat pipes (MCHP) or oscillating heat pipes (OHP) system contains similar components as OHP thermal system described in section.~\ref{chap:GAPS:GFP:thermal}, with a larger-sized radiator, reservoir and swaglok tubing, see section.~\ref{chap:GAPS:thermal:OHP}.
+
+During flight, the payload is exposed to the environment. To avoid potential sun radiation causing thermal overheat issue, a series of styrofoam insulation package is designed and manufactured to make the entire payload thermal condition stable during the \ac{LDB} mission over multi-week time scale, see section.~\ref{chap:GAPS:thermal:foam}.
+
+\subsection{MCHP/OHP}
+\label{chap:GAPS:thermal:OHP}
+
+
+\subsection{Flight Insulation package}
+\label{chap:GAPS:thermal:foam}
+
+\begin{table}
+\label{table:styrofoam}
+\centering
+\begin{tabular}{p{0.7\textwidth}|p{0.2\textwidth}}
+\hline
+\textbf{Property and Test Method} & \textbf{Value} \\
+\hline
+Thermal Resistance per inch, ASTM C518 @ 75°F mean temp., ft²•h•°F/Btu, R-value\textsuperscript{(1)}, min. & 5.0 \\
+\hline
+Compressive Strength\textsuperscript{(2)}, ASTM D1621, psi, min. & 25 \\
+\hline
+Water Absorption, ASTM C272, \% by volume, max. & 0.1 \\
+\hline
+Water Vapor Permeance\textsuperscript{(3)}, ASTM E96, perm, max. & 1.5 \\
+\hline
+Maximum Use Temperature, °F & 165 \\
+\hline
+Coefficient of Linear Thermal Expansion, ASTM D696, in/in•°F & 3.5 × 10\textsuperscript{-5} \\
+\hline
+Flexural Strength, ASTM C203, psi, min. & 50 \\
+\hline
+Dimensional Stability, ASTM D2126, \% linear change, max. & 2.0 \\
+\hline
+Surface Burning Characteristics\textsuperscript{(4)}, ASTM E84 & \\
+\quad Flame Spread\textsuperscript{(3)}, ASTM E84 & 15 \\
+\quad Smoke Development, ASTM E84 & 165 \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+\small
+\begin{enumerate}
+\setlength\itemsep{0.0em}
+\item R means resistance to heat flow. The higher the R-value, the greater the insulating power.
+\item Vertical compressive strength is measured at 10 percent deformation or at yield, whichever occurs first. Since Styrofoam\texttrademark\ Extruded Polystyrene Foam Insulations are visco-elastic materials, adequate design safety factors should be used to prevent long-term creep and fatigue deformation.
+\end{enumerate}
+\caption{U.S. Physical Properties of Styrofoam\texttrademark\ Brand Scoreboard XPS Foam Insulation}
+\label{tab:styrofoam_properties}
+\end{table}
+
+GAPS flight insulation used Styrofoam Brand XPS Insulation from DUPONT \cite{dupont_styrofoam}. The major advantages is the large resistance value of the material, that with thinner thickness one could make compatible thermal performance, see chart.~\ref{table:styrofoam}. We have developed a series of styrofoam pieces that covers the cold part of OHP system to a minimum $ 4'' $ thickness to hold the system thermally stable, see table.~\ref{table:styrofoam_list}.
+
+\begin{longtable}{p{0.2\textwidth}p{0.7\textwidth}}
+\caption{GAPS flight insulation styrofoam list} \\
+\toprule
+\textbf{Group} & \textbf{Foam parts name} \\
+\midrule
+\endfirsthead
+
+\caption[]{Foam Parts by Group (Continued)} \\
+\toprule
+\textbf{Group} & \textbf{Foam parts name} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{2}{r}{{Continued on next page}} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+Solar panel & GAPS-SOL-MEC-116 Foam Panel 1, Sun Shield \\
+& GAPS-SOL-MEC-116 Foam Panel 1, Sun Shield\_RH side \\
+& GAPS-SOL-MEC-117 Foam Panel 2, Sun Shield \\
+& GAPS-SOL-MEC-117 Foam Panel 2, Sun Shield\_RH side \\
+\midrule
+
+gondola top & GAPS-GON-MEC-017 Foam Section 5, Gondola \\
+& GAPS-GON-MEC-018 Foam Section 6, Gondola\_LH side \\
+& GAPS-GON-MEC-018 Foam Section 6, Gondola \\
+& GAPS-GON-MEC-016 Foam Section 4, Gondola \\
+& GAPS-GON-MEC-001 Foam Section 1, Gondola \\
+& GAPS-GON-MEC-002 Foam Section 2, Gondola \\
+& GAPS-GON-MEC-001 Foam Section 1, Gondola (1) \\
+& GAPS-GON-MEC-001 Foam Section 1, Gondola (2) \\
+& GAPS-GON-MEC-001 Foam Section 1, Gondola \\
+& GAPS-GON-MEC-001 Foam Section 1, Gondola (3) \\
+& GAPS-GON-MEC-002 Foam Section 2, Gondola \\
+& GAPS-GON-MEC-001 Foam Section 1, Gondola (4) \\
+& GAPS-GON-MEC-019 Foam Section 7, Gondola\_For OHP side \\
+& GAPS-GON-MEC-019 Foam Section 7, Gondola \\
+\midrule
+
+radiator & GAPS-RAD-MEC-010 Foam Section 1, Radiator\_Center section \\
+& GAPS-RAD-MEC-011 Foam Section 2, Radiator \\
+& GAPS-RAD-MEC-012 Foam Section 3, Radiator \\
+& GAPS-RAD-MEC-013 Foam Section 4, Radiator \\
+& GAPS-RAD-MEC-034 Foam Section 20, Radiator \\
+& GAPS-RAD-MEC-014 Foam Section 5, Radiator \\
+& GAPS-RAD-MEC-035 Foam Section 21, Radiator \\
+& GAPS-RAD-MEC-015 Foam Section 6, Radiator \\
+& GAPS-RAD-MEC-015 Foam Section 6, Radiator \\
+& GAPS-RAD-MEC-016 Foam Section 7, Radiator \\
+& GAPS-RAD-MEC-016 Foam Section 7, Radiator \\
+& GAPS-RAD-MEC-017 Foam Section 8, Radiator \\
+& GAPS-RAD-MEC-017 Foam Section 8, Radiator \\
+& GAPS-RAD-MEC-017 Foam Section 8, Radiator \\
+& GAPS-RAD-MEC-020 Foam Section 11, Radiator\_RH side \\
+& GAPS-RAD-MEC-021 Foam Section 12, Radiator \\
+& GAPS-RAD-MEC-021 Foam Section 12, Radiator\_Other side \\
+& GAPS-RAD-MEC-027 Foam Section 13, Radiator \\
+& GAPS-RAD-MEC-032 Foam Section 18, Radiator \\
+& GAPS-RAD-MEC-031 Foam Section 17, Radiator \\
+& GAPS-RAD-MEC-028 Foam Section 14, Radiator \\
+& GAPS-RAD-MEC-029 Foam Section 15, Radiator \\
+& GAPS-RAD-MEC-030 Foam Section 16, Radiator \\
+& GAPS-RAD-MEC-033 Foam Section 19, Radiator \\
+& GAPS-RAD-MEC-037 Foam Section 22, Radiator \\
+& GAPS-RAD-MEC-038 Foam Section 24, Radiator \\
+& GAPS-RAD-MEC-039 Foam Section 25, Radiator \\
+& GAPS-RAD-MEC-018 Foam Section 9, Radiator \\
+& GAPS-RAD-MEC-019 Foam Section 10, Radiator \\
+& GAPS-RAD-MEC-038 Foam Section 24, Radiator \\
+& GAPS-RAD-MEC-039 Foam Section 25, Radiator \\
+& GAPS-RAD-MEC-040 Foam Section 26, Radiator\_LH side \\
+& GAPS-RAD-MEC-040 Foam Section 26, Radiator \\
+& GAPS-RAD-MEC-041 Foam Section 27, Radiator \\
+& GAPS-RAD-MEC-041 Foam Section 27, Radiator\_With reservoir brckt cuts \\
+& GAPS-RAD-MEC-042 Foam Section 28, Radiator \\
+& GAPS-RAD-MEC-010 Foam Section 1, Radiator \\
+& GAPS-RAD-MEC-010 Foam Section 1, Radiator\_With reservoir brckt cuts \\
+& GAPS-RAD-MEC-043 Foam Section 29, Radiator \\
+& GAPS-RAD-MEC-044 Foam Section 30, Radiator \\
+& GAPS-RAD-MEC-047 Foam Section 31 \\
+& GAPS-RAD-MEC-048 Foam Section 32 \\
+& GAPS-RAD-MEC-049 Foam Section 33 \\
+& GAPS-RAD-MEC-046 Foam Section 34, Radiator \\
+& GAPS-CBE-MEC-111 Foam Panel 6\_LH side \\
+& GAPS-CBE-MEC-111 Foam Panel 6\_RH side \\
+\midrule
+
+Tracker cube & GAPS-CBE-MEC-101 Foam Panel 1, Cube \\
+& GAPS-CBE-MEC-101 Foam Panel 1, Cube \\
+& GAPS-CBE-MEC-102 Foam Panel 2, Cube \\
+& GAPS-CBE-MEC-102 Foam Panel 2, Cube \\
+& GAPS-CBE-MEC-103 Foam Panel 3, Cube \\
+& GAPS-CBE-MEC-104 Foam Panel 4, Cube \\
+& GAPS-CBE-MEC-104 Foam Panel 4, Cube \\
+& GAPS-CBE-MEC-105 Foam Panel 5, Cube \\
+& GAPS-CBE-MEC-113 Foam Panel 8 \\
+\midrule
+
+E-Bay & GAPS-EBY-MEC-003 Foam Section 3, E-bay \\
+& GAPS-EBY-MEC-003 Foam Section 3, E-bay \\
+& GAPS-EBY-MEC-001 Foam Section 1, E-bay \\
+& GAPS-EBY-MEC-002 Foam Section 2, E-bay \\
+& GAPS-EBY-MEC-005 Foam Section 5, E-bay \\
+& GAPS-EBY-MEC-006 Foam Section 6, E-bay \\
+& GAPS-EBY-MEC-004 Foam Section 4, E-bay \\
+& GAPS-EBY-MEC-004 Foam Section 4, E-bay \\
+
+\end{longtable}
+\label{table:styrofoam_list}
+
+One example styrofoam pieces GAPS-RAD-MEC-049\_Foam\_Section\_33 are showed in Fig.~\ref{fig:foam_33}. \textbf{(a)} Shows the design for this styrofoam piece which goes on top of the OHP heat transaction area. Small group of grooves are formed to divide all 36 loops of OHP tubings from tracker to radiator. \textbf{(b)} shows a 3D model of this particular piece. \textbf{(c)} shows the actual piece that I made with styrofoam and router. This design will guarantee minimum heat leak from the tubing by cover all of the cold area. The fabrication of these foams are essential for both ground testing and flight while especially crucial for ground testing since we can't put entire payload into a controlled environment as more detail be discussed in section.~\ref{chap:GAPS:thermal:GCS}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GAPS-RAD-MEC-049_Foam_Section_33.png}
+    \textbf{(a)} Shows the design for this styrofoam piece which goes on top of the OHP heat transaction area. Small group of grooves are formed to divide all 36 loops of OHP tubings from tracker to radiator. \textbf{(b)} shows a 3D model of this particular piece. \textbf{(c)} shows the actual piece that I made with styrofoam and router. This design will guarantee minimum heat leak from the tubing by cover all of the cold area.
+    \caption{GAPS payload styrofoam GAPS-RAD-MEC-049 Foam Section 33 design}
+    \label{fig:foam_33}
+\end{figure}
+
+\subsection{Ground Cooling System (GCS)}
+\label{chap:GAPS:thermal:GCS}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GAPS_GCS.png}
+    Left figure shows schematics of GAPS GCS with 4 cold panels embed 36 loops of methanol cooling lines meifold. Each 2 panels are cooled down by a \ac{ACC} circulating methanol. Right picture shows actual GAPS GCS setup at Columbia University nevis lab. Red arrows with letters show the methanol line displayed on the left.
+    \caption{GAPS Ground Cooling System}
+    \label{fig:GAPS_GCS}
+\end{figure}
+As discussed in section.~\ref{chap:GAPS:detectors}, GAPS detectors gain their peak performance under $ \sim -40^\circ C $, which is designed to work under LDB flight environment with dedicated thermal system. While before flight, the entire payload has to be calibrated to provide sensible measurement. For a small scale experiment, the solution is rather straightforward with a \ac{TVAC} testing that contains all the payload inside a environment-controlled chamber. But GAPS payload exceeded $ \sim 6.6\ m \times 4.1\ m \times 4.6\ m $ dimension, which makes it extremely hard to provide nominal \ac{TVAC} testing environment. One of the few possible facilities that could handle this type of task would be the Space Simulation Vacuum Chamber at the NASA’s Neil A. Armstrong Test Facility (ATF) in Sandusky, Ohio, but the cost of using it would be also way beyond budget because GAPS would need multiple months to perform the detector calibration for more than 1000 channels on board \cite{nasa_glenn_sec}.
+
+To perform the ground testing, the ground cooling system (\ac{GCS}) has being designed and assembled to provide similar thermal condition for flight, see Fig.~\ref{fig:GAPS_GCS}. While at the same time all the detector modules are sealed with aluminum window and purged with nitrogen gas, the low vacuum condition ($ \sim 3\ torr $) throughout the entire payload is not accomplished with \ac{GCS} system.
+
+\section{GAPS Time of Flight System}
+\label{chap:GAPS:TOF}
+The TOF flight instrument contains an inner cube, top umbrella and side cortina, all composed of plastic scintillator (EJ-200, 0.6 cm thick). An inner cube completely surrounds the tracker, providing near $100\%$ hermeticity and covering an area of 15 $m^2$. The upper umbrella is above the inner cube with a gap of at least 90 cm and four TOF cortina are separated from the sides of the inner cube by at least 30 cm, providing TOF and tracking measurements. A total of 160 scintillator paddles are used, either 16 cm wide and 160/180 cm long or 10 cm wide and 108 cm long (depending on location). Light is detected by silicon photomultipliers (SiPMs, Hamamatsu S13360-6050VE) coupled to each end of the scintillator via optical silicone cookies. A preamp board incorporates six SiPMs, provides bias voltage ($\sim58 \ V$) and high-speed signal amplification, and produces high-gain and low-gain outputs for the waveform digitizer and trigger, respectively.

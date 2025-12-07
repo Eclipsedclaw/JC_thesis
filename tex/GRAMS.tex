@@ -1,0 +1,490 @@
+\chapter{GRAMS Experiment Apparatus}
+\label{chap:GRAMS}
+
+As mentioned in introduction section.~\ref{chap:intro:GRAMS}, GRAMS is a novel project that can simultaneously target both astrophysical observations with MeV gamma rays and an indirect dark matter search with antimatter detection \cite{aramaki2020dual}. For GRAMS timeline showing in Fig.~\ref{fig:timeline}, we have finished engineer flight eGRAMS, antiproton beam test T98, and currently working on a prototype flight pGRAMS using a $ 30\ cm \times 30\ cm \times 30\ cm $ miniGRAMS detector with segmentation to measure MeV gamma-ray events and cosmic charged particle events.
+
+
+\section{Liquid argon time projection chamber detector}
+\label{chap:GRAMS:detectors}
+The Liquid Argon Time Projection Chamber (LArTPC) is a powerful detection technology that has evolved significantly since its inception. The concept was first proposed by Nygren in 1974 as a method for precision tracking and calorimetry in particle physics experiments \cite{NYGREN201822}. Early implementations demonstrated the technology's ability to provide excellent spatial resolution and energy reconstruction capabilities through ionization charge collection in liquid argon medium.
+
+Over the decades, LArTPC technology has matured through numerous experiments, including the pioneering work at Fermilab and subsequent large-scale implementations. The technology gained prominence with experiments such as MicroBooNE, which validated LArTPC performance for neutrino detection \cite{MicroBooNE:2007ivj}. More recently, the Deep Underground Neutrino Experiment (DUNE) has adopted LArTPC as its primary detection technology for next-generation physics research. The key advantages of LArTPC detectors include exceptional spatial resolution (sub-millimeter scale), excellent calorimetric capabilities for energy measurement, and the ability to reconstruct complex particle interaction topologies \cite{FALCONE2022167217}. These characteristics make LArTPC technology particularly suitable for both astrophysical gamma-ray observations and rare event searches, as demonstrated by the GRAMS mission.
+
+The LArTPC operates on the principle of ionization charge collection in liquid argon. When a charged particle traverses the detector volume, it ionizes argon atoms along its path, creating electron-ion pairs. An applied electric field drifts the free electrons toward the anode (charge readout plane), while the ions drift toward the cathode. The charge collected at the anode is proportional to the energy deposited by the particle, enabling precise energy measurement and calorimetry.
+
+Scintillation light is produced during the ionization process and is detected by photomultiplier tubes (PMTs) or silicon photomultipliers (SiPMs) positioned at the cathode. This light signal provides the initial trigger and timing reference (T$_0$) for the event. The time difference between the scintillation light detection and the charge signal arrival determines the drift time, which directly translates to the vertical (Z) coordinate of the interaction from electron drift speed calculation. Combined with the two-dimensional information from the charge readout grid, the full three-dimensional position of the event can be reconstructed with sub-millimeter precision.
+
+The pixel-grid or mesh style structure of the charge readout allows determination of the horizontal (X and Y) coordinates by identifying which readout channels recorded a signal, details see section.~\ref{chap:GRAMS:pGRAMS:RandD:detector}. This combination of spatial information from multiple detection mechanisms enables comprehensive event reconstruction and particle identification, making LArTPC ideal for complex interaction topologies.
+
+
+
+\begin{longtable}{p{0.5\textwidth}p{0.4\textwidth}}
+\caption{Physical and Chemical Properties of Argon}\label{tab:argon} \\
+\toprule
+\textbf{Property} & \textbf{Value} \\
+\midrule
+\endfirsthead
+
+\caption[]{Physical and Chemical Properties of Argon (Continued)} \\
+\toprule
+\textbf{Property} & \textbf{Value} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{2}{r}{{Continued on next page}} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+\textbf{Basic Information} & \\
+\quad Atomic Number & 18 \\
+\quad Atomic Symbol & Ar \\
+\quad Atomic Weight & $39.948$ g/mol \\
+\quad Electron Configuration & [Ne] $3s^2 3p^6$ \\
+\quad Group & 18 (Noble Gases) \\
+\quad Period & 3 \\
+\quad Block & p-block \\
+\midrule
+
+\textbf{Physical Properties} & \\
+\quad State at STP & Gas \\
+\quad Color & Colorless \\
+\quad Odor & Odorless \\
+\quad Taste & Tasteless \\
+\quad Density (gas, at STP) & $1.784$ g/L \\
+\quad Density (liquid, at boiling point) & $1.40$ g/mL \\
+\quad Boiling Point & $-185.848^\circ$C ($-302.526^\circ$F) \\
+\quad Melting Point & $-189.34^\circ$C ($-308.81^\circ$F) \\
+\quad Triple Point & $-189.3442^\circ$C, $68.89$ kPa \\
+\quad Critical Point & $-122.4^\circ$C, $4.86$ MPa \\
+\quad Heat of Fusion & $1.18$ kJ/mol \\
+\quad Heat of Vaporization & $6.43$ kJ/mol \\
+\quad Specific Heat Capacity (gas, $25^\circ$C) & $20.85$ J/(mol·K) \\
+\quad Thermal Conductivity (300 K) & $17.72$ mW/(m·K) \\
+\quad Viscosity (gas, $25^\circ$C) & $22.9\ \mu$ Pa·s \\
+\quad Solubility in Water ($20^\circ$C) & $33.6$ mL/L \\
+\midrule
+
+\textbf{Atomic Properties} & \\
+\quad Atomic Radius (empirical) & $71$ pm \\
+\quad Covalent Radius & $106$ pm \\
+\quad Van der Waals Radius & $188$ pm \\
+\quad Crystal Structure & Face-centered cubic (fcc) \\
+\quad Oxidation States & $0$ \\
+\quad Electronegativity (Pauling scale) & N/A (noble gas) \\
+\quad Ionization Energies: & \\
+\quad \quad 1st & $1520.6$ kJ/mol \\
+\quad \quad 2nd & $2665.8$ kJ/mol \\
+\quad \quad 3rd & $3931$ kJ/mol \\
+\midrule
+
+\textbf{Thermodynamic Properties} & \\
+\quad Standard Entropy ($S^\circ$, gas) & $154.846$ J/(mol·K) \\
+\quad Standard Enthalpy of Formation ($\Delta H^\circ_f$, gas) & $0$ kJ/mol \\
+\quad Gibbs Free Energy of Formation ($\Delta G^\circ_f$, gas) & $0$ kJ/mol \\
+\midrule
+
+\textbf{Spectral Properties} & \\
+\quad Emission Spectrum Color & Pale violet to lavender \\
+\quad Principal Spectral Lines & \\
+\quad \quad Red & $696.543$ nm \\
+\quad \quad Blue & $427.217$ nm \\
+\quad \quad Green & $546.074$ nm \\
+\midrule
+
+\textbf{Isotopes} & \\
+\quad Natural Abundance & \\
+\quad \quad Ar-36 & $0.3336$\% \\
+\quad \quad Ar-38 & $0.0629$\% \\
+\quad \quad Ar-40 & $99.6035$\% \\
+\quad Half-life of Radioisotopes & \\
+\quad \quad Ar-37 & $35$ days \\
+\quad \quad Ar-39 & $269$ years \\
+\quad \quad Ar-42 & $32.9$ years \\
+\midrule
+
+\textbf{Industrial \& Commercial Properties} & \\
+\quad Purity Grade (industrial) & $99.999$\% (5N) typical \\
+\quad Global Production & $\sim 700,000$ tons/year \\
+\quad Major Uses & \\
+\quad \quad Welding shielding gas & \\
+\quad \quad Incandescent lighting & \\
+\quad \quad Semiconductor manufacturing & \\
+\quad \quad Cryogenic applications & \\
+\quad \quad Atmospheric shielding & \\
+\midrule
+
+\textbf{Environmental \& Safety} & \\
+\quad Ozone Depletion Potential & $0$ \\
+\quad Global Warming Potential & $0$ \\
+\quad ASHRAE Safety Classification & A1 (non-toxic, non-flammable) \\
+\quad CAS Number & 7440-37-1 \\
+\quad UN Number & UN 1006 \\
+\quad NFPA 704 Rating & \\
+\quad \quad Health & $1$ \\
+\quad \quad Flammability & $0$ \\
+\quad \quad Instability & $0$ \\
+
+\end{longtable}
+
+
+\section{GRAMS Detection Concept}
+\label{chap:GRAMS:concept}
+
+\section{Engineer Flight eGRAMS}
+\label{chap:GRAMS:eGRAMS}
+
+An engineering balloon flight with a small-scale LArTPC (eGRAMS) was conducted on July 27, 2023, to establish a system for safely operating an LArTPC at balloon altitudes and to obtain cosmic-ray data from the LArTPC. The flight was launched from the Japan Aerospace Exploration Agency’s (JAXA) Taiki Aerospace Research Field in Hokkaido, Japan. The total flight duration was 3 hours and 12 minutes, including a level flight of 44 minutes at a maximum altitude of 28.9 km. The flight system was landed on the sea and successfully recovered. The LArTPC was successfully operated throughout the flight, and about 0.5 million events of cosmic-ray data including muons, protons, and Compton scattering gamma-ray candidates were collected. This pioneering flight demonstrates the feasibility of operating an LArTPC in high-altitude environments, paving the way for future GRAMS missions and advancing our capabilities in MeV gamma-ray astronomy and dark matter research \cite{Nakajima:2024fgx}.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/eGRAMS_intro.png}
+    \textbf{(a)} eGRAMS payload picture. redline highlighted part shows detector cryostats. \textbf{(b)} One cosmic muon events from eGRAMS flight that is read out by the charge system. \textbf{(c)} shows detailed detector inside the flight cryostats. 3 channels charge sensitive preamp (\ac{CSP}) installed on top of the $10\ cm \times 10\ cm \times 10\ cm$ TPC body. A \ac{PMT} is installed at the bottom to read out light signal \cite{Nakajima:2024fgx}.
+    \caption{eGRAMS setup}
+    \label{fig:eGRAMS_setup}
+\end{figure}
+
+\subsection{Detectors and Payload}
+\label{chap:GRAMS:eGRAMS:detector}
+As shown in Fig.~\ref{fig:eGRAMS_setup} (top-left), the LAr vessel (shown inside red highlight) is placed in the center of the gondola with two ballast boxes on either side of it. The pressurized vessel (shown on the left of LAr vessel) containing the electronics is placed in one corner. In the other three corners of the gondola, the bus system and two piggyback experiments are placed. The entire gondola is covered with 25 mm (bottom half) and 75 mm (top half) heat insulation material (Styrofoam B2), because the atmospheric temperature drops to at least $-70^\circ C$ at higher altitudes. The Styrofoam on the outer layer of the gondola was colored with orange and white paint to improve its visibility. As the Styrofoam also acts as a float after landing on the sea, extra Styrofoam was inserted in the gondola.
+
+The gondola was designed to withstand 3 g in the horizontal (2 axes) and vertical directions for the impact during launch and 7.5 g in the vertical direction for the impact during parachuting, with a $50\%$ safety margin. The gondola frame mainly consisted of L-shaped aluminum (A6065-t5, $ 500 \times 500 \times t5\ {mm}^3$). The overall size is a cube of $ 1.2\ m\times1.2\ m\times\ 1.2 $. The frames are fastened to each other with stainless steel screws. Stainless steel eye-nuts were used at the suspension points, and extra-strong duralumin (A7075) was installed at the eye-nut fixing points \cite{Nakajima:2024fgx}.
+
+\subsection{Charge Sensitive Preamp (CSP)}
+\label{chap:GRAMS:eGRAMS:CSP}
+A charge sensitive preamp (CSP) is a device that converts collected charge from the detector into a pulse with a characteristic height. This height directly corresponds to the energy deposited into the detector volume. Additionally, due to the pixel-grid structure of the tile, we can pinpoint a specific X- and Y- coordinate for any given event by identifying which CSP produced a response. This information, in combination with a Z-coordinate provided by the time delay between the SiPM response and the CSP response, allows us to recreate almost any given event.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.7]{fig/CSP.png}
+    \textbf{(a)}An initial version of the preamp board schematic. \textbf{(b)}A prototype of the CSP, version 5. Pins 1 and 2 connect to the TPC tile or an injection board for bench testing. Pins 3, 4, 5, and 6 provide +5 V power, GND, signal out, and -5 V power respectively. \textbf{(c)}Designed \ac{PCB} layout.
+    \caption{GRAMS \ac{CSP} design and layout}
+    \label{fig:preamppicture}
+\end{figure}
+
+The CSP for the LArTPC has been designed and constructed at Northeastern University, and a picture of a prototype version is shown in Fig.~\ref{fig:preamppicture}. 
+
+This is a 2-layer printed circuit board with two different stages of amplification circuit. The first stage amplification involves integrating the incoming charge signal to produce an exponential decay voltage waveform and the second stage amplifies the voltage signal further to accomplish good \ac{SN} ratio. Pins 1 and 2 connect to the TPC tile or an injection board for bench testing. Pins 3, 4, 5, and 6 provide +5 V power, GND, signal out, and -5 V power respectively. For the first stage amplification, a dual \ac{JFET} connecting in parallel is used to minimize the equivalent input noise charge. The $ 0.5\ pF $ feedback capacitor and $ 1\ G\Omega $ resistor are selected to provide an appropriate gain and decay time constant. The second stage uses a low-noise operational amplifier to further amplify the voltage signal. Critical components are selected based on their low-noise performance under cryogenic condition as showed in \ac{BOM} table.~\ref{tab:CSP_BOM}. ID 1 is the pin for electrical contact, ID 3 (Q1) and ID 4 (Q2) are two \ac{JFET} we selected that are optimized for low noise performance at cryogenic temperature. ID 14 (U1) and ID 15 (U2) are two op-amps for first and second stage amplification respectively. ID 11 is the feedback resistor while ID 17 is the feedback capacitor. Other components are resistors and capacitors that are used to build the amplification circuit. All rest of resistors and capacitors are used to build the voltage requirement for opamps and filteration.
+
+
+\begin{table}
+\centering
+\small
+\begin{tabular}{ccccl}
+\toprule
+\textbf{ID} & \textbf{Name} & \textbf{Designator} & \textbf{Quantity} \\
+\midrule
+1 & MILL-MAX\_3780\_90\_DEGREE\_PIN & VCC,GND,OUT,VEE,SIG\_IN,GND & 6 \\
+2 & 255 & R18 & 1 \\
+3 & MMBFJ310LT1G & Q1 & 1 \\
+4 & 2SK932 & Q2 & 1 \\
+5 & 768 & R1 & 1 \\
+6 & 1.96k & R2 & 1 \\
+7 & 6.81k & R3 & 1 \\
+8 & 22.1 & R4,R7,R15,R16 & 4 \\
+9 & 453 & R5 & 1 \\
+10 & 6.19k & R6 & 1 \\
+11 & 1G & R8 & 1 \\
+12 & 49.9 & R9 & 1 \\
+13 & 5.11K & R19 & 1 \\
+14 & LM6171AIM/NOPB & U1 & 1 \\
+15 & OPA656U & U2 & 1 \\
+16 & 2.2uF & C1,C2,C3,C4,C17,C18,C23 & 7 \\
+17 & 0.5pF & C5 & 1 \\
+18 & 2k & R17 & 1 \\
+\bottomrule
+\end{tabular}
+\vspace{0.5cm} 
+Here ID 1 is the pin for electrical contact, ID 3 (Q1) and ID 4 (Q2) are two \ac{JFET} we selected that are optimized for low noise performance at cryogenic temperature. ID 14 (U1) and ID 15 (U2) are two op-amps for first and second stage amplification respectively. ID 11 is the feedback resistor while ID 17 is the feedback capacitor. Other components are resistors and capacitors that are used to build the amplification circuit.
+\caption{\ac{CSP} Bill of Materials (BOM)}
+\label{tab:CSP_BOM}
+\end{table}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/CSP_bench_test.png}
+    Figure on left shows the setup of the bench, we used a $ 1\ pF $ capacitor act as a injection detector while a $ 50\ pF $ capacitor act as dummy detector. We have changed the value of dummy detector capacitance to simulate possible detector tile strip capacitance. Then on the output end we used an analog shaper to shape the signal with different shaping time. Right figure shows the result of the signal's \ac{FWHM} under different shaping time. We took different data with different grounding configuration to find the most stable performance condition for CSPs.
+    \caption{CSP bench test setup and result from different configurations}
+    \label{fig:CSP_testbench}
+\end{figure}
+
+To study, optimize and calibrate the \ac{CSP}, we have setup a bench to quantify injected charge and measured the output signal response. The setup involves a pulse generator that sends a square wave signal to a voltage divider circuit. The output of the voltage divider is connected to an injection capacitor of known capacitance $ 1\ pF $ capacitor act as a injection detector while a $ 50\ pF $ capacitor act as dummy detector. We have changed the value of dummy detector capacitance to simulate possible detector tile strip capacitance. Then on the output end we used an analog shaper to shape the signal with different shaping time. Right figure shows the result of the signal's \ac{FWHM} under different shaping time. Fig.~\ref{fig:CSP_testbench} shows the setup of the bench and the result of the signal's \ac{FWHM} under different shaping time. We took different data with different grounding configuration to find the most stable performance condition for CSPs. With the charge conversion
+\begin{align}\label{equ:Charge_calculation}
+    Q&=\varepsilon_{Ar}\times N_e\\
+    &=\varepsilon_{Ar}\times \frac{Q_{input}}{e}\\
+    &=\frac{\varepsilon_{Ar}}{e}\times C_{inject}V_{input}\\
+    &=\frac{25}{1.6\times10^{-19}}\times10^{-12}\times0.012V\\
+    &=1.875\times10^6eV=1.875MeV 
+\end{align}
+Where here $\varepsilon_{Ar}=25eV$ and electron charge $e=1.6\times10^{-19}C$. $C_{inject}$ is the injection capacitor value $1pF$. $V_{input}$ is the input voltage from the pulse generator $12mV$ after our voltage divider. With this input charge relation we could convert readout voltage signal to input charge energy value. The conversion relation is shown in equation.~\ref{equ:Charge_conversion}.
+\begin{equation}\label{equ:Charge_conversion}
+    1.875MeV=7.5V\Longrightarrow 1keV=4mV\Longrightarrow 1mV=0.25keV
+\end{equation}
+We were able to operate our CSP in liquid argon temperature and get performance converted as low as 18.92 keV energy resolution based on the conversion from equation.~\ref{equ:Charge_conversion}. 
+
+As this CSP design is adapted from nEXO experiment which has the readout electronics outside of cryogenic system \cite{Li_2019}, several modifications were made to optimize the design for GRAMS application. The CSP was redesigned to be compact enough to fit inside the GRAMS LArTPC cryostat, which has limited space. The power consumption was also reduced to minimize heat dissipation inside the cryostat due to balloon mission power budget constraint. Another major effect is that Texas Instrument has discontinued \ac{JFET} BF862 production that was used and tested. We have tested several different \ac{JFET} candidates (BF862, MMBFJ310LT1G, 2SK932, 2SK3557, CPH3910) and selected MMBFJ310LT1G and 2SK932 as the best performing ones at cryogenic temperature. 
+
+The eGRAMS mission used 3 CSPs for validation of operation during balloon flight, see Fig.~\ref{fig:eGRAMS_setup}, while the pGRAMS design will involve a total of 180 CSPs to read out all active channels. They are divided into nine sections, each of which will have separated X- and Y- channel readouts. Power to the CSPs will be provided through a dedicated power flange on the cryostat. This will branch out to individual power boards which will distribute power to each CSP connected to it. The CSP output is driven outside of the cryostat using a DB-62 connector through 110 Ohm twisted pair cables. It is then routed to the charge signal shaper designed by Columbia University. 
+
+There are several considerations in the CSP design, including liquid argon purity and low-temperature operation compatibility. The solder masks on fabricated CSPs to be used in pGRAMS will be removed due to purity considerations. Several different op-amp candidates are also being tested for cryogenic compatibility as well. 
+
+The CSP v5 was calibrated with a charge injection board that makes use of a voltage divider, an injection capacitor of 1 pF and a dummy capacitor used to mimic the pGRAMS detector’s assumed 50 pF capacitance. The tests demonstrated that the CSP noise FWHM can be as low as 20~keV in room temperature.
+
+
+
+\section{Antiproton Beam Test}
+\label{chap:GRAMS:beamtest}
+
+\subsection{Detectors}
+\label{chap:GRAMS:beamtest:detector}
+
+\subsection{Time-of-Flight (TOF) Beam Test}
+\label{chap:GRAMS:beamtest:TOF}
+
+\section{Prototype Flight pGRAMS}
+\label{chap:GRAMS:pGRAMS}
+pGRAMS is a stepping stone for the future GRAMS Science Mission, which will simultaneously target MeV gamma-ray observations and indirect dark matter searches through anti-matter detection, becoming the first ever launched liquid argon compton camera. 
+
+As the following project of GRAMS engineer flight in 2023 (eGRAMS, section.~\ref{chap:GRAMS:eGRAMS}), pGRAMS flight will have and use the knowledge gained to make several steps forward. The prepared pGRAMS payload will verify a scaled GRAMS detector's performance of capturing gamma-rays and cosmic charged particles,  new technique of cryostat and its thermal design, time-of-flight(TOF) and multiplicity detector(MPD) combined particle tracking ability, instrumental firmware and software capability etc. All of these unique accomplishments from pGRAMS flight will ultimately benefit our coming science flight, which let us to explore the most exciting MeV gap region as well as cosmic antiparticles' low energy($ \leq 0.2GeV/n $) region that reveal the secret of Dark Matter.
+
+\noindent Specifically for pGRAMS, the goals are as follows:
+
+\begin{itemize}
+    \item To demonstrate the prototype detector's capability in the flight including MiniGRAMS $30cm \times 30cm \times 20cm$ liquid Argon time projection chamber(LArTPC) and \ac{TOF}/\ac{MPD}
+    \item To demonstrate capability of capture cosmic muons and reconstruct tracks
+    \item To demonstrate capability of identifying Compton scattering events
+    \item Even scientific goals are not top priority for pGRAMS flight, we expect to observe some of the brightest gamma-ray objects.
+
+\end{itemize}
+
+
+\noindent To achieve our goals, there are also requirements for both our system and balloon flight as follows:
+\begin{itemize}
+    \item mass and power budgets are 500kg and 250W separately. 500kg mass budget could be loosend by  sacrificing flight altitude. 250W power budget could be increased if we add more batteries on board which will increase the total weight. 
+    \item Flight altitude requirement is $\geq25$ km, level flight time requirement is $\geq6$ hours. As it is a one-day scale mission, we won't prepare for cooling and purification system.
+    \item Gondola size constraint is $1.5 m \times 1.5 m \times 1.5 m$
+
+\end{itemize}
+
+Based on the requirement, we have designed system as described in Fig.~\ref{fig:system_diagram}. The entire pGRAMS payload could be divided into detector, \ac{DAQ}, communication and power system (\ac{PDU}).
+Detector system contains \ac{LArTPC} and \ac{TOF} / \ac{MPD}. As major detector system, \ac{LArTPC} behaves as 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/pGRAMS_system_diagram_251205.png}
+    \caption{pGRAMS experiment system diagram}
+    \label{fig:system_diagram}
+\end{figure}
+
+\subsection{pGRAMS R\&D in lab}
+\label{chap:GRAMS:pGRAMS:RandD}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/microGRAMS_TPC.png}
+    \textbf{(a)} microGRAMS \ac{LArTPC} from bottom view, looking directly at the \ac{SiPM} board. \textbf{(b)}\ac{LArTPC} inside view from bottom cathode mesh. \textbf{(c)} Sideview. Left side shows charge readout electronics that is being tested in eGRAMS, section.~\ref{chap:GRAMS:eGRAMS:CSP}.  \textbf{(d)} Bottom cathode field shape mesh.
+    \caption{microGRAMS detector pictures}
+    \label{fig:microGRAMS_RandD}
+\end{figure}
+
+To prepare for the actual prototype balloon flight, we designed and assembled a smaller size \ac{LArTPC} detector with dimension of $ 10cm \times 10cm \times 10cm$ called microGRAMS, see fig.~\ref{fig:microGRAMS_RandD}. microGRAMS has same detection concept as the GRAMS proposed science detector. The advantage of microGRAMS is the small scale with fast testing and upgrade.
+
+
+
+\subsubsection{microGRAMS Ddetector}
+\label{chap:GRAMS:pGRAMS:RandD:detector}
+As Fig.~\ref{fig:microGRAMS_RandD} showed, microGRAMS detector is constructed with three major system, light readout cathode, charge readout anode and drifting E-field shaping structure. 
+
+\noindent\textbf{Light readout cathod:} The cathode is made with a mesh structure to allow scintillation light to pass through and be detected by the \ac{SiPM} array installed at the bottom of the detector body. The cathode mesh is made with copper with $ 81\% $ optical transparency to allow efficient light collection. The \ac{SiPM} array consists 8 visible SiPMs and 8 VUV SiPMs, each with an active area of $ 6mm \times 6mm $. These SiPMs are arranged in a $ 4 \times 4 $ grid pattern, covering a total active area of $ 24mm \times 24mm $. Each group of 4 SiPMs are biased and read out, allowing for precise timing and position information of the scintillation light signals. The SiPMs are mounted on a custom-designed PCB that provides mechanical support and electrical amplifications. This SiPM readout is compatible with one cell out of 9 cells in the science flight detector design.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/pGRAMS_tile.png}
+    \caption{A.pGRAMS tile design demonstration.  B.pGRAMS tile detail front side  C.pGRAMS tile detail back side. See more detials in section.~\ref{chap:GRAMS:pGRAMS:detector}. D.microGRAMS tile real picture}
+    \label{fig:tilecloseup}
+\end{figure}
+
+\noindent\textbf{Charge readout anode:} The anode is designed with a stripped readout structure to provide two-dimensional position information of the ionization charge signals. The anode consists of 32 strips in both X and Y directions, with each strip having a width of $ 2.8mm $ and a separation of $ 200 \mu m $. This configuration allows for a total active area of $ 96mm \times 96mm $. Each strip is connected to a \ac{CSP} for signal amplification and processing that is mentioned in section.~\ref{chap:GRAMS:eGRAMS:CSP}. A demonstration of microGRAMS tile is shown in Fig.~\ref{fig:tilecloseup} D. While at the same time A, B and C are design demonstration of pGRAMS tile which share the same design concept with a larger size. See more details in section.~\ref{chap:GRAMS:pGRAMS:detector}.
+
+\noindent\textbf{Light readout cathode:} pGRAMS will make use of \ac{SiPM} that are sensitive to light in the visible and ultraviolet regimes. The SiPM sensors selected for the flight have been manufactured by Hamamatsu Photonics and procured by Northeastern University. Half of the SiPM's comprising the detector are the Hamamatsu S13360-6075CS, which are sensitive to light between 270-900 nm. The remaining SiPM's are the Hamamatsu S13370-6075CN, which are sensitive to a larger portion of the electromagnetic spectrum, from 120-900 nm. All SiPM's use the same PCB mount package and have a sensitive area of 6x6 mm. Both models are also constructed with a microcell pitch of 75um, which offers the highest \ac{PDE} offered for this class of SiPM. The S13360-6075CS and S13370-6075CN have PDE's of ~\%50 and ~\%35 respectively at ~480 nm. 
+Since most light produced by liquid argon scintillation falls in the Ultraviolet to Vacuum Ultraviolet range, \ac{TPB} is used as a wavelength shifter of the scintillation light into the visible range. Adhered to the interior walls of the TPC cells are Mylar sheets which have been coated with a thin (~1 $\mu$m) layer of \ac{TPB} using a vacuum evaporation process developed at Waseda University, Tokyo \cite{Aoyama_2020}. In this configuration, isotropically emitted scintillation light is converted into visible blue  (430 nm) and re-emitted (isotropically) by the TPC walls. Further studies are planned to investigate the feasibility of evaporatively coating TPB onto the SiPM sensors directly. Yorita Lab from Waseda University / University of Tokyo group has extensive experience with this technique \cite{yoritakohei2025}.
+For each TPC cell, 16 SiPM's are ganged in a hybrid configuration. Specifically, 4 SiPMs are connected together, resulting in a $2\times2$ quadrant configuration for each TPC cell. Each quadrant (4 SiPMs) is read out as a single channel.
+Using the hybrid ganging scheme, multiple SiPMs can be readout as a single channel while keeping the capacitive load on the input of the preamp to a minimum. This scheme also allows for the parallel biasing of multiple SiPMs, which only requires the bias voltage that would be used for a single SiPM. The bypass capacitors used in the hybrid ganging scheme also reduce the fall time of the signal pulse compared to a group of SiPMs that are ganged in a purely parallel setup.    
+
+\noindent\textbf{E-field shaping structure:} The drifting electric field is established using a series of field shaping rings made of copper embedded in FR4 PCB boards. These rings are evenly spaced $ 5\ mm $ along the height of the detector, ensuring a uniform electric field throughout the active volume. The field shaping rings are connected to a high-voltage power supply through a resistor chain, allowing for precise control of the electric field strength. Also as mentioned in above anode and cathode section, the copper mesh will behave as extra field shaping electrodes to ensure uniform E-field near the edges, see Fig.~\ref{fig:microGRAMS_RandD} (b) and (d). And for anode mesh, aside from the field shaping purpose, it also acts as a signal shaping to block the induced signal to make the raw charge signal rising peak more prominent, see comparison of this without and with anode mesh effect on the charge readout in Fig.~\ref{fig:event_comparison}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/microGRAMS_event_comparison.png}
+    Left figure shows the raw charge signal without anode mesh, right figure shows the raw charge signal with anode mesh. The anode mesh acts as a signal shaping to block the induced signal to make the raw charge signal rising peak more prominent.
+    \caption{Comparison of charge signal without and with anode mesh effect.}
+    \label{fig:event_comparison}
+\end{figure}
+
+For microGRAMS TPC we tested in lab, we did a e-field simulation with femtet software \cite{muratasoftware} to optimize the field uniformity. The simulation result is shown in Fig.~\ref{fig:Efield_simulation}. The entire active volume has a very uniform E-field distribution except the edge region that is close to the field shaping rings. We will use the fiducial volume cut to avoid the edge effect during data analysis. 
+Another important parameter is the anode mesh blocking efficiency. To solve this problem we have separated TPC volume vertically into two parts, one for the entire TPC body with a vertical distance $ d_2 $, total resistance $ R_2 $ and one for the anode mesh region with a vertical distance $ d_1 $, total resistance $ R_1 $. Then we calculated the E-field distribution theoretically along the center line of the TPC volume based on a fixed external high voltage $ V $.
+
+\begin{align}
+    V_1 + V_2 &= V\\
+    \frac{V_1}{R_1} &= \frac{V_2}{R_2}
+\end{align}
+Then we could resolve the E-field value in each region as:
+\begin{align}
+    E_1 &= \frac{V_1}{d_1} = \frac{R_1}{R_1+R_2}\frac{V}{d_1}\\
+    E_2 &= \frac{V_2}{d_2} = \frac{R_2}{R_1+R_2}\frac{V}{d_2}
+\end{align}
+Here from the work in the history, The ratio of E-field between these two regions is desired to be $ E_2/E_1 = 10 $. Based on the above equations, we could derive the resistance ratio requirement for our detector setup. This ratio is also applied to design the pGRAMS detector, see section.~\ref{chap:GRAMS:pGRAMS:detector}.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/microGRAMS_efield_simulation.png}
+    \caption{microGRAMS E-field simulation result with femtet software.}
+    \label{fig:Efield_simulation}
+\end{figure}
+
+\subsubsection{microGRAMS Slow Control System}
+\label{chap:GRAMS:pGRAMS:RandD:slowcontrol}
+To ensure reliable and live system monitoring and control for a multi-user scenario, we developed and tested a customized slow control system. See Fig.~\ref{fig:SlowControl}, Solid line shows the local network that handles all the back ends. It is protected locally behind the firewall to avoid any potential hacker activity. Front end 1, 2, and 3 could be any computers that digitized and recorded sensors or device status data. As long as these front end devices are connected to the same network, it can send all the collected data to mysql server remotely running on a NAS server within ms of delay. Then the commercial data display software grafana \cite{Web:Grafana:Docs} is used to constantly query \ac{HK} data from mysql server. Grafana is an open-source platform for monitoring and observability. It's primarily used for visualizing and analyzing time-series data from various sources, making it extremely popular for infrastructure and application monitoring.
+
+We setup a local grafana server listen to an internal port A on NAS to provide service. A particular external port C is set to direct to internal grafana listened port A so that multiple users could view system status from outside world at the same time. A port B is securely forwarded for admin to modify and control the mysql database server. A full software package is developed for this usage \cite{eclipsedclaw_2023_alab_housekeeping}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{fig/lab_slowcontrol.png}
+
+    Solid line shows the local network that handles all the back ends. Front end 1, 2, and 3 are taking any required sensor or device status data, and send to mysql server remotely running on a NAS server. Then the commercial data display software grafana \cite{Web:Grafana:Docs} is used to constantly query \ac{HK} data from mysql server. A particular external port C is set to direct to internal grafana listened port A so that multiple users could view system status from outside world at the same time. A port B is securely forwarded for admin to modify and control the mysql database server.
+
+    \caption{GRAMS slow control schematic diagram.}
+    \label{fig:SlowControl}
+\end{figure}
+
+\subsubsection{\ac{LAr} Purity and Electron Lifetime}
+\label{chap:GRAMS:pGRAMS:RandD:purity}
+To achieve optimal performance of the liquid argon time projection chamber (LArTPC), it is crucial to maintain high purity levels of the liquid argon (LAr) used in the detector. Impurities such as oxygen, water, and nitrogen can significantly affect the electron lifetime and light attenuation, which is a key parameter for accurate charge signal detection.
+% TODO: Add more information about this
+
+\subsubsection{CAEN Commercial \ac{DAQ}}
+\label{chap:GRAMS:pGRAMS:RandD:CAEN}
+For Lab R$\&$D purpuse, we need a fast and easy-accessing \ac{DAQ} to provide fast digitization and data analysis. Since this is not for balloon flight, we don't have limitation on low power consumption and thermal heat dissipation etc. The high performance electronics that could give us the desired sampling frequency are preferrable. We have purchased high performance digitization card V2740B and Vx2730 from CAEN. 
+
+The Vx2730 is ideal for waveform digitization and multi-channel analysis, particularly for signals from liquid scintillators coupled with SiPMs. 
+Power to the board is provided by the VME64-X crate. The Vx2730 board requires a power input of +12V, amounting to 6W. This versatile digitizer supports charge-to-digital conversion firmware with per-channel configurable settings. It features a 14-bit resolution at a 500 MS/s sampling rate. The device supports 32 single-ended analog inputs via MCX connectors, offering a 4Vpp input range with software-selectable analog gain. Open FPGA programming is available through the SCI-Compiler graphical tool, providing customization and flexibility. It features fully programmable front panel I/Os, including 4 LEMO TTL/NIM and 16 LVDS connections. The on-board Zynq UltraScale+ FPGA, with an embedded Linux-based ARM processor, enables real-time processing to extract physical parameters from waveforms, ideal for high trigger rate applications. The board includes 5GB of total acquisition memory (DDR4), allowing it to save both raw waveforms and processed parameters.
+
+There are 144 SiPMs installed in the pGRAMS detector, and a common SiPM bias HV is supplied to all of them. After pre-amplification, the 32 independent analog SiPM signals are driven outside the cryostat and digitized using a CAEN Vx2730 digitizer board, which can accommodate 32 channels simultaneously at 500 MHz with a 14-bit ADC. The Vx2730 board FPGA can be configured with customizable trigger logic to generate SiPM triggers based on multiple channel coincidences and summed pulse height. These signals are then processed by the NIM module to produce a single trigger pulse which is then distributed to the charge readout system and TOF system via LEMO as a negative NIM pulse of 100 ns width to initiate data readout. The Vx2730 will be configured to read out data in association with a light trigger, capturing the timestamp, waveform ID, uncalibrated energy ADC value, and the waveform itself over a 2$\mu s$ duration surrounding the trigger time. The output data is sent to PC storage via USB or gigabit ethernet. Communication interfaces include USB 3.0 type-C and 1/10 Gigabit Ethernet, offering versatile options for data transfer and integration into various systems. The maximum data writing rate is 280 MB/s. For software development, the Vx2730 offers comprehensive support. Custom DAQ software can be developed using the CAEN-provided SDK for the embedded Linux processor and host PC, allowing for console-based operations. Additionally, the digitizer board fully supports CoMPASS and WaveDump2 readout software. Light data will be time-synchronized with the charge and time-of-flight data offline, using time markers synchronously timestamped in each readout system.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{fig/CAEN_pipline.png}
+    \caption{CAEN data analysis pipline}
+    \label{fig:CAEN_data_pipline}
+\end{figure}
+
+\subsection{pGRAMS Flight Detector}
+\label{chap:GRAMS:pGRAMS:detector}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/pGRAMS_TPC_model_v2.png}
+    Left figure shows miniGRAMS TPC design demonstration. Top anode is constructed with a $ 330\ mm \times 330\ mm $ tile, and 12 groups of \ac{CSP}. Bottom cathode is constructed of 3 SiPM preamp boards which holds 3 cells each. Inside TPC there are PTFE sheet to separate each cells. Right figure shows miniGRAMS TPC schematic. Each field cage rings for TPC body is connected with a 100 M$\Omega$ resistor while anode mesh region is connected with a 400 M$\Omega$ resistor to provide desired E-field ratio between these two regions.
+    \caption{MiniGRAMS \ac{LArTPC} detector design demonstration}
+    \label{fig:minigrams}
+\end{figure}
+pGRAMS will make use of the ``MiniGRAMS'' LArTPC detector, which comprises a total of nine (9) optically isolated TPC cells, as shown in Fig.~\ref{fig:minigrams}, housed inside the cryostat with a custom flange. LArTPC is constructed with 
+\begin{itemize}
+    \item Top electron readout system that 180 of charge sensitive preamps(CSPs) connected to a 2D charge sensing tile to provide the electron drift x-y geometry information, which is powered by a serial of power board to distribute the power and signal and same time.
+    \item serials of field shape rings embedded in four side PCB boards to provide the drift E-field.
+    \item Anode and cathode mesh for field shaping and extract drifted electrons
+    \item bottom 3x3 SiPM cells to readout the signal trigger light that is produced inside the active volume
+\end{itemize}
+See Fig.~\ref{fig:minigrams}, Left figure shows miniGRAMS TPC design demonstration. Top anode is constructed with a $ 330\ mm \times 330\ mm $ tile, and 12 groups of \ac{CSP}. Bottom cathode is constructed of 3 SiPM preamp boards which holds 3 cells each. Inside TPC there are PTFE sheet to separate each cells. Right figure shows miniGRAMS TPC schematic. Each field cage rings for TPC body is connected with a 100 M$\Omega$ resistor while anode mesh region is connected with a 400 M$\Omega$ resistor to provide desired E-field ratio between these two regions.
+
+\noindent\textbf{Charge readout anode:} The charge collection tile has a geomatry of 33~cm$\times$33~cm which shares the same design concept as described in section.~\ref{chap:GRAMS:pGRAMS:RandD:detector}. Its active area is 30~cm$\times$30~cm from the outer contour, while there will be no active area on the edges on each cell due to separation. Tile itslef comprises 96 strips on each direction (X and Y), spaced 2.6~mm apart, read out independently. Due to the cell separator, there will be 90 strips on each direction be active, which added to total 180 charge readout channels. Each strip is made of pixels connected along the given direction and inteplexed as shown in Fig.~\ref{fig:microGRAMS_RandD} (a), (b) and (c). Once the charge reached tile, it will induce both X and Y strips to let us grab the information of the hit location. Detailed design files of miniGRAMS tile are listed in appendix.~\ref{app:designs}.
+
+\subsection{Data acquisition system (DAQ)}
+\label{chap:GRAMS:pGRAMS:DAQ}
+As system diagram of pGRAMS shown in Fig.~\ref{fig:system_diagram}, the \ac{DAQ} system is responsible for reading out the charge signals from the \ac{LArTPC} detector, digitizing them, and transmitting the data to the onboard computer for storage and analysis. The \ac{DAQ} system is designed to handle the high data rates generated by the TPC, while also being robust enough to operate in the harsh conditions of a balloon flight. After passing cryostats and vacuum jacket flanges, the amplified charge signals from the CSPs are feeded into a special shaper board designed by Columbia University to further shape the signals rising peak for better timing resolution. Then the shaped charge signals are sent to Neis DAQ crate that lives inside the sealed enclosure to get digitized and transmitted to the DAQ computer via PCIe. While at the same time TPC light signals will be sent to a shaper card lives in the same Nevis crate for further shaping and digitization. Light rigger will also be digitized and sent to DAQ computer via PCIe, and provide a trigger signal to \ac{TOF} system for further event mergers.
+
+\noindent\textbf{Charge DAQ Nevis DAQ crate Mechanical assembly:} The system comprises a 9U crate with a custom backplane, a crate controller, a clock card, a transmitter module, a trigger board, and three ADC+FEM (Front End Module) cards responsible for digitization and data processing.  The crate is housed inside the sealed enclosure, due to the environment and thermal requirements. 
+
+\noindent\textbf{Charge DAQ digitization and Data Handling:} The analog TPC data are received by each ADC+FEM card in groups of 64 channels. The ADC part of the card was designed by Brookhaven National Lab, while the digital data handling part was designed by Columbia University, Nevis Labs. Within each card, the analog signals are digitized within eight AD9222 octal-channel, 12-bit ADC chips from Analog Devices, Inc., providing sufficient dynamic range to accommodate both gamma-ray and antiparticle detection, with a power consumption of 100~mW/channel. Signals are digitized at 16~MHz, but only one in eight samples are kept in the digital handling part of the board, reducing the sampling rate to effectively 2~MHz. The 2~MHz sampling rate is optimized by taking into consideration the expected pulse shape provided by the convolution of the front-end electronics, the expected electric field response, and the O(1)~$\mu$s diffusion effects which govern charge drift within the liquid argon. Digital handling is provided by the FEM part of the card, which houses a Stratix III Altera FPGA. Data from all 64 wires are first rearranged from channel order to time order, and duplicated into two readout streams---one that supports continuous readout after loss compression, and another that allows for lossless compression and readout upon receiving an external trigger. Only the latter option was chosen for pGRAMS.
+
+\noindent\textbf{Charge DAQ readout Configuration and Data Flow:} The crate controller provides system configuration and slow I/O communication with each board in the readout crate. The system is run on an independent, 16~MHz clock, distributed synchronously to all electronics cards via the backplane. The clock resets upon a software-initiated run-start and is tracked in terms of a configurable (nominally set to 100~us) frame size and a 2~MHz sample number keeping track of time within the frame. All ADC+FEM cards are synchronized to this common 16~MHz clock. The trigger board is responsible for receiving and issuing trigger signals, as well as distributing accepted triggers to the crate controller. The crate controller subsequently propagates them to the transmitter module. The latter initiates sequential readout of each ADC+FEM card beginning with a configurable readout window prior to the trigger time, $\Delta t$, and extending forward in time spanning a total of 3$\Delta t$. The configurable size of $\Delta t$ is governed by the maximum drift time and spans three or four frames. In order to reduce the amount of data being transmitted, the FPGA trims the three or four frames to span the exact readout window required, 100~$\mu$s before the trigger plus 200~$\mu$s after the trigger. Optionally, lossless compression (Huffman) can be applied, and, after processing by the FPGA, the data passes to the crate backplane dataway. A token-passing scheme is utilized to transfer data from each FEM board to the data transmitter module in a controlled way, whereby each FEM, in the order of closest to furthest away from the XMIT module, receives a token, transmits its data to the XMIT, and passes the token on to the next FEM in the sequence. Each FEM sends all data associated with a particular trigger number. This data transfer is relayed via the otherwise passive crate backplane, and is limited to 512~MB/s. In the transmitter module, the data is buffered temporarily and sent to the DAQ machine via PCIe.
+
+\noindent\textbf{Light DAQ capture light trigger:} The Trigger Board has the ability to receive, via the crate controller, DAQ-issued (via software) calibration triggers, which are used explicitly for electronics and light calibration. The various input triggers can be independently pre-scaled, masked, and mixed together (OR or AND) to generate an event trigger.
+
+\noindent\textbf{Light DAQ Mechanical Assembly:} The nominal option for the pGRAMS SiPM readout makes use of custom readout electronics designed originally for the MicroBooNE LArTPC experiment, and is a complement to the charge readout system. Specifically, the light readout system can be housed together with the charge readout system in the same custom crate with a backplane distributing power and clock signals to a number of electronics boards:
+\begin{enumerate}
+    \item Crate Controller: responsible for configuration and control at run start, status readback and GPS timing readback. Also receives trigger from trigger board and issues readout command.
+    \item Shaper board: Receives raw analog signals from SiPMs. Shapes signals with a ~60ns rise time. Shaped signals are driven differentially to the ADC+FEM via front panel cables.
+    \item ADC+FEM board: Performs digitization and data packaging. The board supports up to 64 channels (only 1 will be needed for pGRAMS).
+    \item Transmitter board (XMIT): Responsible for shipping the ADC+FEM data. The XMIT hardware supports two possible streams: triggered, or continuous.
+    \item Trigger board: Receives SiPM triggers from the ADC+FEM board. The trigger board issues triggers via ethernet connection to the crate controller.
+    \item Clock module: 16MHz precision clock responsible for providing timing through the backplane to all boards.
+\end{enumerate}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\linewidth]{fig/ADC_FEM_SCHEM.png}
+    \caption{NEVIS DAQ schematic}
+    \label{fig:DAQ_schematic}
+\end{figure}
+
+The SiPM ADC+FEM and three shaper boards can sit in the same crate as the charge readout system described eariler, in which case no extra crate or controller, \ac{XMIT}, clock, trigger modules would be necessary. The Columbia light readout system therefore only requires 4 additional boards, in the form of 3 analog shaper boards (5V) and a single ADC+FEM board (12V/5V).
+
+\noindent\textbf{Light DAQ Digitization and Data Handling:} The analog waveforms enter the SiPM shaper board via LEMO inputs and are 50-Ohm terminated at the shaper. The shaped signals (unipolar shaping, 60ns shaping time) are sent to the ADC+FEM board differentially via short front panel cables, and are digitized by the ADC at 64 MHz. The baseline of the receiver is set at ADC mid‐range, 2048. After digitization, the digitized raw pulse is delayed by d=4 64 MHz samples and subtracted from itself, giving DIFF(i) = rawpulse(i)‐rawpulse(id), where d is a parameter configurable by the run control. This sharpens the pulse by removing any low frequency noise and baseline shifts. The value of d depends on the signal shaping time, and can be adjusted in order to maximize signal to noise ratio. If rawpulse(i)‐rawpulse(i‐d) is negative, DIFF(i) is set to zero. The DIFF pulse (which is NOT recorded but only used for generating readout conditions and triggering) is discriminated to determine whether rawpulse(i) should be read out, as well as to form a trigger. For any enabled channel, there are two discriminators, Discr 0 and Discr 1. Each has an independently set threshold value. A two‐level discrimination is used. Discr 0 is the first level of discrimination and is a precondition for Discr 1 firing. Discr 0 has a very low threshold and is used to determine the timing of a pulse, thus avoiding slewing. A second level of discrimination is applied by Discr 1. Discr 1 typically has higher thresholds and is used to determine the actual readout of data and define timing windows for possible SiPM trigger generation. If the discriminators fire on a particular channel, a configurable number of 64MHz samples for that particular channel associated with the fired discriminators will be stored in the FEM channel FIFO. If a trigger, issued by the trigger board, intercepts the FEM delay memory, the SRAM discriminated data over four clock frames surrounding the trigger time will be read out. Assuming the nominal choice of 100 microseconds per clock frame, this means 400 microseconds of SiPM data for every triggered event. 
+
+\textbf{Light DAQ Readout Configuration and Data Flow:} The overall readout system's internal communication and data flow is described earlier in the charge DAQ part. The transmitter module initiates controlled and sequential readout of all ADC+FEM cards in the crate. The SiPM ADC+FEM stores four clock frames' worth of data for each event, including the frame in which the trigger was received, one frame before it, and two frames after it. A token-passing scheme is utilized to transfer data from each FEM board to the data transmitter module in a controlled way, whereby each FEM, in the order of closest to furthest away from the XMIT module, receives a token, transmits its data to the XMIT, and passes the token on to the next FEM in the sequence. It is necessary for the SiPM ADC+FEM to sit farther from the XMIT module than the TPC ADC+FEMs.
+
+
+\subsection{Cryostat and plumbing}
+\label{chap:GRAMS:pGRAMS:cryostats}
+As main medium for \ac{LArTPC} is natually liquid argon which required a cryogenic system to handle the cooling and maintain the liquid state. For pGRAMS flight, we designed a custom cryostat with a vacuum jacket to provide the thermal insulation. The cryostat inner vessel is made of aluminum to hold the miniGRAMS \ac{LArTPC} detector and \ac{LAr} inside. The outer vessel is also made of aluminum to provide vacuum insulation space between inner and outer vessel to minimize the convection heat transfer. Then there are multi-layer of sheets wrapped around the inner cryostats to further reduce the radiation heat transfer. For pGRAMS operation we made cthis cryostat's flange facing downward to reduce the material stacking on top of the detector active volume. See Fig.~\ref{fig:pGRAMS_cryostat}. Left \textbf{(a)} shows cryostat general view. miniGRAMS TPC is mounted inside the inner cryostat. There are kapton heaters installed outside of inner cryostat to help release the argon before descending. Right top \textbf{(b)} shows area that between inner cryostat and outer vacuum jacket. Green cylinders are G10 supporting rods for the purpose of low thermal conductance. Thin blue/red/yellow hoses are plumbing lines for fill/vent/\ac{LLD} respectively. middle-siezd yellow line shows safety rapture disk. Right bottom \textbf{(c)} shows bottom of the cryostat. center KF cross is used for plumbing, while each quadrant has a signal flange for charge and light readout, \ac{HK} sensors, detector power flange and high voltage flange.With this cryostat design, we could maintain the \ac{LAr} state for more than 24 hours without any extra cooling. This is sufficient for the pGRAMS flight that targetting on last for less then one day.
+Detailed cryostat design files are listed in appendix.~\ref{app:designs}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/pGRAMS_cryostat.png}
+    \textbf{(a)} Left figure shows cryostat general view. miniGRAMS TPC is mounted inside the inner cryostat. There are kapton heaters installed outside of inner cryostat to help release the argon before descending. \textbf{(b)} Right top figure shows area that between inner cryostat and outer vacuum jacket. Green cylinders are G10 supporting rods for the purpose of low thermal conductance. Thin blue/red/yellow hoses are plumbing lines for fill/vent/\ac{LLD} respectively. middle-siezd yellow line shows safety rapture disk. \textbf{(c)} Right bottom figure shows bottom of the cryostat. center KF cross is used for plumbing, while each quadrant has a signal flange for charge and light readout, \ac{HK} sensors, detector power flange and high voltage flange.
+    \caption{pGRAMS cryostat design demonstration.}
+    \label{fig:pGRAMS_cryostat}
+\end{figure}
+
+We have also setup a full plumbing system to handle the \ac{LAr} filling, venting and \ac{LLD} monitoring. The detailed plumbing schematic is shown in Fig.~\ref{fig:plumbing_schematic}. There are multiple safety protection mechanisms installed to avoid any over pressure or vacuum inside the cryostat during flight. Detailed argon filling procedure to be determined.
+% TODO: update the argon filling procedure
+
+We have done a series of analysis including thermal analysis and structural analysis to ensure the cryostat and plumbing system could survive the harsh environment during balloon flight. The thermal analysis shows that with the multi-layer insulation and vacuum jacket design, the heat load to the inner cryostat could be reduced to less than 30 W. Structural analysis shows that both inner and outer cryostat could survive the 10g acceleration during parachute deployment. Detail analysis report could be found in appendix.~\ref{app:software}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/pGRAMS_plumbing.png}
+    All argon will go through customized designed and regenerated filter to reduce nritrogon, oxygen and water Impurities. A scroll pump and vacuum pump will be used to clean up the inside of cryostat. 
+    \caption{pGRAMS cryostat plumbing schematic.}
+    \label{fig:plumbing_schematic}
+\end{figure}
+
+\subsection{Flight Computer System}
+\label{chap:GRAMS:pGRAMS:computer}
+The flight computer system is limited with stratosphere compatibility, low power consumption and system performance. Some selection requirement listed as:
+\begin{itemize}
+    \item computer that sends telementry data and controls \ac{PDU} has to be stratosphere compatible with wide temperature range from $-60^\circ C$ to $ +50^\circ C $.
+    \item computer that reads and writes \ac{DAQ} system data has to have enough storage space and high data writing speed to avoid data loss. While at the same time hardware level it needs two \ac{PCIe} slots as data transition port as mentioned in section.~\ref{chap:GRAMS:pGRAMS:DAQ}.
+    \item power of the computer has to be as low as possible to perform necessary tasks.
+    \item operating system has to be linux based to be compatible with the \ac{DAQ} software and other devices we are developing.
+    \item exntension of I/O ports have to be flexible to connect with various devices including USB, RS232, SPI etc.
+\end{itemize}
+
+After evaluating multiple options, we have selected two computers to be the flight computer system for pGRAMS. One is the hub computer (Versalogic DS-EPM-31 BayCat) \cite{versalogic_baycat} that is responsible for overall system control telementry data handling. The other is the DAQ computer (Versalogic VL-EPMe-51 Sabertooth) \cite{versalogic_sabertooth} that is responsible for data receiving from Nevis DAQ crate via PCIe and store to local SSD. Both computers are running ubuntu 22.04. 
+As system diagram of pGRAMS shown in Fig.~\ref{fig:system_diagram}, hub computer is mainly in charge of communication and control, while DAQ computer is mainly in charge of data receiving and storage, details described below in section.~\ref{chap:GRAMS:pGRAMS:computer:hub} and section.~\ref{chap:GRAMS:pGRAMS:computer:daq}.
+
+\subsubsection{Hub Computer}
+\label{chap:GRAMS:pGRAMS:computer:hub}
+
+\subsubsection{DAQ Computer}
+\label{chap:GRAMS:pGRAMS:computer:daq}
+
+\subsection{pGRAMS Gondola}
+\label{chap:GRAMS:pGRAMS:gondola}
+
+\subsection{Power Distribution Unit (PDU)}
+\label{chap:GRAMS:PDU}

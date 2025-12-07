@@ -1,0 +1,238 @@
+\chapter{GRAMS Analysis}
+\label{chap:GRAMSresult}
+
+
+\section{pGRAMS Bench Test}
+\label{chap:GRAMSresult:pGRAMS}
+
+\subsection{CSP Performance validation}
+\label{chap:GRAMSresult:pGRAMS:CSP}
+
+\subsection{2D Charge Sensing Tile}
+\label{chap:GRAMSresult:pGRAMS:tile}
+
+\subsection{Light Readout validation}
+\label{chap:GRAMSresult:pGRAMS:SIPM}
+
+\subsection{Cosmic muon Track Reconstruction Algorithm}
+\label{chap:GRAMSresult:pGRAMS:track}
+
+\section{GRAMS antihelium-3 Sensitivity Simulation}
+\label{chap:GRAMSresult:antihelium-3}
+We did simulation to estimate the GRAMS sensitivity towards \ac{aHe3}.
+
+\subsection{GRAMS Detection Concept for Antiparticles}
+\label{chap:GRAMSresult:antihelium-3:DetectionConcept}
+
+The GRAMS detection concept utilizes the combined signals from time-of-flight (TOF) and LArTPC systems to identify and reconstruct events. The TOF system will measure the velocity of the incoming particle and its energy deposition. The incoming charged antiparticles will slow down as they deposit energy, through ionization, in the LAr. The antiparticle will be combined with an argon nucleus, forming an exotic atom. The exotic atom in the excited state will de-excite, emitting Auger electrons and X-rays \cite{aramaki2013measurement}. The antiparticle will eventually be captured by the nucleus and produce annihilation products, including charged pions and protons. The number of pions and protons produced here will be related to the number of antinucleons, providing additional information to identify the incoming antiparticle.
+
+Since antiprotons will also form exotic atoms in the LAr detector and generate annihilation products at the stop position, they will contribute the majority of background events for antihelium-3 detection. However, an antihelium-3 nucleus will deposit more energy in the TOF system as it has a charge of -2e. Moreover, since it consists of three antinucleons, the annihilation product profile will be different from an antiproton, where more protons and pions can be generated from the annihilation point.
+
+\subsection{Simulation configuration}
+\label{chap:GRAMSresult:antihelium-3:simulation}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GRAMS_simulation.jpg}
+    GEANT4 simulation with the GRAMS geometry for the GRASP estimation. We generated antiparticles on a 20 m $\times$ 20 m plane located above a thin layer of compressed air and the GRAMS payload. Antiparticles go through the compressed air to simulate the atmospheric effect. Two green boxes are the outer and inner TOF paddles, and the red cube inside the inner TOF box is the LArTPC detector (140 cm $\times$ 140 cm $\times$ 20 cm). The red lines are the example tracks of the generated antihelium-3 nuclei.
+    \caption{Simulated GRAMS detector with GEANT4}
+    \label{fig:GEANT4}
+\end{figure}
+
+To estimate the sensitivity, we demonstrated the detection concept using GEANT4 simulation. See Fig.~\ref{fig:GEANT4}, we generated antiparticles on a 20 m $\times$ 20 m plane located above a thin layer of compressed air and the GRAMS payload. Antiparticles go through the compressed air to simulate the atmospheric effect. Two green boxes are the outer and inner TOF paddles, and the red cube inside the inner TOF box is the \ac{LArTPC} detector (140 cm $\times$ 140 cm $\times$ 20 cm). The red lines are the example tracks of the generated antihelium-3 nuclei.
+
+\subsection{GRASP}
+\label{chap:GRAMSresult:antihelium-3:GRASP}
+
+GRASP is named and defined based on eq.~\ref{equ:GRASP}, which describes the capability of a detector grasping target particles. We evaluated the sensitivity of GRAMS for antihelium-3 nuclei using GEANT4 Monte Carlo simulations with QGSP\_BERT physics list \cite{AGOSTINELLI2003250, APOSTOLAKIS2009859}. With configuration from section.~\ref{chap:GRAMSresult:antihelium-3:simulation} antiparticles are isotropically generated from a 20 m $\times$ 20 m plane at the top of the atmosphere (TOA) with energy up to 1000 MeV/n and will propagate downward through a 3.9 cm compressed air layer with a 1 g/cm$^2$ density. The antiparticles will annihilate or lose energy, providing a realistic estimate of the antiparticle flux reaching the detector at the flight altitude of around 37 km. Then GRASP is corresponding to antiparticles stopping or in-flight annihilation efficiency inside the detector. 
+
+\begin{equation}
+    \Gamma_i = \pi\cdot A\cdot\frac{N_{i}}{N_t}
+    \label{equ:GRASP}
+\end{equation}
+
+Here, $ A $ represents the area for the antiparticle generation, which is a 20 m $\times$ 20 m source plane, $ N_t $ is the number of total antiparticles generated in the area (50 million of antiproton and antihelium-3 events), and $ N_i $ is the number of antiparticles stopped or inflight annihilated inside the LArTPC detector. GRASP was calculated to characterize the detector's response as a function of initial energy at \ac{TOA}. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\linewidth]{fig/GRASP_0_1000_v5.png}
+    \caption{GRASP for proposed GRAMS detector}
+    \label{fig:GRAMS_GRASP}
+\end{figure}
+
+Fig.~\ref{fig:GRAMS_GRASP} shows the GRASP simulation results. Antiparticles with TOA energy between 100 MeV/n and 500 MeV/n can stop in the LArTPC, while in-flight annihilation events dominate for antiparticles with energy greater than 300 MeV/n. The simulation result using the same GEANT4 framework showed a good match of the event rate at the balloon altitude during the engineering flight (eGRAMS) \cite{Nakajima:2024fgx}.
+
+\subsection{Particle Identification Technique with energy deposit in Time-of-Flight (TOF)}
+\label{chap:GRAMSresult:antihelium-3:TOF}\
+
+\begin{figure}
+\begin{center} 
+\includegraphics*[width=10cm]{fig/3D_v2.png}
+\end{center}
+The x-axis is the energy deposition in the outer TOF paddle, and the y-axis is the energy deposition in the inner paddle. The z-axis is the timing difference between the outer and inner paddle hits, which is related to the kinetic energy of the incoming charge particles. We can clearly see antiproton and antihelium-3 event clusters well separated from each other.
+\caption{3D plot of antiparticles' deposited energy and timing in \ac{TOF} system}
+\label{fig:3D}
+\end{figure}
+
+The main background for antihelium-3 nuclei measurements would be antiprotons, as mentioned in section.~\ref{chap:GRAMSresult:antihelium-3:DetectionConcept}. However, they can be identified and distinguished from antihelium-3 events based on particle identification techniques with the TOF profile for both timing and energy deposition. 
+
+Since antihelium-3 nuclei have a charge of -2e and roughly three times the antiproton mass, they will deposit more energy inside the TOF plastic scintillator with the same velocity measured by the TOF system compared to antiprotons. GEANT4 simulations were conducted to evaluate the energy depositions in the outer and inner plastic scintillator paddles and the velocity based on the timing between the inner and outer TOF paddles. Here, energy resolution was assumed to be 16\% (14\%) for a charge of $\pm$2e ($\pm$1e) particles, and the timing resolution was considered to be 0.4 ns, as measured in other experiments, as well as the preliminary bench test in lab \cite{bindi2010scintillator}. Based on hit locations, timing, and accumulated energy deposition in the inner and outer TOF paddles, we obtained clusters for antiproton and antihelium-3 events in a 3D plot (see Fig.~\ref{fig:3D}).
+
+
+\begin{figure}
+\begin{center} 
+\includegraphics*[width=0.65\linewidth]{fig/slice_v5.png}
+\end{center}
+An example of the sliced 2D plot for the TOF timing between 12 ns and 13 ns. We removed the light green shaded area at the bottom left to keep the rest of the region accepted. For this particular timing range, 98.6 \% of antihelium-3 events can be accepted while rejecting all antiproton events.
+\caption{An example of \ac{TOF} selection cut}
+\label{fig:cut}
+\end{figure}
+
+To evaluate antihelium-3 selection cuts, we sliced the 3D plot with a time window of 1 ns ($\pm$0.5 ns) and made it into a 2D plot, energy depositions in the inner and outer TOF paddles. We applied the antihelium-3 selection cuts by drawing a box to completely cover the antiproton cluster (see an example in Fig.~\ref{fig:cut}). With this cut method, we established a stair-shaped separation plane in the 3D plot. Fig.~\ref{fig:cut efficiency} also shows the acceptance rate for antihelium-3 events with the applied cut, approximately 96.5 \%, while rejecting all simulated antiproton events. This gives an upper limit on the antiproton cut efficiency $\varepsilon_{TOF}^{\bar{p}}=0.000142$ (99\% C.L). Note that, aside from energy depositions inside TOF paddles, energy deposition inside the LArTPC detector can also be used to reject antiprotons, considering the charge and mass difference between antiprotons and antihelium-3 nuclei. 
+
+
+\begin{figure}[htbp]
+\begin{center} 
+\includegraphics*[width=8
+cm]{fig/cut_efficiency_v2.png}
+\end{center}
+Selection efficiency for antihelium-3 events under each one ns time window. Combined all simulation data gives an antihelium-3 nuclei selection cut
+efficiency $\varepsilon_{TOF}^{^3\overline{He}}=0.965$, while we reject all antiprotons and provide an upper limit on the antiproton cut efficiency $\varepsilon_{TOF}^{\bar{p}}=0.000142$ (99\% C.L)
+\caption{TOF 3D selection cut efficiency}
+\label{fig:cut efficiency}
+\end{figure}
+
+\subsection{Particle Identification Technique with charged pion multiplicity}
+\label{chap:GRAMSresult:antihelium-3:chargedpion}
+When antiparticles annihilate inside the LArTPC, they will generate pions. The number of charged/neutral pions and its standard deviation ($\sigma$) for the antiproton-nucleon annihilation can be estimated as follows \cite{cugnon1989antiproton, cugnon1992antideuteron}.
+
+\begin{equation}\label{equ: pion main}
+    \langle M^p_{\pi^{\pm, 0}}\rangle=2.65+3.65\ln{\sqrt{s}}
+\end{equation}
+
+\begin{equation}\label{equ: pion sigma}
+    \frac{\sigma^2}{\langle M^p_{\pi^{\pm, 0}}\rangle}=0.174(\sqrt{s})^{0.40}
+\end{equation}
+
+Here, $ \langle M^p_{\pi^{\pm, 0}}\rangle $ is the average number of charged and neutral pions, and $ \sqrt{s} $ is the center of mass energy in GeV \cite{aramaki2016antideuteron}. There are two models to analyze how antinucleons inside antihelium-3 nuclei interact with nuclei \cite{cugnon1992antideuteron}. We assume an even number of charged and neutral pions are generated here:
+
+\begin{equation}
+    \langle M_{\pi^+}\rangle = \langle M_{\pi^-}\rangle = \langle M_{\pi^0}\rangle
+\end{equation}
+Since neutral pions quickly decay into two high-energy gamma rays that can easily escape from the LArTPC, we will only consider charged pion multiplicity.
+Fig.~\ref{fig:Simulated Charged pion multiplicity} shows the GEANT4 simulation results of pion multiplicities from stopped 100000 antiprotons and antihelium-3 nuclei events. The antiproton result fits well with the theoretical model \cite{cugnon1989antiproton, cugnon1992antideuteron}. Here, we could apply a selection cut at 9 charged pions, providing below $10^{-5}$ of selection efficiency ($\varepsilon_\pi^{\bar{p}}$) for antiprotons while $\varepsilon_\pi^{^3\overline{He}}=0.912 $ for antihelium-3 events.
+
+\begin{figure}
+\begin{center} 
+\includegraphics*[width=10
+cm]{fig/charged_pion_multiplicity_v3.png}
+\end{center}
+GEANT4 simulation results of charged pion multiplicities for antiproton and antihelium-3 events are shown in red and blue bars. We could apply a cut of $N\geq9$ (vertical black dashed line) to reject antiproton events while still keeping $91.2\%$ of antihelium-3 events. The dashed red line shows the model prediction of the pion multiplicity for 1 GeV/n antiproton in-flight annihilation events, indicating the selection cut of $N\geq9$ is still valid with the antiproton selection efficiency of $\varepsilon_\pi^{\bar{p}}=1.25\times10^{-5}$.
+\caption{GRAMS simulated charged pion multiplicity}
+\label{fig:Simulated Charged pion multiplicity}
+\end{figure}
+
+We used the equations (\ref{equ: pion main}) and (\ref{equ: pion sigma}) to estimate the pion multiplicity for antiproton in-flight annihilation events with the kinetic energy of 1 GeV/n (see the dashed red line in Fig.~\ref{fig:Simulated Charged pion multiplicity}). Even for this case, we can easily separate antiproton and antihelium-3 events with the same selection cut, $N\geq9$ charged pions, providing the antiproton selection efficiency of $\varepsilon_\pi^{\bar{p}}=1.43\times10^{-5}$.
+
+The INC model also predicts that protons and neutrons can be generated by three different processes: (1) direct emission from the interaction between the primordial pions and the nucleus, (2) pre-equilibrium emission (multifragmentation) from excited nucleons, and (3) nuclear evaporation \cite{chamberlain1955observation, aramaki2016antideuteron}.
+
+
+\subsection{Confidence Level and Sensitivity Calculation}
+\label{subsection: Sensitivity and Confidence Level}
+
+The main background events for GRAMS's antihelium-3 nuclei detection are antiprotons that can produce annihilation products in the LArTPC and the secondary antihelium-3 nuclei produced by cosmic-ray interactions. The antiproton and secondary antihelium-3 events, as well as the sensitivity of one antihelium-3 nuclei detection, $ S_{^3\overline{He}}$, can be estimated as follows.
+
+\begin{equation}
+    n_{\bar{p}}^{bkg}=\int F_{\bar{p}}(E)\Gamma_{\bar{p}}(E)T\varepsilon_g^{\bar{p}}dE\cdot\prod_i\varepsilon_i^{\bar{p}}
+\end{equation}
+\begin{equation}
+    n_{^3\overline{He}}^{bkg}=\int F_{^3\overline{He}}^{sec}(E)\Gamma_{^3\overline{He}}(E)T\varepsilon_g^{^3\overline{He}}dE\cdot\prod_i\varepsilon_i^{^3\overline{He}}
+\end{equation}
+\begin{equation}
+    S_{^3\overline{He}}=\frac{1}{\int \Gamma_{^3\overline{He}}(E)T\varepsilon_g^{^3\overline{He}}dE\cdot\prod_i\varepsilon_i^{^3\overline{He}}}
+\end{equation}
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{l|r}
+\hline
+&numerical value\\
+\hline
+$F_{\bar{p}}(E)$ & $10^{-2}$ [m$^2$ s sr GeV/n]$^{-1}$ \\
+$F_{^3\overline{He}}^{sec}(E)$ &$5\times10^{-11}$ [m$^2$ s sr GeV/n]$^{-1}$ \\
+A&$20\ m\times20\ m$ \\
+$\int\Gamma_{\bar{p}}(E)dE$ & $1.77324\ m^2 sr \ GeV/n$ \\
+$\int\Gamma_{^3\overline{He}}(E)dE$&$1.7017\ m^2 sr \ GeV/n$\\
+T&105 days\\
+$\varepsilon_g^{\bar{p}}$&0.7\\
+$\varepsilon_g^{^3\overline{He}}$&0.5\\
+$\varepsilon_{TOF}^{\bar{p}}$&0.000142\\
+$\varepsilon_{TOF}^{^3\overline{He}}$&0.965\\
+$\varepsilon_{\pi}^{\bar{p}}$&0.0000125\\
+$\varepsilon_{\pi}^{^3\overline{He}}$&0.912\\
+\hline
+\end{tabular}
+\small
+\begin{description}
+    \item[$ F_{\bar{p}}(E) $ and $ F_{^3\overline{He}}^{sec}(E) $] are the fluxes of antiprotons and secondary antihelium-3 nuclei at the top of the atmosphere\cite{PhysRevLett.105.121101, shukla2020large}.
+    \item[$\Gamma_{\bar{p}}(E)$ and $\Gamma_{^3\overline{He}}(E)$] are GRASPs for antiproton and antihelium-3 events, integrating through energy from Fig.~\ref{fig:GRAMS_GRASP}.
+    \item[$\Gamma_{\bar{p}}(E)$ and $\Gamma_{^3\overline{He}}(E)$] are GRASPs for antiproton and antihelium-3 events, integrating through energy from Fig.~\ref{fig:GRAMS_GRASP}. 
+    \item[$ T $ ] will be the observation time during the level flight
+    \item[$\varepsilon_g^{\bar{p}}$ and $\varepsilon_g^{^3\overline{He}}$] are geomagnetic cutoff efficiency, for antiprotons and  for antihelium-3 nuclei during the Antarctic flight \cite{vonDoetinchem:2017Id}.
+    \item[$ \varepsilon_i^{\bar{p}} $] is the acceptance for each antihelium-3 selection cut (charged pion multiplicity and TOF energy deposition). 
+    \item[$\varepsilon_{TOF}^{\bar{p}}$ and $\varepsilon_{TOF}^{^3\overline{He}}$ ] are acceptance for antiproton and antihelium-3 cutnuclei TOF profile cut.
+    \item[$\varepsilon_{\pi}^{\bar{p}}$ and $\varepsilon_{\pi}^{^3\overline{He}}$] are the pion multiplicity selection cut acceptance with $N\geq9$ for antiproton and antihelium-3 nuclei respectively.
+\end{description}
+\caption{GRAMS \ac{LDB} antihelium-3 sensitivity calculation numerical values}
+\label{table:Balloon_table}
+\end{table}
+
+Based on values show in table.~\ref{table:Balloon_table}, the corresponding antihelium-3 sensitivity would be $1.47\times10^{-7}$ [m$^2$ s sr GeV/n]$^{-1}$ with the expected background events for antiproton (secondary antihelium-3) of $2.00\times10^{-4}$ ($3.4\times10^{-4}$). Fig.~\ref{fig:antihelium3_sensitivity} shows the GRAMS sensitivity and antihelium-3 fluxes from dark matter models.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{l|r}
+\hline
+&numerical value\\
+\hline
+$F_{\bar{p}}(E)$ & $10^{-2}$ [m$^2$ s sr GeV/n]$^{-1}$ \\
+$F_{^3\overline{He}}^{sec}(E)$ &$5\times10^{-11}$ [m$^2$ s sr GeV/n]$^{-1}$ \\
+A&$20\ m\times20\ m$ \\
+$\mathbf{\int\Gamma_{\bar{p}}(E)dE}$ & $\mathbf{10.9873\ m^2 sr \ GeV/n}$ \\
+$\mathbf{\int\Gamma_{^3\overline{He}}(E)dE}$&$\mathbf{11.6025\ m^2 sr \ GeV/n}$\\
+\textbf{T}&\textbf{2 years}/\textbf{10 years}\\
+$\mathbf{\varepsilon_g^{\bar{p}}}$&\textbf{$\sim$1}\\
+$\mathbf{\varepsilon_g^{^3\overline{He}}}$&\textbf{$\sim$1}\\
+$\varepsilon_{TOF}^{\bar{p}}$&0.000142\\
+$\varepsilon_{TOF}^{^3\overline{He}}$&0.965\\
+$\varepsilon_{\pi}^{\bar{p}}$&0.0000125\\
+$\varepsilon_{\pi}^{^3\overline{He}}$&0.912\\
+\hline
+\end{tabular}
+
+Sensitivity numerical values for potential satellite mission. Upgraded items marked in bold
+\caption{GRAMS future satellite antihelium-3 sensitivity calculation numerical values}
+\label{table:Satellite_table}
+\end{table}
+GRAMS can be expanded to the satellite mission, providing a significantly improved antihelium-3 sensitivity by increasing both the LArTPC detector size and the observation time. Considering the satellite fairing size, the LArTPC can be upgraded to 3.2 m $\times$ 3.2 m $\times$ 0.2 m, which can boost the GRASP for antihelium-3 as seen in Fig.~\ref{fig:GRASP for MAX design}. Here, we assume the observation time to be 2 years/10 years and geomagnetic cutoff $\varepsilon_g\sim1$ at the Lagrange point. With these upgrades listed in table.~\ref{table:Satellite_table}, the GRAMS sensitivity to antihelium-3 nuclei can be significantly improved down to $1.55\times10^{-9}$ [m$^2$ s sr GeV/n]$^{-1}$ / $3.10\times10^{-10}$ [m$^2$ s sr GeV/n]$^{-1}$. Fig.~\ref{fig:antihelium3_sensitivity} shows that GRAMS can uniquely and deeply explore various dark matter models via low-energy antihelium-3 measurements. 
+
+\begin{figure}
+\begin{center} 
+\includegraphics*[width=15cm]{fig/antihelium3_sensitivity_with_inflight_satellite_v7.png}
+\end{center}
+The antihelium-3 measurements, similar to the antideuteron measurements, could serve as a powerful tool for background-free dark matter searches \cite{PhysRevD.97.103011, PhysRevD.96.083020, PhysRevD.96.103021, Ding_2019, PhysRevLett.126.101101, PhysRevD.99.023016, PhysRevD.102.063004, Kachelrie_2020}.
+\label{fig:antihelium3_sensitivity}
+\caption{Antihelium-3 flux, background and sensitivity}
+\end{figure}
+
+The AMS sensitivity and the BESS upper limit to the antihelium flux were estimated based on the $ \overline{He}/He$ ratios \cite{PhysRevLett.108.131301, Kounine:2011bkq} and the precision measurement of the $ He $ flux \cite{PhysRevLett.115.211101, SANUKI2001761} while converting the rigidity to the corresponding kinetic energy for each BESS/AMS rigidity bin.
+
+\begin{figure}
+\begin{center} 
+\includegraphics*[width=0.7\linewidth]{fig/GRASP_comparison_v5.png}
+\end{center}
+GRASP estimation for the GRAMS satellite mission, with a 3.2 m $\times$ 3.2 m $\times$ 0.2 m LArTPC detector, considering the satellite fairing size \cite{7943833}. Solid lines show annihilation at rest events, while dashed lines show annihilation in-flight events.
+\caption{GRASP estimation for future GRAMS satellite mission}
+\label{fig:GRASP for MAX design}
+\end{figure}
+
+The Low-energy cosmic-ray antihelium-3 nuclei measurement can be a background-free indirect dark matter search method since the antihelium-3 flux from the dark matter annihilation can be a few orders of magnitude higher than the secondary flux from cosmic-ray interactions at the low-energy range. The GRAMS's unique detector and detection concept are optimized to investigate the low-energy range ($E < 1$ GeV/n). We estimated the GRAMS antihelium-3 sensitivity for three LDB flights (105 days of observation time in total) as $1.47\times10^{-7}$ [m$^2$ s sr GeV/n]$^{-1}$. The future GRAMS satellite mission with the upgraded 3.2 m $\times$ 3.2 m $\times$ 0.2 m LArTPC detector and longer observation time (2 years / 10 years), the antihelium-3 sensitivity can be as low as $ 1.55\times10^{-9}$ [m$^2$ s sr GeV/n]$^{-1}$ / $3.10\times10^{-10}$ [m$^2$ s sr GeV/n]$^{-1}$, allowing GRAMS to explore a variety of dark matter models.
