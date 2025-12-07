@@ -1,0 +1,163 @@
+% ----------------------------------------------------------------------------
+% thesis.tex:	Template for Master Thesis and PhD Dissertation
+%             Northeastern University, Electrical and Computer Engineering (Update to your home department)
+%
+% This document contains embedded instructions. Each instruction line starts
+% with "%%", conversely code options to enable, only start with a single "%"
+% ----------------------------------------------------------------------------
+% edited by:	Gunar Schirner
+% last update:	see SVN
+% ----------------------------------------------------------------------------
+
+%% Options
+%% PHD    -- PhD Dissertation (default: MS Thesis)
+%% draft  -- label as draft version (default: final)
+%% Remove [PHD] if MS Thesis
+\documentclass[PHD]{macro/neu_msthesis}
+
+% --- Global Definitions for title and others ---
+
+%% Enter thesis title
+
+\title{Development of Current and Next-Generation Balloon-Borne Indirect Dark Matter Search Experiments}
+
+%% Enter thesis author
+
+\author{Jiancheng(J.C) Zeng}
+
+\nuid{001430204}
+
+%% department name
+
+\dept{Physics}
+
+%% degree name if not "Master of Science" or "Doctor of Philosophy"
+%% should not be needed
+%\degree{My Custom Degree Name}
+
+%% area of degree
+%% will be used on degree page, change as instructed below:
+%% For MS students "Electrical and Computer Engineering"
+%% For PhDEE students "Electrical Engineering"	
+%% For PhDCE students "Computer Engineering"
+
+\degreename{Physics}
+
+%% General field in which degree is obtainded (usually same as \degreename{})
+
+\field{Astroparticle Physics}
+
+%% Define month when submitted (START writing early or it will be very soon too late :-) )
+%% Use full name for months
+
+\submitdate{April 2026}
+
+%Although the template does not generate the signature page, leave the following 13 lines unchanged!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DO NOT CHANGE BELOW (From here) %%%%%%%%%%%%%%%%%%%%%%%%
+% how many committee members (including adviser, put a number between 3 and 6)
+\numberofmembers{3}
+%% Define committee member names, except for the advisor, all other names come in alphabetical order (last name)
+\principaladviser{Dr. Tsuguo Aramaki}
+\firstreader{Dr. Orimoto Toyoko}
+\secondreader{Dr. Jonathan Blazek}
+\thirdreader{Dr. Kerstin Perez}
+\fourthreader{N/A}
+\fifthreader{N/A}
+%% name chair of department
+\chairman{Dr. Mark Williams}
+%% name of director graduate school
+\dean{Dr. Brent Nelson}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DONOT CHANGE ABOVE (TO HRE) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% all user defined macros
+% outsourced conveniently to keep this file clean
+
+\input{macro/macro}
+-
+
+% --- begin of document ---
+
+\begin{document}
+
+% add a pdf bookmark to the cover page
+\pdfbookmark[1]{Cover}{cover}
+
+% --- title page ---
+\titlepage
+
+% --- front matter ---
+\begin{frontmatter}
+% %%%%%% NO SIGNATURE PAGE WILL BE GENERATED, PLEASE DOWNLOAD FROM COE WEB SITE (READ file Readme.pdf in this folder!)
+%\signaturepage
+% dedication
+
+\input{tex/dedication.tex}
+
+% table of content (add bookmark for convenience)
+
+\pdfbookmark[1]{Table of Contents}{contents}
+\tableofcontents
+
+
+%% include any of the front matter files that contain text
+%% attention the input does cause a page break, the include on
+%% the other hand does not
+
+\end{frontmatter}
+
+
+% --- body of the document ---
+\pagestyle{headings}
+
+\input{tex/abstract.tex}
+
+%% include each chapter like below
+\input{tex/intro.tex}
+
+%% background
+%\input{tex/background.tex}
+
+%% GAPS experiment
+\input{tex/GAPS.tex}
+\input{tex/GAPS_result}
+
+%% GRAMS experiment
+\input{tex/GRAMS.tex}
+\input{tex/GRAMS_result}
+
+
+\input{tex/discussion}
+\input{tex/conclusion}
+
+% include a list of Acronyms (comment out if no acronyms are specified)
+\input{tex/acronyms.tex}
+
+\listoffigures
+\newpage\ssp
+\listoftables
+
+% --- Bibliography ----
+\bibliographystyle{IEEEtran}
+
+%% include bibliography definition
+\bibliography{bib/thesis}
+
+
+% --- Appendix ---
+\appendix
+
+\input{tex/designs}
+\input{tex/software}
+
+\input{tex/acknowledgments.tex}
+
+% --- Index ----
+\printindex
+
+
+% --- that's it ---
+\end{document}
+
+% --- EOF --------------------------------------------------------------------
+
