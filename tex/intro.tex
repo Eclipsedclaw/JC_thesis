@@ -86,52 +86,58 @@ To this end, suborbital flight testing can serve as an invaluable opportunity fo
 
 Particularly for Balloon-Borne Indirect Dark Matter Search Experiments that this thesis is focused on developing, the advantages are mainly low cost and reduced CR-induced shower backgrounds at stratospheric altitudes \cite{grieder2010extensive, PhysRev.76.1092}. To apply our charge particle detection technique and identify antinucleons, we must detect as many primary cosmic-ray particles as possible while minimizing shower-induced backgrounds. Additionally, balloon-borne experiments are cost-effective, allowing extensive laboratory research and development to prepare for future satellite missions that will achieve unprecedented sensitivity for \ac{CRs} measurements in the relevant energy range. With more than 25km altitude, \ac{CRs} shower backgrounds are reduced . Based on this we could choose a variety of balloon types to fulfill our request, see Fig.~\ref{fig:balloon_altitude}. Once selected balloon type, payload floating altitude will be related to the total suspended weight. The heavier the payload becomes, the lower the leveling flight altitude will be. For \ac{GAPS} experiment science flight, the Zero-Pressure Balloon: Long Duration Antarctic is chosen, detailed information see relative column in Chart.~\ref{table:NASA_Balloon}. As for \ac{GRAMS} experiment, particularly pGRAMS mission selected NASA-Contracted Commercial Flight Providers worldview, which has flight duration several hours to several days at a floating target altitude 15-30 km \cite{worldviewspace2025}. The nominal payload weight capacity could reach to 500 kg, which is also pGRAMS's design target.
 
+\begin{landscape}
 \begin{table}
 \centering
 \footnotesize
-\begin{tabular}{>{\raggedright\arraybackslash}p{1.3cm}|>{\raggedright\arraybackslash}p{2.3cm}|>{\raggedright\arraybackslash}p{2.3cm}|>{\raggedright\arraybackslash}p{2.3cm}|>{\raggedright\arraybackslash}p{2.3cm}}
-\hline
-\textbf{Vehicle} & 
+\setlength{\tabcolsep}{4pt} % Reduce column padding
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.2cm}
+                >{\raggedright\arraybackslash}p{3.3cm}
+                >{\raggedright\arraybackslash}p{3.3cm}
+                >{\raggedright\arraybackslash}p{3.3cm}
+                >{\raggedright\arraybackslash}p{3.3cm}}
+\toprule
+\textbf{Category} & 
 \textbf{\makecell{Zero-Pressure\\Balloon:\\Conventional}} & 
 \textbf{\makecell{Zero-Pressure\\Balloon:\\Long Duration\\Antarctic}} & 
 \textbf{\makecell{Super Pressure\\Balloon:\\Mid-Latitude}} & 
 \textbf{\makecell{Zero-Pressure\\Balloon:\\High Altitude}} \\
-\hline
-\small
+\midrule
 Description & 
-Launches take place from Fort Sumner, NM or Palestine, TX with multiple balloon volumes available for short duration flights supporting scientific, engineering, technology, or educational missions and utilizing line of sight communications. & 
-Launches take place in Antarctica with multiple balloon volumes available for missions lasting from a few days to several weeks to support scientific missions and utilizing both line of sight and over the horizon communications. & 
-Launches takes place in New Zealand using the ~0.5 million cubic meter volume super-pressure balloon for missions lasting from a few days to several weeks at the southern hemisphere mid-latitude in support of scientific missions and utilizing line of sight and over the horizon communications. & 
-Launches take place at the conventional or Long Duration locations using a 1.7 million cubic meter volume zero-pressure balloon for short or long duration flights supporting scientific missions utilizing line of sight and over the horizon communications. \\
-\hline
+Launches from Fort Sumner, NM or Palestine, TX. Multiple balloon volumes for short duration flights (scientific, engineering, technology, educational). Line of sight communications. & 
+Launches in Antarctica. Multiple balloon volumes for missions lasting days to weeks. Both line of sight and over the horizon communications. & 
+Launches in New Zealand. ~0.5M m³ super-pressure balloon. Missions lasting days to weeks at southern hemisphere mid-latitude. Line of sight and over the horizon communications. & 
+Launches at conventional or Long Duration locations. 1.7M m³ zero-pressure balloon. Short or long duration flights. Line of sight and over the horizon communications. \\
+\midrule
 Flight Duration & 
 ~2 hrs to 36 hrs & 
 ~7 to 50+ days & 
 ~7 up to 100 days & 
 ~2 hrs to 21+ days \\
-\hline
+\midrule
 Target Altitude & 
-30 to 40 km & 
-30 to 40 km & 
+30–40 km & 
+30–40 km & 
 33.5 km & 
-47 to 50 km \\
-\hline
+47–50 km \\
+\midrule
 Payload Weight & 
-Up to 2,948 kg & 
-Up to 2,948 kg & 
-900 to 1300 kg & 
-Up to 200 kg \\
-\hline
+$\leq$ 2,948 kg & 
+$\leq$ 2,948 kg & 
+900–1300 kg & 
+$\leq$ 200 kg \\
+\midrule
 Payload Dimensions & 
-Compatible with various payload dimensions (small, medium or large); details available from NASA BPO & 
-Compatible with various payload dimensions (small, medium or large); details available from NASA BPO & 
-Compatible with various payload dimensions (small, medium or large); details available from NASA BPO & 
-Compatible with various payload dimensions (small, medium or large); details available from NASA BPO \\
-\hline
+Various sizes; details from NASA BPO & 
+Various sizes; details from NASA BPO & 
+Various sizes; details from NASA BPO & 
+Various sizes; details from NASA BPO \\
+\bottomrule
 \end{tabular}
 \caption{NASA HIGH-ALTITUDE BALLOON PLATFORMS \cite{nasa_suborbital}}
 \label{table:NASA_Balloon}
 \end{table}
+\end{landscape}
 
 \begin{figure}
     \centering
@@ -202,29 +208,12 @@ GRAMS has been proposed initially in 2019, followed with a continuous developmen
 
 In the future, GRAMS will perform science balloon flight and progress to a satellite missio to deliver the science result we proposed and simulated.
 
-\noindent\textbf{What is the population of MeV-emitting astrophysical objects?}\\
-There are many sources which potentially emit photons in the MeV gamma-ray domain (e.g., active galactic nuclei, X-ray and gamma-ray binaries, pulsars/pulsar wind nebula, supernova remnants). % COMMENT: Good list; consider adding refs for each class where relevant.
-These objects in principle have nonthermal (continuum) emission in a broad energy band, ranging from radio to GeV gamma ray and above. %which can be probed with other very sensitive missions (e.g.,~Fermi and NuSTAR).
-Measurements of the nonthermal emission allow us to understand the mechanism of particle acceleration at different scales of shocks and jets in the aforementioned sources.
-$\sim$2000 and $\sim$7000 sources have been already identified in the hard X-ray and GeV gamma-ray bands, respectively, by missions with sensitive instruments such as NuSTAR, INTEGRAL, Swift, and Fermi \cite{}. Thus, some of them could be potential MeV gamma-ray emitters.\\
+\noindent\textbf{What is the population of MeV-emitting astrophysical objects?} There are many sources which potentially emit photons in the MeV gamma-ray domain (e.g., active galactic nuclei, X-ray and gamma-ray binaries, pulsars/pulsar wind nebula, supernova remnants). These objects in principle have nonthermal (continuum) emission in a broad energy band, ranging from radio to GeV gamma ray and above. Measurements of the nonthermal emission allow us to understand the mechanism of particle acceleration at different scales of shocks and jets in the aforementioned sources. $\sim$2000 and $\sim$7000 sources have been already identified in the hard X-ray and GeV gamma-ray bands, respectively, by missions with sensitive instruments such as NuSTAR, INTEGRAL, Swift, and Fermi \cite{}. Thus, some of them could be potential MeV gamma-ray emitters.
 
-\noindent\textbf{Where did the heavy elements form?}\\
-MeV gamma-ray line emission is the only direct probe of the formation of r-process elements \cite{korobkin-r-proc,metzger-r-proc}, %nuculei, 
-enabling us to explore the origin of matter.
-%Line emission from kilonova ejecta in MeV range
-The detection of nuclear gamma-ray lines from the decay of r-process radioactive elements in supernovae or kilonovae formed after neutron star mergers would would be a direct probe of the sites where neutron-rich elements that are essential for life did originate. %Main target in this study is nucleosynthesis in supernovae and neutron star mergers.
-% COMMENT: Duplicate "would would" -> remove one. Also clarify what spectral resolution is needed to detect such lines; leave as note to add.
-(need to better understand what kind of energy and angular resolution we can have with GRAMS)\\
+\noindent\textbf{Where did the heavy elements form?} MeV gamma-ray line emission is the only direct probe of the formation of r-process elements \cite{korobkin-r-proc,metzger-r-proc}, enabling us to explore the origin of matter. The detection of nuclear gamma-ray lines from the decay of r-process radioactive elements in supernovae or kilonovae formed after neutron star mergers would would be a direct probe of the sites where neutron-rich elements that are essential for life did originate.
 
-\noindent\textbf{What is the origin of galactic positrons?}\\
-MeV missions such as COMPTEL and INTEGRAL have detected a bright gamma-ray emission line at 511\,keV from the galactic bulge and disk that is associated with the annihilation of positrons. The origin of this positron population is unknown, with potential sites ranging from a population of millisecond pulsars to the decay of dark matter particles. The improved effective area of a GRAMS mission compared to predecessor efforts will improve the spatial characterization of the 511\,keV excess and distinguish between models for the origin of galactic positrons and their diffusion in the interstellar medium.\\ 
+\noindent\textbf{What is the origin of galactic positrons?} MeV missions such as COMPTEL and INTEGRAL have detected a bright gamma-ray emission line at 511\,keV from the galactic bulge and disk that is associated with the annihilation of positrons. The origin of this positron population is unknown, with potential sites ranging from a population of millisecond pulsars to the decay of dark matter particles. The improved effective area of a GRAMS mission compared to predecessor efforts will improve the spatial characterization of the 511\,keV excess and distinguish between models for the origin of galactic positrons and their diffusion in the interstellar medium.
 
-\noindent\textbf{What is the origin of gamma-ray transients?}\\
-%Transient phenomena (e.g., NS-NS mergers and gamma-ray bursts) will be mainstream in the next decay.
-The Astro 2020 Decadal survey established that "the highest-priority in space is sustaining space-based activity of space-based time-domain and multi-messenger program with small- and medium-scale missions." % COMMENT: Quote is fine; include citation to Astro2020 white paper.
-GRAMS will play an important role in identifying transient phenomena such as gamma-ray burst and mergers of two neutron stars and the gamma-ray counterparts of gavitational wave and neutrino events. With its large effective area and instantaneous field of view, GRAMS will be sensitive to these short but luminous events %because its large effective area enables us to detect photons in a short time of transients and
-and provide their localizations to the astrophysics community to follow up at other wavelengths. %it has a good synergy with measurements of other messenger, such as neutrino and gravitational wave.
-(This requires on-board processing for real-time reconstruction and pointing)\\
-%It is also well aligned with the highest-priority in space as identified by the astro 2020 decadal survey, which is sustaining space-based activity of space-based time-domain and multi-messenger program with small- and medium-scale missions.
+\noindent\textbf{What is the origin of gamma-ray transients?} The Astro 2020 Decadal survey established that "the highest-priority in space is sustaining space-based activity of space-based time-domain and multi-messenger program with small- and medium-scale missions." GRAMS will play an important role in identifying transient phenomena such as gamma-ray burst and mergers of two neutron stars and the gamma-ray counterparts of gavitational wave and neutrino events. With its large effective area and instantaneous field of view, GRAMS will be sensitive to these short but luminous events and provide their localizations to the astrophysics community to follow up at other wavelengths. (This requires on-board processing for real-time reconstruction and pointing)
 
 Detailed GRAMS experiment apparatus and analysis will be showed in section.~\ref{chap:GRAMS} and section.~\ref{chap:GRAMSresult}.

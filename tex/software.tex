@@ -5,7 +5,12 @@
 
 
 \begin{landscape}
-\begin{longtable}{@{}p{3.5cm}p{3cm}p{2.5cm}p{3.5cm}p{4cm}@{}}
+\small
+\begin{longtable}{@{}>{\RaggedRight}p{3.5cm}
+                    >{\RaggedRight}p{3.5cm}
+                    >{\RaggedRight}p{2.5cm}
+                    >{\RaggedRight}p{4cm}
+                    >{\RaggedRight}p{4cm}@{}}
 \caption{ANSI/AIAA S-080A-2018 Requirements} \\
 \toprule
 \textbf{Aerospace System Parameter} & \textbf{Design Parameter} & \textbf{Verification Method} & \textbf{Test References} & \textbf{Analysis Results} \\
@@ -25,7 +30,7 @@
 \bottomrule
 \endlastfoot
 
-5.1.3 MEOP & 5.2.3 Proof Pressure & Analysis \& Test & 10.4.6 Proof Test & \textbf{PASS} - 2atm internal, 1atm external \\
+5.1.3 MEOP & 5.2.3 Proof Pressure & Analysis \& Test & 10.4.6 Proof Test & \textbf{PASS} - 2~atm internal, 1~atm external \\
  & 5.2.2 Design Burst Pressure & Analysis \& Test & 10.4.10 Burst Test & \textbf{PASS} - All margins positive \\
  & 5.2.5 Margin of Safety & Analysis & N/A & \textbf{PASS} - Combined loads \\
 \midrule
@@ -34,7 +39,7 @@
  & 5.2.10 Stability Design & Analysis or A\&T & 10.4.11 Stability Test & \textbf{PASS} - Buckling eigenvalues OK \\
 \midrule
 5.1.6 Service Life & 5.2.13 Fracture Control & Analysis or Test & 10.1.1 Damage Tolerance & \textbf{PASS} - Low stresses \\
- & 5.2.14 Fatigue Life & Analysis \& Test & 10.4.8 Pressure Cycle Test & \textbf{PENDING} - N. Noparat \\
+ & 5.2.14 Fatigue Life & Analysis \& Test & 10.4.8 Pressure Cycle Test & \textbf{PENDING} - N.~Noparat \\
 \midrule
 5.1.7 Volume Capacity & 5.2.7 Volume Capacity & Analysis \& Test & 10.4.5 Volume Test & \textbf{PASS} - Worst-case OK \\
 \midrule
@@ -58,7 +63,7 @@
 \midrule
 5.1.18 Reliability & (Analysis only) & Analysis & N/A & \textbf{N/A} structural \\
 \midrule
-\multicolumn{5}{l}{\textbf{Additional Design Requirements:}} \\
+\multicolumn{5}{l}{\textbf{Additional:}} \\
  & 5.2.17 Battery Containers & Analysis & N/A & \textbf{N/A} - No batteries \\
  & 5.2.18 Cryostats/Dewars & Analysis & N/A & \textbf{PASS} - All margins positive \\
  & 5.2.19 Sealed Containers & Analysis & N/A & \textbf{PASS} - All margins positive \\
@@ -77,64 +82,17 @@
 
 
 \begin{landscape}
-\begin{longtable}{@{}p{3.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}@{}}
-\caption{CRYOSTAT BOLT ANALYSIS SUMMARY (DLL)} \\
-\toprule
-\textbf{Bolt Description} & \textbf{Size} & \textbf{Material} & \textbf{Torque (n-hf)} & \textbf{Lubrication} & \textbf{Max Axial Load (lbf)} & \textbf{RSS Shear (lbf)} & \textbf{Belleville} & \textbf{Ultimate MoS} & \textbf{Shear MoS} \\
-\midrule
-\endfirsthead
-
-\multicolumn{10}{c}{{\bfseries Table \thetable{} -- continued from previous page}} \\
-\toprule
-\textbf{Bolt Description} & \textbf{Size} & \textbf{Material} & \textbf{Torque (n-hf)} & \textbf{Lubrication} & \textbf{Max Axial Load (lbf)} & \textbf{RSS Shear (lbf)} & \textbf{Belleville} & \textbf{Ultimate MoS} & \textbf{Shear MoS} \\
-\midrule
-\endhead
-
-\bottomrule
-\multicolumn{10}{r}{{Continued on next page}} \\
-\endfoot
-
-\bottomrule
-\endlastfoot
-
-Vacuum Shell Plate to Tank & 1/4-28 & A286 & 127.7 & 601EF (0.18) & 392.9 & 51.4 & B0500-038 & +8.88 & +38.86 \\
-\midrule
-Vacuum Shell Plate to Tank Susp Flanges & 10-32 & A286 & 53.3 & 601EF (0.18) & 679.4 & 86.8 & B0375-030 & +2.14 & +11.71 \\
-\midrule
-Tank Susp Flanges to Argon Base & 10-32 & A286 & 53.3 & 601EF (0.18) & 317.5 & 85.0 & B0375-030 & +5.72 & +11.92 \\
-\midrule
-Argon Base to Argon Tank & 1/4-28 & A286 & 31.9 & 601EF (0.18) & 97.0 & 85.1 & B0500-038 & +30.00 & +23.08 \\
-\midrule
-Argon Tank Closeout / Feedthroughs & 8-32 & A286 & 32.3 & 601EF (0.18) & 364.3 & 2.5 & B0343-019 & +3.10 & +300.09 \\
-\midrule
-Vacuum Shell Tank Closeout / Feedthroughs & 8-32 & C185 & 8.1 & 601EF (0.18) & 78.6 & 5.0 & B0343-019 & +8.51 & +75.55 \\
-\midrule
-Instrument to Argon Tank Base Plate & 10-32 & A286 & 69.0 & None (0.3) & 111.1 & 16.0 & B0375-030 & +16.60 & +61.42 \\
-\midrule
-\multicolumn{10}{l}{\textbf{Additional Bolt Margins:}} \\
- & \multicolumn{9}{l}{\textbf{Separation MoS:} All positive except Slip MoS (acceptable - not alignment sensitive)} \\
- & \multicolumn{9}{l}{• Vacuum Shell Plate to Tank Susp Flanges: +1.05 Sep, -0.12 Slip} \\
- & \multicolumn{9}{l}{• Tank Susp Flanges to Argon Base: N/A Sep, +1.08 Slip} \\
- & \multicolumn{9}{l}{• Argon Base to Argon Tank: N/A Sep, +10.49 Slip} \\
- & \multicolumn{9}{l}{• Argon Tank Closeout: N/A Sep, +0.84 Slip} \\
- & \multicolumn{9}{l}{• Vacuum Shell Tank Closeout: N/A Sep, +1.03 Slip} \\
- & \multicolumn{9}{l}{• Instrument to Argon Base: N/A Sep, +2.84 Slip} \\
-\midrule
-\multicolumn{10}{l}{\textbf{Bolt Temperature Note:}} \\
-\multicolumn{10}{l}{• Vacuum Shell bolts minimum temperature is -40°F} \\
-\multicolumn{10}{l}{• All bolts maintain positive margins at operational temperatures} \\
-\midrule
-\multicolumn{10}{l}{\textbf{Summary:}} \\
-\multicolumn{10}{l}{• \textbf{All Ultimate Margins:} Positive (ranging from +2.14 to +30.00)} \\
-\multicolumn{10}{l}{• \textbf{All Shear Margins:} Positive (ranging from +11.71 to +300.09)} \\
-\multicolumn{10}{l}{• \textbf{Slip Margins:} Some negative values acceptable (structure not alignment sensitive)} \\
-\multicolumn{10}{l}{• \textbf{Total Bolts Analyzed:} 7 different bolt configurations} \\
-
-\end{longtable}
-\end{landscape}
-
-\begin{landscape}
-\begin{longtable}{@{}p{3.5cm}p{2.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}@{}}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\RaggedRight}p{3.2cm}
+                    >{\RaggedRight}p{2.2cm}
+                    >{\RaggedRight}p{1.3cm}
+                    >{\RaggedRight}p{1.3cm}
+                    >{\RaggedRight}p{3cm}
+                    >{\RaggedRight}p{1.3cm}
+                    >{\RaggedRight}p{2cm}
+                    >{\RaggedRight}p{2cm}
+                    >{\RaggedRight}p{2cm}@{}}
 \caption{Part Stresses and Margins Summary} \\
 \toprule
 \textbf{Part/Component} & \textbf{Material} & \textbf{Ftu (ksi)} & \textbf{Fty (ksi)} & \textbf{Max Stress (ksi)} & \textbf{Yield FS} & \textbf{Ultimate FS} & \textbf{Yield MoS} & \textbf{Ultimate MoS} \\
@@ -173,25 +131,25 @@ Argon Tank Close Out / Feedthrough Plates & 304 Stainless Steel & 73.0 & 31 & 21
 Instrument PCB Flanges & FR4 & 38.0 & -- & 20.9 & N/A & 1.5 & N/A & +0.21 \\
 \midrule
 \multicolumn{9}{l}{\textbf{Analysis Notes:}} \\
-\multicolumn{9}{l}{• All load cases were run (enveloped using FEMAP)} \\
-\multicolumn{9}{l}{• Stresses shown represent maximum stress for each part across all load cases} \\
-\multicolumn{9}{l}{• Temperature and pressure environments applied simultaneously with inertial loads} \\
-\multicolumn{9}{l}{• Minimum buckling eigenvalue = 7.38 (Vacuum Tank, FS = 2.0, MS = +2.69)} \\
+\multicolumn{9}{@{}l}{• All load cases were run (enveloped using FEMAP)} \\
+\multicolumn{9}{@{}l}{• Stresses shown represent maximum stress for each part across all load cases} \\
+\multicolumn{9}{@{}l}{• Temperature and pressure environments applied simultaneously with inertial loads} \\
+\multicolumn{9}{@{}l}{• Minimum buckling eigenvalue = 7.38 (Vacuum Tank, FS = 2.0, MS = +2.69)} \\
 \midrule
 \multicolumn{9}{l}{\textbf{Material Property Notes:}} \\
-\multicolumn{9}{l}{• 6061-T651 Aluminum: Ftu = 42 ksi, Fty = 35 ksi} \\
-\multicolumn{9}{l}{• Welded 6061-T651 (4043 filler): Ftu = 37 ksi, Fty = 20 ksi} \\
-\multicolumn{9}{l}{• 304 Stainless Steel: Ftu = 73 ksi, Fty = 31 ksi} \\
-\multicolumn{9}{l}{• G10/FR4: Ftu = 38 ksi (no yield defined for composites)} \\
+\multicolumn{9}{@{}l}{• 6061-T651 Aluminum: Ftu = 42 ksi, Fty = 35 ksi} \\
+\multicolumn{9}{@{}l}{• Welded 6061-T651 (4043 filler): Ftu = 37 ksi, Fty = 20 ksi} \\
+\multicolumn{9}{@{}l}{• 304 Stainless Steel: Ftu = 73 ksi, Fty = 31 ksi} \\
+\multicolumn{9}{@{}l}{• G10/FR4: Ftu = 38 ksi (no yield defined for composites)} \\
 \midrule
 \multicolumn{9}{l}{\textbf{Margin of Safety Summary:}} \\
-\multicolumn{9}{l}{• \textbf{All Ultimate Margins:} Positive (ranging from +0.18 to +3.51)} \\
-\multicolumn{9}{l}{• \textbf{All Yield Margins:} Positive where applicable (ranging from +0.60 to +7.85)} \\
-\multicolumn{9}{l}{• \textbf{Lowest Ultimate MoS:} +0.18 (Argon Tank Close Out Plates)} \\
-\multicolumn{9}{l}{• \textbf{Lowest Yield MoS:} +0.60 (Tank Suspension Flanges)} \\
-\multicolumn{9}{l}{• \textbf{Highest Ultimate MoS:} +3.51 (Vacuum Tank Close Out Plates)} \\
-\multicolumn{9}{l}{• \textbf{Highest Yield MoS:} +7.85 (Vacuum Tank Close Out Plates)} \\
-\multicolumn{9}{l}{• \textbf{Total Parts Analyzed:} 9 structural components} \\
+\multicolumn{9}{@{}l}{• \textbf{All Ultimate Margins:} Positive (ranging from +0.18 to +3.51)} \\
+\multicolumn{9}{@{}l}{• \textbf{All Yield Margins:} Positive where applicable (ranging from +0.60 to +7.85)} \\
+\multicolumn{9}{@{}l}{• \textbf{Lowest Ultimate MoS:} +0.18 (Argon Tank Close Out Plates)} \\
+\multicolumn{9}{@{}l}{• \textbf{Lowest Yield MoS:} +0.60 (Tank Suspension Flanges)} \\
+\multicolumn{9}{@{}l}{• \textbf{Highest Ultimate MoS:} +3.51 (Vacuum Tank Close Out Plates)} \\
+\multicolumn{9}{@{}l}{• \textbf{Highest Yield MoS:} +7.85 (Vacuum Tank Close Out Plates)} \\
+\multicolumn{9}{@{}l}{• \textbf{Total Parts Analyzed:} 9 structural components} \\
 
 \end{longtable}
 \end{landscape}

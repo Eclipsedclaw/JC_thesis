@@ -17,7 +17,7 @@ Scintillation light is produced during the ionization process and is detected by
 The pixel-grid or mesh style structure of the charge readout allows determination of the horizontal (X and Y) coordinates by identifying which readout channels recorded a signal, details see section.~\ref{chap:GRAMS:pGRAMS:RandD:detector}. This combination of spatial information from multiple detection mechanisms enables comprehensive event reconstruction and particle identification, making LArTPC ideal for complex interaction topologies.
 
 
-
+% TODO: Update argon properties table and check detail of the value needed
 \begin{longtable}{p{0.5\textwidth}p{0.4\textwidth}}
 \caption{Physical and Chemical Properties of Argon}\label{tab:argon} \\
 \toprule
@@ -194,7 +194,7 @@ This is a 2-layer printed circuit board with two different stages of amplificati
 17 & 0.5pF & C5 & 1 \\
 18 & 2k & R17 & 1 \\
 \bottomrule
-\end{tabular}
+\end{tabular}\\
 \vspace{0.5cm} 
 Here ID 1 is the pin for electrical contact, ID 3 (Q1) and ID 4 (Q2) are two \ac{JFET} we selected that are optimized for low noise performance at cryogenic temperature. ID 14 (U1) and ID 15 (U2) are two op-amps for first and second stage amplification respectively. ID 11 is the feedback resistor while ID 17 is the feedback capacitor. Other components are resistors and capacitors that are used to build the amplification circuit.
 \caption{\ac{CSP} Bill of Materials (BOM)}
@@ -244,9 +244,9 @@ The CSP v5 was calibrated with a charge injection board that makes use of a volt
 
 \section{Prototype Flight pGRAMS}
 \label{chap:GRAMS:pGRAMS}
-pGRAMS is a stepping stone for the future GRAMS Science Mission, which will simultaneously target MeV gamma-ray observations and indirect dark matter searches through anti-matter detection, becoming the first ever launched liquid argon compton camera. 
+pGRAMS is a stepping stone for the future GRAMS Science Mission, which will simultaneously target MeV gamma-ray observations and indirect dark matter searches through anti-matter detection, becoming the first ever launched liquid argon compton camera. It is funded by NASA's \ac{APRA} program, leading by Northeastern University, Columbia University and \ac{GSFC}.
 
-As the following project of GRAMS engineer flight in 2023 (eGRAMS, section.~\ref{chap:GRAMS:eGRAMS}), pGRAMS flight will have and use the knowledge gained to make several steps forward. The prepared pGRAMS payload will verify a scaled GRAMS detector's performance of capturing gamma-rays and cosmic charged particles,  new technique of cryostat and its thermal design, time-of-flight(TOF) and multiplicity detector(MPD) combined particle tracking ability, instrumental firmware and software capability etc. All of these unique accomplishments from pGRAMS flight will ultimately benefit our coming science flight, which let us to explore the most exciting MeV gap region as well as cosmic antiparticles' low energy($ \leq 0.2GeV/n $) region that reveal the secret of Dark Matter.
+As the following project of GRAMS engineer flight in 2023 (eGRAMS, section.~\ref{chap:GRAMS:eGRAMS}), pGRAMS flight will have and use the knowledge gained to make several steps forward. The prepared pGRAMS payload will verify a scaled GRAMS detector's performance of capturing gamma-rays and cosmic charged particles, new technique of cryostat and its thermal design, time-of-flight(TOF) and multiplicity detector(MPD) combined particle tracking ability, instrumental firmware and software capability etc. All of these unique accomplishments from pGRAMS flight will ultimately benefit our coming science flight, which let us to explore the most exciting MeV gap region as well as cosmic antiparticles' low energy($ \leq 0.2GeV/n $) region that reveal the secret of Dark Matter.
 
 \noindent Specifically for pGRAMS, the goals are as follows:
 
@@ -268,14 +268,73 @@ As the following project of GRAMS engineer flight in 2023 (eGRAMS, section.~\ref
 \end{itemize}
 
 Based on the requirement, we have designed system as described in Fig.~\ref{fig:system_diagram}. The entire pGRAMS payload could be divided into detector, \ac{DAQ}, communication and power system (\ac{PDU}).
-Detector system contains \ac{LArTPC} and \ac{TOF} / \ac{MPD}. As major detector system, \ac{LArTPC} behaves as 
+Detector system contains \ac{LArTPC} and \ac{TOF} / \ac{MPD}. As major detector system, \ac{LArTPC} behaves as main detector for MeV gamma-ray and cosmic charged particle detection. \ac{TOF} / \ac{MPD} behaves as auxiliary detector for particle identification and direction determination. In the system diagram you can see the sealed enclosure near the main detector, which is used to host devices that require environment that are not compatible with stratosphere conditions, mainly \ac{DAQ} system. The communication system is handled by hub computer while the \ac{PDU} powered all the subsystems. On top right of the system diagram, all the flight avionics from flight provider worldview \cite{worldviewspace2025} are shown, which handle the flight control and telemetry data transmission during the entire flight.
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{fig/pGRAMS_system_diagram_251205.png}
+    \includegraphics[angle=90, width=0.6\textheight, keepaspectratio]{fig/pGRAMS_system_diagram_251205.png}
     \caption{pGRAMS experiment system diagram}
     \label{fig:system_diagram}
 \end{figure}
+
+\begin{table}
+\centering
+\caption{pGRAMS mass budget}
+\label{tab:pGRAMS_massbudget}
+\begin{tabularx}{\textwidth}{Xrr}
+\toprule
+\textbf{Component} & \textbf{Mass (kg)} & \textbf{Contingency (kg)} \\
+\midrule
+Cryostats + argon & 231.85 & 23.2 \\
+TPC + inside harness & 10 & 1.0 \\
+CU DAQ & 16.828 & 1.7 \\
+DAQ computer & 0.5 & 0.05 \\
+Hub computer & 0.14 & 0.014 \\
+Sealed enclosure & 26 & 2.6 \\
+Gondola frame & 100 & 10.0 \\
+TOF (panels + electronics) & 13.81 & 1.4 \\
+MPD (panels + electronics) & 45.7 & 4.6 \\
+Batteries & 40 & 4.0 \\
+PDU & 15 & 1.5 \\
+\midrule
+\textbf{Total} & \textbf{499.828} & \textbf{51.064} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+\begin{landscape}
+\begin{table}
+\centering
+\small  % Use tiny instead of footnotesize
+\caption{pGRAMS power budget}
+\label{tab:pGRAMS_powerbudget}
+\begin{tabular}{@{}lccccccc@{}}
+\toprule
+\textbf{Component} & \textbf{\# Units} & \textbf{\# Chan.} & \textbf{V (V)} & \textbf{Chan. I (A)} & \textbf{Chan. P (W)} & \textbf{PDU I (A)} & \textbf{PDU P (W)} \\
+\midrule
+HV & 1 & 1 & 10000 & 0.0000005 & 0.005 & 0.0000005 & 0.005 \\
+Charge PreAmp & 1 & 1 & -5 & 1.00 & 5.00 & 1.00 & 5.00 \\
+SIPM PreAmp & 1 & 3 & 2.5 & 0.09 & 0.675 & 0.27 & 0.675 \\
+SIPM Bias & 1 & 18 & 52 & 0.001 & 0.936 & 0.018 & 0.936 \\
+CAEN-NEVIS ±5V DAQ PDU & 1 & 1 & 5 & 5.10 & 25.50 & 5.10 & 25.50 \\
+CAEN-NEVIS 12V DAQ PDU & 1 & 1 & -5 & 2.47 & 12.35 & 2.47 & 12.35 \\
+CAEN-NEVIS 3.3V DAQ PDU & 1 & 1 & 3.3 & 8.46 & 27.918 & 8.46 & 27.918 \\
+Shaper & 6 & 180 & -3.3 & 0.0025 & 1.485 & 0.45 & 8.91 \\
+Sabertooth & 1 & 1 & 12 & 3.40 & 40.80 & 3.40 & 40.80 \\
+PCIe Bifurcator & 1 & 1 & 12 & 1.20 & 14.40 & 1.20 & 14.40 \\
+Sabertooth IO & 1 & 1 & 3.3 & 0.07 & 0.231 & 0.07 & 0.231 \\
+SSD & 1 & 1 & 5 & 1.30 & 6.50 & 1.30 & 6.50 \\
+TOF / MPD & 1 & 1 & 12 & 2.00 & 24.00 & 2.00 & 24.00 \\
+TOF Bias & 2 & 2 & 5 & 1.50 & 7.50 & 3.00 & 15.00 \\
+Hub Computer & 1 & 1 & 5 & 1.00 & 5.00 & 1.00 & 5.00 \\
+\midrule
+\multicolumn{7}{l}{\textbf{Estimated total power for nominal operation}} \\
+Pressure Regulator &  &  &  &  &  &  & 273.106W \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{landscape}
 
 \subsection{pGRAMS R\&D in lab}
 \label{chap:GRAMS:pGRAMS:RandD}
@@ -289,8 +348,6 @@ Detector system contains \ac{LArTPC} and \ac{TOF} / \ac{MPD}. As major detector 
 \end{figure}
 
 To prepare for the actual prototype balloon flight, we designed and assembled a smaller size \ac{LArTPC} detector with dimension of $ 10cm \times 10cm \times 10cm$ called microGRAMS, see fig.~\ref{fig:microGRAMS_RandD}. microGRAMS has same detection concept as the GRAMS proposed science detector. The advantage of microGRAMS is the small scale with fast testing and upgrade.
-
-
 
 \subsubsection{microGRAMS Ddetector}
 \label{chap:GRAMS:pGRAMS:RandD:detector}
@@ -411,7 +468,7 @@ As system diagram of pGRAMS shown in Fig.~\ref{fig:system_diagram}, the \ac{DAQ}
 
 \noindent\textbf{Charge DAQ readout Configuration and Data Flow:} The crate controller provides system configuration and slow I/O communication with each board in the readout crate. The system is run on an independent, 16~MHz clock, distributed synchronously to all electronics cards via the backplane. The clock resets upon a software-initiated run-start and is tracked in terms of a configurable (nominally set to 100~us) frame size and a 2~MHz sample number keeping track of time within the frame. All ADC+FEM cards are synchronized to this common 16~MHz clock. The trigger board is responsible for receiving and issuing trigger signals, as well as distributing accepted triggers to the crate controller. The crate controller subsequently propagates them to the transmitter module. The latter initiates sequential readout of each ADC+FEM card beginning with a configurable readout window prior to the trigger time, $\Delta t$, and extending forward in time spanning a total of 3$\Delta t$. The configurable size of $\Delta t$ is governed by the maximum drift time and spans three or four frames. In order to reduce the amount of data being transmitted, the FPGA trims the three or four frames to span the exact readout window required, 100~$\mu$s before the trigger plus 200~$\mu$s after the trigger. Optionally, lossless compression (Huffman) can be applied, and, after processing by the FPGA, the data passes to the crate backplane dataway. A token-passing scheme is utilized to transfer data from each FEM board to the data transmitter module in a controlled way, whereby each FEM, in the order of closest to furthest away from the XMIT module, receives a token, transmits its data to the XMIT, and passes the token on to the next FEM in the sequence. Each FEM sends all data associated with a particular trigger number. This data transfer is relayed via the otherwise passive crate backplane, and is limited to 512~MB/s. In the transmitter module, the data is buffered temporarily and sent to the DAQ machine via PCIe.
 
-\noindent\textbf{Light DAQ capture light trigger:} The Trigger Board has the ability to receive, via the crate controller, DAQ-issued (via software) calibration triggers, which are used explicitly for electronics and light calibration. The various input triggers can be independently pre-scaled, masked, and mixed together (OR or AND) to generate an event trigger.
+\noindent\textbf{Light DAQ capture light trigger:} The Trigger Board has the ability to receive, via the crate controller, DAQ-issued (via software) calibration triggers, which are used explicitly for electronics and light calibration. The various input triggers can be independently pre-scaled, masked, and mixed together (OR or AND) to generate an event trigger to make sure we capture all the \ac{ROI}.
 
 \noindent\textbf{Light DAQ Mechanical Assembly:} The nominal option for the pGRAMS SiPM readout makes use of custom readout electronics designed originally for the MicroBooNE LArTPC experiment, and is a complement to the charge readout system. Specifically, the light readout system can be housed together with the charge readout system in the same custom crate with a backplane distributing power and clock signals to a number of electronics boards:
 \begin{enumerate}
@@ -477,14 +534,56 @@ The flight computer system is limited with stratosphere compatibility, low power
 After evaluating multiple options, we have selected two computers to be the flight computer system for pGRAMS. One is the hub computer (Versalogic DS-EPM-31 BayCat) \cite{versalogic_baycat} that is responsible for overall system control telementry data handling. The other is the DAQ computer (Versalogic VL-EPMe-51 Sabertooth) \cite{versalogic_sabertooth} that is responsible for data receiving from Nevis DAQ crate via PCIe and store to local SSD. Both computers are running ubuntu 22.04. 
 As system diagram of pGRAMS shown in Fig.~\ref{fig:system_diagram}, hub computer is mainly in charge of communication and control, while DAQ computer is mainly in charge of data receiving and storage, details described below in section.~\ref{chap:GRAMS:pGRAMS:computer:hub} and section.~\ref{chap:GRAMS:pGRAMS:computer:daq}.
 
+For the control system, pGRAMS decided to use the same framework that is being used and tested in the engineer flight \cite{Nakajima:2024fgx}. See software development at \cite{pGramsFC_2024}.
+
 \subsubsection{Hub Computer}
 \label{chap:GRAMS:pGRAMS:computer:hub}
+As we separate flight computers into two parts, hub computer is mainly in charge of communication and control. It will handle the communication with ground station via iridium and starlink. All \ac{HK} data collected from various sensors will be packaged and sent to ground station periodically. While at the same time it will also receive command from ground station and distribute the command to corresponding devices including \ac{PDU}, DAQ computer and \ac{TOF} system. This makes our options of hub computer more flexible since it doesn't need to handle high data rate from \ac{DAQ} system. We have selected Versalogic DS-EPM-31 BayCat \cite{versalogic_baycat} as our hub computer which is also being used for another balloon experiment ComPair \cite{10.1117/12.2628811}. 
+As system diagram of pGRAMS shown in Fig.~\ref{fig:system_diagram} and Table.~\ref{tab:hub_io_summary}, hub computer will take 1 ethernet from flight provide worldview's avionics \cite{worldviewspace2025} as the primary control interface. The second ethernet connection will be used to connect with DAQ computer for command and status exchange. We will extend defualt USB ports to 6, connect to \ac{HK} board, 2x 4-wire \ac{RTD} readout modules, 2x \ac{TOF} bias control board converters and 1 spare. The communication before hub computer and \ac{PDU} would be through SPI interface and a pair of power cable.
+
+\begin{table}
+\centering
+\caption{hub computer I/O Interface Summary}
+\label{tab:hub_io_summary}
+\begin{tabular}{@{}p{3cm}p{10cm}@{}}
+\toprule
+\textbf{I/O Interface} & \textbf{Specifications} \\
+\midrule
+\textbf{USB} & Four USB 2.0 host ports and one USB 3.0 host port. \\
+\addlinespace
+\textbf{COM 1 / 2} & RS-232/422/485 selectable. 16C550 compatible. 460 Kbps. \\
+\addlinespace
+\textbf{Digital I/O} & Twenty-four TTL I/O lines (3.3V). Independently configurable. \\
+\addlinespace
+\textbf{I2C} & Single I2C interface (3.3V) \\
+\addlinespace
+\textbf{Audio} & Via DisplayPort and HDMI interfaces, or optional VL-ADR-01 audio interface. \\
+\addlinespace
+\textbf{Counter/Timers} & Three 8254 compatible Programmable Interval Timers (PITs). \\
+\textbf{Mini PCIe Socket} & Full-length Mini PCIe socket. Supports Wi-Fi modems, GPS receivers, non-volatile flash data storage with auto-detect mSATA support, and other plug-in modules. \\
+\addlinespace
+\textbf{SPI Interface} & Supports SPI and SPX devices. Supports up to two SPX modules. \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsubsection{DAQ Computer}
 \label{chap:GRAMS:pGRAMS:computer:daq}
+As hub computer takes most of the interface part, DAQ computer is mainly in charge of data receiving and storage. It will receive data from Nevis DAQ crate via PCIe and store to local SSD. We have selected Versalogic VL-EPMe-51 Sabertooth \cite{versalogic_sabertooth} as our DAQ computer which has a PC-104 slot and support high speed data writing to local SSD. It provides the performance we need while only consumes a maximum 50W power.
+ As system diagram of pGRAMS shown in Fig.~\ref{fig:system_diagram}, DAQ computer will take one ethernet from hub computer for command and status exchange. There are two \ac{PCIe} slots adapted from PC-104 that will be used to connect with Nevis DAQ crate for data receiving. The other ethernet will be used to connect to \ac{TOF} system front end board D (FEB/D) for data receiving. There is only one USB port that is used to connect to a analog discovery 3 device \cite{digilent_ad3} for receiving and distibuting \ac{pps} clock signal.
+
 
 \subsection{pGRAMS Gondola}
 \label{chap:GRAMS:pGRAMS:gondola}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/pGRAMS_gondola.png}
+    These two figures show the pGRAMS gondola design demonstration from front and back side of view. Center tower holds the cryostat, vacuum jacket and \ac{TOF} system, made the main structure of the detector. Two TOF panels are placed on top of the tower to provide the timing and trigger information. Four side of the tower are used to hold the \ac{MPD} panels. The base plate are used to mount all the battery stacks, while four outer side gondola are used for hub computer box, PDU, sealed enclosure respectively. Four legs with casters are designed to attach to the bottom of the base plate to enable flexibility of the payload during integration while they will be removed when we are preparing for launching.
+    \caption{pGRAMS gondola design demonstration}
+    \label{fig:pGRAMS_gondola}
+\end{figure}
+For holding all the subsystems together, we have designed a custom gondola for pGRAMS flight. See Fig.~\ref{fig:pGRAMS_gondola}, These two figures show the pGRAMS gondola design demonstration from front and back side of view. Center tower holds the cryostat, vacuum jacket and \ac{TOF} system, made the main structure of the detector. Two TOF panels are placed on top of the tower to provide the timing and trigger information. Four side of the tower are used to hold the \ac{MPD} panels. The base plate are used to mount all the battery stacks, while four outer side gondola are used for hub computer box, PDU, sealed enclosure respectively. Four legs with casters are designed to attach to the bottom of the base plate to enable flexibility of the payload during integration while they will be removed when we are preparing for launching. The gondola design follows the requirement of the mass budeget mentioned in Table.~\ref{tab:pGRAMS_massbudget} to ensure we have our flight altitude target met.
 
 \subsection{Power Distribution Unit (PDU)}
 \label{chap:GRAMS:PDU}
+The power distribution unit (PDU) is responsible for distributing power from the battery packs to various subsystems of the pGRAMS payload, including the flight computer system, \ac{DAQ} system, \ac{TOF} system, cryostat heaters, and other electronics. The PDU is designed to handle the high power requirements of the payload while also being robust enough to operate in the harsh conditions of a balloon flight. We have specific control on \ac{PDU} with each devices, while the hub computer will remain always ON since it is the control end of the \ac{PDU}. Detailed design see Fig.~\ref{fig:design_PDU}.
