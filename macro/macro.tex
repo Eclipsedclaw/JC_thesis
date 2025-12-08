@@ -1,7 +1,7 @@
 % a set of default macros (outsourced of main document for cleanliness
 
-\usepackage{amsfonts,amssymb,amsmath}			% special math characters
-\usepackage{times}		% use Postscript fonts
+\usepackage{amsfonts,amssymb,amsmath}           % special math characters
+\usepackage{times}      % use Postscript fonts
 \usepackage{bm}
 
 \usepackage[running]{lineno}
@@ -31,21 +31,18 @@
 \newcommand{\chapref}[1]{Chapter~\ref{#1}}
 \newcommand{\secref}[1]{Section~\ref{#1}}
 \newcommand{\appref}[1]{Appendix~\ref{#1}}
-%\newcommand{\lineref}[1]{line~\ref{#1}}
-%\newcommand{\Lineref}[1]{Line~\ref{#1}}
 \newcommand{\ifyes}[1]{#1}
 \newcommand{\ifno}[1]{}
 
 % local macro
 \usepackage{multirow}
-\clubpenalty=1000
-\widowpenalty=1000
+\clubpenalty=10000
+\widowpenalty=10000
 
 % misc. settings
 \setcounter{secnumdepth}{3}
 
 % enable index generation
-\makeindex
 \usepackage{makeidx}
 
 % Load acronym ONCE, before hyperref
@@ -77,7 +74,7 @@
     hypertexnames=false,
     breaklinks=true,
     colorlinks=true,
-    linkcolor=blue,     % Keep this - sets default link color to blue
+    linkcolor=black,     % Keep this - sets default link color to blue
     citecolor=blue      % Keep this - sets default citation color to blue
 ]{hyperref}
 % or for dvips ..
@@ -92,23 +89,16 @@ citecolor=blue%                         % Make citation color blue
 ]{hyperref}
 \fi
 
-% Fix ONLY acronym links to be black (do this AFTER hyperref)
-\makeatletter
-\renewcommand*{\AC@hyperlink}[2]{%
-  \begingroup
-  \hypersetup{linkcolor=black}% Temporarily override to black for acronyms
-  \hyperlink{#1}{#2}%
-  \endgroup
-}
-\makeatother
+% ----------------------------------------------------------------
+% PDF METADATA
+% ----------------------------------------------------------------
 
-\hypersetup{				% setup PDF information fields
+\hypersetup{                % setup PDF information fields
 pdfauthor = {\authorRef},
 pdftitle = {\titleRef},
-pdfsubject = {\expandafter{\degreeRef} thesis submitted to Northeastern University},
-pdfkeywords = {add keywords here}
+pdfsubject = {\degreeRef\ thesis submitted to Northeastern University},
+pdfkeywords = {macroeconomics, thesis, Northeastern University, economic modeling, financial analysis},
 pdfcreator = {LaTeX with hyperref package},
 pdfproducer = {dvips + ps2pdf}}
 
 \usepackage{microtype}
-

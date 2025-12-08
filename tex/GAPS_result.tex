@@ -3,22 +3,22 @@
 
 \section{GAPS functional prototype (GFP) performance}
 \label{chap:GAPSresult:GFP}
-As described in section.~\ref{chap:GAPS:GFP}, we have setup the GFP at Bates during year 2021 and 2022. Alongside with the construction of this prototype ground testing bench, we have validated the thermal performance and detector performance at the same time.
+As described in section.~\ref{chap:GAPS:GFP}, we have setup the \ac{GFP} at Bates during year 2021 and 2022. Alongside with the construction of this prototype ground testing bench, we have validated the thermal performance and detector performance at the same time.
 
 \subsection{Detector Performance and Particle Tracking}
 \label{chap:GAPSresult:GFP:detector}
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_GFP_xray.png}
-    Left plot shows the energy resolutions at various peaking times from the GFP and the standard calibration bench. GFP setup has slightly lower temperature comparing to bench setup. Right plot shows a X-ray spectrum from one example Si(Li) strip when the OHP reservoir is on (black) and off (red) at the GFP.
+    Left plot shows the energy resolutions at various peaking times from the \ac{GFP} and the standard calibration bench. \ac{GFP} setup has slightly lower temperature comparing to bench setup. Right plot shows a X-ray spectrum from one example Si(Li) strip when the \ac{OHP} reservoir is on (black) and off (red) at the GFP.
     \caption{Detector noise validation with X-ray calibration}
     \label{fig:GFP_xray}
 \end{figure}
-At beginning of the GFP, one concern was that the coupling between the OHP tubes and the Si(Li) modules would introduce some noise to the Si(Li) tracker. To disentangle such potential environmental conditions, before integrating the GFP tracker, we first install a single module which is mounted with the discrete preamps with the OHP discrete preamps were used for the module calibration as discussed in Ref.~\cite{10168972}. We cool down the module directly with the cold N$_2$, and calibrate the Si(Li) detectors with an Am-241 radioactive source. We compare the X-ray resolutions obtained from the GFP configuration and from a standard calibration facility as described in Ref.~\cite{10168972}. Fig.~\ref{fig:GFP_xray} shows the X-ray resolution as a function of peaking time at $-45^\circ$C from the GFP and $-37^\circ$C from the standard calibration. The energy resolution with the optimal peaking time ($\sim 4$ $\mu$s) at the GFP configuration is below 3 keV. In addition, the energy resolutions with longer peaking times are expected to be better at a lower temperature due to a smaller leak current. By fitting the noise mode, we get consistent noise parameters at GFP but just a smaller leakage current which is scaled with the temperature. These results validate that the Si(Li) modules perform well at the system level.
+At beginning of the GFP, one concern was that the coupling between the \ac{OHP} tubes and the Si(Li) modules would introduce some noise to the Si(Li) tracker. To disentangle such potential environmental conditions, before integrating the \ac{GFP} tracker, we first install a single module which is mounted with the discrete preamps with the \ac{OHP} discrete preamps were used for the module calibration as discussed in Ref.~\cite{10168972}. We cool down the module directly with the cold N$_2$, and calibrate the Si(Li) detectors with an Am-241 radioactive source. We compare the X-ray resolutions obtained from the \ac{GFP} configuration and from a standard calibration facility as described in Ref.~\cite{10168972}. Fig.~\ref{fig:GFP_xray} shows the X-ray resolution as a function of peaking time at $-45^\circ$C from the \ac{GFP} and $-37^\circ$C from the standard calibration. The energy resolution with the optimal peaking time ($\sim 4$ $\mu$s) at the \ac{GFP} configuration is below 3 keV. In addition, the energy resolutions with longer peaking times are expected to be better at a lower temperature due to a smaller leak current. By fitting the noise mode, we get consistent noise parameters at \ac{GFP} but just a smaller leakage current which is scaled with the temperature. These results validate that the Si(Li) modules perform well at the system level.
 
-Furthermore, we compare the X-ray resolution when the OHP is running or off. The red histogram in Fig.~\ref{fig:GFP_xray} shows the X-ray spectrum of one Si(Li) strip at $-45^\circ$C obtained when the PID for OHP reservoir is off and the shadow shows when it is on. They are very consistent with each other. This test proves the OHP running doesn't introduce the additional noise at the GFP configuration, and validates the design of electricity isolation for the subsystems.
+Furthermore, we compare the X-ray resolution when the \ac{OHP} is running or off. The red histogram in Fig.~\ref{fig:GFP_xray} shows the X-ray spectrum of one Si(Li) strip at $-45^\circ$C obtained when the PID for \ac{OHP} reservoir is off and the shadow shows when it is on. They are very consistent with each other. This test proves the \ac{OHP} running doesn't introduce the additional noise at the \ac{GFP} configuration, and validates the design of electricity isolation for the subsystems.
 
-with the ASIC electronics: We take the pedestal data of Si(Li) module to study equivalent noise charge (ENC) for ASIC electronics. For the GFP construction, we tested the modules which were assembled with the ASIC front-end electronics in the lab before they were integrated into the GFP setup. During this testing, we found the ASIC channels with longer circuit traces between the ASIC chip and Si(Li) strips performed a higher noise than others. This additional noise could be due to that those channels are further away from the grounding or easier pick up the noise from electromagnetic interference. To reduce such noise, two additional PCBs were potted on top of the FEB with epoxy with Torr Seal. These small PCBs are connected with the analog ground via the Al frame, providing a closer ground shielding against the noise for those channels with longer input traces. This recipe has been fully validated at GFP. Fig.~\ref{fig:GAPS_GFP_detector_performance} shows the ENC resolutions of one representative module before (grey) and after (blue) mounting the noise shields from a parallel testing in the lab. In addition, overlaid the plot, the red line shows the ENC resolutions for this module being integrated into the row at the GFP. The consistently good ENC resolutions at the GFP clearly validate that adopting noise shields is a robust solution to make the ASIC front-end electronics work as well as expected. Limited by the time, only the last 12 Si(Li) modules for the top tracker layer are assembled with the noise shields at the GFP, while the modules on the middle and bottom layer don't include the noise shields during the GFP running.
+with the ASIC electronics: We take the pedestal data of Si(Li) module to study equivalent noise charge (ENC) for ASIC electronics. For the \ac{GFP} construction, we tested the modules which were assembled with the ASIC front-end electronics in the lab before they were integrated into the \ac{GFP} setup. During this testing, we found the ASIC channels with longer circuit traces between the ASIC chip and Si(Li) strips performed a higher noise than others. This additional noise could be due to that those channels are further away from the grounding or easier pick up the noise from electromagnetic interference. To reduce such noise, two additional PCBs were potted on top of the FEB with epoxy with Torr Seal. These small PCBs are connected with the analog ground via the Al frame, providing a closer ground shielding against the noise for those channels with longer input traces. This recipe has been fully validated at GFP. Fig.~\ref{fig:GAPS_GFP_detector_performance} shows the ENC resolutions of one representative module before (grey) and after (blue) mounting the noise shields from a parallel testing in the lab. In addition, overlaid the plot, the red line shows the ENC resolutions for this module being integrated into the row at the GFP. The consistently good ENC resolutions at the \ac{GFP} clearly validate that adopting noise shields is a robust solution to make the ASIC front-end electronics work as well as expected. Limited by the time, only the last 12 Si(Li) modules for the top tracker layer are assembled with the noise shields at the GFP, while the modules on the middle and bottom layer don't include the noise shields during the \ac{GFP} running.
 \begin{figure}
     \centering
     \includegraphics[width=0.7\linewidth]{fig/GAPS_GFP_detector_performance.jpeg}
@@ -35,13 +35,13 @@ with the ASIC electronics: We take the pedestal data of Si(Li) module to study e
     \caption{GFP grounding loop demonstrations and solution}
     \label{fig:GFP_GND_loop}
 \end{figure}
-We also performed grounding loop debugging during the GFP commissioning. As we found additional noise was introduced when the two rows on the same layer were being operated at the same time. After a careful debugging, we identified that the additional noise was caused by the ground loop between the two rows. By design, the rows on the same layer are locked together with metal nut plates in order to maintain the positions of the modules precisely by mechanically constraints. However, the Aluminium frame of Si(Li) module also connects with the ground of ASIC electronics. So the ground loop appeared when the adjacent rows are electrically shorted by the metal parts. The top and middle plot in Fig. 13 demonstrates the electronics connection with and without the issue of ground loop. To confirm the noise source with data, we isolated the two rows on top layer by disconnecting the nut plates and adding additional nylon spacers between them, and then took the data when six rows in the tracker are powered on. The bottom plot in Fig.~\ref{fig:GFP_GND_loop} compares the pedestal spectrum before and after the row isolation. The ENC resolutions are significantly improved when the adjacent rows on the same layer were electrically isolated.
+We also performed grounding loop debugging during the \ac{GFP} commissioning. As we found additional noise was introduced when the two rows on the same layer were being operated at the same time. After a careful debugging, we identified that the additional noise was caused by the ground loop between the two rows. By design, the rows on the same layer are locked together with metal nut plates in order to maintain the positions of the modules precisely by mechanically constraints. However, the Aluminium frame of Si(Li) module also connects with the ground of ASIC electronics. So the ground loop appeared when the adjacent rows are electrically shorted by the metal parts. The top and middle plot in Fig. 13 demonstrates the electronics connection with and without the issue of ground loop. To confirm the noise source with data, we isolated the two rows on top layer by disconnecting the nut plates and adding additional nylon spacers between them, and then took the data when six rows in the tracker are powered on. The bottom plot in Fig.~\ref{fig:GFP_GND_loop} compares the pedestal spectrum before and after the row isolation. The ENC resolutions are significantly improved when the adjacent rows on the same layer were electrically isolated.
 
-The above noise debugging and reduction for the Si(Li) tracker at the GFP testing provide the important chance for us to identify and address the issues arisen from the interface between the subsystems in the system level. The solution to suppress the noise with additional noise shields has been fully validated by the GFP testing and adopted for the GAPS flight. A batch of noise shields dedicated design to better fit the module geometry are fabricated after the GFP. All modules used for the flight have been assembled with the noise shields before they are integrated. To address the ground loop issue, we improve the mechanical design as well as the row assembly procedure for the flight instrument to secure the isolation but keep the required thermal conductance: the nut plates used to lock the adjacent rows are anodized; a thin (3 mils thick) Kapton tape was placed on both sides of the row; we check the resistance between the adjacent rows with multi-meter after a new row integrated into the tracker. All these have greatly mitigated the risks for the GAPS flight.
+The above noise debugging and reduction for the Si(Li) tracker at the \ac{GFP} testing provide the important chance for us to identify and address the issues arisen from the interface between the subsystems in the system level. The solution to suppress the noise with additional noise shields has been fully validated by the \ac{GFP} testing and adopted for the \ac{GAPS} flight. A batch of noise shields dedicated design to better fit the module geometry are fabricated after the GFP. All modules used for the flight have been assembled with the noise shields before they are integrated. To address the ground loop issue, we improve the mechanical design as well as the row assembly procedure for the flight instrument to secure the isolation but keep the required thermal conductance: the nut plates used to lock the adjacent rows are anodized; a thin (3 mils thick) Kapton tape was placed on both sides of the row; we check the resistance between the adjacent rows with multi-meter after a new row integrated into the tracker. All these have greatly mitigated the risks for the \ac{GAPS} flight.
 
-As for the GFP scientific runs, the TOF provides a master trigger to the Si(Li) tracker. After receiving the master trigger, combined with a veto of busy signal from Si(Li) back-ends, the Si(Li) DAQ starts acquiring the data from the ASICs. It is critical to address the time difference between the trigger generation from TOF and trigger reception by Si(Li) back-end. With an implementation of a proper time delay, the Si(Li) back-end DAQ successfully samples the muon hits which triggered by the TOF at GFP. The blue histograms in Fig. 14 show the spectra of minimum ionizing particles (MIP) from muon in the unit of ADC, where each histogram is for the readout from one Si(Li), i.e. the sum of 32 ASIC channels. The MIP peaks clearly appear on the spectra as expected.
+As for the \ac{GFP} scientific runs, the TOF provides a master trigger to the Si(Li) tracker. After receiving the master trigger, combined with a veto of busy signal from Si(Li) back-ends, the Si(Li) DAQ starts acquiring the data from the ASICs. It is critical to address the time difference between the trigger generation from TOF and trigger reception by Si(Li) back-end. With an implementation of a proper time delay, the Si(Li) back-end DAQ successfully samples the muon hits which triggered by the TOF at GFP. The blue histograms in Fig. 14 show the spectra of minimum ionizing particles (MIP) from muon in the unit of ADC, where each histogram is for the readout from one Si(Li), i.e. the sum of 32 ASIC channels. The MIP peaks clearly appear on the spectra as expected.
 
-In addition to the master trigger from the TOF, the FPGA implemented in the Si(Li) back-ends provides a Zero Length Encoding (ZLE) algorithm for each module for the data record, in order to reduce the overall data size as well as to suppress accidental background. In this data acquisition mode, only the hits which were associated with the TOF trigger and over the threshold for zero suppression were recorded by the DAQ. The others, in particular the low-energy hits from noise but were accidentally coincident with the trigger time window, are suppressed to zero. In the GFP testing, a global zero suppression threshold is set for all modules. The threshold is estimated as $\sim$300 keV which is safely far off the MIP energy range. The cutoff on the MIP spectrum in blue in Fig. 14 shows the effect introduced by the threshold zero-suppression. These cutoffs vary from module to module, but all are safely far away from the MIP peaks. In addition, no any event was observed in the low energy region on the MIP spectrum, which validate that the zero-suppression algorithm works well to suppress the accidental backgrounds.
+In addition to the master trigger from the TOF, the FPGA implemented in the Si(Li) back-ends provides a Zero Length Encoding (ZLE) algorithm for each module for the data record, in order to reduce the overall data size as well as to suppress accidental background. In this data acquisition mode, only the hits which were associated with the TOF trigger and over the threshold for zero suppression were recorded by the DAQ. The others, in particular the low-energy hits from noise but were accidentally coincident with the trigger time window, are suppressed to zero. In the \ac{GFP} testing, a global zero suppression threshold is set for all modules. The threshold is estimated as $\sim$300 keV which is safely far off the MIP energy range. The cutoff on the MIP spectrum in blue in Fig. 14 shows the effect introduced by the threshold zero-suppression. These cutoffs vary from module to module, but all are safely far away from the MIP peaks. In addition, no any event was observed in the low energy region on the MIP spectrum, which validate that the zero-suppression algorithm works well to suppress the accidental backgrounds.
 
 \begin{figure}
     \centering
@@ -50,7 +50,7 @@ In addition to the master trigger from the TOF, the FPGA implemented in the Si(L
     \caption{GFP \ac{MIP} spectra}
     \label{fig:GFP_MIP}
 \end{figure}
-Due to the ineluctable electronics fluctuations, it is impossible to make all ASIC readout channels identical with each other. So different ASIC readout channels are expected with different responses to the same energy deposition in the Si(Li) strips, as indicated by the various locations in ADC from different modules in Fig. 14. In order to perform the energy calibration, we develop an approach with the so-called transfer function to convert the readout ADC to the deposited energy. In this calibration procedure, with the calibration system mounted on the ASIC FEB, we read out the ASIC outputs with various amounts of inject current and build a relation between the input charge (mV) and ASIC readout (ADC) for all channels, which is defined as the transfer function. Based on the simulations, we extracted the charge yield rate with a given energy deposition in the Si(Li) strip. Combined the transfer function (converts ADC to mV) and charge yield rate (converts mV to keV/MeV), the MIP spectrum is reconstructed into the deposited energy for all individual ASIC channel. The histograms in red of Fig.~\ref{fig:GFP_MIP} show the MIP energy spectra in MeV and each spectrum is for one Si(Li) module. So with the energy reconstruction, all modules at the GFP perform a very similar MIP energy as expected. This method is also applied for all GAPS flight detectors.
+Due to the ineluctable electronics fluctuations, it is impossible to make all ASIC readout channels identical with each other. So different ASIC readout channels are expected with different responses to the same energy deposition in the Si(Li) strips, as indicated by the various locations in ADC from different modules in Fig. 14. In order to perform the energy calibration, we develop an approach with the so-called transfer function to convert the readout ADC to the deposited energy. In this calibration procedure, with the calibration system mounted on the ASIC FEB, we read out the ASIC outputs with various amounts of inject current and build a relation between the input charge (mV) and ASIC readout (ADC) for all channels, which is defined as the transfer function. Based on the simulations, we extracted the charge yield rate with a given energy deposition in the Si(Li) strip. Combined the transfer function (converts ADC to mV) and charge yield rate (converts mV to keV/MeV), the MIP spectrum is reconstructed into the deposited energy for all individual ASIC channel. The histograms in red of Fig.~\ref{fig:GFP_MIP} show the MIP energy spectra in MeV and each spectrum is for one Si(Li) module. So with the energy reconstruction, all modules at the \ac{GFP} perform a very similar MIP energy as expected. This method is also applied for all \ac{GAPS} flight detectors.
 
 After fixing all the noise issues, we have incorporated the TOF system to trigger and capture cosmic muons to validate our electronics and reconstruction algorithm performance. The time clock for the TOF readout computer and tracker readout computer are synchronized via the Network Time Protocol (NTP). Driven by a synchronized time clock system, a event generator sends an event ID to both the TOF readout and tracker back-end at the same time when receiving a master trigger from the TOF system. Besides the assigned ID, each recorded event is tagged with the timestamp for the offline data analysis. Using the event ID and timestamp, the software merges the event which is separately recorded by TOF and tracker DAQ, and these merged events are used to reconstruct the tracks from the TOF to the tracker.
 
@@ -60,22 +60,116 @@ After fixing all the noise issues, we have incorporated the TOF system to trigge
     \caption{Reconstructed event 169965693 from GFP}
     \label{fig:GFP_nice_event}
 \end{figure}
-Fig.~\ref{fig:GFP_nice_event} shows an example of the reconstructed muon track. With the merged muon events, the GAPS functional prototype has been demonstrated to work well to reconstruct the track at the system level, which includes synchronization of two DAQ system, the waveform analysis on TOF data, hit finding and alignment in the Si(Li) tracker, and the event merge. More details will be discussed in the flight instrument ground testing in section.~\ref{chap:GAPSresult:flight}.
+Fig.~\ref{fig:GFP_nice_event} shows an example of the reconstructed muon track. With the merged muon events, the \ac{GAPS} functional prototype has been demonstrated to work well to reconstruct the track at the system level, which includes synchronization of two DAQ system, the waveform analysis on TOF data, hit finding and alignment in the Si(Li) tracker, and the event merge. More details will be discussed in the flight instrument ground testing in section.~\ref{chap:GAPSresult:flight}.
 
 \subsection{GAPS functional prototype (GFP) Ground Cooling Performance Evaluation and oscillating heat pipe (OHP) Functionality Validation}
 \label{chap:GAPSresult:GFP:thermal}
+
+
+\begin{table}
+\centering
+\caption{Experimental configurations for the \ac{GFP}.}
+\label{tab:experimental_config}
+\begin{tabular}{p{0.15\linewidth}p{0.35\linewidth}p{0.4\linewidth}}
+\toprule
+\textbf{Component} & \textbf{Specification} & \textbf{Parameters} \\
+\midrule
+Tube & (1) Flexible tube, chiller outlet & Inner $D = 0.0096$, $L = 1.0$ \\
+ & (2) Copper tube on cold plate & Inner $D = 0.0083$, $L = 10.5$ \\
+ & (3) Flexible tube from cold plate & Inner $D = 0.0120$, $L = 1.0$ \\
+ & (4) Copper tube on reservoir & Inner $D = 0.0079$, $L = 2.9$ \\
+ & (5) Flexible tube to chiller inlet & Inner $D = 0.0096$, $L = 1.0$ \\
+\midrule
+Insulator & DuPont Styrofoam Ace II & $k = 0.028$ (catalog value) \\
+ & Teijin/Bridgestone QonPET & $k = 0.041$ (catalog value) \\
+ & Aeroflex MSR16 & $k = 0.031$ (catalog value) \\
+\midrule
+TC & Okazaki T35 & Sheathed, K type \\
+ & Ninomiya T-6F & T type \\
+\midrule
+Chiller & Thomas TRL-70SLP & Cooling capacity = 250 W \\
+ & (Pump discharge $P = 0.03$ MPa) & at lowest $T$ of $-70^\circ$C \\
+\midrule
+Logger & Graphtec GL820 & 1 Hz sampling \\
+\midrule
+Heater & Clayborn A-16 & 12.5 $\Omega$/m \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+The \ac{OHP} cooling approach developed for \ac{GAPS} has been well demonstrated and published \cite{FUKE2023168102, OKAZAKI201820, doi:10.1142/S2251171714400042}. However, the \ac{GFP} provides an ideal setup to validate the performance of this novel cooling system, as the heat generated from the Si(Li) electronics, the thermal coupler between the \ac{OHP} tubes and Si(Li) modules, and the surround insulating foam are all identical between the \ac{GFP} and flight. The \ac{GFP} testing confirms that the module temperature is strongly driven by the coolant temperature which is well maintained by controlling the temperature of reservoir and heat exchanger. Fig.~\ref{fig:GFP_thermal_result} shows the temperature evolution of the reservoir and three module frames during a representative \ac{GFP} run. All Si(Li) modules at \ac{GFP} are successfully cooled down below $-40^\circ$C with the \ac{OHP} running for $\sim$6 hours. All the \ac{OHP} performance at \ac{GFP} is consistent with the expectation which further validated the system.
+
+It should note that one drawback using the on-ground \ac{GFP} setup for thermal validation is there is additional heat leak introduced by the convection comparing to the flight environment. So, this fact makes a conservative validation of \ac{OHP} performance from the \ac{GFP} testing results, and the \ac{GAPS} thermal system is anticipated to perform even better during the flight. To have better understanding of this difference, we have evaluated our thermal model based on \ac{GFP} thermal data. The chiller outlet temperature was set at $-70^\circ$C, and a scaled heat load of $Q_0 = 110 \, \text{W}$ was applied to the cold plate. Table.~\ref{tab:GFP_thermal_result} summarizes the results. The average temperature of the cold plate was $-61.0^\circ$C. The insulator outer surface was $26.4^\circ$C on average, consistently with the room temperature. The total outer surface area of the insulator was $3.06 \, \text{m}^2$. From Eq.~\ref{equ:GCS_heatload}, the heat input $Q_2$ was calculated to be $74.9 \pm 1.7 \, \text{W}$. The error is estimated from the uncertainty in measuring the temperature.
+
+Here, we cross-check the heat input by using the temperatures of the methanol flowing in the tube. Assuming the flow is in quasi-equilibrium and is fully developed, the pressure loss of methanol flowing in the tube can be expressed by the Darcy-Weisbach equation as follows:
+
+\begin{equation}\label{equ:DWpressureloss}
+    \Delta P = \lambda \frac{L}{D} \frac{\rho u^2}{2}
+\end{equation}
+
+Here, the coefficient of friction in the pipe, $\lambda$, is classified according to Reynolds number, or whether the flow regime is laminar or turbulent, by the following definitions:
+
+\begin{align}\label{equ:friction_coefficient}
+\lambda &= 
+\begin{cases}
+64 \, \text{Re}^{-1}, & \text{Re} \leq 2300, \text{laminar flow}, \\
+0.3164 \, \text{Re}^{-0.25}, & \text{Re} > 2300, \text{turbulent flow},
+\end{cases} \\
+\text{Re} &= \frac{u \, D}{\nu}.
+\end{align}
+
+The amount of heat that methanol removes during its flow between the inlet and outlet of the cold plate is expressed by:
+\begin{equation}\label{equ:heat_removal}
+Q_2 = \Delta T \, \rho \, C_V \, \dot{V}
+\end{equation}
+
+\begin{equation}\label{equ:volume_flow_rate}
+\dot{V} = \pi \, (D/2)^2 \, u = \dot{m}/\rho
+\end{equation}
+
+Where $\dot{V}$ is the volume flow rate. The pressure loss of methanol between outlet and inlet of the chiller, $\Delta P$, is fixed to 0.03 MPa, as defined by the discharge pressure of the chiller pump. For the coolant properties, we referred to \cite{Lemmon2013NISTSR}.
+
+The mass flow rate, $\dot{m}$, which is the same for every tube section, is calculated to be 0.042 kg/s. The calculated values of $Re$ are below 2000 throughout the chiller tube in this case. By combining the above equations and substituting the measured temperature difference $\Delta T$ between inlet and outlet of the cold plate, Eq.~\ref{equ:heat_removal} gives the amount of heat removed from the cold plate by the coolant as $Q_3 \approx 183.8 \pm 5.0 \, \text{W}$. This is consistent with $Q_1 + Q_2 \approx 184.9 \, \text{W}$, which is the amount of heat to be removed from the cold plate.
+
+We successfully demonstrated that a scaled-down \ac{GFP} radiator surrounded by 0.1 m thick insulation could be cooled to $-60^\circ \text{C}$ in the laboratory. We also confirmed that the heat input to the cold plate is balanced with the heat removed from it by the coolant as well as that the heat leak can be suppressed to a negligible level by filling all gaps between insulations, see Table.~\ref{tab:GFP_thermal_result} and Fig.~\ref{fig:GFP_thermal_result}.
+
+% TODO: make better arrangement of this section
+
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.75\linewidth}c}
+\toprule
+\textbf{Parameter} & \textbf{Value} \\
+\midrule
+Cold plate surface temperature (averaged) & $-61.0^\circ$C \\
+Insulator outer surface temperature & $26.4^\circ$C \\
+The outer surface area of cold plate insulator & $3.06$ m$^2$ \\
+Dummy heat load $Q_1$ & $110.0$ W \\
+Cold plate heat input $Q_2$ estimated from Eq.~\ref{equ:GCS_heatload} & $74.9 \pm 1.7$ W \\
+Sum of $Q_1$ and $Q_0$ & $184.9 \pm 1.7$ W \\
+\midrule
+Chiller outlet temperature (setting) & $-70.0^\circ$C \\
+Methanol temperature at cold plate inlet & $-63.9^\circ$C \\
+Methanol temperature at cold plate outlet & $-61.4^\circ$C \\
+Chiller pump discharge pressure (fixed) & $0.3$ MPa \\
+Methanol mass flow rate & $0.042$ kg/s \\
+Heat removed from cold plate, $Q_2$, from Eq.~\ref{equ:heat_removal} & $183.8 \pm 5.0$ W \\
+\bottomrule
+\end{tabular}
+\caption{\ac{GFP} thermal performance evaluation results.}
+\label{tab:GFP_thermal_result}
+\end{table}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.7\linewidth]{fig/GFP_thermal_result.png}
     \\
-    Top schematic shows configurations of GFP while we only installed two rows (Layer 1 Column 2, Layer 2 Column 2) while all other detector empty locations connect to nothing. On those installed detector modules, temperature sensors were installed to track ASICs temperature. Those sensors won't track cooling down process since we need low temperature to provide working condition of electronics. So we also installed 3 addtional \ac{RTD} sensors to track down cooling process. Lower figure shows the cooling process, the entire GFP system reached working condition within 6 hours.
+    Top schematic shows configurations of \ac{GFP} while we only installed two rows (Layer 1 Column 2, Layer 2 Column 2) while all other detector empty locations connect to nothing. On those installed detector modules, temperature sensors were installed to track ASICs temperature. Those sensors won't track cooling down process since we need low temperature to provide working condition of electronics. So we also installed 3 addtional \ac{RTD} sensors to track down cooling process. Lower figure shows the cooling process, the entire \ac{GFP} system reached working condition within 6 hours.
     \caption{GFP thermal performance result}
     \label{fig:GFP_thermal_result}
 \end{figure}
-The OHP cooling approach developed for GAPS has been well demonstrated and published \cite{FUKE2023168102, OKAZAKI201820, doi:10.1142/S2251171714400042}. However, the GFP provides an ideal setup to validate the performance of this novel cooling system, as the heat generated from the Si(Li) electronics, the thermal coupler between the OHP tubes and Si(Li) modules, and the surround insulating foam are all identical between the GFP and flight. The GFP testing confirms that the module temperature is strongly driven by the coolant temperature which is well maintained by controlling the temperature of reservoir and heat exchanger. Fig.~\ref{fig:GFP_thermal_result} shows the temperature evolution of the reservoir and three module frames during a representative GFP run. All Si(Li) modules at GFP are successfully cooled down below $-40^\circ$C with the OHP running for $\sim$6 hours. All the OHP performance at GFP is consistent with the expectation which further validated the system.
-
-It should note that one drawback using the on-ground GFP setup for thermal validation is there is additional heat leak introduced by the convection comparing to the flight environment. So, this fact makes a conservative validation of OHP performance from the GFP testing results, and the GAPS thermal system is anticipated to perform even better during the flight.
 
 \subsection{Time-of-Flight (TOF) Performance Evaluation}
 \label{chap:GAPSresult:GFP:TOF}
