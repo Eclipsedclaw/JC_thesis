@@ -132,6 +132,7 @@ The pixel-grid or mesh style structure of the charge readout allows determinatio
 
 \section{GRAMS Detection Concept}
 \label{chap:GRAMS:concept}
+For an incoming gamma ray, multiple Compton scatterings will be measured and used to reconstruct the Compton ring to determine the source direction. GRAMS has also developed algorithms to reconstruct the Compton event  inside our detector \cite{TAKASHIMA2022166897, YONEDA2023102765}.
 
 \section{Engineer Flight eGRAMS}
 \label{chap:GRAMS:eGRAMS}
@@ -375,7 +376,7 @@ Using the hybrid ganging scheme, multiple SiPMs can be readout as a single chann
     \centering
     \includegraphics[width=1\linewidth]{fig/microGRAMS_event_comparison.png}
     Left figure shows the raw charge signal without anode mesh, right figure shows the raw charge signal with anode mesh. The anode mesh acts as a signal shaping to block the induced signal to make the raw charge signal rising peak more prominent.
-    \caption{Comparison of charge signal without and with anode mesh effect.}
+    \caption{Comparison of charge signal without and with anode mesh effect. These two figures were taken from microGRAMS TPC with different runs thus the configurations are different. The baseline noise level is different due to this reason.}
     \label{fig:event_comparison}
 \end{figure}
 
