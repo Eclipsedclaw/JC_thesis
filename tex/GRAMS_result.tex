@@ -8,6 +8,72 @@ A series of bench tests were conducted to validate the performance of the pGRAMS
 
 \subsection{CSP Performance validation}
 \label{chap:GRAMSresult:pGRAMS:CSP}
+As mentioned in section.~\ref{chap:GRAMS:eGRAMS:CSP}, upgraded design for \ac{CSP} was implemented for pGRAMS detector. As showed in table.~\ref{tab:CSP_versions}, we have several versions of \ac{CSP} developed for pGRAMS. \ac{CSP} verson 1 to 5 were developed mainly to optimize the \ac{PCB} layout, while \ac{CSP} v5 was used in the eGRAMS flight. \ac{CSP} v5.1 was developed to increase the gain to both improve the signal to noise ratio and test the dynamic range. \ac{CSP} v6/v6.1/v6.2 was developed to further minimize the size of the board to fit the pGRAMS tile design. 
+
+\begin{table}
+\centering
+\label{tab:CSP_versions}
+\caption{\ac{CSP} version upgrade}
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{Name} & \textbf{Energy deposit} & \textbf{2nd stage Gain} & \textbf{Raw output} & \textbf{2V Dynamic range} \\
+\midrule
+CSP v1/2/3/4 & 1 MeV & $\times$2 & 25.6 mV & [0, 78.1] MeV \\
+CSP v5 & 1 MeV & $\times$9 & 115.2 mV & [0, 8.7] MeV\\
+CSP v5.1 & 1 MeV & $\times$40 & 512 mV & [0, 3.9] MeV \\
+CSP v6 & 1 MeV & $\times$40 & 512 mV & [0, 3.9] MeV \\
+CSP v6.1 & 1 MeV & $\times$9 & 115.2 mV & [0, 8.7] MeV \\
+CSP v6.2 & 1 MeV & $\times$40 & 512 mV & [0, 3.9] MeV \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+To compare the performance of different \ac{CSP} versions, we measured the noise level with connecting all the \ac{CSP}s to the actual mincroGRAMS detector. We have taken total 100 events baseline to evaluate the \ac{FWHM} for each channel. To do an precise comparison, we installed two banks of \ac{CSP} boards on the same microGRAMS tile, one side with 16 \ac{CSP} v5 while the other side with 16 \ac{CSP} v6.2. The configuration is same as picture showed in Fig.~\ref{fig:microGRAMS_run26_config}, and the readout channels are mapped as shown in table.~\ref{tab:microGRAMS_channel_map_run34}.
+
+\begin{table}
+\centering
+\caption{microGRAMS Digitizer Channel Mapping for run34}
+\label{tab:microGRAMS_channel_map_run34}
+\small
+\begin{tabular}{@{}c l l c l l c l l@{}}
+\toprule
+\textbf{Ch.} & \textbf{Label} & \textbf{Flag} & 
+\textbf{Ch.} & \textbf{Label} & \textbf{Flag} & 
+\textbf{Ch.} & \textbf{Label} & \textbf{Flag} \\
+\midrule
+ch0 & -- & -- & ch22 & X4 & CSP\_X & ch44 & Y3 & CSP\_Y \\
+ch1 & SiPM\_VEE & & ch23 & X7 & CSP\_X & ch45 & Y6 & CSP\_Y \\
+ch2 & SiPM\_SIG3 & SIPM\_VIS & ch24 & X10 & CSP\_X & ch46 & Y9 & CSP\_Y \\
+ch3 & SiPM\_SIG4 & SIPM\_VIS & ch25 & X13 & CSP\_X & ch47 & Y12 & CSP\_Y \\
+ch4 & -- & GND & ch26 & X15 & CSP\_X & ch48 & Y15 & CSP\_Y \\
+ch5 & X2 & CSP\_X & ch27 & Y1 & CSP\_Y & ch49 & -- & -- \\
+ch6 & X5 & CSP\_X & ch28 & Y4 & CSP\_Y & ch50 & CSP\_VCC & \\
+ch7 & X8 & CSP\_X & ch29 & Y7 & CSP\_Y & ch51 & -- & -- \\
+ch8 & X11 & CSP\_X & ch30 & Y10 & CSP\_Y & ch52 & -- & -- \\
+ch9 & X14 & CSP\_X & ch31 & Y13 & CSP\_Y & ch53 & -- & -- \\
+ch10 & Y2 & CSP\_Y & ch32 & -- & -- & ch54 & X3 & CSP\_X \\
+ch11 & Y5 & CSP\_Y & ch33 & -- & -- & ch55 & -- & -- \\
+ch12 & Y8 & CSP\_Y & ch34 & SiPM\_BIAS1 & BIAS & ch56 & -- & -- \\
+ch13 & Y11 & CSP\_Y & ch35 & SiPM\_SIG1 & SIPM\_VUV & ch57 & -- & -- \\
+ch14 & Y14 & CSP\_Y & ch36 & SiPM\_BIAS2 & BIAS & ch58 & -- & -- \\
+ch15 & -- & -- & ch37 & -- & GND & ch59 & -- & -- \\
+ch16 & -- & -- & ch38 & -- & GND & ch60 & -- & -- \\
+ch17 & CSP\_VEE & & ch39 & -- & -- & ch61 & -- & -- \\
+ch18 & SiPM\_VCC & & ch40 & X6 & CSP\_X & ch62 & -- & -- \\
+ch19 & SiPM\_SIG2 & SIPM\_VUV & ch41 & X9 & CSP\_X & ch63 & -- & -- \\
+ch20 & -- & GND & ch42 & X12 & CSP\_X & & & \\
+ch21 & X1 & CSP\_X & ch43 & -- & GND & & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/pedestal_comparison_version_cryo.png}
+    Top figure shows \ac{CSP} and \ac{SiPM} pedestal for each channel under room condition. Bottom figure shows \ac{CSP} and \ac{SiPM} pedestal for each channel under liquid argon condition. The green box shows \ac{CSP} v5 channels with mapping showed ealier in table.~\ref{tab:microGRAMS_channel_map_run34}. One can easily see the performance difference between different \ac{CSP} versions. CSP v5 behaves slightly better in both room and cryo condition.
+    \caption{Signal pedestal result}
+    \label{fig:CSP_noise_comparison}
+\end{figure}
 
 \subsection{2D Charge Sensing Tile}
 \label{chap:GRAMSresult:pGRAMS:tile}
@@ -16,12 +82,12 @@ A series of bench tests were conducted to validate the performance of the pGRAMS
 \label{chap:GRAMSresult:pGRAMS:SIPM}
 
 \subsection{Cosmic muon Track Reconstruction Algorithm}
-As described in section.~\ref{chap:GRAMS:pGRAMS:RandD}, we used CAEN digitizers to read out the waveforms from the microGRAMS LArTPC detector. Per ditigizer channel, we recoreded 39500 sampes at a 125 MHz sampling rate, corresponding to a 316 $\mu$s time window, where 16us window behaves as pre-trigger region. Since the maximum drift time inside the microGRAMS LArTPC is around 200 $\mu$s, this time window is sufficient to cover the full drift time. A typical mapping of the readout channels are shown in table.~\ref{tab:microGRAMS_channel_map}.
+As described in section.~\ref{chap:GRAMS:pGRAMS:RandD}, we used CAEN digitizers to read out the waveforms from the microGRAMS LArTPC detector. Per ditigizer channel, we recoreded 39500 sampes at a 125 MHz sampling rate, corresponding to a 316 $\mu$s time window, where 16us window behaves as pre-trigger region. Since the maximum drift time inside the microGRAMS LArTPC is around 200 $\mu$s, this time window is sufficient to cover the full drift time. A typical mapping of the readout channels are shown in table.~\ref{tab:microGRAMS_channel_map_run26}.
 
 \begin{table}
 \centering
-\caption{microGRAMS Digitizer Channel Mapping}
-\label{tab:microGRAMS_channel_map}
+\caption{microGRAMS Digitizer Channel Mapping for Run26}
+\label{tab:microGRAMS_channel_map_run26}
 \begin{tabular}{c l l c l l c l l}
 \toprule
 \textbf{Ch.} & \textbf{Label} & \textbf{Flag} & 
@@ -127,16 +193,16 @@ From the filtered waveforms, we could then identify the signal peaks for each ch
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{fig/GRAMS_run26_muon_9483.png}
-    An example of the reconstructed cosmic muon track event inside the pGRAMS LArTPC detector, same event with raw and filtered waveform showed in Fig.~\ref{fig:event_comparison}. This event ID 9483\_444759 is taken from run 26 data on Sep 4th, 2024. The left figure shows the X-Z plot while right one shows the Y-Z plot. The color bar indicates the charge deposition in each voxel. Z-axis is the drift direction, converted from drift time.
-    \caption{An example of reconstructed cosmic muon track event inside microGRAMS LArTPC detector}
+    \includegraphics[width=1\linewidth]{fig/GRAMS_run26_muons.png}
+    Examples of the reconstructed cosmic muon track event inside the pGRAMS LArTPC detector, same event ID 9483 with raw and filtered waveform showed in Fig.~\ref{fig:event_comparison} is desplayed on the top, taken from run 26 data on Sep 4th, 2024. The left figure shows the X-Z plot while right one shows the Y-Z plot. The color bar indicates the charge deposition in each voxel. Z-axis is the drift direction, converted from drift time. While bottom two shows another event ID 4934 taken from same run dataset.
+    \caption{Examples of reconstructed cosmic muon track event inside microGRAMS LArTPC detector}
     \label{fig:muontest_event}
 \end{figure}
 
-\newpage
+
 \section{GRAMS antihelium-3 Sensitivity Simulation}
 \label{chap:GRAMSresult:antihelium-3}
-We did simulation to estimate the GRAMS sensitivity towards \ac{aHe3}.
+As mentioned in section.~\ref{chap:intro:IDMS:antihelium}, as a potential smoke gun for \ac{DM} searches, antihelium is getting more and more important. One has to keep in mind that, current simulation tools are not treating antinucleus-nucleus interaction with precise models due to lack of data. Currently there is no \ac{ad} beam existing in the world for us to study its property due to low production efficiency. And \ac{aHe3} beam is harder to generate than \ac{ad}. The simulation packages like GEANT4 only have very simplified models for antinucleus-nucleus interaction. 
 
 \subsection{GRAMS Detection Concept for Antiparticles}
 \label{chap:GRAMSresult:antihelium-3:DetectionConcept}
