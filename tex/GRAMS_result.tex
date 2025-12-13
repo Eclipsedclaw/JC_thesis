@@ -4,6 +4,7 @@
 
 \section{pGRAMS Bench Test}
 \label{chap:GRAMSresult:pGRAMS}
+A series of bench tests were conducted to validate the performance of the pGRAMS detector components and the cosmic muon track reconstruction algorithm. 
 
 \subsection{CSP Performance validation}
 \label{chap:GRAMSresult:pGRAMS:CSP}
@@ -15,7 +16,115 @@
 \label{chap:GRAMSresult:pGRAMS:SIPM}
 
 \subsection{Cosmic muon Track Reconstruction Algorithm}
-\label{chap:GRAMSresult:pGRAMS:track}
+As described in section.~\ref{chap:GRAMS:pGRAMS:RandD}, we used CAEN digitizers to read out the waveforms from the microGRAMS LArTPC detector. Per ditigizer channel, we recoreded 39500 sampes at a 125 MHz sampling rate, corresponding to a 316 $\mu$s time window, where 16us window behaves as pre-trigger region. Since the maximum drift time inside the microGRAMS LArTPC is around 200 $\mu$s, this time window is sufficient to cover the full drift time. A typical mapping of the readout channels are shown in table.~\ref{tab:microGRAMS_channel_map}.
+
+\begin{table}
+\centering
+\caption{microGRAMS Digitizer Channel Mapping}
+\label{tab:microGRAMS_channel_map}
+\begin{tabular}{c l l c l l c l l}
+\toprule
+\textbf{Ch.} & \textbf{Label} & \textbf{Flag} & 
+\textbf{Ch.} & \textbf{Label} & \textbf{Flag} & 
+\textbf{Ch.} & \textbf{Label} & \textbf{Flag} \\
+\midrule
+ch0 & -- & -- & ch22 & -- & -- & ch44 & X25 & CSP\_X \\
+ch1 & -- & -- & ch23 & -- & -- & ch45 & X27 & CSP\_X \\
+ch2 & -- & -- & ch24 & -- & -- & ch46 & X29 & CSP\_X \\
+ch3 & -- & -- & ch25 & -- & -- & ch47 & X31 & CSP\_X \\
+ch4 & -- & -- & ch26 & -- & -- & ch48 & Y1 & CSP\_Y \\
+ch5 & -- & -- & ch27 & -- & -- & ch49 & Y3 & CSP\_Y \\
+ch6 & -- & -- & ch28 & -- & -- & ch50 & Y5 & CSP\_Y \\
+ch7 & -- & -- & ch29 & -- & -- & ch51 & Y7 & CSP\_Y \\
+ch8 & -- & -- & ch30 & SIPM\_VIS & SIPM\_VIS & ch52 & Y9 & CSP\_Y \\
+ch9 & -- & -- & ch31 & SIPM\_VUV & SIPM\_VUV & ch53 & Y11 & CSP\_Y \\
+ch10 & -- & -- & ch32 & X1 & CSP\_X & ch54 & Y13 & CSP\_Y \\
+ch11 & -- & -- & ch33 & X3 & CSP\_X & ch55 & Y15 & CSP\_Y \\
+ch12 & -- & -- & ch34 & X5 & CSP\_X & ch56 & Y17 & CSP\_Y \\
+ch13 & -- & -- & ch35 & X7 & CSP\_X & ch57 & Y19 & CSP\_Y \\
+ch14 & -- & -- & ch36 & X9 & CSP\_X & ch58 & Y21 & CSP\_Y \\
+ch15 & -- & -- & ch37 & X11 & CSP\_X & ch59 & Y23 & CSP\_Y \\
+ch16 & -- & -- & ch38 & X13 & CSP\_X & ch60 & Y25 & CSP\_Y \\
+ch17 & -- & -- & ch39 & X15 & CSP\_X & ch61 & Y27 & CSP\_Y \\
+ch18 & -- & -- & ch40 & X17 & CSP\_X & ch62 & Y29 & CSP\_Y \\
+ch19 & -- & -- & ch41 & X19 & CSP\_X & ch63 & Y31 & CSP\_Y \\
+ch20 & -- & -- & ch42 & X21 & CSP\_X & & & \\
+ch21 & -- & -- & ch43 & X23 & CSP\_X & & & \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.3cm}
+\footnotesize
+This table shows one typical mapping of the CAEN digitizer channels to the corresponding microGRAMS LArTPC detector components. CSP\_X and CSP\_Y represent the charge sensing channels in X and Y directions, respectively. SIPM\_VIS and SIPM\_VUV represent the SiPM channels for visible and VUV light detection, respectively. The flages are used in the data analysis to identify the channel types. Softwares are developed based on this channel mapping to process the recorded waveforms for further analysis.
+\end{table}
+
+We will use one typical cosmic muon track event to demonstrate the reconstruction algorithm. The microGRAMS Run 26 is performed on Sep 4th, 2024. Detailed configuration of the microGRAMS Run 26 is shown in Fig.~\ref{fig:microGRAMS_run26_config}. Left photo shows Run26 TPC mounted on the flange with sideway mounting to maximaize active channels the cosmic muon flux go through the TPC. Middle photo shows the TPC without sensing tile to show the anode E-field shaping mesh. Right photo shows customized mesh with gauge 32 copper wire (202$\mu$m diameter) with 5 mm pitch to form the E-field shaping cage. Flight version anode mesh will be fabricated with CNC techniques to enhance the precision and uniformity.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/microGRAMS_run26_config.png}
+    Left photo shows Run26 TPC mounted on the flange with sideway mounting to maximaize active channels the cosmic muon flux go through the TPC. Middle photo shows the TPC without sensing tile to show the anode E-field shaping mesh. Right photo shows customized mesh with gauge 32 copper wire (202$\mu$m diameter) with 5 mm pitch to form the E-field shaping cage. Flight version anode mesh will be fabricated with CNC techniques to enhance the precision and uniformity.
+    \caption{microGRAMS Run26 configuration}
+    \label{fig:microGRAMS_run26_config}
+\end{figure}
+
+\begin{table}
+\centering
+\caption{microGRAMS Run 26 Parameters}
+\label{tab:run26_parameters}
+\begin{tabular}{l l}
+\hline
+\textbf{Parameter} & \textbf{Value} \\
+\hline
+Resistance in between anode (R1) & $46.4~M\Omega$ \\
+Resistance for full body (R2) & $94.3~M\Omega$ \\
+Field Cage Resistance (room) & $141.4~M\Omega$ \\
+Field Cage Resistance (LAr) & $147.8~M\Omega$ \\
+SiPM Preamp VCC & $1.10$ V / $20$ mA / $20$ mW \\
+SiPM Preamp VEE & $-1.90$ V / $20$ mA / $40$ mW \\
+Charge Preamp VCC & $6.90$ V / $350$ mA / $2.41$ W \\
+Charge Preamp VEE & $3$ V / $130$ mA / $0.39$ W \\
+Drift Field Bias & $-2500$ V \\
+Digitizer & CAEN 2740 PID: 51054 \\
+Trigger setup & VIS: $-30.01$V, VUV: $-15.00$V \\
+SiPM bias voltage & $49.720$ V \\
+\hline
+\end{tabular}
+\end{table}
+
+With configuration shown in table.~\ref{tab:run26_parameters}, we collected around 20000 cosmic muon events. One typical raw event shows directly with all active channels in Fig.~\ref{fig:microGRAMS_raw_plot}. From left figure, we can see the raw waveforms for all 34 channels including charge and light signals. We first perform baseline correction to zero out digitizer's offset. After baseline correction, the right plot shows all the signals with same level of baseline. One noticeable feature of the charge signals is the udershoot coming after the main pulse, which is a coupling effect from the charge readout side. For pGRAMS flight, we will use a series of shapering circuits to further process the raw charge signals to avoid this effect using well explored shaping concept\cite{OHKAWA197685}. As for bench test, I developed a software based filter to remove this charge signal undershoot effect and integrating peaks for better signal identification.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/microGRAMS_9483_raw.png}
+    Left figure shows event ID 9483 raw waveforms for all 34 channels including charge and light signals. Right figure shows baseline corrected raw waveform for all 34 channels. 
+    \caption{Run26 acquisition0 event ID 9483 raw waveforms}
+    \label{fig:microGRAMS_raw_plot}
+\end{figure}
+
+The key of the filter for charge readout is reducing noise level and removing the undershoot effect while still keep the peaking time as precise as possible. To achieve this goal, I developed a software based filter with the following steps: A high pass filter to capture the peak location, together with a gaussian filter to smooth the waveform. See Fig.~\ref{fig:pGRAMS_filter}, for one charge signal channel Ch57 (Y19) from event 9483, blue line shows the raw waveform after baseline correction. The orange line shows the waveform after applying the high pass filter. The signal's long tails are removed while the peak location is still kept. The red line shows the waveform after applying the gaussian smoothing filter. The noise level is significantly reduced.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/microGRAMS_9483_filter.png}
+    Blue line shows the raw waveform from one charge channel (Ch57, Y19) for event ID 9483. The orange line shows the waveform after applying the high pass filter. The signal's long tails are removed while the peak location is still kept. The red line shows the waveform after applying the gaussian smoothing filter. The noise level is significantly reduced.
+    \caption{microGRAMS software charge signal filtering}
+    \label{fig:pGRAMS_filter}
+\end{figure}
+
+% TODO: add staticstics for peak shift comparison
+With this software filter, we could then make all the charge signal readout cleaner for track reconstruction. One comparison of the event ID 9483 before and after the filter is shown in Fig.~\ref{fig:filter_comparison}. Left figure shows the raw waveforms for all charge channels for event ID 9483, while right figure shows the filtered waveforms. The charge signals are much cleaner after the filter, making it easier to identify the signal peaks for further 3D track reconstruction. One could already identify a cosmic muon track going through the TPC from the clear shift of the peak on the right figure.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GRAMS_reconstruct_digital_filter.png}
+    Left figure shows the raw waveforms for all charge channels for event ID 9483, while right figure shows the filtered waveforms. The charge signals are much cleaner after the filter, making it easier to identify the signal peaks for further 3D track reconstruction. One could already identify a cosmic muon track going through the TPC from the clear shift of the peak on the right figure.
+    \caption{Run26 acquisition0 event ID 9483 charge signal comparison before and after filter}
+    \label{fig:filter_comparison}
+\end{figure}
+
+From the filtered waveforms, we could then identify the signal peaks for each channel and reconstruct the 3D track inside the microGRAMS LArTPC detector. We have the charge intensity for both X and Y axis in the form of 16 charge channels, this naturally makes a 16-pixel resolution in both X and Y directions. For Z direction, we could convert the drift time to drift distance with known drift velocity. Since the convertion of drift time could be infinitely precise up to sampling rate of 39500 samples over 316us, the timing resolution will limit the precision of the Z conversion. For simplicity, we set Z pixel to be 20, corresponding to 5 mm per pixel with a drift velocity of 1 mm/$\mu$s at 500 V/cm drift field. With this 16x16x20 voxel grid inside the microGRAMS LArTPC, we could then reconstruct the 3D track with charge deposition in each voxel. The result is shown in Fig.~\ref{fig:muontest_event}.
+
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GRAMS_run26_muon_9483.png}
@@ -24,6 +133,7 @@
     \label{fig:muontest_event}
 \end{figure}
 
+\newpage
 \section{GRAMS antihelium-3 Sensitivity Simulation}
 \label{chap:GRAMSresult:antihelium-3}
 We did simulation to estimate the GRAMS sensitivity towards \ac{aHe3}.
