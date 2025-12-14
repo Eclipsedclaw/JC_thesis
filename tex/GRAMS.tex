@@ -85,7 +85,7 @@ The GRAMS antimatter survey involves capturing an antiparticle in a target mater
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GRAMS_charged_particle_concept.png}
-    The GRAMS antimatter detection technique. The stopped antimatter forms an excited exotic atom that decays and emits atomic X-rays and annihilation products(pions and protons). The atomic X-rays, pion/proton multiplicities, and the stopping depth in the LArTPC provide the particle identification capability.
+    \noindent\raggedright The GRAMS antimatter detection technique. The stopped antimatter forms an excited exotic atom that decays and emits atomic X-rays and annihilation products(pions and protons). The atomic X-rays, pion/proton multiplicities, and the stopping depth in the LArTPC provide the particle identification capability.
     \caption{GRAMS charged particle detection concept}
     \label{fig:GRAMS_charged_particle_concept}
 \end{figure}
@@ -111,7 +111,7 @@ detailed payload status during eGRAMS operation is showed in Fig.~\ref{fig:eGRAM
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/eGRAMS_floating.png}
-    \textbf{(a)} eGRAMS mission trajectory. \textbf{(b)} eGRAMS mission altitude during operation. \textbf{(c)} eGRAMS chamber status during operation \cite{Nakajima:2024fgx}.
+    \noindent\raggedright \textbf{(a)} eGRAMS mission trajectory. \textbf{(b)} eGRAMS mission altitude during operation. \textbf{(c)} eGRAMS chamber status during operation \cite{Nakajima:2024fgx}.
     \caption{eGRAMS mission}
     \label{fig:eGRAMS_mission}
 \end{figure}
@@ -121,7 +121,7 @@ One example event is showed in Fig.~\ref{fig:eGRAMS_setup} \textbf{b}, which can
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/eGRAMS_intro.png}
-    \textbf{(a)} eGRAMS payload picture. redline highlighted part shows detector cryostats. \textbf{(b)} One cosmic muon events from eGRAMS flight that is read out by the charge system. \textbf{(c)} shows detailed detector inside the flight cryostats. 3 channels charge sensitive preamp (\ac{CSP}) installed on top of the $10\ cm \times 10\ cm \times 10\ cm$ TPC body. A \ac{PMT} is installed at the bottom to read out light signal \cite{Nakajima:2024fgx}.
+    \noindent\raggedright\textbf{(a)} eGRAMS payload picture. redline highlighted part shows detector cryostats. \textbf{(b)} One cosmic muon events from eGRAMS flight that is read out by the charge system. \textbf{(c)} shows detailed detector inside the flight cryostats. 3 channels charge sensitive preamp (\ac{CSP}) installed on top of the $10\ cm \times 10\ cm \times 10\ cm$ TPC body. A \ac{PMT} is installed at the bottom to read out light signal \cite{Nakajima:2024fgx}.
     \caption{eGRAMS setup}
     \label{fig:eGRAMS_setup}
 \end{figure}
@@ -138,8 +138,8 @@ A charge sensitive preamp (CSP) is a device that converts collected charge from 
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.7]{fig/CSP.png}
-    \textbf{(a)}An initial version of the preamp board schematic. \textbf{(b)}A prototype of the CSP, version 5. Pins 1 and 2 connect to the TPC tile or an injection board for bench testing. Pins 3, 4, 5, and 6 provide +5 V power, GND, signal out, and -5 V power respectively. \textbf{(c)}Designed \ac{PCB} layout.
+    \includegraphics[width=1\linewidth]{fig/CSP.png}
+    \noindent\raggedright \textbf{(a)}An initial version of the preamp board schematic. \textbf{(b)}A prototype of the CSP, version 5. Pins 1 and 2 connect to the TPC tile or an injection board for bench testing. Pins 3, 4, 5, and 6 provide +5 V power, GND, signal out, and -5 V power respectively. \textbf{(c)}Designed \ac{PCB} layout.
     \caption{GRAMS \ac{CSP} design and layout}
     \label{fig:preamppicture}
 \end{figure}
@@ -177,7 +177,7 @@ This is a 2-layer printed circuit board with two different stages of amplificati
 \bottomrule
 \end{tabular}\\
 \vspace{0.5cm} 
-Here ID 1 is the pin for electrical contact, ID 3 (Q1) and ID 4 (Q2) are two \ac{JFET} we selected that are optimized for low noise performance at cryogenic temperature. ID 14 (U1) and ID 15 (U2) are two op-amps for first and second stage amplification respectively. ID 11 is the feedback resistor while ID 17 is the feedback capacitor. Other components are resistors and capacitors that are used to build the amplification circuit.
+\noindent\raggedright Here ID 1 is the pin for electrical contact, ID 3 (Q1) and ID 4 (Q2) are two \ac{JFET} we selected that are optimized for low noise performance at cryogenic temperature. ID 14 (U1) and ID 15 (U2) are two op-amps for first and second stage amplification respectively. ID 11 is the feedback resistor while ID 17 is the feedback capacitor. Other components are resistors and capacitors that are used to build the amplification circuit.
 \caption{\ac{CSP} Bill of Materials (BOM)}
 \label{tab:CSP_BOM}
 \end{table}
@@ -185,7 +185,7 @@ Here ID 1 is the pin for electrical contact, ID 3 (Q1) and ID 4 (Q2) are two \ac
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/CSP_bench_test.png}
-    Figure on left shows the setup of the bench, we used a $ 1\ pF $ capacitor act as a injection detector while a $ 50\ pF $ capacitor act as dummy detector. We have changed the value of dummy detector capacitance to simulate possible detector tile strip capacitance. Then on the output end we used an analog shaper to shape the signal with different shaping time. Right figure shows the result of the signal's \ac{FWHM} under different shaping time. We took different data with different grounding configuration to find the most stable performance condition for CSPs.
+    \noindent\raggedright Figure on left shows the setup of the bench, we used a $ 1\ pF $ capacitor act as a injection detector while a $ 50\ pF $ capacitor act as dummy detector. We have changed the value of dummy detector capacitance to simulate possible detector tile strip capacitance. Then on the output end we used an analog shaper to shape the signal with different shaping time. Right figure shows the result of the signal's \ac{FWHM} under different shaping time. We took different data with different grounding configuration to find the most stable performance condition for CSPs.
     \caption{CSP bench test setup and result from different configurations}
     \label{fig:CSP_testbench}
 \end{figure}
@@ -325,7 +325,7 @@ Pressure Regulator &  &  &  &  &  &  & 273.106W \\
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/microGRAMS_TPC.png}
-    \textbf{(a)} microGRAMS \ac{LArTPC} from bottom view, looking directly at the \ac{SiPM} board. \textbf{(b)}\ac{LArTPC} inside view from bottom cathode mesh. \textbf{(c)} Sideview. Left side shows charge readout electronics that is being tested in eGRAMS, section.~\ref{chap:GRAMS:eGRAMS:CSP}.  \textbf{(d)} Bottom cathode field shape mesh.
+    \noindent\raggedright \textbf{(a)} microGRAMS \ac{LArTPC} from bottom view, looking directly at the \ac{SiPM} board. \textbf{(b)}\ac{LArTPC} inside view from bottom cathode mesh. \textbf{(c)} Sideview. Left side shows charge readout electronics that is being tested in eGRAMS, section.~\ref{chap:GRAMS:eGRAMS:CSP}.  \textbf{(d)} Bottom cathode field shape mesh.
     \caption{microGRAMS detector pictures}
     \label{fig:microGRAMS_RandD}
 \end{figure}
@@ -357,7 +357,7 @@ Using the hybrid ganging scheme, multiple SiPMs can be readout as a single chann
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/microGRAMS_event_comparison.png}
-    Left figure shows the raw charge signal without anode mesh, right figure shows the raw charge signal with anode mesh. The anode mesh acts as a signal shaping to block the induced signal to make the raw charge signal rising peak more prominent.
+    \noindent\raggedright Left figure shows the raw charge signal without anode mesh, right figure shows the raw charge signal with anode mesh. The anode mesh acts as a signal shaping to block the induced signal to make the raw charge signal rising peak more prominent.
     \caption{Comparison of charge signal without and with anode mesh effect. These two figures were taken from microGRAMS TPC with different runs thus the configurations are different. The baseline noise level is different due to this reason.}
     \label{fig:event_comparison}
 \end{figure}
@@ -394,7 +394,7 @@ We setup a local grafana server listen to an internal port A on NAS to provide s
     \centering
     \includegraphics[width=0.9\linewidth]{fig/lab_slowcontrol.png}
 
-    Solid line shows the local network that handles all the back ends. Front end 1, 2, and 3 are taking any required sensor or device status data, and send to mysql server remotely running on a NAS server. Then the commercial data display software grafana \cite{Web:Grafana:Docs} is used to constantly query \ac{HK} data from mysql server. A particular external port C is set to direct to internal grafana listened port A so that multiple users could view system status from outside world at the same time. A port B is securely forwarded for admin to modify and control the mysql database server.
+    \noindent\raggedright Solid line shows the local network that handles all the back ends. Front end 1, 2, and 3 are taking any required sensor or device status data, and send to mysql server remotely running on a NAS server. Then the commercial data display software grafana \cite{Web:Grafana:Docs} is used to constantly query \ac{HK} data from mysql server. A particular external port C is set to direct to internal grafana listened port A so that multiple users could view system status from outside world at the same time. A port B is securely forwarded for admin to modify and control the mysql database server.
 
     \caption{GRAMS slow control schematic diagram.}
     \label{fig:SlowControl}
@@ -426,7 +426,7 @@ There are 144 SiPMs installed in the pGRAMS detector, and a common SiPM bias HV 
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/pGRAMS_TPC_model_v2.png}
-    Left figure shows miniGRAMS TPC design demonstration. Top anode is constructed with a $ 330\ mm \times 330\ mm $ tile, and 12 groups of \ac{CSP}. Bottom cathode is constructed of 3 SiPM preamp boards which holds 3 cells each. Inside TPC there are PTFE sheet to separate each cells. Right figure shows miniGRAMS TPC schematic. Each field cage rings for TPC body is connected with a 100 M$\Omega$ resistor while anode mesh region is connected with a 400 M$\Omega$ resistor to provide desired E-field ratio between these two regions.
+    \noindent\raggedright Left figure shows miniGRAMS TPC design demonstration. Top anode is constructed with a $ 330\ mm \times 330\ mm $ tile, and 12 groups of \ac{CSP}. Bottom cathode is constructed of 3 SiPM preamp boards which holds 3 cells each. Inside TPC there are PTFE sheet to separate each cells. Right figure shows miniGRAMS TPC schematic. Each field cage rings for TPC body is connected with a 100 M$\Omega$ resistor while anode mesh region is connected with a 400 M$\Omega$ resistor to provide desired E-field ratio between these two regions.
     \caption{MiniGRAMS \ac{LArTPC} detector design demonstration}
     \label{fig:minigrams}
 \end{figure}
@@ -485,7 +485,7 @@ Detailed cryostat design files are listed in appendix.~\ref{app:designs}.
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/pGRAMS_cryostat.png}
-    \textbf{(a)} Left figure shows cryostat general view. miniGRAMS TPC is mounted inside the inner cryostat. There are kapton heaters installed outside of inner cryostat to help release the argon before descending. \textbf{(b)} Right top figure shows area that between inner cryostat and outer vacuum jacket. Green cylinders are G10 supporting rods for the purpose of low thermal conductance. Thin blue/red/yellow hoses are plumbing lines for fill/vent/\ac{LLD} respectively. middle-siezd yellow line shows safety rapture disk. \textbf{(c)} Right bottom figure shows bottom of the cryostat. center KF cross is used for plumbing, while each quadrant has a signal flange for charge and light readout, \ac{HK} sensors, detector power flange and high voltage flange.
+    \noindent\raggedright \textbf{(a)} Left figure shows cryostat general view. miniGRAMS TPC is mounted inside the inner cryostat. There are kapton heaters installed outside of inner cryostat to help release the argon before descending. \textbf{(b)} Right top figure shows area that between inner cryostat and outer vacuum jacket. Green cylinders are G10 supporting rods for the purpose of low thermal conductance. Thin blue/red/yellow hoses are plumbing lines for fill/vent/\ac{LLD} respectively. middle-siezd yellow line shows safety rapture disk. \textbf{(c)} Right bottom figure shows bottom of the cryostat. center KF cross is used for plumbing, while each quadrant has a signal flange for charge and light readout, \ac{HK} sensors, detector power flange and high voltage flange.
     \caption{pGRAMS cryostat design demonstration.}
     \label{fig:pGRAMS_cryostat}
 \end{figure}
@@ -498,7 +498,7 @@ We have done a series of analysis including thermal analysis and structural anal
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/pGRAMS_plumbing.png}
-    All argon will go through customized designed and regenerated filter to reduce nritrogon, oxygen and water Impurities. A scroll pump and vacuum pump will be used to clean up the inside of cryostat. 
+    \noindent\raggedright All argon will go through customized designed and regenerated filter to reduce nritrogon, oxygen and water Impurities. A scroll pump and vacuum pump will be used to clean up the inside of cryostat. 
     \caption{pGRAMS cryostat plumbing schematic.}
     \label{fig:plumbing_schematic}
 \end{figure}
@@ -561,7 +561,7 @@ As hub computer takes most of the interface part, DAQ computer is mainly in char
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/pGRAMS_gondola.png}
-    These two figures show the pGRAMS gondola design demonstration from front and back side of view. Center tower holds the cryostat, vacuum jacket and \ac{TOF} system, made the main structure of the detector. Two TOF panels are placed on top of the tower to provide the timing and trigger information. Four side of the tower are used to hold the \ac{MPD} panels. The base plate are used to mount all the battery stacks, while four outer side gondola are used for hub computer box, PDU, sealed enclosure respectively. Four legs with casters are designed to attach to the bottom of the base plate to enable flexibility of the payload during integration while they will be removed when we are preparing for launching.
+    \noindent\raggedright These two figures show the pGRAMS gondola design demonstration from front and back side of view. Center tower holds the cryostat, vacuum jacket and \ac{TOF} system, made the main structure of the detector. Two TOF panels are placed on top of the tower to provide the timing and trigger information. Four side of the tower are used to hold the \ac{MPD} panels. The base plate are used to mount all the battery stacks, while four outer side gondola are used for hub computer box, PDU, sealed enclosure respectively. Four legs with casters are designed to attach to the bottom of the base plate to enable flexibility of the payload during integration while they will be removed when we are preparing for launching.
     \caption{pGRAMS gondola design demonstration}
     \label{fig:pGRAMS_gondola}
 \end{figure}

@@ -36,8 +36,7 @@ The readout is preformed with a dedicated \ac{ASIC} which provides the specific 
 \label{chap:GAPS:detectors}
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{fig/SiLi_module_display.png}
-    Left figure shows \ac{GAPS} \ac{Si(Li)} module which contains 4 detectors, a custom 32-channel ASIC, and a front-end board. Right figure shows a close view of each detector which are wire-bounded from each 8 channels to the front-end board.
+    \noindent\raggedright Left figure shows \ac{GAPS} \ac{Si(Li)} module which contains 4 detectors, a custom 32-channel ASIC, and a front-end board. Right figure shows a close view of each detector which are wire-bounded from each 8 channels to the front-end board.
     \caption{GAPS detector module}
     \label{fig:GAPS_detector}
 \end{figure}
@@ -47,7 +46,7 @@ To produce \ac{GAPS} \ac{Si(Li)} detector, this thesis shows simple steps. For t
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_SiLi_fab.png}
     \caption{GAPS \ac{Si(Li)} detector fabrication procedure \cite{KOZAI2022166820}.}
-    \label{fig:placeholder}
+    \label{fig:GAPS_detector_fab}
 \end{figure}
 
 (1) Procurement of p-type Si crystal
@@ -79,7 +78,7 @@ The side of the top-hat and the n-side grooves are etched after painting wax on 
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_event_display.png}
-    This is one typical single track event that \ac{GAPS} detected with ground testing, activated \ac{TOF} and \ac{Si(Li)} system provided information for us to reconstruct the charge particle track.
+    \noindent\raggedright This is one typical single track event that \ac{GAPS} detected with ground testing, activated \ac{TOF} and \ac{Si(Li)} system provided information for us to reconstruct the charge particle track.
     \caption{3D event display of single track event 241213 0949 5452, recorded at LDB at 9:49am GMT, 24/12/13}
     \label{fig:GAPS_event_display}
 \end{figure}
@@ -93,7 +92,7 @@ To confirm \ac{GAPS} functionality for the full payload, we have proposed and te
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_GFP_config.png}
-    Overview of the GFP setup: Si(Li) tracker, \ac{TOF} and Thermal. Instruments which are not shown in the photo: tracker power system (on the bottom of electronic rack) and tracker DAQ computer.
+    \noindent\raggedright Overview of the GFP setup: Si(Li) tracker, \ac{TOF} and Thermal. Instruments which are not shown in the photo: tracker power system (on the bottom of electronic rack) and tracker DAQ computer.
     \caption{GAPS GFP setup at Bates lab}
     \label{fig:GAPS_GFP_config}
 \end{figure}
@@ -122,7 +121,7 @@ The GFP \ac{TOF} system is designed to provide the capacity of tracking incoming
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_GFP_TOF.png}
-    Left photo shows actual \ac{TOF} system geometry at Bates lab, with both top and middle panel mounted on a customized aluminum rack. Right photo shows one paddle that construct the \ac{TOF} panel, with \ac{SiPM} mounted on two side to readout the light signal. Histogram shows timing resolution of one of the paddle.
+    \noindent\raggedright Left photo shows actual \ac{TOF} system geometry at Bates lab, with both top and middle panel mounted on a customized aluminum rack. Right photo shows one paddle that construct the \ac{TOF} panel, with \ac{SiPM} mounted on two side to readout the light signal. Histogram shows timing resolution of one of the paddle.
     \caption{GFP \ac{TOF} system configuration.}
     \label{fig:GFP_TOF}
 \end{figure}
@@ -174,7 +173,7 @@ Fig.~\ref{fig:GFP_module_row} illustrates the front-end and back-end electronics
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GFP_thermal.jpg}
-    Dual-phase trifluoromethane (\ac{R23}) filled in the reservoir and the rest of the swaglok tubings. With heat generated from the detector and electronics on the right side, liquid R23 will vaporize and push the flow moves up to return to the top and the radiator on the left. Then the R23 will dessipate heat and become liquid again, drop to the bottom of the radiator due to gravity. This will keep the cycle flowing inside each loop.
+    \noindent\raggedright Dual-phase trifluoromethane (\ac{R23}) filled in the reservoir and the rest of the swaglok tubings. With heat generated from the detector and electronics on the right side, liquid R23 will vaporize and push the flow moves up to return to the top and the radiator on the left. Then the R23 will dessipate heat and become liquid again, drop to the bottom of the radiator due to gravity. This will keep the cycle flowing inside each loop.
     \caption{ The GFP thermal system design, with only one Si(Li) row shown (left) and the setup (right).}
     \label{fig:GFP_thermal}
 \end{figure}
@@ -185,7 +184,7 @@ GFP thermal system required cooling down Si(Li) detectors down to required $ -40
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GFP_thermal_lines.png}
-    In this photo, two rows of detector L1C2 and L2C2 are tagged. As the time of this picture was taken, only these two rows of detectors are installed and the result from section.~\ref{chap:GAPSresult:GFP:thermal}, Fig.~\ref{fig:GFP_thermal_result} are based on this configuration dated back on December 1st, 2021.
+    \noindent\raggedright In this photo, two rows of detector L1C2 and L2C2 are tagged. As the time of this picture was taken, only these two rows of detectors are installed and the result from section.~\ref{chap:GAPSresult:GFP:thermal}, Fig.~\ref{fig:GFP_thermal_result} are based on this configuration dated back on December 1st, 2021.
     \caption{GFP thermal design with each row of detector tagged.}
     \label{fig:GFP_thermal_line}
 \end{figure}
@@ -200,7 +199,7 @@ To reduce thermal leaks, the entire GFP OHP system is insulated by at least $ 4'
 \begin{figure}
     \centering
     \includegraphics[width=0.9\linewidth]{fig/GAPS_thermal_design.jpg}
-    Conceptual diagram of the \ac{GAPS} instrument. To cool the Si(Li) tracker consisting of $ >1000 $ detectors, the heat to be removed is transported to a radiator, which is located outside the \ac{TOF} system and pointed to the anti-solar azimuth direction, and then dissipated to space \cite{FUKE2023168102}.
+    \noindent\raggedright Conceptual diagram of the \ac{GAPS} instrument. To cool the Si(Li) tracker consisting of $ >1000 $ detectors, the heat to be removed is transported to a radiator, which is located outside the \ac{TOF} system and pointed to the anti-solar azimuth direction, and then dissipated to space \cite{FUKE2023168102}.
     \caption{GAPS flight instrument thermal design schematic}
     \label{fig:GAPS_flight_thermal}
 \end{figure}
@@ -265,7 +264,7 @@ One example styrofoam pieces GAPS-RAD-MEC-049\_Foam\_Section\_33 are showed in F
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS-RAD-MEC-049_Foam_Section_33.png}
-    \textbf{(a)} Shows the design for this styrofoam piece which goes on top of the OHP heat transaction area. Small group of grooves are formed to divide all 36 loops of OHP tubings from tracker to radiator. \textbf{(b)} shows a 3D model of this particular piece. \textbf{(c)} shows the actual piece that I made with styrofoam and router. This design will guarantee minimum heat leak from the tubing by cover all of the cold area.
+    \noindent\raggedright \textbf{(a)} Shows the design for this styrofoam piece which goes on top of the OHP heat transaction area. Small group of grooves are formed to divide all 36 loops of OHP tubings from tracker to radiator. \textbf{(b)} shows a 3D model of this particular piece. \textbf{(c)} shows the actual piece that I made with styrofoam and router. This design will guarantee minimum heat leak from the tubing by cover all of the cold area.
     \caption{GAPS payload styrofoam GAPS-RAD-MEC-049 Foam Section 33 design}
     \label{fig:foam_33}
 \end{figure}
@@ -285,7 +284,7 @@ To roughly estimate $Q_0$, we assume that the \ac{OHP}, the radiator, and the de
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GCS_mount.png}
-    Left figure shows the schematics of \ac{GAPS} GCS mounting on the payload. Right picture shows actual \ac{GAPS} GCS mounted on the payload at MIT Bates lab.
+    \noindent\raggedright Left figure shows the schematics of \ac{GAPS} GCS mounting on the payload. Right picture shows actual \ac{GAPS} GCS mounted on the payload at MIT Bates lab.
     \caption{GAPS GCS design and mounting}
     \label{fig:GAPS_GCS_setup}
 \end{figure}
@@ -297,7 +296,7 @@ As we move forward with \ac{GCS} cooling down GAPS detector during preparation f
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_GCS.png}
-    Left figure shows schematics of \ac{GAPS} GCS with 4 cold panels embed 36 loops of methanol cooling lines meifold. Each 2 panels are cooled down by a \ac{ACC} circulating methanol. Right picture shows actual \ac{GAPS} GCS setup at Columbia University nevis lab. Red arrows with letters show the methanol line displayed on the left.
+    \noindent\raggedright Left figure shows schematics of \ac{GAPS} GCS with 4 cold panels embed 36 loops of methanol cooling lines meifold. Each 2 panels are cooled down by a \ac{ACC} circulating methanol. Right picture shows actual \ac{GAPS} GCS setup at Columbia University nevis lab. Red arrows with letters show the methanol line displayed on the left.
     \caption{GAPS Ground Cooling System}
     \label{fig:GAPS_GCS}
 \end{figure}

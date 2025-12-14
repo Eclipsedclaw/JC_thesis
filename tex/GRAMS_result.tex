@@ -70,7 +70,7 @@ ch21 & X1 & CSP\_X & ch43 & -- & GND & & & \\
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/pedestal_comparison_version_cryo.png}
-    Top figure shows \ac{CSP} and \ac{SiPM} pedestal for each channel under room condition. Bottom figure shows \ac{CSP} and \ac{SiPM} pedestal for each channel under liquid argon condition. The green box shows \ac{CSP} v5 channels with mapping showed ealier in table.~\ref{tab:microGRAMS_channel_map_run34}. One can easily see the performance difference between different \ac{CSP} versions. CSP v5 behaves slightly better in both room and cryo condition.
+    \noindent\raggedright Top figure shows \ac{CSP} and \ac{SiPM} pedestal for each channel under room condition. Bottom figure shows \ac{CSP} and \ac{SiPM} pedestal for each channel under liquid argon condition. The green box shows \ac{CSP} v5 channels with mapping showed ealier in table.~\ref{tab:microGRAMS_channel_map_run34}. One can easily see the performance difference between different \ac{CSP} versions. CSP v5 behaves slightly better in both room and cryo condition.
     \caption{Signal pedestal result}
     \label{fig:CSP_noise_comparison}
 \end{figure}
@@ -119,7 +119,7 @@ ch21 & -- & -- & ch43 & X23 & CSP\_X & & & \\
 
 \vspace{0.3cm}
 \footnotesize
-This table shows one typical mapping of the CAEN digitizer channels to the corresponding microGRAMS LArTPC detector components. CSP\_X and CSP\_Y represent the charge sensing channels in X and Y directions, respectively. SIPM\_VIS and SIPM\_VUV represent the SiPM channels for visible and VUV light detection, respectively. The flages are used in the data analysis to identify the channel types. Softwares are developed based on this channel mapping to process the recorded waveforms for further analysis.
+\noindent\raggedright This table shows one typical mapping of the CAEN digitizer channels to the corresponding microGRAMS LArTPC detector components. CSP\_X and CSP\_Y represent the charge sensing channels in X and Y directions, respectively. SIPM\_VIS and SIPM\_VUV represent the SiPM channels for visible and VUV light detection, respectively. The flages are used in the data analysis to identify the channel types. Softwares are developed based on this channel mapping to process the recorded waveforms for further analysis.
 \caption{microGRAMS Digitizer Channel Mapping for Run26}
 \label{tab:microGRAMS_channel_map_run26}
 \end{table}
@@ -129,7 +129,7 @@ We will use one typical cosmic muon track event to demonstrate the reconstructio
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/microGRAMS_run26_config.png}
-    Left photo shows Run26 TPC mounted on the flange with sideway mounting to maximaize active channels the cosmic muon flux go through the TPC. Middle photo shows the TPC without sensing tile to show the anode E-field shaping mesh. Right photo shows customized mesh with gauge 32 copper wire (202$\mu$m diameter) with 5 mm pitch to form the E-field shaping cage. Flight version anode mesh will be fabricated with CNC techniques to enhance the precision and uniformity.
+    \noindent\raggedright Left photo shows Run26 TPC mounted on the flange with sideway mounting to maximaize active channels the cosmic muon flux go through the TPC. Middle photo shows the TPC without sensing tile to show the anode E-field shaping mesh. Right photo shows customized mesh with gauge 32 copper wire (202$\mu$m diameter) with 5 mm pitch to form the E-field shaping cage. Flight version anode mesh will be fabricated with CNC techniques to enhance the precision and uniformity.
     \caption{microGRAMS Run26 configuration}
     \label{fig:microGRAMS_run26_config}
 \end{figure}
@@ -163,7 +163,7 @@ With configuration shown in table.~\ref{tab:run26_parameters}, we collected arou
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/microGRAMS_9483_raw.png}
-    Left figure shows event ID 9483 raw waveforms for all 34 channels including charge and light signals. Right figure shows baseline corrected raw waveform for all 34 channels. 
+    \noindent\raggedright Left figure shows event ID 9483 raw waveforms for all 34 channels including charge and light signals. Right figure shows baseline corrected raw waveform for all 34 channels. 
     \caption{Run26 acquisition0 event ID 9483 raw waveforms}
     \label{fig:microGRAMS_raw_plot}
 \end{figure}
@@ -173,7 +173,7 @@ The key of the filter for charge readout is reducing noise level and removing th
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/microGRAMS_9483_filter.png}
-    Blue line shows the raw waveform from one charge channel (Ch57, Y19) for event ID 9483. The orange line shows the waveform after applying the high pass filter. The signal's long tails are removed while the peak location is still kept. The red line shows the waveform after applying the gaussian smoothing filter. The noise level is significantly reduced.
+    \noindent\raggedright Blue line shows the raw waveform from one charge channel (Ch57, Y19) for event ID 9483. The orange line shows the waveform after applying the high pass filter. The signal's long tails are removed while the peak location is still kept. The red line shows the waveform after applying the gaussian smoothing filter. The noise level is significantly reduced.
     \caption{microGRAMS software charge signal filtering}
     \label{fig:pGRAMS_filter}
 \end{figure}
@@ -184,7 +184,7 @@ With this software filter, we could then make all the charge signal readout clea
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GRAMS_reconstruct_digital_filter.png}
-    Left figure shows the raw waveforms for all charge channels for event ID 9483, while right figure shows the filtered waveforms. The charge signals are much cleaner after the filter, making it easier to identify the signal peaks for further 3D track reconstruction. One could already identify a cosmic muon track going through the TPC from the clear shift of the peak on the right figure.
+    \noindent\raggedright Left figure shows the raw waveforms for all charge channels for event ID 9483, while right figure shows the filtered waveforms. The charge signals are much cleaner after the filter, making it easier to identify the signal peaks for further 3D track reconstruction. One could already identify a cosmic muon track going through the TPC from the clear shift of the peak on the right figure.
     \caption{Run26 acquisition0 event ID 9483 charge signal comparison before and after filter}
     \label{fig:filter_comparison}
 \end{figure}
@@ -194,7 +194,7 @@ From the filtered waveforms, we could then identify the signal peaks for each ch
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GRAMS_run26_muons.png}
-    Examples of the reconstructed cosmic muon track event inside the pGRAMS LArTPC detector, same event ID 9483 with raw and filtered waveform showed in Fig.~\ref{fig:event_comparison} is desplayed on the top, taken from run 26 data on Sep 4th, 2024. The left figure shows the X-Z plot while right one shows the Y-Z plot. The color bar indicates the charge deposition in each voxel. Z-axis is the drift direction, converted from drift time. While bottom two shows another event ID 4934 taken from same run dataset.
+    \noindent\raggedright Examples of the reconstructed cosmic muon track event inside the pGRAMS LArTPC detector, same event ID 9483 with raw and filtered waveform showed in Fig.~\ref{fig:event_comparison} is displayed on the top, taken from run 26 data on Sep 4th, 2024. The left figure shows the X-Z plot while right one shows the Y-Z plot. The color bar indicates the charge deposition in each voxel. Z-axis is the drift direction, converted from drift time. While bottom two shows another event ID 4934 taken from same run dataset.
     \caption{Examples of reconstructed cosmic muon track event inside microGRAMS LArTPC detector}
     \label{fig:muontest_event}
 \end{figure}
@@ -216,7 +216,7 @@ Since antiprotons will also form exotic atoms in the LAr detector and generate a
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GRAMS_simulation.jpg}
-    GEANT4 simulation with the GRAMS geometry for the GRASP estimation. We generated antiparticles on a 20 m $\times$ 20 m plane located above a thin layer of compressed air and the GRAMS payload. Antiparticles go through the compressed air to simulate the atmospheric effect. Two green boxes are the outer and inner TOF paddles, and the red cube inside the inner TOF box is the LArTPC detector (140 cm $\times$ 140 cm $\times$ 20 cm). The red lines are the example tracks of the generated antihelium-3 nuclei.
+    \noindent\raggedright GEANT4 simulation with the GRAMS geometry for the GRASP estimation. We generated antiparticles on a 20 m $\times$ 20 m plane located above a thin layer of compressed air and the GRAMS payload. Antiparticles go through the compressed air to simulate the atmospheric effect. Two green boxes are the outer and inner TOF paddles, and the red cube inside the inner TOF box is the LArTPC detector (140 cm $\times$ 140 cm $\times$ 20 cm). The red lines are the example tracks of the generated antihelium-3 nuclei.
     \caption{Simulated GRAMS detector with GEANT4}
     \label{fig:GEANT4}
 \end{figure}
@@ -238,7 +238,7 @@ Here, $ A $ represents the area for the antiparticle generation, which is a 20 m
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GRASP_0_1000_v5.png}
-    GRASP estimation for the proposed GRAMS detector with a 140 cm $\times$ 140 cm $\times$ 20 cm LArTPC detector. Solid lines show annihilation at rest events, while dashed lines show annihilation in-flight events. For the lower then $ 100MeV/n$ energy range, the GRASP is limited by the atmospheric annihilation above the detector. The tails at the high energy range for the stopped events are due to diagonal angle incoming antiparticles with longer path length inside the LArTPC detector.
+    \noindent\raggedright GRASP estimation for the proposed GRAMS detector with a 140 cm $\times$ 140 cm $\times$ 20 cm LArTPC detector. Solid lines show annihilation at rest events, while dashed lines show annihilation in-flight events. For the lower then $ 100MeV/n$ energy range, the GRASP is limited by the atmospheric annihilation above the detector. The tails at the high energy range for the stopped events are due to diagonal angle incoming antiparticles with longer path length inside the LArTPC detector.
     \caption{GRASP for proposed GRAMS detector}
     \label{fig:GRAMS_GRASP}
 \end{figure}
@@ -392,7 +392,7 @@ $\varepsilon_{\pi}^{^3\overline{He}}$&0.912\\
 \hline
 \end{tabularx}\\
 \vspace{0.1cm} 
-Sensitivity numerical values for potential satellite mission. Upgraded items marked in \textbf{bold}. Detailed expalainlation of each items refer to table.~\ref{table:Balloon_table}.
+\noindent\raggedright Sensitivity numerical values for potential satellite mission. Upgraded items marked in \textbf{bold}. Detailed expalainlation of each items refer to table.~\ref{table:Balloon_table}.
 \caption{GRAMS future satellite antihelium-3 sensitivity calculation numerical values}
 \label{table:Satellite_table}
 \end{table}
