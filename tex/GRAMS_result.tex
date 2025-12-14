@@ -12,8 +12,6 @@ As mentioned in section.~\ref{chap:GRAMS:eGRAMS:CSP}, upgraded design for \ac{CS
 
 \begin{table}
 \centering
-\label{tab:CSP_versions}
-\caption{\ac{CSP} version upgrade}
 \begin{tabular}{l c c c c}
 \toprule
 \textbf{Name} & \textbf{Energy deposit} & \textbf{2nd stage Gain} & \textbf{Raw output} & \textbf{2V Dynamic range} \\
@@ -26,14 +24,14 @@ CSP v6.1 & 1 MeV & $\times$9 & 115.2 mV & [0, 8.7] MeV \\
 CSP v6.2 & 1 MeV & $\times$40 & 512 mV & [0, 3.9] MeV \\
 \bottomrule
 \end{tabular}
+\label{tab:CSP_versions}
+\caption{\ac{CSP} version upgrade}
 \end{table}
 
 To compare the performance of different \ac{CSP} versions, we measured the noise level with connecting all the \ac{CSP}s to the actual mincroGRAMS detector. We have taken total 100 events baseline to evaluate the \ac{FWHM} for each channel. To do an precise comparison, we installed two banks of \ac{CSP} boards on the same microGRAMS tile, one side with 16 \ac{CSP} v5 while the other side with 16 \ac{CSP} v6.2. The configuration is same as picture showed in Fig.~\ref{fig:microGRAMS_run26_config}, and the readout channels are mapped as shown in table.~\ref{tab:microGRAMS_channel_map_run34}.
 
 \begin{table}
 \centering
-\caption{microGRAMS Digitizer Channel Mapping for run34}
-\label{tab:microGRAMS_channel_map_run34}
 \small
 \begin{tabular}{@{}c l l c l l c l l@{}}
 \toprule
@@ -65,6 +63,8 @@ ch20 & -- & GND & ch42 & X12 & CSP\_X & & & \\
 ch21 & X1 & CSP\_X & ch43 & -- & GND & & & \\
 \bottomrule
 \end{tabular}
+\caption{microGRAMS Digitizer Channel Mapping for run34}
+\label{tab:microGRAMS_channel_map_run34}
 \end{table}
 
 \begin{figure}
@@ -86,8 +86,6 @@ As described in section.~\ref{chap:GRAMS:pGRAMS:RandD}, we used CAEN digitizers 
 
 \begin{table}
 \centering
-\caption{microGRAMS Digitizer Channel Mapping for Run26}
-\label{tab:microGRAMS_channel_map_run26}
 \begin{tabular}{c l l c l l c l l}
 \toprule
 \textbf{Ch.} & \textbf{Label} & \textbf{Flag} & 
@@ -122,6 +120,8 @@ ch21 & -- & -- & ch43 & X23 & CSP\_X & & & \\
 \vspace{0.3cm}
 \footnotesize
 This table shows one typical mapping of the CAEN digitizer channels to the corresponding microGRAMS LArTPC detector components. CSP\_X and CSP\_Y represent the charge sensing channels in X and Y directions, respectively. SIPM\_VIS and SIPM\_VUV represent the SiPM channels for visible and VUV light detection, respectively. The flages are used in the data analysis to identify the channel types. Softwares are developed based on this channel mapping to process the recorded waveforms for further analysis.
+\caption{microGRAMS Digitizer Channel Mapping for Run26}
+\label{tab:microGRAMS_channel_map_run26}
 \end{table}
 
 We will use one typical cosmic muon track event to demonstrate the reconstruction algorithm. The microGRAMS Run 26 is performed on Sep 4th, 2024. Detailed configuration of the microGRAMS Run 26 is shown in Fig.~\ref{fig:microGRAMS_run26_config}. Left photo shows Run26 TPC mounted on the flange with sideway mounting to maximaize active channels the cosmic muon flux go through the TPC. Middle photo shows the TPC without sensing tile to show the anode E-field shaping mesh. Right photo shows customized mesh with gauge 32 copper wire (202$\mu$m diameter) with 5 mm pitch to form the E-field shaping cage. Flight version anode mesh will be fabricated with CNC techniques to enhance the precision and uniformity.
@@ -136,8 +136,6 @@ We will use one typical cosmic muon track event to demonstrate the reconstructio
 
 \begin{table}
 \centering
-\caption{microGRAMS Run 26 Parameters}
-\label{tab:run26_parameters}
 \begin{tabular}{l l}
 \hline
 \textbf{Parameter} & \textbf{Value} \\
@@ -156,6 +154,8 @@ Trigger setup & VIS: $-30.01$V, VUV: $-15.00$V \\
 SiPM bias voltage & $49.720$ V \\
 \hline
 \end{tabular}
+\caption{microGRAMS Run 26 Parameters}
+\label{tab:run26_parameters}
 \end{table}
 
 With configuration shown in table.~\ref{tab:run26_parameters}, we collected around 20000 cosmic muon events. One typical raw event shows directly with all active channels in Fig.~\ref{fig:microGRAMS_raw_plot}. From left figure, we can see the raw waveforms for all 34 channels including charge and light signals. We first perform baseline correction to zero out digitizer's offset. After baseline correction, the right plot shows all the signals with same level of baseline. One noticeable feature of the charge signals is the udershoot coming after the main pulse, which is a coupling effect from the charge readout side. For pGRAMS flight, we will use a series of shapering circuits to further process the raw charge signals to avoid this effect using well explored shaping concept\cite{OHKAWA197685}. As for bench test, I developed a software based filter to remove this charge signal undershoot effect and integrating peaks for better signal identification.
@@ -250,7 +250,7 @@ Fig.~\ref{fig:GRAMS_GRASP} shows the GRASP simulation results. Antiparticles wit
 
 \begin{figure}
 \begin{center} 
-\includegraphics*[width=10cm]{fig/3D_v2.png}
+\includegraphics*[width=1\linewidth]{fig/3D_v2.png}
 \end{center}
 The x-axis is the energy deposition in the outer TOF paddle, and the y-axis is the energy deposition in the inner paddle. The z-axis is the timing difference between the outer and inner paddle hits, which is related to the kinetic energy of the incoming charge particles. We can clearly see antiproton and antihelium-3 event clusters well separated from each other.
 \caption{3D plot of antiparticles' deposited energy and timing in \ac{TOF} system}
@@ -274,10 +274,9 @@ An example of the sliced 2D plot for the TOF timing between 12 ns and 13 ns. We 
 To evaluate antihelium-3 selection cuts, we sliced the 3D plot with a time window of 1 ns ($\pm$0.5 ns) and made it into a 2D plot, energy depositions in the inner and outer TOF paddles. We applied the antihelium-3 selection cuts by drawing a box to completely cover the antiproton cluster (see an example in Fig.~\ref{fig:cut}). With this cut method, we established a stair-shaped separation plane in the 3D plot. Fig.~\ref{fig:cut efficiency} also shows the acceptance rate for antihelium-3 events with the applied cut, approximately 96.5 \%, while rejecting all simulated antiproton events. This gives an upper limit on the antiproton cut efficiency $\varepsilon_{TOF}^{\bar{p}}=0.000142$ (99\% C.L). Note that, aside from energy depositions inside TOF paddles, energy deposition inside the LArTPC detector can also be used to reject antiprotons, considering the charge and mass difference between antiprotons and antihelium-3 nuclei. 
 
 
-\begin{figure}[htbp]
+\begin{figure}
 \begin{center} 
-\includegraphics*[width=8
-cm]{fig/cut_efficiency_v2.png}
+\includegraphics*[width=1\linewidth]{fig/cut_efficiency_v2.png}
 \end{center}
 Selection efficiency for antihelium-3 events under each one ns time window. Combined all simulation data gives an antihelium-3 nuclei selection cut
 efficiency $\varepsilon_{TOF}^{^3\overline{He}}=0.965$, while we reject all antiprotons and provide an upper limit on the antiproton cut efficiency $\varepsilon_{TOF}^{\bar{p}}=0.000142$ (99\% C.L)
@@ -307,8 +306,7 @@ Fig.~\ref{fig:Simulated Charged pion multiplicity} shows the GEANT4 simulation r
 
 \begin{figure}
 \begin{center} 
-\includegraphics*[width=10
-cm]{fig/charged_pion_multiplicity_v3.png}
+\includegraphics*[width=1\linewidth]{fig/charged_pion_multiplicity_v3.png}
 \end{center}
 GEANT4 simulation results of charged pion multiplicities for antiproton and antihelium-3 events are shown in red and blue bars. We could apply a cut of $N\geq9$ (vertical black dashed line) to reject antiproton events while still keeping $91.2\%$ of antihelium-3 events. The dashed red line shows the model prediction of the pion multiplicity for 1 GeV/n antiproton in-flight annihilation events, indicating the selection cut of $N\geq9$ is still valid with the antiproton selection efficiency of $\varepsilon_\pi^{\bar{p}}=1.25\times10^{-5}$.
 \caption{GRAMS simulated charged pion multiplicity}
@@ -335,9 +333,9 @@ The main background events for GRAMS's antihelium-3 nuclei detection are antipro
     S_{^3\overline{He}}=\frac{1}{\int \Gamma_{^3\overline{He}}(E)T\varepsilon_g^{^3\overline{He}}dE\cdot\prod_i\varepsilon_i^{^3\overline{He}}}
 \end{equation}
 
-\begin{table}[htbp]
+\begin{table}
 \centering
-\begin{tabular}{l|r}
+\begin{tabularx}{\linewidth}{l >{\raggedleft\arraybackslash}X}
 \hline
 &numerical value\\
 \hline
@@ -354,7 +352,7 @@ $\varepsilon_{TOF}^{^3\overline{He}}$&0.965\\
 $\varepsilon_{\pi}^{\bar{p}}$&0.0000125\\
 $\varepsilon_{\pi}^{^3\overline{He}}$&0.912\\
 \hline
-\end{tabular}
+\end{tabularx}
 \small
 \begin{description}
     \item[$ F_{\bar{p}}(E) $ and $ F_{^3\overline{He}}^{sec}(E) $] are the fluxes of antiprotons and secondary antihelium-3 nuclei at the top of the atmosphere\cite{PhysRevLett.105.121101, shukla2020large}.
@@ -366,15 +364,16 @@ $\varepsilon_{\pi}^{^3\overline{He}}$&0.912\\
     \item[$\varepsilon_{TOF}^{\bar{p}}$ and $\varepsilon_{TOF}^{^3\overline{He}}$ ] are acceptance for antiproton and antihelium-3 cutnuclei TOF profile cut.
     \item[$\varepsilon_{\pi}^{\bar{p}}$ and $\varepsilon_{\pi}^{^3\overline{He}}$] are the pion multiplicity selection cut acceptance with $N\geq9$ for antiproton and antihelium-3 nuclei respectively.
 \end{description}
+\vspace{0.5cm} 
 \caption{GRAMS \ac{LDB} antihelium-3 sensitivity calculation numerical values}
 \label{table:Balloon_table}
 \end{table}
 
 Based on values show in table.~\ref{table:Balloon_table}, the corresponding antihelium-3 sensitivity would be $1.47\times10^{-7}$ [m$^2$ s sr GeV/n]$^{-1}$ with the expected background events for antiproton (secondary antihelium-3) of $2.00\times10^{-4}$ ($3.4\times10^{-4}$). Fig.~\ref{fig:antihelium3_sensitivity} shows the GRAMS sensitivity and antihelium-3 fluxes from dark matter models.
 
-\begin{table}[htbp]
+\begin{table}
 \centering
-\begin{tabular}{l|r}
+\begin{tabularx}{\linewidth}{l >{\raggedleft\arraybackslash}X}
 \hline
 &numerical value\\
 \hline
@@ -391,9 +390,9 @@ $\varepsilon_{TOF}^{^3\overline{He}}$&0.965\\
 $\varepsilon_{\pi}^{\bar{p}}$&0.0000125\\
 $\varepsilon_{\pi}^{^3\overline{He}}$&0.912\\
 \hline
-\end{tabular}
-
-Sensitivity numerical values for potential satellite mission. Upgraded items marked in bold
+\end{tabularx}\\
+\vspace{0.1cm} 
+Sensitivity numerical values for potential satellite mission. Upgraded items marked in \textbf{bold}. Detailed expalainlation of each items refer to table.~\ref{table:Balloon_table}.
 \caption{GRAMS future satellite antihelium-3 sensitivity calculation numerical values}
 \label{table:Satellite_table}
 \end{table}
@@ -401,7 +400,7 @@ GRAMS can be expanded to the satellite mission, providing a significantly improv
 
 \begin{figure}
 \begin{center} 
-\includegraphics*[width=15cm]{fig/antihelium3_sensitivity_with_inflight_satellite_v7.png}
+\includegraphics*[width=1\linewidth]{fig/antihelium3_sensitivity_with_inflight_satellite_v7.png}
 \end{center}
 The red and brown (coral) lines show the GRAMS antihelium-3 sensitivities for three LDB flights and the satellite missions in comparison with other missions' reported sensitivities  \cite{SAFFOLD2021102580}. GRAMS would be able to explore various dark matter models that could produce two orders of magnitude higher antihelium-3 fluxes than standard astrophysical background models \cite{PhysRevD.99.023016, PhysRevD.102.063004, Kachelrie_2020, PhysRevLett.126.101101, PhysRevD.97.103011, PhysRevD.96.083020,  Ding_2019}. The AMS sensitivity and the BESS upper limit to the antihelium flux were estimated based on the $ \overline{He}/He$ ratios \cite{PhysRevLett.108.131301, Kounine:2011bkq} and the precision measurement of the $ He $ flux \cite{PhysRevLett.115.211101, SANUKI2001761} while converting the rigidity to the corresponding kinetic energy for each BESS/AMS rigidity bin.
 \label{fig:antihelium3_sensitivity}

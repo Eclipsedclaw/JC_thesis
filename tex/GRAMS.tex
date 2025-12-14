@@ -18,8 +18,6 @@ The pixel-grid or mesh style structure of the charge readout allows determinatio
 
 \begin{table}
 \centering
-\caption{Main physical properties of liquid argon under 1 atm pressure. See \cite{lar_properties, LI2016160, Thorn_lar_properties}. Detailed argon properties could be found in table.~\ref{tab:argon}}
-\label{tab:main_LAr_properties}
 %\renewcommand{\arraystretch}{1.2} % Increase row spacing
 \begin{tabularx}{\linewidth}{l >{\raggedleft\arraybackslash}X}
 \toprule
@@ -39,6 +37,8 @@ Nuclear interaction length $\lambda_I$ & 85.7 cm \\
 Minimum ionization loss $dE/dx_{\text{min}}$ & 2.12 MeV/cm \\
 \bottomrule
 \end{tabularx}
+\caption{Main physical properties of liquid argon under 1 atm pressure. See \cite{lar_properties, LI2016160, Thorn_lar_properties}. Detailed argon properties could be found in table.~\ref{tab:argon}}
+\label{tab:main_LAr_properties}
 \end{table}
 
 \section{GRAMS Detection Concept}
@@ -262,8 +262,6 @@ Detector system contains \ac{LArTPC} and \ac{TOF} / \ac{MPD}. As major detector 
 
 \begin{table}
 \centering
-\caption{pGRAMS mass budget}
-\label{tab:pGRAMS_massbudget}
 \begin{tabularx}{\textwidth}{Xrr}
 \toprule
 \textbf{Component} & \textbf{Mass (kg)} & \textbf{Contingency (kg)} \\
@@ -283,6 +281,8 @@ PDU & 15 & 1.5 \\
 \textbf{Total} & \textbf{499.828} & \textbf{51.064} \\
 \bottomrule
 \end{tabularx}
+\caption{pGRAMS mass budget}
+\label{tab:pGRAMS_massbudget}
 \end{table}
 
 
@@ -290,8 +290,6 @@ PDU & 15 & 1.5 \\
 \begin{table}
 \centering
 \small  % Use tiny instead of footnotesize
-\caption{pGRAMS power budget}
-\label{tab:pGRAMS_powerbudget}
 \begin{tabular}{@{}lccccccc@{}}
 \toprule
 \textbf{Component} & \textbf{\# Units} & \textbf{\# Chan.} & \textbf{V (V)} & \textbf{Chan. I (A)} & \textbf{Chan. P (W)} & \textbf{PDU I (A)} & \textbf{PDU P (W)} \\
@@ -316,6 +314,8 @@ Hub Computer & 1 & 1 & 5 & 1.00 & 5.00 & 1.00 & 5.00 \\
 Pressure Regulator &  &  &  &  &  &  & 273.106W \\
 \bottomrule
 \end{tabular}
+\caption{pGRAMS power budget}
+\label{tab:pGRAMS_powerbudget}
 \end{table}
 \end{landscape}
 
@@ -526,8 +526,6 @@ As system diagram of pGRAMS shown in Fig.~\ref{fig:system_diagram} and Table.~\r
 
 \begin{table}
 \centering
-\caption{hub computer I/O Interface Summary}
-\label{tab:hub_io_summary}
 \begin{tabular}{@{}p{3cm}p{10cm}@{}}
 \toprule
 \textbf{I/O Interface} & \textbf{Specifications} \\
@@ -548,6 +546,8 @@ As system diagram of pGRAMS shown in Fig.~\ref{fig:system_diagram} and Table.~\r
 \textbf{SPI Interface} & Supports SPI and SPX devices. Supports up to two SPX modules. \\
 \bottomrule
 \end{tabular}
+\caption{hub computer I/O Interface Summary}
+\label{tab:hub_io_summary}
 \end{table}
 
 \subsubsection{DAQ Computer}
