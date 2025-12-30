@@ -216,14 +216,81 @@ The CSP v5 was calibrated with a charge injection board that makes use of a volt
 
 \section{Antiproton Beam Test}
 \label{chap:GRAMS:beamtest}
-% TODO: make this section finished
-To confirm the antiparticles capture capabilities of GRAMS detector, 
+To confirm the antiparticles capture capabilities of GRAMS detector, an antiproton beam test was conducted at J-PARC in 2023. The main goals of the beam test were to validate the GRAMS LArTPC detector's ability to capture antiprotons, form exotic atoms, and detect the resulting annihilation products. This section provides an overview of the beam test setup, detectors used, see Fig.~\ref{fig:GRAMS_beamtest_setup}. Since this is not the main focus of this thesis, the result of the antiproton beam test will only be showed briefly here, more detailed analysis and result will be published in future work.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/T98_beam.png}
+    \noindent\raggedright Left figuire shows system of ESS. Right figure shows the \ac{TOF} distribution of antiproton and deuteron tuned Run \cite{Yano:202503}.
+    \caption{K1.8BR Beamline at J-PARC Hadron Experimental Facility}
+    \label{fig:ESS_principle}
+\end{figure}
+
+The T98 experiment was conducted at the K1.8BR beamline of the J-PARC Hadron Experimental Facility, which is capable of providing high purity antiproton beam with a maximum momentum of $1.1\ \text{GeV}/c$, to observe high-statistics antiproton capture events. The facility utilizes secondary particles by irradiating a $30\ \text{GeV}$ proton beam onto an Au target. The K1.8BR beamline employs an \ac{ESS} for selecting mass of beam profile. The operating principle of the ESS is illustrated in Fig~\ref{fig:ESS_principle} (left). Particles bent by the upstream magnetic field pass through a region with an applied electric field, where their trajectory is reversed, and are subsequently bent again by a downstream magnet. Only particles with a given mass are transported downstream.
+
+Multiple ToF counters, gas chambers, and \ac{AC} detectors are installed along the beamline. The combined use of \ac{TOF} and \ac{AC} enables high-purity selection of antiprotons and other species. Fig~\ref{fig:ESS_principle} (right) shows the \ac{TOF} distribution for beams tuned to antiprotons (black) and deuterons (red), demonstrating effective separation of pions from antiprotons and deuterons.
+
 
 \subsection{Detectors}
 \label{chap:GRAMS:beamtest:detector}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{fig/T98_config.png}\\
+    \noindent\raggedright Left picture Shows the overall setup of the GRAMS T-98 antiproton beam test at J-PARC. The beam enters from the left side, passes through the \ac{TOF} paddles that setup right in front of the \ac{LArTPC}, then reaches the GRAMS detector placed inside a cryostat. The center picture shows the $ 30\ cm \times 30\ cm \times 30\ cm $ detector installed inside the cryostat. The right picture shows the readout 2D tile design, which is slightly different from the pGRAMS design discussed in seaction.~\ref{chap:GRAMS:pGRAMS:RandD}.
+    \caption{GRAMS T-98 experiment setup}
+    \label{fig:GRAMS_beamtest_setup}
+\end{figure}
+eGRAMS mission mentioned in section.~\ref{chap:GRAMS:eGRAMS} has a limited mass and power budget, that constraint the detector size and readout channel number. For the antiproton beam test, we have prepared a larger LArTPC detector with full readout capability to maximize the antiproton capture event statistics. The detector size is $ 30\ cm \times 30\ cm \times 30\ cm $ as shown in Fig.~\ref{fig:GRAMS_beamtest_setup}. Left picture Shows the overall setup of the GRAMS T-98 antiproton beam test at J-PARC. The beam enters from the left side, passes through the \ac{TOF} paddles that setup right in front of the \ac{LArTPC}, then reaches the GRAMS detector placed inside a cryostat. The center picture shows the $ 30\ cm \times 30\ cm \times 30\ cm $ detector installed inside the cryostat. The right picture shows the readout 2D tile design, which is slightly different from the pGRAMS design that is discussed in seaction.~\ref{chap:GRAMS:pGRAMS:RandD}. This volume is sufficient to fully stop $700\ \text{MeV}/c$ antiprotons. The anode readout pitch is $5\ \text{mm}$, with $60$ strip channels each in the $x$ and $y$ directions. The anode pad structure consisted of $5\ \text{mm} \times 5\ \text{mm}$ squares segmented into triangular divisions. A drift electric field of $250\ \text{V/cm}$ was established by applying $-9.0\ \text{kV}$ between the cathode and the anode grid and $-1.5\ \text{kV}$ between the anode grid and the anode. A PMT (R6041-506) and four SiPMs (S13361-6050AE-04) are installed beneath the TPC as photodetectors.
 
 \subsection{Time-of-Flight (TOF) Beam Test}
 \label{chap:GRAMS:beamtest:TOF}
+Two \ac{TOF} paddles were prepared for the test, both $750\ \text{mm}$ length and $27\ \text{mm}$ width, but one with $8\ \text{mm}$ thickness, and the other with $10\ \text{mm}$ thickness to compare the performance. The TOF was located downstream of the beam line, one paddle was located horizontally and the other paddle was located vertically as shown in the right Figure. The paddles were set so that the center of the beam crossed the intersection of the two paddles. The number of events which hits in both paddles was about 11000 in 1 hour, slightly higher than $3\ \text{Hz}$. The particles detected were remnant pion in $\bar{p}$ beam with momentum of $-0.7\ \text{GeV}/c$. Time resolutions obtained from the test are shown in the Fig.~\ref{fig:GRAMS_TOF_beamtest}. The histograms were created by plotting the time difference between the time information obtained from one side of SiPM and the opposite side of SiPMs, then applying a Gaussian fit. The resultant time resolution was about the same, $233\ \text{ps}$ for $10\ \text{mm}$ thickness TOF and $236\ \text{ps}$ for $8\ \text{mm}$ thickness TOF. The results were consistent with our expectations \cite{makoto_2025_ICRC}. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/beam_test_TOF_performance.png}
+    \noindent\raggedright Left picture shows the two orthogonal \ac{TOF} paddles mounted in front of the detector. Middle figure shows the time resolution for the 10mm thick scintillator paddle. Right figure shows the time resolution for the 8mm thick scintillator paddle. Events are selected by the hits for both vertical and horizontal TOF paddles \cite{makoto_2025_ICRC}.
+    \caption{GRAMS \ac{TOF} beam test result}
+    \label{fig:GRAMS_TOF_beamtest}
+\end{figure}
+
+
+
+\subsection{Antiproton Beam Test Result}
+\label{chap:GRAMS:beamtest:result}
+\begin{table}
+\centering
+\caption{Data acquisition conditions and number of collected events}
+\label{tab:beam_time_summary}
+\small
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Particle} & \textbf{Momentum [GeV/$c$]} & \textbf{Number of Particles[/Spill]} & \textbf{DAQ Rate [/Spill]} & \textbf{Total Event} \\
+\midrule
+antiproton & 0.7 & 1200 & 300 & 3.6M \\
+antiproton & 1.0 & 1100 & 200 & 660k \\
+proton & 0.7 & 500 & 400 & 160k \\
+deuteron & 1.0 & 500 & 300 & 160k \\
+$K^-$ & 1.0 & 1000 & 300 & 160k \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The beam test at J-PARC utilized 24 hours of beam time, as summarized in Table~\ref{tab:beam_time_summary}, acquiring data at different momenta and for various particle species. The primary data set consisted of antiproton runs. Proton and deuteron data were also collected to study stopping points and reaction processes leading to particle capture. In addition, dedicated pion data were collected to study energy calibration. During off-spill periods, cosmic-ray muon data were recorded for use in purity checks and energy calibration\cite{Yano:202503}.
+
+Here as an example of the result, Fig.~\ref{fig:GRAMS_beamtest_event} shows two antiproton capture events candidate from the beam test data and two pion events. Top four figures show two $ 0.7\ GeV/c $ antiproton capture event candidates from the beam test data. They are both displayed in X-Z and Y-Z view. The beam direction is from left to right in the X-Z view. Bottom four figures show two $ 0.7\ GeV/c $ pion events from the beam test data, also displayed in X-Z and Y-Z view\cite{Yano:202503}. It is clear to see the difference of annihilation products between antiproton capture events and pion events.
+
+Currently the data analysis is still ongoing, and more detailed results will be published in future work.
+
+\begin{landscape}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GRAMS_beamtest_event.png}
+    \noindent\raggedright Top four figures show two $ 0.7\ GeV/c $ antiproton capture event candidates from the beam test data. They are both displayed in X-Z and Y-Z view. The beam direction is from left to right in the X-Z view. Bottom four figures show two $ 0.7\ GeV/c $ pion events from the beam test data, also displayed in X-Z and Y-Z view\cite{Yano:202503}. It is clear to see the difference of annihilation products between antiproton capture events and pion events.
+    \caption{GRAMS T-98 beam test example events}
+    \label{fig:GRAMS_beamtest_event}
+\end{figure}
+\end{landscape}
 
 \section{Prototype Flight pGRAMS}
 \label{chap:GRAMS:pGRAMS}
@@ -332,7 +399,7 @@ Pressure Regulator &  &  &  &  &  &  & 273.106W \\
     \label{fig:microGRAMS_RandD}
 \end{figure}
 
-To prepare for the actual prototype balloon flight, we designed and assembled a smaller size \ac{LArTPC} detector with dimension of $ 10cm \times 10cm \times 10cm$ called microGRAMS, see fig.~\ref{fig:microGRAMS_RandD}. microGRAMS has same detection concept as the GRAMS proposed science detector. The advantage of microGRAMS is the small scale with fast testing and upgrade.
+To prepare for the actual prototype balloon flight, we designed and assembled a smaller size \ac{LArTPC} detector with dimension of $ 10cm \times 10cm \times 10cm$ called microGRAMS, see Fig.~\ref{fig:microGRAMS_RandD}. microGRAMS has same detection concept as the GRAMS proposed science detector. The advantage of microGRAMS is the small scale with fast testing and upgrade.
 
 \subsubsection{microGRAMS Ddetector}
 \label{chap:GRAMS:pGRAMS:RandD:detector}
