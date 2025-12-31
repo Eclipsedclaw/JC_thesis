@@ -14,11 +14,20 @@ As introduction section.~\ref{chap:intro:GAPS} mentioned, \ac{GAPS} is an Antarc
     \item Year 2012: pGAPS balloon flight \cite{MOGNET201424, J_E_Koglin_2008}. 
     \item Year 2018 - Year 2019: Science flight detector fabrication \cite{Rogers_2019, KOZAI2022166820, scotti2019frontendelectronicsgapstracker, PEREZ201812, a5c7b362e95a41df8a83d91fe2100f18, OKAZAKI201820}.
     \item Year 2020 - Year 2025: \ac{GAPS} science flight payload assembly and testing\cite{10168972, Tiberio_2025, Aoyama:2025S0}.
-    \item Year 2025 - Year 2026: \ac{GAPS} first \ac{LDB} flight in the austral summer of 2025, see fig.~\ref{fig:GAPS_antarctic}
+    \item Year 2025 - Year 2026: \ac{GAPS} first \ac{LDB} flight on the day of December 16th 2025 at 5:37 am NZDT, see Fig.~\ref{fig:GAPS_antarctic} and Fig.~\ref{fig:GAPS_launch}.
+    \item Year 2026 - : Data analysis and prepare for second flight.
 \end{itemize}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GAPS_launch.png}
+    \noindent\raggedleft Left photo shows NASA \ac{LDB} inflating the in preparation for launch. Middle photo shows the exact moment of GAPS payload left launch vehicle. Right photo shows the GAPS payload ascending to the stratosphere with a clear sky background shot from the ground station.
+    \caption{GAPS launch on December 16th 2025 at 5:37 am NZDT from McMurdo station, Antarctica.}
+    \label{fig:GAPS_launch}
+\end{figure}
+
 As my major contribution for \ac{GAPS} started from year 2021, this thesis will focus mainly on the \ac{GFP} and \ac{GAPS} science flight.
-The \ac{GAPS} first science balloon flight design is displayed in fig.~\ref{fig:GAPS_antarctic}. The major detector instrument is built with two primary subsystems: a \ac{TOF} system for particle timing and a high-resolution tracker (\ac{Si(Li)}) for energy and tracking measurement. The \ac{TOF} system features inner and outer layers of EJ-200 plastic scintillator paddles. The outer \ac{TOF} if made of an horizontal plane above the rest of the detector (named “umbrella”) and of four lateral vertical walls (named “cortina”). The inner \ac{TOF} is a cube that surrounds the tracker system on top, bottom and lateral sides. All scintillators are 6.35 mm thick and 16 cm wide, with a length between 1.1 and 1.8 m. Each paddle is read out with \ac{SiPM}(Hamamatsu S13360-6050VE) on both ends. The tracker systems is made of 1008 \ac{Si(Li)} arranged in 7 planes evenly spaced by 10 cm \cite{PEREZ201812, KOZAI2019162695, KOZAI2022166820, SAFFOLD2021165015, 10168972}.
+The \ac{GAPS} first science balloon flight design is displayed in Fig.~\ref{fig:GAPS_antarctic}. The major detector instrument is built with two primary subsystems: a \ac{TOF} system for particle timing and a high-resolution tracker (\ac{Si(Li)}) for energy and tracking measurement. The \ac{TOF} system features inner and outer layers of EJ-200 plastic scintillator paddles. The outer \ac{TOF} if made of an horizontal plane above the rest of the detector (named “umbrella”) and of four lateral vertical walls (named “cortina”). The inner \ac{TOF} is a cube that surrounds the tracker system on top, bottom and lateral sides. All scintillators are 6.35 mm thick and 16 cm wide, with a length between 1.1 and 1.8 m. Each paddle is read out with \ac{SiPM}(Hamamatsu S13360-6050VE) on both ends. The tracker systems is made of 1008 \ac{Si(Li)} arranged in 7 planes evenly spaced by 10 cm \cite{PEREZ201812, KOZAI2019162695, KOZAI2022166820, SAFFOLD2021165015, 10168972}.
  A tracker plane is made of 6×6 modules, where each module contains 2×2 detectors. Each detector has a cylindrical shape of $ 10cm$ diameter and $ 2.5mm$ thickness and it is segmented into eight strips of equal area. The required operational temperature of $ \sim -40^\circ C$ is achieved with an \ac{OHP} system \cite{doi:10.1142/S2251171714400042, doi:10.1142/S2251171717400062, OKAZAKI201820, FUKE2023168102}. We have developed a noise model for the \ac{Si(Li)} detector system to optimize the operating temperature and peaking time of the readout electronics \cite{Rogers_2019,ARAMAKI201290}
 \begin{equation}
     ENC^2 = \left(2qI_{peak} + \frac{4kT}{R_p}\right)F_i \tau + 4kT\left(R_s + \frac{\Gamma}{g_m}\right)F_v \frac{C_{total}^2}{\tau} + A_f C_{total}^2 F_{vf}
@@ -30,17 +39,18 @@ The readout is preformed with a dedicated \ac{ASIC} which provides the specific 
 
 
 
- Aside from detector systems, a highly integrated thermal system goes into the center \ac{Si(Li)} tracker and dissipate heat through the radiator panels on one side of the payload. While the other side of the payload has 16 of the sun panels to provide required power during the flight as well as balancing the payload \ac{COM} on a mechanical perspective. On top of the payload, we put Iridium and TDRSS antenna on the BOOM to get best communication. At the very bottom we put all our electronics in the \ac{EBay}.
+ Aside from detector systems, a highly integrated thermal system goes into the center \ac{Si(Li)} tracker and dissipate heat through the radiator panels on one side of the payload, details see section.~\ref{chap:GAPS:thermal}. While the other side of the payload has 16 of the sun panels to provide required power during the flight as well as balancing the payload \ac{COM} on a mechanical perspective. On top of the payload, we put Iridium and TDRSS antenna on the BOOM to get best communication. At the very bottom we put all our electronics in the \ac{EBay}.
 
 \section{Detectors}
 \label{chap:GAPS:detectors}
 \begin{figure}
     \centering
+    \includegraphics[width=1\linewidth]{fig/SiLi_module_display.png}
     \noindent\raggedright Left figure shows \ac{GAPS} \ac{Si(Li)} module which contains 4 detectors, a custom 32-channel ASIC, and a front-end board. Right figure shows a close view of each detector which are wire-bounded from each 8 channels to the front-end board.
     \caption{GAPS detector module}
     \label{fig:GAPS_detector}
 \end{figure}
-To produce \ac{GAPS} \ac{Si(Li)} detector, this thesis shows simple steps. For the detailed description, readers can refer to \cite{KOZAI2019162695}.
+As mentioned in previous section, GAPS uses \ac{Si(Li)} detectors as its main tracker and calorimeter. Each detector is 10 cm in diameter and 2.5 mm thick, segmented into 8 strips. A total of 1008 detectors are arranged in 7 layers to form the tracker system. Each layer contains 36 modules, and each module consists of 4 detectors, as shown in Fig.~\ref{fig:GAPS_detector}. The detectors are fabricated using an novel lithium drifting method to create a thick intrinsic layer with high energy resolution at a relatively high operating temperature of -40 °C. The fabrication process is illustrated in Fig.~\ref{fig:GAPS_detector_fab}. This thesis shows simple steps of how we achieve the high-quality \ac{Si(Li)} detectors. For the detailed description, readers can refer to \cite{KOZAI2019162695}.
 
 \begin{figure}
     \centering
@@ -49,14 +59,42 @@ To produce \ac{GAPS} \ac{Si(Li)} detector, this thesis shows simple steps. For t
     \label{fig:GAPS_detector_fab}
 \end{figure}
 
-(1) Procurement of p-type Si crystal
-Purity and uniformity of the Si crystal are essential for obtaining a uniform and large-area Li-drifted layer [30], [31]. It is also desirable to realize as light a boron doping as possible for sufficient and uniform compensation of the boron acceptors by Li ions. We developed a custom Si ingot with a diameter of 10 cm and featuring a carrier lifetime of 1 ms, resistivity of 1000 cm, and oxygen and carbon concentrations below the measurement limit (10 16 atoms/cm3). The floating-zone method was used for crystal growth to avoid contamination by impurities. The crystal orientation is <111>. Ingots are sliced into wafers with 10 cm diameters and 2.5 mm thicknesses.
+\noindent\textbf{(1) Procurement of p-type Si crystal}
 
-(2) Li evaporation and diffusion Li is evaporated and diffused to a shallow depth to form the Li-diffused layer or $ n^+$-layer. Custom Li evaporator and heater are developed to realize a uniform Li-diffused layer. Theoretical calculations and inspections of the wafer cross-section by copper-staining (see [32], [33] and Fig. A.3 in Appendix) confirm that the thickness of the Li-diffused layer is 0.1 mm.
+\noindent Several studies have showed that the purity and uniformity of the Si crystal are essential for obtaining a uniform and large-area Li-drifted layer \cite{Miyachi1988307, Miyachi19944115, etde_20317602, kashiwagi1990fabrication, MURRAY1966330, FONG1982623, LITOVCHENKO2003408}. It is also desirable to realize as light a boron doping as possible for sufficient and uniform compensation of the boron acceptors by Li ions. We successfully developed a high-purity p-type Si crystal specifically for the GAPS \ac{Si(Li)} detectors in collaboration with SUMCO Corporation, Japan. Table.~\ref{tab:Si_spec} lists the specifications of the crystal used for our fabrications. For the raw material of our crystal growth, we employ polycrystalline silicon made from mono-silane. The crystal is grown to be oxygen free using the floating zone method with an axis of \(\langle \textbf{111} \rangle\). Both Si crystals with \(\langle \textbf{111} \rangle\) and \(\langle \textbf{110} \rangle\) orientations are used in previous studies, but \(\langle \textbf{111} \rangle\) is more proven for \ac{Si(Li)} detector fabrication, including for Shimadzu's commercial detectors. There is also one report indicating that it is empirically preferable for Li drift \cite{kashiwagi1990fabrication}.
 
-(3) Evaporation of n-electrode and top-hat machining Nickel and gold are evaporated on the n-side as an electrode with a thickness of 140 nm. The circumference of the n-side is then ground by ultrasonic impact grinding (UIG) to form a top-hat geometry. This geometry prevents avalanche breakdown and inhibits Li ions from drifting to the sides of the wafer during the Li-drift process.
+\begin{table}
+\centering
+%\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{l >{\raggedleft\arraybackslash}X}
+\midrule
+Fabrication method & Floating zone \\
+Type & p \\
+Dopant & Boron \\
+Crystal orientation & \(\langle \textbf{111} \rangle\) \\
+Oxygen concentration & \(< 1 \times 10^{16} \, \text{atoms / cm}^3\) \\
+Carbon concentration & \(< 2 \times 10^{16} \, \text{atoms / cm}^3\) \\
+Resistivity & \(\sim 1000 \, \Omega\) cm \\
+Minority carrier lifetime & \(\sim 1\) ms \\
+Diameter & \(\sim 100 \, \text{mm (4 inches)}\) \\
+\bottomrule
+\end{tabularx}
+\caption{Specifications of Si crystal used for GAPS Si(Li) detector.}
+\label{tab:Si_spec}
+\end{table}
 
-(4) Li drift A custom drift stage was developed to uniformly heat the large-area wafer. The wafer is put on the drift stage (hot plate in step 4 in Fig. 1), which is electrically grounded, with the p-side facing down. A positive bias voltage [V] is applied to the n-side by an electrode from a voltage supply. A temperature sensor (resistance temperature detector) is installed on the n-side of the wafer for feedback control of the heater built into the drift stage. The wafer is maintained at a constant temperature of T 100 °C. Li is drifted into the bulk of the wafer by the electric field induced by the bias voltage. The drifted depth W grows with drift time t, as \cite{osti_4532160}
+
+\noindent\textbf{(2) Li evaporation and diffusion}
+
+\noindent Li is evaporated and diffused to a shallow depth to form the Li-diffused layer or $ n^+$-layer. Custom Li evaporator and heater are developed to realize a uniform Li-diffused layer. Theoretical calculations and inspections of the wafer cross-section by copper-staining (see [32], [33] and Fig. A.3 in Appendix) confirm that the thickness of the Li-diffused layer is 0.1 mm.
+
+\noindent\textbf{(3) Evaporation of n-electrode and top-hat machining}
+
+\noindent Nickel and gold are evaporated on the n-side as an electrode with a thickness of 140 nm. The circumference of the n-side is then ground by ultrasonic impact grinding (UIG) to form a top-hat geometry. This geometry prevents avalanche breakdown and inhibits Li ions from drifting to the sides of the wafer during the Li-drift process.
+
+\noindent\textbf{(4) Li drift}
+
+\noindent A custom drift stage was developed to uniformly heat the large-area wafer. The wafer is put on the drift stage (hot plate in step 4 in Fig. 1), which is electrically grounded, with the p-side facing down. A positive bias voltage [V] is applied to the n-side by an electrode from a voltage supply. A temperature sensor (resistance temperature detector) is installed on the n-side of the wafer for feedback control of the heater built into the drift stage. The wafer is maintained at a constant temperature of T 100 °C. Li is drifted into the bulk of the wafer by the electric field induced by the bias voltage. The drifted depth W grows with drift time t, as \cite{osti_4532160}
 
 \begin{equation}
     W = \sqrt{2V\mu_L T}
@@ -64,17 +102,28 @@ Purity and uniformity of the Si crystal are essential for obtaining a uniform an
 
 where $ \mu_L $ is the Li mobility related to the diffusion constant (D) by the Einstein relation $ \mu_L=qD/k_B T $ with the elementary charge q and the Boltzmann constant $ k_B $. Fig. 13a displays the t-W relationship, which is used in Section 5 to discuss the interpretations of the analysis results in this study.
 
-(5) Machining grooves for the guard ring and strips
-The intrinsic layer exposed on the side surface of the top-hat is relatively easy to be contaminated and can become a source or path for surface LC. A circular groove of depth 0.3 mm and width 1 mm is cut into the n-side by UIG. This groove electrically isolates the perimeter, or guard-ring [6] electrode connected to the side surface, from the central area, or readout electrode. Grooves dividing the readout electrode into 8 strips of equal area are cut at the same time as machining the guard-ring groove, using the same groove depth and width.
+\noindent\textbf{(5) Machining grooves for the guard ring and strips}
 
-(6) Evaporation of p-electrode The metal contact on the p-side is evaporated in the same manner as the n-electrode.
+\noindent The intrinsic layer exposed on the side surface of the top-hat is relatively easy to be contaminated and can become a source or path for surface LC. A circular groove of depth 0.3 mm and width 1 mm is cut into the n-side by UIG. This groove electrically isolates the perimeter, or guard-ring [6] electrode connected to the side surface, from the central area, or readout electrode. Grooves dividing the readout electrode into 8 strips of equal area are cut at the same time as machining the guard-ring groove, using the same groove depth and width.
 
-(7) Etching on side of the top-hat and grooves
-The side of the top-hat and the n-side grooves are etched after painting wax on the n- and p-electrodes. This etching not only removes the damaged layer on the surface formed by UIG, but also smooths the surfaces and removes contaminants from the exposed silicon crystal. Organic-solvent cleaning is then performed to remove the wax. This surface treatment is effective for reducing the surface LC, but unnecessarily long etching needs to be avoided because it expands the area of the grooves where the intrinsic layer is exposed. [18] deduced an optimum etching time at which the LC suppression begins to saturate. In some cases where the LC is not sufficiently suppressed by etching for the specified time, second and third etchings were additionally performed during mass production.
+\noindent\textbf{(6) Evaporation of p-electrode}
 
+\noindent The metal contact on the p-side is evaporated in the same manner as the n-electrode.
+
+\noindent\textbf{(7) Etching on side of the top-hat and grooves}
+
+\noindent The side of the top-hat and the n-side grooves are etched after painting wax on the n- and p-electrodes. This etching not only removes the damaged layer on the surface formed by UIG, but also smooths the surfaces and removes contaminants from the exposed silicon crystal. Organic-solvent cleaning is then performed to remove the wax. This surface treatment is effective for reducing the surface LC, but unnecessarily long etching needs to be avoided because it expands the area of the grooves where the intrinsic layer is exposed. [18] deduced an optimum etching time at which the LC suppression begins to saturate. In some cases where the LC is not sufficiently suppressed by etching for the specified time, second and third etchings were additionally performed during mass production.
 
 \section{Detection Concept}
 \label{chap:GAPS:concept}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GAPS_concept_with_payload.png}
+    \noindent\raggedright Left figure shows \ac{GAPS} payload design while right figure shows the detection concept of \ac{GAPS}. An incoming low-energy antinucleus (antiproton, antideuteron, antihelium) is slowed down by the \ac{TOF} and \ac{Si(Li)} layers until it stops in the tracker volume. It then forms an exotic atom by replacing a shell electron, de-excites by emitting characteristic X-rays, and finally annihilates with the nucleus producing a star of pions and protons.
+    \caption{GAPS payload and detection concept}
+    \label{fig:GAPS_detection_concept}
+\end{figure}
+
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_event_display.png}
