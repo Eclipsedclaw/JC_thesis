@@ -21,7 +21,7 @@ As introduction section.~\ref{chap:intro:GAPS} mentioned, \ac{GAPS} is an Antarc
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_launch.png}
-    \noindent\raggedleft Left photo shows NASA \ac{LDB} inflating the in preparation for launch. Middle photo shows the exact moment of GAPS payload left launch vehicle. Right photo shows the GAPS payload ascending to the stratosphere with a clear sky background shot from the ground station.
+    \noindent\raggedleft Left photo shows NASA \ac{LDB} inflating the in preparation for launch. Middle photo shows the exact moment of \ac{GAPS}payload left launch vehicle. Right photo shows the \ac{GAPS}payload ascending to the stratosphere with a clear sky background shot from the ground station.
     \caption{GAPS launch on December 16th 2025 at 5:37 am NZDT from McMurdo station, Antarctica.}
     \label{fig:GAPS_launch}
 \end{figure}
@@ -50,7 +50,9 @@ The readout is preformed with a dedicated \ac{ASIC} which provides the specific 
     \caption{GAPS detector module}
     \label{fig:GAPS_detector}
 \end{figure}
-As mentioned in previous section, GAPS uses \ac{Si(Li)} detectors as its main tracker and calorimeter. Each detector is 10 cm in diameter and 2.5 mm thick, segmented into 8 strips. A total of 1008 detectors are arranged in 7 layers to form the tracker system. Each layer contains 36 modules, and each module consists of 4 detectors, as shown in Fig.~\ref{fig:GAPS_detector}. The detectors are fabricated using an novel lithium drifting method to create a thick intrinsic layer with high energy resolution at a relatively high operating temperature of -40 °C. The fabrication process is illustrated in Fig.~\ref{fig:GAPS_detector_fab}. This thesis shows simple steps of how we achieve the high-quality \ac{Si(Li)} detectors. For the detailed description, readers can refer to \cite{KOZAI2019162695}.
+As mentioned in previous section, \ac{GAPS}uses \ac{Si(Li)} detectors as its main tracker and calorimeter. Each detector is 10 cm in diameter and 2.5 mm thick, segmented into 8 strips. A total of 1008 detectors are arranged in 7 layers to form the tracker system. Each layer contains 36 modules, and each module consists of 4 detectors, as shown in Fig.~\ref{fig:GAPS_detector}. The detectors are fabricated using an novel lithium drifting method to create a thick intrinsic layer with high energy resolution at a relatively high operating temperature of -40 °C. The fabrication process is illustrated in Fig.~\ref{fig:GAPS_detector_fab}. This thesis shows simple steps of how we achieve the high-quality \ac{Si(Li)} detectors. For the detailed description, readers can refer to \cite{KOZAI2019162695}.
+
+\medskip
 
 \begin{figure}
     \centering
@@ -59,9 +61,11 @@ As mentioned in previous section, GAPS uses \ac{Si(Li)} detectors as its main tr
     \label{fig:GAPS_detector_fab}
 \end{figure}
 
-\noindent\textbf{(1) Procurement of p-type Si crystal}
+\noindent\textbf{Step 1: Procurement of p-type Si crystal}
 
-\noindent Several studies have showed that the purity and uniformity of the Si crystal are essential for obtaining a uniform and large-area Li-drifted layer \cite{Miyachi1988307, Miyachi19944115, etde_20317602, kashiwagi1990fabrication, MURRAY1966330, FONG1982623, LITOVCHENKO2003408}. It is also desirable to realize as light a boron doping as possible for sufficient and uniform compensation of the boron acceptors by Li ions. We successfully developed a high-purity p-type Si crystal specifically for the GAPS \ac{Si(Li)} detectors in collaboration with SUMCO Corporation, Japan. Table.~\ref{tab:Si_spec} lists the specifications of the crystal used for our fabrications. For the raw material of our crystal growth, we employ polycrystalline silicon made from mono-silane. The crystal is grown to be oxygen free using the floating zone method with an axis of \(\langle \textbf{111} \rangle\). Both Si crystals with \(\langle \textbf{111} \rangle\) and \(\langle \textbf{110} \rangle\) orientations are used in previous studies, but \(\langle \textbf{111} \rangle\) is more proven for \ac{Si(Li)} detector fabrication, including for Shimadzu's commercial detectors. There is also one report indicating that it is empirically preferable for Li drift \cite{kashiwagi1990fabrication}.
+\noindent Several studies have showed that the purity and uniformity of the Si crystal are essential for obtaining a uniform and large-area Li-drifted layer \cite{Miyachi1988307, Miyachi19944115, etde_20317602, kashiwagi1990fabrication, MURRAY1966330, FONG1982623, LITOVCHENKO2003408}. It is also desirable to realize as light a boron doping as possible for sufficient and uniform compensation of the boron acceptors by Li ions. We successfully developed a high-purity p-type Si crystal specifically for the \ac{GAPS}\ac{Si(Li)} detectors in collaboration with SUMCO Corporation, Japan. Table.~\ref{tab:Si_spec} lists the specifications of the crystal used for our fabrications. For the raw material of our crystal growth, we employ polycrystalline silicon made from mono-silane. The crystal is grown to be oxygen free using the floating zone method with an axis of \(\langle \textbf{111} \rangle\). Both Si crystals with \(\langle \textbf{111} \rangle\) and \(\langle \textbf{110} \rangle\) orientations are used in previous studies, but \(\langle \textbf{111} \rangle\) is more proven for \ac{Si(Li)} detector fabrication, including for Shimadzu's commercial detectors. There is also one report indicating that it is empirically preferable for Li drift \cite{kashiwagi1990fabrication}. Resistivity of $\sim 1000~\Omega\cdot cm$ corresponds to an acceptor concentration of $N_A \approx 10^{13}~\mathrm{atoms/cm}^3$ \cite{LITOVCHENKO2003408}, which is an order of magnitude lower density than that used in some of previous studies of large-area \ac{Si(Li)} detectors \cite{Miyachi1988307, Miyachi19944115, etde_20317602, kashiwagi1990fabrication}. Substrate with a lower $p$-type acceptor concentration requires fewer Li ions for compensation, thus reducing the temperature and time required in the diffusion process. Reduction of the heating treatment prevents the Si crystal from forming defects. The in-plane non-uniformity of the resistivity of our Si wafer is $\sim 10\%$ based on the measurement of sample wafers. The lifetime of minority carriers is an indicator of crystal defects and contaminants. The lifetime of $ \approx 1ms$ is enough to make a high-quality compensated region, as proven by our in-house development \cite{PEREZ201812}. After procuring 2.5 mm-thick wafers cut from the 10 cm-diameter Si crystal, we remove foreign matter on the surface by organic-solvent cleaning with methanol, xylene, and acetone. We then etch the wafer surface with our etchant (a solution of hydrofluoric acid, nitric acid and acetic acid) for 2 min to remove surface contaminants and mechanical defects. Si oxide on the surface is then removed by immersing the wafer in a solution of hydrofluoric acid for 1 min.
+
+\medskip
 
 \begin{table}
 \centering
@@ -79,40 +83,94 @@ Minority carrier lifetime & \(\sim 1\) ms \\
 Diameter & \(\sim 100 \, \text{mm (4 inches)}\) \\
 \bottomrule
 \end{tabularx}
-\caption{Specifications of Si crystal used for GAPS Si(Li) detector.}
+\caption{Specifications of Si crystal used for \ac{GAPS}Si(Li) detector.}
 \label{tab:Si_spec}
 \end{table}
 
 
-\noindent\textbf{(2) Li evaporation and diffusion}
+\noindent\textbf{Step 2: Li evaporation and diffusion}
 
-\noindent Li is evaporated and diffused to a shallow depth to form the Li-diffused layer or $ n^+$-layer. Custom Li evaporator and heater are developed to realize a uniform Li-diffused layer. Theoretical calculations and inspections of the wafer cross-section by copper-staining (see [32], [33] and Fig. A.3 in Appendix) confirm that the thickness of the Li-diffused layer is 0.1 mm.
+\noindent 
+A vacuum-based thermal Li evaporator is used to deposit and diffuse Li into high-purity Si wafers to form an \(n^{+}\)-layer. The process involves:
+\begin{itemize}
+    \item Evaporating Li onto the wafer at 280\(^\circ\)C under vacuum (\(<10^{-4}\) Pa)
+    \item Diffusing Li to form a \(\sim 100\ \mu\)m thick \(n^{+}\)-layer
+    \item Using a custom heater plate for uniform heating across the large-area wafer
+\end{itemize}
 
-\noindent\textbf{(3) Evaporation of n-electrode and top-hat machining}
+\noindent The depth of the \(n^{+}\)-\(p\) junction formed by Li diffusion is given by \cite{LITOVCHENKO2003408}
+\begin{equation}
+    x_{j}=2\sqrt{Dt}\cdot\text{erfc}^{-1}\left(\frac{N_{a}}{N_{0}}\right)
+\end{equation}
 
-\noindent Nickel and gold are evaporated on the n-side as an electrode with a thickness of 140 nm. The circumference of the n-side is then ground by ultrasonic impact grinding (UIG) to form a top-hat geometry. This geometry prevents avalanche breakdown and inhibits Li ions from drifting to the sides of the wafer during the Li-drift process.
+\noindent where \(D\) is the diffusion constant of Li in Si, \(t\) is diffusion time, \(N_{a}\) is acceptor concentration (\(\approx 10^{13}\ \text{atoms/cm}^3\)), and \(N_{0}\) is Li surface concentration (\(\approx 10^{16}\ \text{atoms/cm}^3\)).
 
-\noindent\textbf{(4) Li drift}
+\noindent The diffusion constant for \(\sim 1000\ \Omega\cdot\text{cm}\) \(p\)-type Si is:
+\begin{equation}
+    D=6\times 10^{-4}\exp\left(\frac{-0.61q}{k_{\text{B}}T}\right)\ \left[\text{cm}^2/\text{s}\right]
+\end{equation}
+\noindent where \(q\) is elementary charge, \(k_{\text{B}}\) is Boltzmann constant, and \(T\) is temperature.
 
-\noindent A custom drift stage was developed to uniformly heat the large-area wafer. The wafer is put on the drift stage (hot plate in step 4 in Fig. 1), which is electrically grounded, with the p-side facing down. A positive bias voltage [V] is applied to the n-side by an electrode from a voltage supply. A temperature sensor (resistance temperature detector) is installed on the n-side of the wafer for feedback control of the heater built into the drift stage. The wafer is maintained at a constant temperature of T 100 °C. Li is drifted into the bulk of the wafer by the electric field induced by the bias voltage. The drifted depth W grows with drift time t, as \cite{osti_4532160}
+\noindent Key advantages of using high-purity Si (\(\sim 1000\ \Omega\cdot\text{cm}\)) include lower temperature (280\(^\circ\)C) and shorter heating time (1-2 min + cooling) compared to previous studies using \(\sim 100\ \Omega\cdot\text{cm}\) crystals (300-400\(^\circ\)C for 5-20 min). The Li oxide layer formed on the wafer surface is removed by chemical etching for 1 min with our etchant. This etching also removes mechanical defects and contaminants from the surface \cite{KOZAI2019162695}.
+\medskip
+
+\noindent\textbf{Step 3: Evaporation of n-electrode and top-hat machining}
+
+\noindent The detector's electrical contact is formed by thermally evaporating a dual-layer electrode onto the \(n\)-side of the wafer. This consists of an 18\,nm adhesion layer of nickel, followed by a 120\,nm protective layer of gold, deposited at room temperature under a vacuum pressure of \(<10^{-4}\)\,Pa. To define the active area and confine the subsequent Li drift to the central region, the detector circumference is ground using Ultrasonic Impact Grinding (UIG) to produce a top-hat geometry. This geometry is designed with a 97\,mm inner diameter to maximize the sensitive area, while leaving a 1\,mm thick brim that remains \(p\)-type after Li drift for safe handling. UIG is chosen as a cost-effective method suitable for mass production. After machining, the \(n\)- and \(p\)-side surfaces are protected with Apiezon\textsuperscript{\textregistered} wax, and the ground sidewall is etched for 12\,minutes to remove damaged material and contaminants introduced during grinding. Finally, the wax is removed through a sequence of organic-solvent cleaning steps using methanol, xylene, and acetone.
+
+\medskip
+
+\noindent\textbf{Step 4: Lithium(Li) drift}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GAPS_detector_leakage_current.jpg}\\
+    \noindent\raggedright Profiles of the applied bias voltage (top), heater output (middle), and leakage current (bottom) during the drift of a sample detector. The inset plot in each panel displays each parameter's variation in the first 3 hours of the drift, as the voltage is increased step-wise to the 600 V set-point.
+    \caption{Lithium drift for \ac{GAPS} \ac{Si(Li)} detector fabrication \cite{KOZAI2019162695}.}
+    \label{fig:Li_drift_stage}
+\end{figure}
+\noindent A uniform Li-drift is achieved by our special \ac{GAPS} drift apparatus, which has been custom-designed for large-area \ac{Si(Li)} detectors. We found that retaining a thin undrifted layer on the p-side effectively suppresses the leakage current. The radial uniformity of the growth of the drifted region during Li drift is key to realizing this thin, uniform undrifted layer. Li drifting is performed in a custom drift apparatus consisting of an electrically grounded heater plate, a pressure contact for applying a bias voltage, a \ac{RTD}, and a controller. The Si wafer is set on the heater plate with the n-side up and, the p-side connected to the grounded heater plate. The pressure contact and RTD are connected to the n-electrode to apply a positive bias voltage and monitor the wafer's temperature. Then the controller automatically controlled the sequence desceibed below. Fig.~\ref{fig:Li_drift_stage} depicts an example of the bias voltage, heater output, and leakage current during the $\approx110$ hours of the drifting routine. Our sample detector is a 10-cm \ac{Si(Li)} detector. The voltage is increased step-wise, in 100 V intervals every 30 min, to prevent rapid increase of the leakage current. The insets in each panel of Fig.~\ref{fig:Li_drift_stage} display the variations over the first 3 hours of the drift, as the voltage is ramped up to the set-point of 600 V. In the first panel, open arrows indicate the timing of the voltage steps. In the final panel, the leakage current shows a step-like increase of  mA corresponding to each voltage increase. As Li drifts toward the p-side and the depletion layer expands from the n-side, the leakage current gradually increases. The Joule heat generated by the leakage current also increases. Displayed by the middle panel, heater output is automatically decreased to compensate for the Joule heat and keep the wafer at $100^\circ C$. At the end of the drift, the depletion layer approaches the p-side. At this point, the leakage current rapidly increases, the wafer temperature exceeds $100^\circ C$ due to the Joule heat, and the heater output decreases to zero. The bias voltage is automatically turned off, i.e., the Li drift is terminated, either when the leakage current reaches 25 mA or when the heater output becomes zero. The wafer is then allowed to naturally cool to room temperature. \cite{KOZAI2019162695}. Under a bias voltage as high as 600 V, the depletion layer expands slightly toward the p-side beyond the "i-p junction" formed between the drifted and undrifted layer. Thus, despite the steep increase in leakage current, a thin undrifted layer is retained on the p-side of our \ac{Si(Li)} detectors after the drifting process. The drifted depth W grows with drift time t, as \cite{osti_4532160}
 
 \begin{equation}
     W = \sqrt{2V\mu_L T}
 \end{equation}
 
-where $ \mu_L $ is the Li mobility related to the diffusion constant (D) by the Einstein relation $ \mu_L=qD/k_B T $ with the elementary charge q and the Boltzmann constant $ k_B $. Fig. 13a displays the t-W relationship, which is used in Section 5 to discuss the interpretations of the analysis results in this study.
+\noindent where $ \mu_L $ is the Li mobility related to the diffusion constant (D) by the Einstein relation 
+\begin{equation}
+    D = \mu_L k_B T / q
+\end{equation}
+\noindent with the elementary charge q and the Boltzmann constant $ k_B $. For \ac{GAPS} detector drift parameters, we derive $t\approx100h$ to obtain a drifted depth $W\approx2.2mm$ ($90\%$ of the overall 2.5 mm thickness). This calculated result is comparable to \ac{GAPS}actual drift time displayed in Fig.~\ref{fig:Li_drift_stage}. In the case that the Li drift is unexpectedly terminated before $\sim 100h $, we resume the drift sequence to make sure the qulaity of our detectors. The higher bias voltage or temperature would reduce the fabrication time while at the same time will generate more hole-electron pairs, which attract Li-compensation, hence disturbing the ideal Li distribution, which should only compensate for acceptors \cite{goulding1966semiconductor}. The optimum parameters for bias voltage $600V$ and temperature $100^\circ C$ here were experimentally optimized and determined. Normally after the drift, conventional way of the \ac{Si(Li)} detector fabrication will remove the undrifted layer near the p-side region and add a metal contact such as evaporated gold as a Schottky barrier. For \ac{GAPS}case, we found excessive large leakage current under $-35^\circ C$ with this conventional method. But if we kept the $ 100\mu m$ undrifted layer, the leakage current was significantly suppressed, see Fig.~\ref{fig:leakage_current_comparison}. With conventional way of polishing the p-side region, they are used as window for low-energy X-ray detection \cite{lyman1989x, rossington1991si, cox2005improvement}, such detectors adopted Schottky barrier contacts to minimize the p-side insensitive layers while suppressing bulk leakage currents. \ac{GAPS}aims to detect X-rays with energies higher than 20 keV, the $\sim 100\mu m$ insensitive layer is acceptable.
 
-\noindent\textbf{(5) Machining grooves for the guard ring and strips}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig/leakage_current_comparison.jpg}\\
+    \noindent\raggedright Under $ -35^\circ C $ condition, for the same detector before and after removing the undrifted layer on p-side, the leakage current shows significant difference.
+    \caption{Leakage current comparison between p-side finishing methods}
+    \label{fig:leakage_current_comparison}
+\end{figure}
 
-\noindent The intrinsic layer exposed on the side surface of the top-hat is relatively easy to be contaminated and can become a source or path for surface LC. A circular groove of depth 0.3 mm and width 1 mm is cut into the n-side by UIG. This groove electrically isolates the perimeter, or guard-ring [6] electrode connected to the side surface, from the central area, or readout electrode. Grooves dividing the readout electrode into 8 strips of equal area are cut at the same time as machining the guard-ring groove, using the same groove depth and width.
+\medskip
 
-\noindent\textbf{(6) Evaporation of p-electrode}
+\noindent\textbf{Step 5: Machining grooves for the guard ring and strips}
 
-\noindent The metal contact on the p-side is evaporated in the same manner as the n-electrode.
+\noindent The side surface of the top-hat has the largest area of the exposed i-layer which can be easily contaminated and contribute to the leakage current. Thus \ac{GAPS} machined guard-ring groove to suppress this surface leakage current, preventing it from flowing into the readout electronics. The guard-ring and strip grooves are machined using \ac{UIG} to electrically isolate the detector's active area. A circular groove with \(\sim 300~\mu\)m depth and 1-mm width is cut into the \(n\)-side, penetrating the \(n^{+}\)-layer (\(\sim 100~\mu\)m depth) to separate the central readout electrode from the perimeter guard-ring electrode. When biased, the \(i\)-layer between them depletes, providing high-resistance isolation, reducing leakage current by an order of \(<10^{-2}\) when the guard-ring is grounded, see Fig.~\ref{fig:SiLi_guarded_ring}. Simultaneously, eight equal-area readout strips are defined by grooves of identical dimensions, each electrically isolated under operating bias. The 1-mm groove width represents an optimization between minimizing exposed \(i\)-layer surface (to reduce leakage current) and practical constraints of \ac{UIG} tool durability and uniform etching—narrower grooves risk tool damage and trap bubbles during etching. The guard-ring width is set to 2.5 mm, balancing active area maximization against the need for reliable application of etch-resisting wax during processing.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig/GAPS_detector_leakage_current_guard_ring.jpg}\\
+    \noindent\raggedright I-V characteristics of a sample detector at before machining the guard-ring groove (triangles); after machining the groove, with a floated guard-ring (rectangles); and after grounding the guard-ring (circles).
+    \caption{Groove and guarded ring for \ac{GAPS} detector}
+    \label{fig:SiLi_guarded_ring}
+\end{figure}
 
-\noindent\textbf{(7) Etching on side of the top-hat and grooves}
+\medskip
 
-\noindent The side of the top-hat and the n-side grooves are etched after painting wax on the n- and p-electrodes. This etching not only removes the damaged layer on the surface formed by UIG, but also smooths the surfaces and removes contaminants from the exposed silicon crystal. Organic-solvent cleaning is then performed to remove the wax. This surface treatment is effective for reducing the surface LC, but unnecessarily long etching needs to be avoided because it expands the area of the grooves where the intrinsic layer is exposed. [18] deduced an optimum etching time at which the LC suppression begins to saturate. In some cases where the LC is not sufficiently suppressed by etching for the specified time, second and third etchings were additionally performed during mass production.
+\noindent\textbf{Step 6: Evaporation of p-electrode}
+
+\noindent The metal contact on the p-side is evaporated in the same manner as the n-electrode that is introduced in Step 3. 
+\medskip
+
+\noindent\textbf{Step 7: Etching on side of the top-hat and grooves}
+
+\noindent Following groove machining, a final etching process is performed on the side of the top-hat and the \(n\)-side grooves after protecting the \(n\)-electrodes and \(p\)-electrodes with wax. This step removes the UIG-damaged layer, smoothes surfaces, and eliminates contaminants from all exposed silicon areas. Organic-solvent cleaning afterward—particularly with methanol—produces a lightly \(n\)-type surface on the exposed \(i\)-region, preventing electric breakdown under high bias. Optimization studies determined that two discrete etching steps (10 min followed by 5 min, totaling 15 min) effectively minimize leakage currents and produce glassy, smooth groove surfaces, while additional etchings provide no significant further improvement. This approach balances active area preservation with contamination control, as excessive etching enlarges the exposed \(i\)-layer area and increases leakage risk.
 
 \section{Detection Concept}
 \label{chap:GAPS:concept}
@@ -218,7 +276,9 @@ Fig.~\ref{fig:GFP_module_row} illustrates the front-end and back-end electronics
 
 \subsection{GFP Thermal System}
 \label{chap:GAPS:GFP:thermal}
+Due to both \ac{GAPS} project timeline and the pandemic situation, the GFP thermal system was designed, fabricated, and tested before the flight system was assembled. Thermal system of \ac{GAPS} is highly integrated with detector system, makes it hard to prepare in parallel. Then the GFP thermal system is designed to validate the novel \ac{OHP} cooling technique for \ac{GAPS} Si(Li) tracker before the full payload is ready, see section.~\ref{chap:GAPS:thermal:OHP}. The GFP thermal system is designed to be as close as possible to the flight thermal system in order to provide a representative validation of the \ac{OHP} technique. This section discusses the design of the GFP thermal system. The concept of \ac{OHP} and \ac{MCHP} will be discussed in section.~\ref{chap:GAPS:thermal:OHP} while the performance of the GFP thermal system is presented in section.~\ref{chap:GAPSresult:GFP:thermal}.
 
+\begin{landscape}
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GFP_thermal.jpg}
@@ -226,10 +286,17 @@ Fig.~\ref{fig:GFP_module_row} illustrates the front-end and back-end electronics
     \caption{ The GFP thermal system design, with only one Si(Li) row shown (left) and the setup (right).}
     \label{fig:GFP_thermal}
 \end{figure}
+\end{landscape}
 \subsubsection*{System requirements}
 GFP thermal system required cooling down Si(Li) detectors down to required $ -40^\circ C $ while at the same time validate again the performance of this novel \ac{OHP} technique that doesn't have any active compressor to reduce the total weight of the payload. It is important for balloon experiment that we keep the payload weight sum as low as possible to reach higher flight altitude, detail information discussed in section.~\ref{chap:intro:balloon}. Detailed \ac{OHP} / \ac{MCHP} discussed in section.~\ref{chap:GAPS:thermal:OHP}. There is no weight requirement for GFP since it is on the ground, but the goal of validating the system make the design of the GFP thermal system as close to flight thermal system as possible.
 
 \subsubsection*{The GFP thermal design}
+To accommodate the GFP tracker configuration, which has 12 modules per layer, the GFP OHP tubes are routed into 12 capillary loops in series, as illustrated in Fig.~\ref{fig:GFP_thermal} and Fig.~\ref{fig:GFP_thermal_line}. To simulate the flight radiator, a scaled down cold plate couples the cooling source and the OHP tubes. Same as flight, the OHP tubes are filled with dual-phase trifluoromethane (R23). The tubes were coupled with the Si(Li) modules with the aluminum cooling collars as discussed earlier. These cooling collars are anodized in order to electrically isolate the OHP tubes from the Si(Li) modules. In order to increase the thermal efficiency, the contact surfaces of the cooling collars are pasted with flight-representative thermal grease.
+
+By design, the cooling collars for the \ac{GAPS} flight have 4 different lengths: (i) $ 9\ cm $ for the bottom layer since this layer is most open to the environment and anticipated to have a larger thermal leak, (ii) $ 4\ cm $ for the top layer to minimize the separation between the \ac{TOF} cube and tracker, (iii) $ 10\ cm $ to connect the top and second top layer to increase the cooling for the top layer, and (iv) $ 6\ cm $ for other normal layers. The GFP instrument uses the first three types of cooling collars which present the worst thermal condition, to simulate the flight scenario to the maximum.
+
+To reduce thermal leaks, the entire GFP OHP system is insulated by at least $ 4'' $-thick foam from the environment and the tracker is wrapped by a two-layer plastic bag. A low-temperature commercial chiller or liquid nitrogen is used to provide the cooling source to the cold plate. A PID controls the heaters with the feedback of temperature readouts from sensors attached to the reservoir and OHP tubes.
+\begin{landscape}
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GFP_thermal_lines.png}
@@ -237,31 +304,43 @@ GFP thermal system required cooling down Si(Li) detectors down to required $ -40
     \caption{GFP thermal design with each row of detector tagged.}
     \label{fig:GFP_thermal_line}
 \end{figure}
-To accommodate the GFP tracker configuration, which has 12 modules per layer, the GFP OHP tubes are routed into 12 capillary loops in series, as illustrated in Fig.~\ref{fig:GFP_thermal} and Fig.~\ref{fig:GFP_thermal_line}. To simulate the flight radiator, a scaled down cold plate couples the cooling source and the OHP tubes. Same as flight, the OHP tubes are filled with dual-phase trifluoromethane (R23). The tubes were coupled with the Si(Li) modules with the aluminum cooling collars as discussed earlier. These cooling collars are anodized in order to electrically isolate the OHP tubes from the Si(Li) modules. In order to increase the thermal efficiency, the contact surfaces of the cooling collars are pasted with flight-representative thermal grease.
-
-By design, the cooling collars for the \ac{GAPS} flight have 4 different lengths: (i) $ 9\ cm $ for the bottom layer since this layer is most open to the environment and anticipated to have a larger thermal leak, (ii) $ 4\ cm $ for the top layer to minimize the separation between the \ac{TOF} cube and tracker, (iii) $ 10\ cm $ to connect the top and second top layer to increase the cooling for the top layer, and (iv) $ 6\ cm $ for other normal layers. The GFP instrument uses the first three types of cooling collars which present the worst thermal condition, to simulate the flight scenario to the maximum.
-
-To reduce thermal leaks, the entire GFP OHP system is insulated by at least $ 4'' $-thick foam from the environment and the tracker is wrapped by a two-layer plastic bag. A low-temperature commercial chiller or liquid nitrogen is used to provide the cooling source to the cold plate. A PID controls the heaters with the feedback of temperature readouts from sensors attached to the reservoir and OHP tubes.
+\end{landscape}
 
 \section{GAPS flight Thermal System}
 \label{chap:GAPS:thermal}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\linewidth]{fig/GAPS_thermal_design.jpg}
-    \noindent\raggedright Conceptual diagram of the \ac{GAPS} instrument. To cool the Si(Li) tracker consisting of $ >1000 $ detectors, the heat to be removed is transported to a radiator, which is located outside the \ac{TOF} system and pointed to the anti-solar azimuth direction, and then dissipated to space \cite{FUKE2023168102}.
-    \caption{GAPS flight instrument thermal design schematic}
-    \label{fig:GAPS_flight_thermal}
-\end{figure}
 
-The \ac{GAPS} thermal system is required to cool down the tracker to below $ \sim-40^\circ C $ during the flight, with a designed cooling power $ \sim300\ W $. As the payload shows in Fig.~\ref{fig:GAPS_antarctic} and the thermal design schematic shows in Fig.~\ref{fig:GAPS_flight_thermal}, \ac{GAPS} thermal system is designed and integrated closely with detector cube, with 2 major parts included, \ac{MCHP}/\ac{OHP} system and flight insulation package.
+Since mentioned in section.~\ref{chap:GAPS:detectors}, \ac{Si(Li)} detectors perform best under $\sim-40^\circ C$, naturally require \ac{GAPS} thermal system to cool down the tracker to below $ \sim-40^\circ C $ during the flight, with a designed cooling power $ \sim300\ W $. As the payload shows in Fig.~\ref{fig:GAPS_antarctic} and the thermal design schematic shows in Fig.~\ref{fig:GAPS_flight_thermal}, \ac{GAPS} thermal system is designed and integrated closely with detector cube, with 2 major parts included, \ac{MCHP}/\ac{OHP} system and flight insulation package.
 
-The multi-loop capillary heat pipes (MCHP) or oscillating heat pipes (OHP) system contains similar components as OHP thermal system described in section.~\ref{chap:GAPS:GFP:thermal}, with a larger-sized radiator, reservoir and swaglok tubing, see section.~\ref{chap:GAPS:thermal:OHP}.
+The multi-loop capillary heat pipes (MCHP) or oscillating heat pipes (OHP) system contains similar components as \ac{GFP} OHP thermal system described in section.~\ref{chap:GAPS:GFP:thermal}, with a larger-sized radiator, reservoir and swaglok tubing, see section.~\ref{chap:GAPS:thermal:OHP}.
 
 During flight, the payload is exposed to the environment. To avoid potential sun radiation causing thermal overheat issue, a series of styrofoam insulation package is designed and manufactured to make the entire payload thermal condition stable during the \ac{LDB} mission over multi-week time scale, see section.~\ref{chap:GAPS:thermal:foam}.
 
+\begin{landscape}
+\begin{figure}
+\centering
+\includegraphics[width=0.9\linewidth]{fig/GAPS_thermal_design.jpg}
+\noindent\raggedright Conceptual diagram of the \ac{GAPS} instrument. To cool the Si(Li) tracker consisting of $ >1000 $ detectors, the heat to be removed is transported to a radiator, which is located outside the \ac{TOF} system and pointed to the anti-solar azimuth direction, and then dissipated to space \cite{FUKE2023168102}.
+\caption{GAPS flight instrument thermal design schematic}
+\label{fig:GAPS_flight_thermal}
+\end{figure}
+\end{landscape}
+
 \subsection{MCHP/OHP}
 \label{chap:GAPS:thermal:OHP}
+The heat pipe is a passive heat transfer device that utilizes evaporation and condensation of a working fluid to transport heat over long distances. It consists of a sealed container divided into three sections: an evaporator where heat is added, an adiabatic section with no heat transfer, and a condenser where heat is rejected. When heat is applied to the evaporator, the working fluid vaporizes, creating a pressure difference that drives vapor flow to the cooler condenser. Condensate is returned to the evaporator via capillary, gravitational, electrostatic, or centrifugal forces. Thermally, the heat pipe functions as a small ``engine'' where thermal energy is partially converted into work to overcome frictional forces within the fluid circulation, enabling more efficient heat transport than pure conduction, though it produces no net external work. Structurally, heat pipes are simple devices made from materials such as aluminum, copper, or stainless steel and operate within the freezing and critical points of the working fluid, requiring careful fluid--material compatibility (e.g., water is incompatible with aluminum). Categories of heat pipes include capillary-driven (conventional heat pipes, thermosyphons, oscillating heat pipes, rotating heat pipes), size-based (micro, flat-plate, vapor chambers), temperature-based (cryogenic, high-temperature), and loop-type systems (loop heat pipes, capillary pumped loops) where vapor and liquid flows are separated \cite{ma_oscillating_2015}.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GAPS_thermal_concept.png}
+    \noindent\raggedright Left plot shows the concept of a \ac{OHP} system from Akachi's patent \cite{akachi_heatpipe_1990}. Right figure shows the \ac{GAPS} thermal design that enbeded the \ac{OHP} system with the entire payload that still shares evaporator(heat genrated from detector region), adiabatic section(top and bottom horizontal sessions of the arrows) and condenser(radiator) area.
+    \caption{Conventional heat pipe schematic}
+    \label{fig:GAPS_thermal_concept}
+\end{figure}
+
+Addtionally to heat pipe, The Oscillating heat pipe(\ac{OHP}) is a heat transfer device that functions via thermally excited oscillating motion induced by the cyclic phase change of an encapsulated working fluid. A typical OHP consists of a train of liquid plugs and vapor bubbles which exist in serpentine-arranged, interconnected capillary tubes or channels, as shown in Fig.~\ref{fig:GAPS_thermal_concept}. The oscillating heat pipe (OHP) is partially filled with a working fluid, and its internal diameter is made sufficiently small so that liquid plugs are separated by vapor bubbles. Unlike conventional heat pipes, the OHP requires no wicking structure and offers high manufacturability. It consists of three sections: an evaporator, an adiabatic zone, and a condenser, typically arranged as a meandering tube or channel that passes through heat-reception (evaporator) and heat-rejection (condenser) areas. During operation, continuous condensation in the condenser and evaporation in the evaporator generate a pulsating, non-equilibrium vapor-pressure field that drives oscillatory fluid motion between adjacent channel sections. This results in a complex flow pattern characterized by oscillatory and circulatory liquid-vapor volumes, enabling both sensible (convective) and latent (phase-change) heat transfer. Although phase-change processes help initiate the oscillating motion, most of the heat is transported by sensible heat transfer; consequently, oscillating single-phase flow and heat transfer play a dominant role in OHP performance \cite{ma_oscillating_2015}.
+
+% TODO: maybe add a OHP CAD model here to show 36 loops
+As for \ac{GAPS}, we utilized the concept of \ac{OHP} and push it to limit with a 36-loop combined heat pipe system to provide sufficient cooling power for the entire tracker system, see Fig.~\ref{fig:GAPS_thermal_concept}. For each loop, it forms an complete cycle of \ac{OHP} with evaporator, adiabatic section and condenser. With \ac{GAPS} payload, heat generated from the Si(Li) detector region will behave as the evaporator, the top and bottom horizontal sections of the swaglok tubing are the adiabatic section while the radiator is the condenser. The liquid R23 inside the tubing will vaporize when absorbing heat from the detector region, push the flow moves up to return to the top and the radiator. Then the R23 will dessipate heat and become liquid again, drop to the bottom of the radiator due to gravity, starting the next cycle again. This will keep the cycle flowing inside each loop. With 36 loops working together, the entire \ac{OHP} system can provide sufficient cooling power to keep the entire tracker thermally stable during the flight without any active compressor so the mass and power consumption of the payload can be significantly reduced. Since this entire system with 36 loops behaves as one large looped heat pipe, we called it multi-loop capillary heat pipe (\ac{MCHP}) system.
 
 \subsection{Flight Insulation package}
 \label{chap:GAPS:thermal:foam}
@@ -340,7 +419,7 @@ To roughly estimate $Q_0$, we assume that the \ac{OHP}, the radiator, and the de
 
 To perform the ground testing, the ground cooling system (\ac{GCS}) has being designed and assembled to provide similar thermal condition for flight, see Fig.~\ref{fig:GAPS_GCS_setup}. While at the same time all the detector modules are sealed with aluminum window and purged with nitrogen gas, the low vacuum condition ($ \sim 3\ torr $) throughout the entire payload is not accomplished with \ac{GCS} system. The GCS cools the radiator and has a simple design. The payload configuration is not changed for testing, but non-flight items may be attached to the payload. A cold plate is attached to the radiator to cool it. The cold plate is tightened to the radiator with bolts uniformly distributed in the plate so that the two surface planes make good contact. A tube is attached to the cold plate, and a coolant flows through the tube, drawing heat from the plate. Once the radiator is sufficiently cooled, the HPS transfers heat from the detectors to the radiator, bringing the detectors down to operating temperature \cite{Hideyuki_FUKE20232}.
 
-As we move forward with \ac{GCS} cooling down GAPS detector during preparation for the first flight, we have made several improvements to the \ac{GCS} design to enhance its performance and reliability. These improvements include optimizing the coolant flow rate, enhancing the thermal insulation around critical components, and implementing extra chillers to ensure consistent temperature control. These enhancements have significantly improved the efficiency of the cooling process, allowing for more stable and precise temperature regulation of the detectors, see Fig.~\ref{fig:GAPS_GCS}
+As we move forward with \ac{GCS} cooling down \ac{GAPS}detector during preparation for the first flight, we have made several improvements to the \ac{GCS} design to enhance its performance and reliability. These improvements include optimizing the coolant flow rate, enhancing the thermal insulation around critical components, and implementing extra chillers to ensure consistent temperature control. These enhancements have significantly improved the efficiency of the cooling process, allowing for more stable and precise temperature regulation of the detectors, see Fig.~\ref{fig:GAPS_GCS}
 
 \begin{figure}
     \centering
