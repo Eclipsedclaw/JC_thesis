@@ -492,9 +492,128 @@ There are 144 SiPMs installed in the pGRAMS detector, and a common SiPM bias HV 
 
 \subsubsection{microGRAMS test stand at Osaka University}
 \label{chap:GRAMS:pGRAMS:RandD:Osaka}
-For preparation of pGRAMS flight in year 2026, we have setup a smaller scale full detector system in Osaka University to act as purity monitor. It is also a good chance to practice the onsite integration as a scale-down system which we put together from nothing. 
+For preparation of pGRAMS flight in year 2026, we have setup a smaller scale full detector system in Osaka University to act as purity monitor. It is also a good chance to practice the onsite integration as a scale-down system which we put together from nothing. This test stand is led by me and professor Hirokazu Odaka, Shota Arai, Tatsumi Ryutaro from Osaka University. We have replicate a CF-12 opening flange cryostat that is used for pGRAMS flight backup. I have setup the item list and schedule for the entire integration work, so that team from boston will go over the checklist table.~\ref{tab:Osaka_components} and bring all the required items to Osaka for assembly. This is a good practice for the actual flight preparation in future pGRAMS flight and even GRAMS science flight. The entire integration work is planned in two weeks from Dec 10th to Dec 23rd, 2024, schedule showed in Fig.~\ref{fig:Osaka_integration_schedule}. 
+
+By the end of the schedule, we expect to have a fully functional pGRAMS test bench at Osaka setup. This test bench will be used to test the pGRAMS detector performance in lab environment, especially the argon purity and electron lifetime study. It will also be used to train students and young researchers to gain experience for future balloon flight preparation. And the hole setup is waiting for pumping and filling liquid argon to start the test. As discussed in section.~\ref{chap:GRAMS:pGRAMS:RandD:purity}, the argon purity is a key parameter for LArTPC detector performance. We continuously pumped down this chamber for over 2 weeks until we perform our first liquid argon filling test in late Jan, 2026.
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[xscale=0.8, yscale=1.5]
+    % Draw horizontal timeline
+    \draw[thick] (0,0) -- (13,0);
+    
+    % Draw vertical date separators AND dashed lines
+    \foreach \x/\date in {0/Dec 10, 1/Dec 11, 2/Dec 12, 3/Dec 13, 4/Dec 14, 5/Dec 15, 6/Dec 16, 7/Dec 17, 8/Dec 18, 9/Dec 19, 10/Dec 20, 11/Dec 21, 12/Dec 22, 13/Dec 23}
+    {
+        % Solid tick marks on timeline
+        \draw (\x,0.2) -- (\x,-0.2);
+        
+        % Dashed vertical lines extending through entire chart
+        \draw[dashed, gray, opacity=0.5] (\x,0.5) -- (\x,-7);
+        
+        % Date labels
+        \node[below, rotate=45, anchor=north east, yshift=-2pt, xshift=2pt, font=\footnotesize] at (\x,-0.2) {\date};
+    }
+    
+    % Weekend markers
+    \draw[red, line width=3pt] (2,0.3) -- (4,0.3);
+    \node[red, above] at (3,0.4) {Weekend};
+    
+    \draw[red, line width=3pt] (9,0.3) -- (11,0.3);
+    \node[red, above] at (10,0.4) {Weekend};
+    
+    % task 1: arrival and item list check
+    \draw[line width=2pt, ->] (0,-1.25) -- (2,-1.25);
+    \node[above] at (2,-1.2) {\textbf{arrive and item list check}};
+    
+    % Task 2: implement HK system to monitor system during break
+    \draw[line width=2pt, ->] (1,-2.25) -- (13,-2.25);
+    \node[above] at (5.5,-2.2) {\textbf{implement HK system to monitor system during break}};
+    
+    % Task 3: flange preparation and install all pieces with correct torque
+    \draw[line width=2pt, ->] (4,-3.25) -- (13,-3.25);
+    \node[above] at (8.5,-3.2) {\textbf{Flange preparation, install all pieces with correct torque}};
+    
+    % Task 4: TPC assembly and continuity check without top flange
+    \draw[line width=2pt, ->] (4,-4.25) -- (9,-4.25);
+    \node[above] at (8.2,-4.2) {\textbf{TPC assembly and continuity check without top flange}};
+    
+    % Task 5: perform continuity check from channel to readout
+    \draw[line width=2pt, ->] (7,-5.25) -- (8,-5.25);
+    \node[above] at (11,-5.2) {\textbf{perform continuity check from channel to readout}};
+
+    % Task 6: solve potential CSP ringing issue
+    \draw[line width=2pt, ->] (8,-6.25) -- (9,-6.25);
+    \node[above] at (10.5,-6.2) {\textbf{solve potential CSP ringing issue}};
+    
+\end{tikzpicture}
+\caption{pGRAMS test bench at Osaka setup timeline}
+\label{fig:Osaka_integration_schedule}
+\end{figure}
 
 % TODO: make Osaka pGRAMS backup chamber section
+
+\begin{longtable}{|p{0.15\linewidth}|p{0.15\linewidth}|p{0.68\linewidth}|} 
+\caption{pGRAMS Osaka bench Components list} \label{tab:Osaka_components} \\
+\hline
+\multicolumn{2}{|c|}{ARIOS chamber} & chamber body, CF12 gasket, CF12 gasket(backup), CF12 bolts and nuts(M8 70mm), CF12-CF10 adapter, CF10 bolts and nuts(5/16. 1.25), CF10 gasket, CF10 gasket(backup), CF10 flange, styrofoam \\
+\hline
+\endfirsthead
+
+\multicolumn{3}{c}%
+{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
+\hline
+\multicolumn{2}{|c|}{ARIOS chamber (continued)} & \\
+\hline
+\endhead
+
+\hline \multicolumn{3}{r}{{Continued on next page}} \\ \hline
+\endfoot
+
+\hline \hline
+\endlastfoot
+
+\multirow{10}{*}{CF10 air side} & CF4.5 flange & CF4.5 gasket, CF4.5 bolts (tapped hole), M8 25mm, CF4.5-CF4.5-CF4.5 tee, CF4.5 gasket, CF4.5 bolts and nuts, M8 50mm, CF4.5 DB25 flange, DB25 femail connectoe kit (for airside), DB25 RTD, MH ADC board v2, Molex connectors and socket, CF4.5 gasket, CF4.5 bolts and nuts, M8 50mm, CF4.5-CF4.5 valve, CF4.5 gasket, CF4.5 bolts and nuts, M8 50mm, ISO100 to CF4.5 adapter, ISO100 o-ring, ISO100 clamp, ISO100 hose, ISO100 o-ring, ISO100 clamp, ISO100 90-degree, ISO100 o-ring (to turbo), ISO100 clamp \\ 
+\cline{2-3}
+ & CF2.75 flange & CF2.75 gasket, CF2.75 bolts (tapped hole), M6 18mm, CF2.75-CF2.75-CF2.75 tee, CF2.75 gasket, CF2.75 bolts and nuts (LDS kit, 1/4-28, 1.25"), CF2.75 viewport, CF2.75 gasket, CF2.75 bolts and nuts (LDS kit, 1/4-28, 1.25"), CF2.75 to CF1.33 flange, CF1.33 gasket, CF1.33 bolts (tapped hole) 8-32 0.5", CF1.33 SHV 5kV feedthrough and cable \\ 
+\cline{2-3}
+ & CF1.33 \#1 & CF1.33 gasket, CF1.33 bolts (tapped hole) M4 12mm, CF1.33 blank \\ 
+\cline{2-3}
+ & CF1.33 \#2 & CF1.33 gasket, CF1.33 bolts (tapped hole) M4 12mm, CF1.33 blank \\ 
+\cline{2-3}
+ & CF1.33 \#3 & CF1.33 gasket, CF1.33 bolts (tapped hole) M4 12mm, CF1.33 - CF1.33 extension, CF1.33 gasket, CF1.33 bolts and nuts (LDS kit), CF1.33-CF1.33-CF1.33 tee, CF1.33 gasket, CF1.33 bolts and nuts (LDS kit), CF1.33 rupture disk, CF1.33 gasket, CF1.33 bolts and nuts (LDS kit), CF1.33 - KF25 adapter, KF25 o-ring and clamp, KF25 MKS gauge (new one), MKS readout cable \\ 
+\cline{2-3}
+ & CF1.33 \#4 & CF1.33 gasket, CF1.33 bolts (tapped hole) M4 12mm, CF1.33 - swagelok 3/8'' adapter (male), SS tube, 3/8" (long), swagelok 3/8'' ferrules and nut, swagelok 3/8'' valve (male-male), swagelok 3/8'' ferrules and nut, SS tube, 3/8" (short), swagelok 3/8''-1/4''-3/8'' tee (all males), swagelok 1/4'' ferrules and nut, SS tube, 1/4" (long), swagelok 1/4'' adapter (male-male), swagelok 1/4'' analog pressure gauge, swagelok 3/8'' ferrules and nut, SS tube, 3/8" (short), swagelok to NPT adapter (male-female), NPT passive relief valve (male) \\
+\cline{2-3}
+ & CF1.33 \#5 & 1/2 inch PTFE tube, CF1.33 gasket, CF1.33 bolts (tapped hole M4 12mm), swagelok 1/2'' ferrules and nut, CF1.33 vacuum-swagelok 1/2'' tubing (female), swagelok 1/2''-3/8'' adapter (male-male), swagelok 3/8'' ferrules and nut, SS tube, 3/8" (long), swagelok 3/8'' valve (male-male), swagelok 3/8'' ferrules and nut, SS tube, 3/8" (short), 1/2" VCR male to 3/8" swagelok adapter \\
+\cline{2-3}
+ & CF1.33 \#6 & CF1.33 gasket, CF1.33 bolts (tapped hole) M4 12mm, CF1.33 vacuum-swagelok 1/2'' tubing (female), swagelok 1/2'' ferrules and nut, swagelok 1/2''-3/8'' adapter (male-male), swagelok 3/8'' ferrules and nut, SS tube, 3/8" (long), swagelok 3/8'' valve (male-male) \\
+\cline{2-3}
+ & threaded holes & M8 eyeballs for lifting \\
+\cline{2-3}
+ & signal flange &  air side readout DB50 breakout boards, SMA cables, inner side DB50 adapter board, 4-40 vented screw, 3/8" long, DB37-DB37 signal adapter cable \\
+\hline
+\multirow{2}{*}{Vacuum side} & TPC mounting & M8 vented screws, 16 mm, M8 vented screws, 35 mm, C-clamps, 4.5 cm space, C-clamps, 3 cm space, M8 threaded rod, 25 cm, mounting disk, SS \\
+\cline{2-3}
+ & TPC & TPC body, CSP, SIPM preamp board, CSP power board, SMA cable for CSP power boards, SMA cable for SiPM boards, cryo-SMA cable for CSP power/SiPM, SMA extension adapter (female to female), SMA tee, PTFE TPC adapter top 1, PTFE TPC adapter top 2, PTFE TPC adapter bottom 1, PTFE TPC adapter bottom 2 \\
+\hline
+\multicolumn{2}{|l|}{vacuum pumps} & scroll pump, hose, clamps, turbo pump, turbo 24V power supply, turbo controller/RPi, RS485 to USB adapter, turbo power cable \\
+\hline
+\multicolumn{2}{|l|}{Tools etc} & tool box: socket wrench, hex kit, torque wrench, zip ties, dental floss, PTFE tape, Straps, screw drivers, Solder bench, cutter, scissors, adjustable wrenches, nitro gloves, \ac{PPE} \\
+\hline
+\end{longtable}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/Osaka_pgrams.png}
+    \noindent\raggedright Left picture shows the final outlook of the pGRAMS backup chamber at Osaka. All components were installed on the CF-12 flange and tightened with correct torque, pumped from the ISO100 hose by the HiPace 300 turbo pump. Right picture shows the inside of the chamber with TPC mounted on the stainless steel mounting disks. 
+    \caption{pGRAMS test bench at Osaka setup}
+    \label{fig:Osaka_chamber_setup}
+\end{figure}
+
+Fig.~\ref{fig:Osaka_chamber_setup} shows the final outlook of the pGRAMS backup chamber at Osaka. All components were installed on the CF-12 flange and tightened with correct torque, pumped from the ISO100 hose by the HiPace 300 turbo pump. Right picture shows the inside of the chamber with TPC mounted on the stainless steel mounting disks. After pumping, we have performed multiple leak checks with ethonol to ensure there is no leak point on the entire system.
+This shows the capabilities of replicate a full pGRAMS system in a different location with a different team in a short amount of time, makes another advantage for liquid argon time projection chamber technology for a variety of applications for succesors to adapte.
+
 
 \subsection{pGRAMS Flight Detector}
 \label{chap:GRAMS:pGRAMS:detector}
