@@ -22,8 +22,7 @@ Furthermore, we compare the X-ray resolution when the \ac{OHP} is running or off
 with the ASIC electronics: We take the pedestal data of Si(Li) module to study equivalent noise charge (ENC) for ASIC electronics. For the \ac{GFP} construction, we tested the modules which were assembled with the ASIC front-end electronics in the lab before they were integrated into the \ac{GFP} setup. During this testing, we found the ASIC channels with longer circuit traces between the ASIC chip and Si(Li) strips performed a higher noise than others. This additional noise could be due to that those channels are further away from the grounding or easier pick up the noise from electromagnetic interference. To reduce such noise, two additional PCBs were potted on top of the FEB with epoxy with Torr Seal. These small PCBs are connected with the analog ground via the Al frame, providing a closer ground shielding against the noise for those channels with longer input traces. This recipe has been fully validated at GFP. Fig.~\ref{fig:GAPS_GFP_detector_performance} shows the ENC resolutions of one representative module before (grey) and after (blue) mounting the noise shields from a parallel testing in the lab. In addition, overlaid the plot, the red line shows the ENC resolutions for this module being integrated into the row at the GFP. The consistently good ENC resolutions at the \ac{GFP} clearly validate that adopting noise shields is a robust solution to make the ASIC front-end electronics work as well as expected. Limited by the time, only the last 12 Si(Li) modules for the top tracker layer are assembled with the noise shields at the GFP, while the modules on the middle and bottom layer don't include the noise shields during the \ac{GFP} running.
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\linewidth]{fig/GAPS_GFP_detector_performance.jpeg}
-    \\
+    \includegraphics[width=1\linewidth]{fig/GAPS_GFP_detector_performance.jpeg}
     \noindent\raggedright Noise suppression by the additional noise shields: ENC resolutions as the function of ASIC channel from the testing of a single module without (grey) and with (blue) noise shields; (red) ENCresolutions when the same module is assembled with the noise shields and integrated into the row at GFP.
     \caption{Single detector module noise performance}
     \label{fig:GAPS_GFP_detector_performance}
@@ -61,7 +60,14 @@ After fixing all the noise issues, we have incorporated the TOF system to trigge
     \caption{Reconstructed event 169965693 from GFP}
     \label{fig:GFP_nice_event}
 \end{figure}
-Fig.~\ref{fig:GFP_nice_event} shows an example of the reconstructed muon track. With the merged muon events, the \ac{GAPS} functional prototype has been demonstrated to work well to reconstruct the track at the system level, which includes synchronization of two DAQ system, the waveform analysis on TOF data, hit finding and alignment in the Si(Li) tracker, and the event merge. More details will be discussed in the flight instrument ground testing in section.~\ref{chap:GAPSresult:flight}.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GFP_geometry.png}
+    \noindent\raggedright Left picture shows actual \ac{GFP} setup at Bates. Right figure shows the Geant4 simulation geometry for \ac{GFP} setup, including the Si(Li) tracker, TOF system, and surrounding passive materieals.
+    \caption{GFP Geant4 simulation geometry}
+    \label{fig:GFP_simulation}
+\end{figure}
+With the GFP being assembled, I have participated in several cosmic muon runs at Bates. We have successfully merged the events from the TOF and tracker DAQ, and reconstructed the muon tracks at the system level. I also made the simulation geometry for the \ac{GFP} setup with Geant4, enabling us to check the reconstructed muon tracks with the simulation truth information, see Fig.~\ref{fig:GFP_simulation}. With our track reconstruction algorithm, we have successfully demonstrate our capability of capturing cosmic muons. Fig.~\ref{fig:GFP_nice_event} shows an example of the reconstructed muon track. With the merged muon events, the \ac{GAPS} functional prototype has been demonstrated to work well to reconstruct the track at the system level, which includes synchronization of two DAQ system, the waveform analysis on TOF data, hit finding and alignment in the Si(Li) tracker, and the event merge. More details will be discussed in the flight instrument ground testing in section.~\ref{chap:GAPSresult:flight}.
 
 \subsection{GAPS functional prototype (GFP) Ground Cooling Performance Evaluation and oscillating heat pipe (OHP) Functionality Validation}
 \label{chap:GAPSresult:GFP:thermal}
@@ -172,21 +178,83 @@ Heat removed from cold plate, $Q_2$, from Eq.~\ref{equ:heat_removal} & $183.8 \p
     \label{fig:GFP_thermal_result}
 \end{figure}
 
-\subsection{Time-of-Flight (TOF) Performance Evaluation}
-\label{chap:GAPSresult:GFP:TOF}
-
 
 \section{GAPS Payload Ground Testing}
 \label{chap:GAPSresult:flight}
+\ac{GAPS} has accomplished the detector integration at Columbina University Nevis lab in spring of 2023. Then the payload got shipped separately and assembled fully at the Columbia Scientific Balloon Facility (\ac{CSBF}) in summer of 2023. We have conducted several ground testing campaigns at \ac{CSBF} before the flight including the payload calibration run, the on-ground cosmic muon run and \ac{CSBF} compatibility test, see Fig.~\ref{fig:GAPS_GND_TEST}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GAPS_GND_TEST.png}
+    \noindent\raggedright Left picture shows me and Kelsey Yee working on the \ac{GAPS} payload Columbia university Nevis lab on the day of Dec 15th, 2023 when the last of the \ac{GAPS} detector module got installed into the tracker successfully. Middle picture shows the full \ac{GAPS} payload being hanging at \ac{CSBF} facility for the compatibility testing. Right picture shows The entire payload lives inside the McMurdo station running under \ac{GCS} before the flight.
+    \caption{\ac{GAPS} on-ground testing}
+    \label{fig:GAPS_GND_TEST}
+\end{figure}
 
 \subsection{Detector Performance and Particle Tracking}
 \label{chap:GAPSresult:flight:detector}
+We have measured the pedestal and noise performance for all \ac{Si(Li)} channels with the full \ac{GAPS} payload at McMurdo, antarctic. Fig.~\ref{fig:GAPS_flight_detector_performance} shows the ENC resolutions histogram for all \ac{Si(Li)} channels. We got majority of the channels below $ 10keV $, with an average \ac{ENC} resolution $ 4keV $ which meets the design requirement. More calibration runs were performed to confirm the energy is properly reconstructed with the transfer function method. As mentioned in section.~\ref{chap:GAPS:detectors}, \ac{GAPS} detectors behaves differently at various temperatures. So we have conducted several calibration runs at different temperatures to validate the energy reconstruction performance. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/ENC_mcmurdo.png}
+    \noindent\raggedright \ac{ENC} resolutions histogram for all \ac{Si(Li)} channels with the full \ac{GAPS} payload at McMurdo, antarctic. Majority of the channels are below $ 10keV $, with an average \ac{ENC} resolution $ 4keV $ which meets the design requirement.
+    \caption{\ac{GAPS} flight detector noise performance}
+    \label{fig:GAPS_flight_detector_performance}
+\end{figure}
+
+With the reconstructed energy, we have successfully captured cosmic muon events with the full \ac{GAPS} payload at McMurdo. Fig.~\ref{fig:GAPS_event_display} shows one typical single track event that \ac{GAPS} detected with ground testing, activated \ac{TOF} and \ac{Si(Li)} system provided information for us to reconstruct the charge particle track. This shows readyness of \ac{GAPS} payload for the flight.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GAPS_event_display.png}
+    \noindent\raggedright This is one typical single track event that \ac{GAPS} detected with ground testing, activated \ac{TOF} and \ac{Si(Li)} system provided information for us to reconstruct the charge particle track.
+    \caption{3D event display of single track event 241213 0949 5452, recorded at LDB at 9:49am GMT, 24/12/13}
+    \label{fig:GAPS_event_display}
+\end{figure}
 
 \subsection{Thermal Performance with Ground Cooling System (GCS)}
 \label{chap:GAPSresult:flight:thermal}
+As ground testing all finished at various places, the \ac{GCS} system has been proved to be able to maintain the \ac{GAPS} detector temperature for necessary calibration and cosmic muon runs. Fig.~\ref{fig:GAPS_GCS_performance} shows the \ac{GAPS} detector temperatures during ground testing at McMurdo station. The left plot shows the temperature readout from each \ac{ASIC}s thermal sensor in a 3D view. You can clearly see the top edge modules have slightly higher temperature due to thermal insulation defects. It is very hard to avoid the thermal leak on the ground due to convection. Thermally completely seal the entire 4 meter-scale payload is extremely hard. The right plot shows the temperature readout from each \ac{ASIC}s thermal sensor in a 2D view with more detailed numerical values. The dark ones are the non-functioning sensors or \ac{ASIC}s. This result shows the \ac{GCS} system's capability to maintain the entire \ac{GAPS} detector system at the desired temperature range between $-35^\circ C$ to $-45^\circ C$ as required. 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GAPS_ASICs_temperature.png}
+    \noindent\raggedright The left plot shows the temperature readout from each \ac{ASIC}s thermal sensor in a 3D view. You can clearly see the top edge modules have slightly higher temperature due to thermal insulation defects. It is very hard to avoid the thermal leak on the ground due to convection. Thermally completely seal the entire 4 meter-scale payload is extremely hard. The right plot shows the temperature readout from each \ac{ASIC}s thermal sensor in a 2D view with more detailed numerical values. The dark ones are the non-functioning sensors or \ac{ASIC}s. 
+    \caption{\ac{GAPS} detector temperatures during ground testing at McMurdo station}
+    \label{fig:GAPS_GCS_performance}
+\end{figure}
 
 \section{Atmospheric Unfolding}
 \label{chap:GAPSresult:simulation}
+For balloon-borne cosmic antinuclei measurement experiments, It is conventional to project the measured particle flux at the balloon location back to the Top of the Atmosphere (\ac{TOA}) to be compared with theoretical models. To simulate this unfolding, I generated particles using Geant4 simulation to explore the atmospheric effect. This simulation counted on the atmosphere effect in between the \ac{TOA} and \ac{TOI} which effectively have no effect on the detector type and geometry. This makes the simulation more general to be applied for other balloon-borne experiments.For the simulation I did antiproton as an example. I generated antiprotons at \ac{TOA} with various energies and isotropic angular distribution. The altitude I selected is based on \ac{GAPS} mission floating altitude, 37km. The energy loss and interaction information are recorded for each particle during the propagation through the atmosphere.
+
+Fig.~\ref{fig:atmospheric_unfolding} left plot shows the general survival probability of antiproton from \ac{TOA} to \ac{TOI} at 37 km as a function of kinetic energy. As expected, the survival probability increases with energy since high energy antiprotons will be less likely captured by the atmosphere nuclei. The right plot shows the survival probability binned in different zenith angle. As the zenith angle increases, the path length through the atmosphere increases as well, leading to a lower survival probability. With this result and \ac{GAPS} science result, we can unfold the antiproton flux measured at \ac{TOI} back to \ac{TOA} for further scientific interpretation \cite{ROGERS2023102791}. For detailed angular effect, Fig.~\ref{fig:atmospheric_unfolding_zenith} \textbf{(a)} shows zenith angle stays relavent for \ac{TOA} and \ac{TOI}, indicating no major angular deflection during the propagation through atmosphere. \textbf{(b)} shows the zenith angle survival probability relation with kinetic energy. Here is shows the major cutoff element is kinetic energy instead of zenith angle. \textbf{c} shows the energy loss verses kinetic energy for different zenith angle initial states. \textbf{(d)} shows the survive probability verses kinetic energy for different zenith angle initial states.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/Survival_general.png}
+    \noindent\raggedright Left plot shows the general survival probability of antiproton from \ac{TOA} to \ac{TOI} at 37 km as a function of kinetic energy. As expected, the survival probability increases with energy since high energy antiprotons will be less likely captured by the atmosphere nuclei. The right plot shows the survival probability binned in different zenith angle.
+    \caption{Antiproton survival probability from \ac{TOA} to \ac{TOI} (37 km)}
+    \label{fig:atmospheric_unfolding}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/Survival_zenith.png}
+    \noindent\raggedright \textbf{(a)} shows zenith angle stays relavent for \ac{TOA} and \ac{TOI}, indicating no major angular deflection during the propagation through atmosphere. \textbf{(b)} shows the zenith angle survival probability relation with kinetic energy. Here is shows the major cutoff element is kinetic energy instead of zenith angle. \textbf{c} shows the energy loss verses kinetic energy for different zenith angle initial states. \textbf{(d)} shows the survive probability verses kinetic energy for different zenith angle initial states.
+    \caption{Antiproton atmospheric effect binned in zenith angle}
+    \label{fig:atmospheric_unfolding_zenith}
+\end{figure}
 
 \section{GAPS science flight}
 \label{chap:GAPSresult:flight2026}
+% TODO: finish this section after GAPS finished flight
+\ac{GAPS} had a successful flight campaign at McMurdo station, Antarctica during the 2025-2026 austral summer. The payload was launched on Dec 16th, 2024 and floated for XX days before landing on XXXXXX. During the entire flight, \ac{GAPS} payload performed very well and collected more than XXX cosmic ray events. The preliminary data analysis shows great detector performance during the flight. The detailed flight result will be discussed in a future publication. For this thesis, I will show the flight trajectory and thermal performance. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{fig/GAPS_trajectory.png}\\
+    \noindent\raggedright \ac{GAPS} balloon trajectory during the flight. In figure, payload position as of: 10:00:32Z 01/05/26, Latitude: 75°49.57 S, Longitude: 76°12.13 W, Altitude: 113584 Feet, 15.64 Knots @ 283.00°. Blue trakectory shows the flight path from launch to current position. Red trajectory shows the predicted flight path from current position by using weather information.
+    \caption{\ac{GAPS} flight trajectory and altitude}
+    \label{fig:GAPS_flight_trajectory}
+\end{figure}

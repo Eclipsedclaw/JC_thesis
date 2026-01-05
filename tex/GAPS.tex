@@ -182,14 +182,6 @@ A vacuum-based thermal Li evaporator is used to deposit and diffuse Li into high
     \label{fig:GAPS_detection_concept}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=1\linewidth]{fig/GAPS_event_display.png}
-    \noindent\raggedright This is one typical single track event that \ac{GAPS} detected with ground testing, activated \ac{TOF} and \ac{Si(Li)} system provided information for us to reconstruct the charge particle track.
-    \caption{3D event display of single track event 241213 0949 5452, recorded at LDB at 9:49am GMT, 24/12/13}
-    \label{fig:GAPS_event_display}
-\end{figure}
-
 Once an charged particle hit the detector active volume, the \ac{TOF} system will record timing and position information. With an advanced trigger selection, survived low-energy charged particles will be recorded inside \ac{Si(Li)} tracker and captured by all our detector strips which both operate as tracker and calorimeter. For normal standard model \ac{CRs} like proton and helium, they will leave an primary track with limited amount of charged secondary generated. While if there is an antiproton or antideuteron captured, the annihilation vertex will be constructed by adding all the charged secondary to construct an unique detector response. Detailed analysis see section.~\ref{chap:GAPSresult:flight:detector}.
 
 \section{GAPS Functional Prototype (GFP)}
@@ -200,16 +192,6 @@ Once an charged particle hit the detector active volume, the \ac{TOF} system wil
     \caption{\ac{GFP} system diagram}
     \label{fig:GFP_system_diagram}
 \end{figure}
-
-\begin{landscape}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.95\linewidth]{fig/GAPS_GFP_config.png}
-    \noindent\raggedright Overview of the GFP setup: Si(Li) tracker, \ac{TOF} and Thermal. Instruments which are not shown in the photo: tracker power system (on the bottom of electronic rack) and tracker DAQ computer.
-    \caption{GAPS GFP setup at Bates lab}
-    \label{fig:GAPS_GFP_config}
-\end{figure}
-\end{landscape}
 
 To confirm \ac{GAPS} functionality for the full payload, we have proposed and tested a smaller scale assembly called \ac{GAPS} functional prototype (\ac{GFP}). GFP uses 3 layers of detector modules with $ 2\times6 $ modules installed on each layer. For \ac{TOF}, instead of full structure with "Umbrella", "Cortina" and "inner Cube", GFP constructed two largest panel as "top TOF" and "middle TOF" to trigger and reconstruct incoming charge particles. A samller scale thermal system \ac{OHP} is also designed and fabricated. The rest of the electronics remain the same as flight ones so we could test \ac{GAPS} concept to an extensive level to prepare readiness of the first science flight during pandemic time. This section discusses the construction, design of the GFP. The performance of each individual sub-system and result including the thermal performance, the study of noise in the Si(Li) tracker, the measurement of the energy spectrum of minimum ionizing particles and the reconstruction of muon tracks are discussed in section.~\ref{chap:GAPSresult:GFP}.
 
@@ -222,6 +204,16 @@ Since the aim of the \ac{GFP} is to demonstrate a ground-based system with a sim
 \end{itemize}
 
 The GFP construction started at Bates Research and Engineering Center of MIT early in 2021 and all the testing was accomplished in August of 2022.
+
+\begin{landscape}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\linewidth]{fig/GAPS_GFP_config.png}
+    \noindent\raggedright Overview of the GFP setup: Si(Li) tracker, \ac{TOF} and Thermal. Instruments which are not shown in the photo: tracker power system (on the bottom of electronic rack) and tracker DAQ computer.
+    \caption{GAPS GFP setup at Bates lab}
+    \label{fig:GAPS_GFP_config}
+\end{figure}
+\end{landscape}
 
 \subsection{GFP Time of Flight system}
 \label{chap:GAPS:GFP:TOF}
@@ -350,8 +342,15 @@ The heat pipe is a passive heat transfer device that utilizes evaporation and co
 
 Addtionally to heat pipe, The Oscillating heat pipe(\ac{OHP}) is a heat transfer device that functions via thermally excited oscillating motion induced by the cyclic phase change of an encapsulated working fluid. A typical OHP consists of a train of liquid plugs and vapor bubbles which exist in serpentine-arranged, interconnected capillary tubes or channels, as shown in Fig.~\ref{fig:GAPS_thermal_concept}. The oscillating heat pipe (OHP) is partially filled with a working fluid, and its internal diameter is made sufficiently small so that liquid plugs are separated by vapor bubbles. Unlike conventional heat pipes, the OHP requires no wicking structure and offers high manufacturability. It consists of three sections: an evaporator, an adiabatic zone, and a condenser, typically arranged as a meandering tube or channel that passes through heat-reception (evaporator) and heat-rejection (condenser) areas. During operation, continuous condensation in the condenser and evaporation in the evaporator generate a pulsating, non-equilibrium vapor-pressure field that drives oscillatory fluid motion between adjacent channel sections. This results in a complex flow pattern characterized by oscillatory and circulatory liquid-vapor volumes, enabling both sensible (convective) and latent (phase-change) heat transfer. Although phase-change processes help initiate the oscillating motion, most of the heat is transported by sensible heat transfer; consequently, oscillating single-phase flow and heat transfer play a dominant role in OHP performance \cite{ma_oscillating_2015}.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GAPS_OHP_concept.jpg}
+    \noindent\raggedright \textbf{(a)} For each loop, it forms an complete cycle of \ac{OHP} with evaporator, adiabatic section and condenser. With \ac{GAPS} payload, heat generated from the Si(Li) detector region will behave as the evaporator (heating section), the top and bottom horizontal sections of the swaglok tubing are the adiabatic section while the radiator is the condenser. The liquid R23 inside the tubing will vaporize when absorbing heat from the detector region, push the flow moves up to return to the top and the radiator. Then the R23 will dessipate heat through radiator (cooling section) and become liquid again, drop to the bottom of the radiator due to gravity, starting the next cycle again. This will keep the cycle flowing inside each loop. \textbf{(b)} Plot shows temperature of each \ac{MCHP} loop section.
+    \caption{\ac{GAPS} \ac{MCHP} concept}
+    \label{fig:GAPS_MCHP_concept}
+\end{figure}
 % TODO: maybe add a OHP CAD model here to show 36 loops
-As for \ac{GAPS}, we utilized the concept of \ac{OHP} and push it to limit with a 36-loop combined heat pipe system to provide sufficient cooling power for the entire tracker system, see Fig.~\ref{fig:GAPS_thermal_concept}. For each loop, it forms an complete cycle of \ac{OHP} with evaporator, adiabatic section and condenser. With \ac{GAPS} payload, heat generated from the Si(Li) detector region will behave as the evaporator, the top and bottom horizontal sections of the swaglok tubing are the adiabatic section while the radiator is the condenser. The liquid R23 inside the tubing will vaporize when absorbing heat from the detector region, push the flow moves up to return to the top and the radiator. Then the R23 will dessipate heat and become liquid again, drop to the bottom of the radiator due to gravity, starting the next cycle again. This will keep the cycle flowing inside each loop. With 36 loops working together, the entire \ac{OHP} system can provide sufficient cooling power to keep the entire tracker thermally stable during the flight without any active compressor so the mass and power consumption of the payload can be significantly reduced. Since this entire system with 36 loops behaves as one large looped heat pipe, we called it multi-loop capillary heat pipe (\ac{MCHP}) system.
+As for \ac{GAPS}, we utilized the concept of \ac{OHP} and push it to limit with a 36-loop combined heat pipe system to provide sufficient cooling power for the entire tracker system, see Fig.~\ref{fig:GAPS_thermal_concept}. For each loop, it forms an complete cycle of \ac{OHP} with evaporator, adiabatic section and condenser. With \ac{GAPS} payload, heat generated from the Si(Li) detector region will behave as the evaporator (heating section), the top and bottom horizontal sections of the swaglok tubing are the adiabatic section while the radiator is the condenser. The liquid R23 inside the tubing will vaporize when absorbing heat from the detector region, push the flow moves up to return to the top and the radiator. Then the R23 will dessipate heat through radiator (cooling section) and become liquid again, drop to the bottom of the radiator due to gravity, starting the next cycle again. This will keep the cycle flowing inside each loop, see Fig.~\ref{fig:GAPS_MCHP_concept}. With 36 loops working together, the entire \ac{OHP} system can provide sufficient cooling power to keep the entire tracker thermally stable during the flight without any active compressor so the mass and power consumption of the payload can be significantly reduced. Since this entire system with 36 loops behaves as one large looped heat pipe, we called it multi-loop capillary heat pipe (\ac{MCHP}) system.
 
 \subsection{Flight Insulation package}
 \label{chap:GAPS:thermal:foam}
