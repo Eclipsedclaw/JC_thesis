@@ -194,16 +194,27 @@ Once an charged particle hit the detector active volume, the \ac{TOF} system wil
 
 \section{GAPS Functional Prototype (GFP)}
 \label{chap:GAPS:GFP}
-To confirm \ac{GAPS} functionality for the full payload, we have proposed and tested a smaller scale assembly called \ac{GAPS} functional prototype (\ac{GFP}). GFP uses 3 layers of detector modules with $ 2\times6 $ modules installed on each layer. For \ac{TOF}, instead of full structure with "Umbrella", "Cortina" and "inner Cube", GFP constructed two largest panel as "top TOF" and "middle TOF" to trigger and reconstruct incoming charge particles. A samller scale thermal system \ac{OHP} is also designed and fabricated. The rest of the electronics remain the same as flight ones so we could test \ac{GAPS} concept to an extensive level to prepare readiness of the first science flight during pandemic time. This section discusses the construction, design of the GFP. The performance of each individual sub-system and result including the thermal performance, the study of noise in the Si(Li) tracker, the measurement of the energy spectrum of minimum ionizing particles and the reconstruction of muon tracks are discussed in section.~\ref{chap:GAPSresult:GFP}.
-
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{fig/GAPS_GFP_config.png}
+    \includegraphics[width=0.7\linewidth]{fig/GFP_system_diagram.png}\\
+    \caption{\ac{GFP} system diagram}
+    \label{fig:GFP_system_diagram}
+\end{figure}
+
+\begin{landscape}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\linewidth]{fig/GAPS_GFP_config.png}
     \noindent\raggedright Overview of the GFP setup: Si(Li) tracker, \ac{TOF} and Thermal. Instruments which are not shown in the photo: tracker power system (on the bottom of electronic rack) and tracker DAQ computer.
     \caption{GAPS GFP setup at Bates lab}
     \label{fig:GAPS_GFP_config}
 \end{figure}
-Since the aim of the \ac{GFP} is to demonstrate a ground-based system with a simplified configuration. Fig.~\ref{fig:GAPS_GFP_config} shows the GFP overall setup, and the major components are listed below,
+\end{landscape}
+
+To confirm \ac{GAPS} functionality for the full payload, we have proposed and tested a smaller scale assembly called \ac{GAPS} functional prototype (\ac{GFP}). GFP uses 3 layers of detector modules with $ 2\times6 $ modules installed on each layer. For \ac{TOF}, instead of full structure with "Umbrella", "Cortina" and "inner Cube", GFP constructed two largest panel as "top TOF" and "middle TOF" to trigger and reconstruct incoming charge particles. A samller scale thermal system \ac{OHP} is also designed and fabricated. The rest of the electronics remain the same as flight ones so we could test \ac{GAPS} concept to an extensive level to prepare readiness of the first science flight during pandemic time. This section discusses the construction, design of the GFP. The performance of each individual sub-system and result including the thermal performance, the study of noise in the Si(Li) tracker, the measurement of the energy spectrum of minimum ionizing particles and the reconstruction of muon tracks are discussed in section.~\ref{chap:GAPSresult:GFP}.
+
+
+Since the aim of the \ac{GFP} is to demonstrate a ground-based system with a simplified configuration. Fig.~\ref{fig:GFP_system_diagram} shows the system diagram of \ac{GFP} and Fig.~\ref{fig:GAPS_GFP_config} shows the GFP overall setup. Major components are listed below,
 \begin{itemize}
     \item TOF: two panels, each consisting of twelve paddles of plastic scintillator, separated by about one meter.
     \item Si(Li) Tracker: three layers of two rows of Si(Li) detector modules, each row containing six 4-detector Si(Li) modules, which is $ \sim10\% $ of the \ac{GAPS} full payload. A flight-representative high-voltage and low-voltage power supply (HV/LVPS) and back-end data acquisition system (DAQ) provide power and readout.
@@ -220,7 +231,7 @@ A high-speed digitizer (or readout board, see Fig.~\ref{fig:GFP_TOF}) is develop
 
 The \ac{TOF} trigger uses a two-level design, with a local trigger (L1) board mounted in a readout box close to the paddles and a single main trigger (L2) board located near the \ac{TOF} computer. The trigger is based on the energy deposited in each paddle (slow-moving antiparticles will deposit more energy than almost all protons and He nuclei) and on the number of paddles hit. The local trigger board uses three levels of discrimination to determine whether a paddle is hit (minimum-ionizing or above) and which paddles have energy depositions consistent with low-energy antiparticles. This information is passed to the main board which makes a global trigger decision and alerts the tracker and \ac{TOF} systems for readout. The anticipated L1 trigger rate is $\sim$50--100 kHz; L2 reduces this to 500 Hz.
 
-Full prototype construction and testing of the \ac{TOF} paddles and SiPM preamps has been completed (Fig. 2). For a vertical muon, the SiPMs detect an average of 70 photoelectrons. The measured time resolution is <300 ps (Fig. 2), substantially better than the requirement. The position resolutions of 3.0 cm/4.6 cm in the longitudinal/transverse paddle directions translate into an angular resolution for the overall \ac{TOF} system of $<3^\circ$. This performance is conservative, as low-energy antiparticles deposit significantly more energy than vertical \ac{MIP}.
+Full prototype construction and testing of the \ac{TOF} paddles and SiPM preamps has been completed (Fig.~\ref{fig:GFP_TOF}). For a vertical muon, the SiPMs detect an average of 70 photoelectrons. The measured time resolution is <300 ps (Fig. 2), substantially better than the requirement. The position resolutions of 3.0 cm/4.6 cm in the longitudinal/transverse paddle directions translate into an angular resolution for the overall \ac{TOF} system of $<3^\circ$. This performance is conservative, as low-energy antiparticles deposit significantly more energy than vertical \ac{MIP}.
 
 The GFP \ac{TOF} system is designed to provide the capacity of tracking incoming muons by measuring the time and energy of particles passing through the two layers, and a muon trigger to the tracker and suitable information (i.e. event number, trigger type, etc.) to correctly tag events so that tracker and \ac{TOF} data can be merged into a common event. The system consists of two 12-paddle layers, covering an area of $ 
 6\ ft \times 6\ ft $, with a separation of about one meter. Since the GFP tracker only contains two rows on one layer, the coverage of the GFP \ac{TOF} provides a sufficient efficiency for the down-going muons. The top \ac{TOF} panel simulates the flight \ac{TOF} umbrella and the bottom panel simulates the cube. One meter separation between the two panels is same to the flight instrument. The two panels are identical at the GFP which saves the integration timing but provides a valuable validation of the \ac{TOF} panel integration. The lower panel is $\sim30\ cm$ above the top layer of the tracker which is similar with the flight design.
@@ -412,19 +423,19 @@ To roughly estimate $Q_0$, we assume that the \ac{OHP}, the radiator, and the de
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GCS_mount.png}
-    \noindent\raggedright Left figure shows the schematics of \ac{GAPS} GCS mounting on the payload. Right picture shows actual \ac{GAPS} GCS mounted on the payload at MIT Bates lab.
-    \caption{GAPS GCS design and mounting}
+    \noindent\raggedright Left figure shows the schematics of \ac{GAPS} \ac{GCS} mounting on the payload. Right picture shows actual \ac{GAPS} \ac{GCS} mounted on the payload at MIT Bates lab.
+    \caption{GAPS \ac{GCS} design and mounting}
     \label{fig:GAPS_GCS_setup}
 \end{figure}
 
-To perform the ground testing, the ground cooling system (\ac{GCS}) has being designed and assembled to provide similar thermal condition for flight, see Fig.~\ref{fig:GAPS_GCS_setup}. While at the same time all the detector modules are sealed with aluminum window and purged with nitrogen gas, the low vacuum condition ($ \sim 3\ torr $) throughout the entire payload is not accomplished with \ac{GCS} system. The GCS cools the radiator and has a simple design. The payload configuration is not changed for testing, but non-flight items may be attached to the payload. A cold plate is attached to the radiator to cool it. The cold plate is tightened to the radiator with bolts uniformly distributed in the plate so that the two surface planes make good contact. A tube is attached to the cold plate, and a coolant flows through the tube, drawing heat from the plate. Once the radiator is sufficiently cooled, the HPS transfers heat from the detectors to the radiator, bringing the detectors down to operating temperature \cite{Hideyuki_FUKE20232}.
+To perform the ground testing, the ground cooling system (\ac{GCS}) has being designed and assembled to provide similar thermal condition for flight, see Fig.~\ref{fig:GAPS_GCS_setup}. While at the same time all the detector modules are sealed with aluminum window and purged with nitrogen gas, the low vacuum condition ($ \sim 3\ torr $) throughout the entire payload is not accomplished with \ac{GCS} system. The \ac{GCS} cools the radiator and has a simple design. The payload configuration is not changed for testing, but non-flight items may be attached to the payload. A cold plate is attached to the radiator to cool it. The cold plate is tightened to the radiator with bolts uniformly distributed in the plate so that the two surface planes make good contact. A tube is attached to the cold plate, and a coolant flows through the tube, drawing heat from the plate. Once the radiator is sufficiently cooled, the HPS transfers heat from the detectors to the radiator, bringing the detectors down to operating temperature \cite{Hideyuki_FUKE20232}.
 
 As we move forward with \ac{GCS} cooling down \ac{GAPS}detector during preparation for the first flight, we have made several improvements to the \ac{GCS} design to enhance its performance and reliability. These improvements include optimizing the coolant flow rate, enhancing the thermal insulation around critical components, and implementing extra chillers to ensure consistent temperature control. These enhancements have significantly improved the efficiency of the cooling process, allowing for more stable and precise temperature regulation of the detectors, see Fig.~\ref{fig:GAPS_GCS}
 
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_GCS.png}
-    \noindent\raggedright Left figure shows schematics of \ac{GAPS} GCS with 4 cold panels embed 36 loops of methanol cooling lines meifold. Each 2 panels are cooled down by a \ac{ACC} circulating methanol. Right picture shows actual \ac{GAPS} GCS setup at Columbia University nevis lab. Red arrows with letters show the methanol line displayed on the left.
+    \noindent\raggedright Left figure shows schematics of \ac{GAPS} \ac{GCS} with 4 cold panels embed 36 loops of methanol cooling lines meifold. Each 2 panels are cooled down by a \ac{ACC} circulating methanol. Right picture shows actual \ac{GAPS} \ac{GCS} setup at Columbia University nevis lab. Red arrows with letters show the methanol line displayed on the left.
     \caption{GAPS Ground Cooling System}
     \label{fig:GAPS_GCS}
 \end{figure}
