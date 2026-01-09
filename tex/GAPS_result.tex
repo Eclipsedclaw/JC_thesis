@@ -258,3 +258,31 @@ Fig.~\ref{fig:atmospheric_unfolding} left plot shows the general survival probab
     \caption{\ac{GAPS} flight trajectory and altitude}
     \label{fig:GAPS_flight_trajectory}
 \end{figure}
+
+\subsection{GAPS Flight Thermal Performance}
+\label{chap:GAPSresult:flight2026:thermal}
+During the GAPS flight, the temperature sensors on payload send back real-time temperature information to the ground station via telemetry, then we constructed the near-real time visualization dashboard to monitor the payload thermal performance. Fig.~\ref{fig:GAPS_flight_thermal_performance} shows temperature sensors readout from all \ac{GAPS} all over then payload during the flight at 22:24:16, Jan 8th, 2026, Left angled area demonstrates the radiator section in Fig.~\ref{fig:GAPS_MCHP_concept}, right vertical area demonstrates the tracker section in Fig.~\ref{fig:GAPS_MCHP_concept}. While Fig.~\ref{fig:GAPS_flight_thermal_detector} shows \ac{ASIC}s temperature readout from all detector modules during the flight at 22:24:16, Jan 8th, 2026, same time as \ac{RTD} temperature sensors plot. First 7 plots show 7 active layers of detectors' temperature. The blank cells shows no information for the detector module at that location. The last second figure shows all modules' temperature histogram which stablized around $ -37.5 ^\circ C $. The last plot shows the temperature of each detector modedule in the past 24 hours. All the detector modules are extremely stable during the flights despite the fluctuation of the ambient temperature. A conceptual 3D temperature plot from all detector modules during the flight at 22:24:16, Jan 8th, 2026 is shown in Fig.~\ref{fig:GAPS_flight_thermal_detector_3D}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GAPS_flight_thermal_map.png}
+    \noindent\raggedright This plot shows \ac{RTD} temperature sensors readout from all \ac{GAPS} all over then payload during the flight at 22:24:16, Jan 8th, 2026, same time as Fig.~\ref{fig:GAPS_flight_thermal_detector}. Left angled area demonstrates the radiator section in Fig.~\ref{fig:GAPS_MCHP_concept}, right vertical area demonstrates the tracker section in Fig.~\ref{fig:GAPS_MCHP_concept}. 
+    \caption{\ac{GAPS} payload temperatures during the flight}
+    \label{fig:GAPS_flight_thermal_performance}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{fig/GAPS_flight_detector_thermal_map.png}\\
+    \noindent\raggedright This plot shows \ac{ASIC}s temperature readout from all detector modules during the flight at 22:24:16, Jan 8th, 2026, same time as Fig.~\ref{fig:GAPS_flight_thermal_performance}. First 7 plots show 7 active layers of detectors' temperature. The blank cells shows no information for the detector module at that location. The last second figure shows all modules' temperature histogram which stablized around $ -37.5 ^\circ C $. The last plot shows the temperature of each detector modedule in the past 24 hours. All the detector modules are extremely stable during the flights despite the fluctuation of the ambient temperature. 
+    \caption{\ac{GAPS} detector temperatures during the flight}
+    \label{fig:GAPS_flight_thermal_detector}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\linewidth]{fig/3D_2026-01-08_092416.824000.png}\\
+    \noindent\raggedright 3D temperature plot from all detector modules during the flight at 22:24:16, Jan 8th, 2026, same time as Fig.~\ref{fig:GAPS_flight_thermal_performance}.
+    \caption{3D visual of \ac{GAPS} detector temperatures during the flight}
+    \label{fig:GAPS_flight_thermal_detector_3D}
+\end{figure}
