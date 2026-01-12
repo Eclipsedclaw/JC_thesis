@@ -8,7 +8,7 @@ A series of bench tests were conducted to validate the performance of the pGRAMS
 
 \subsection{CSP Performance validation}
 \label{chap:GRAMSresult:pGRAMS:CSP}
-As mentioned in section.~\ref{chap:GRAMS:eGRAMS:CSP}, upgraded design for \ac{CSP} was implemented for pGRAMS detector. As showed in table.~\ref{tab:CSP_versions}, we have several versions of \ac{CSP} developed for pGRAMS. \ac{CSP} verson 1 to 5 were developed mainly to optimize the \ac{PCB} layout, while \ac{CSP} v5 was used in the eGRAMS flight. \ac{CSP} v5.1 was developed to increase the gain to both improve the signal to noise ratio and test the dynamic range. \ac{CSP} v6/v6.1/v6.2 was developed to further minimize the size of the board to fit the pGRAMS tile design. 
+As mentioned in Section.~\ref{chap:GRAMS:eGRAMS:CSP}, upgraded design for \ac{CSP} was implemented for pGRAMS detector. As showed in table.~\ref{tab:CSP_versions}, we have several versions of \ac{CSP} developed for pGRAMS. \ac{CSP} verson 1 to 5 were developed mainly to optimize the \ac{PCB} layout, while \ac{CSP} v5 was used in the eGRAMS flight. \ac{CSP} v5.1 was developed to increase the gain to both improve the signal to noise ratio and test the dynamic range. \ac{CSP} v6/v6.1/v6.2 was developed to further minimize the size of the board to fit the pGRAMS tile design. 
 
 \begin{table}
 \centering
@@ -82,7 +82,7 @@ ch21 & X1 & CSP\_X & ch43 & -- & GND & & & \\
 \label{chap:GRAMSresult:pGRAMS:SIPM}
 
 \subsection{Cosmic muon Track Reconstruction Algorithm}
-As described in section.~\ref{chap:GRAMS:pGRAMS:RandD}, we used CAEN digitizers to read out the waveforms from the microGRAMS LArTPC detector. Per ditigizer channel, we recoreded 39500 sampes at a 125 MHz sampling rate, corresponding to a 316 $\mu$s time window, where 16us window behaves as pre-trigger region. Since the maximum drift time inside the microGRAMS LArTPC is around 200 $\mu$s, this time window is sufficient to cover the full drift time. A typical mapping of the readout channels are shown in table.~\ref{tab:microGRAMS_channel_map_run26}.
+As described in Section.~\ref{chap:GRAMS:pGRAMS:RandD}, we used CAEN digitizers to read out the waveforms from the microGRAMS LArTPC detector. Per ditigizer channel, we recoreded 39500 sampes at a 125 MHz sampling rate, corresponding to a 316 $\mu$s time window, where 16us window behaves as pre-trigger region. Since the maximum drift time inside the microGRAMS LArTPC is around 200 $\mu$s, this time window is sufficient to cover the full drift time. A typical mapping of the readout channels are shown in table.~\ref{tab:microGRAMS_channel_map_run26}.
 
 \begin{table}
 \centering
@@ -202,7 +202,7 @@ From the filtered waveforms, we could then identify the signal peaks for each ch
 
 \section{GRAMS antihelium-3 Sensitivity Simulation}
 \label{chap:GRAMSresult:antihelium-3}
-As mentioned in section.~\ref{chap:intro:IDMS:antihelium}, as a potential smoke gun for \ac{DM} searches, antihelium is getting more and more important. One has to keep in mind that, current simulation tools are not treating antinucleus-nucleus interaction with precise models due to lack of data. Currently there is no \ac{ad} beam existing in the world for us to study its property due to low production efficiency. And \ac{aHe3} beam is harder to generate than \ac{ad}. The simulation packages like GEANT4 only have very simplified models for antinucleus-nucleus interaction. 
+As mentioned in Section.~\ref{chap:intro:IDMS:antihelium}, as a potential smoke gun for \ac{DM} searches, antihelium is getting more and more important. One has to keep in mind that, current simulation tools are not treating antinucleus-nucleus interaction with precise models due to lack of data. Currently there is no \ac{ad} beam existing in the world for us to study its property due to low production efficiency. And \ac{aHe3} beam is harder to generate than \ac{ad}. The simulation packages like GEANT4 only have very simplified models for antinucleus-nucleus interaction. 
 
 \subsection{GRAMS Detection Concept for Antiparticles}
 \label{chap:GRAMSresult:antihelium-3:DetectionConcept}
@@ -226,7 +226,7 @@ To estimate the sensitivity, we demonstrated the detection concept using GEANT4 
 \subsection{GRASP}
 \label{chap:GRAMSresult:antihelium-3:GRASP}
 
-GRASP is named and defined based on eq.~\ref{equ:GRASP}, which describes the capability of a detector grasping target particles. We evaluated the sensitivity of GRAMS for antihelium-3 nuclei using GEANT4 Monte Carlo simulations with QGSP\_BERT physics list \cite{AGOSTINELLI2003250, APOSTOLAKIS2009859}. With configuration from section.~\ref{chap:GRAMSresult:antihelium-3:simulation} antiparticles are isotropically generated from a 20 m $\times$ 20 m plane at the \ac{TOA} with energy up to 1000 MeV/n and will propagate downward through a 3.9 cm compressed air layer with a 1 g/cm$^2$ density. The antiparticles will annihilate or lose energy, providing a realistic estimate of the antiparticle flux reaching the detector at the flight altitude of around 37 km. Then GRASP is corresponding to antiparticles stopping or in-flight annihilation efficiency inside the detector. 
+GRASP is named and defined based on eq.~\ref{equ:GRASP}, which describes the capability of a detector grasping target particles. We evaluated the sensitivity of GRAMS for antihelium-3 nuclei using GEANT4 Monte Carlo simulations with QGSP\_BERT physics list \cite{AGOSTINELLI2003250, APOSTOLAKIS2009859}. With configuration from Section.~\ref{chap:GRAMSresult:antihelium-3:simulation} antiparticles are isotropically generated from a 20 m $\times$ 20 m plane at the \ac{TOA} with energy up to 1000 MeV/n and will propagate downward through a 3.9 cm compressed air layer with a 1 g/cm$^2$ density. The antiparticles will annihilate or lose energy, providing a realistic estimate of the antiparticle flux reaching the detector at the flight altitude of around 37 km. Then GRASP is corresponding to antiparticles stopping or in-flight annihilation efficiency inside the detector. 
 
 \begin{equation}
     \Gamma_i = \pi\cdot A\cdot\frac{N_{i}}{N_t}
@@ -257,7 +257,7 @@ The x-axis is the energy deposition in the outer TOF paddle, and the y-axis is t
 \label{fig:3D}
 \end{figure}
 
-The main background for antihelium-3 nuclei measurements would be antiprotons, as mentioned in section.~\ref{chap:GRAMSresult:antihelium-3:DetectionConcept}. However, they can be identified and distinguished from antihelium-3 events based on particle identification techniques with the TOF profile for both timing and energy deposition. 
+The main background for antihelium-3 nuclei measurements would be antiprotons, as mentioned in Section.~\ref{chap:GRAMSresult:antihelium-3:DetectionConcept}. However, they can be identified and distinguished from antihelium-3 events based on particle identification techniques with the TOF profile for both timing and energy deposition. 
 
 Since antihelium-3 nuclei have a charge of -2e and roughly three times the antiproton mass, they will deposit more energy inside the TOF plastic scintillator with the same velocity measured by the TOF system compared to antiprotons. GEANT4 simulations were conducted to evaluate the energy depositions in the outer and inner plastic scintillator paddles and the velocity based on the timing between the inner and outer TOF paddles. Here, energy resolution was assumed to be 16\% (14\%) for a charge of $\pm$2e ($\pm$1e) particles, and the timing resolution was considered to be 0.4 ns, as measured in other experiments, as well as the preliminary bench test in lab \cite{bindi2010scintillator}. Based on hit locations, timing, and accumulated energy deposition in the inner and outer TOF paddles, we obtained clusters for antiproton and antihelium-3 events in a 3D plot (see Fig.~\ref{fig:3D}).
 
