@@ -475,8 +475,82 @@ We setup a local grafana server listen to an internal port A on NAS to provide s
 
 \subsubsection{\ac{LAr} Purity and Electron Lifetime}
 \label{chap:GRAMS:pGRAMS:RandD:purity}
-To achieve optimal performance of the liquid argon time projection chamber (LArTPC), it is crucial to maintain high purity levels of the liquid argon (LAr) used in the detector. Impurities such as oxygen, water, and nitrogen can significantly affect the electron lifetime and light attenuation, which is a key parameter for accurate charge signal detection. 
-% TODO: Add more information about this
+To achieve optimal performance of the liquid argon time projection chamber (LArTPC), it is crucial to maintain high purity levels of the liquid argon (LAr) used in the detector. Impurities such as oxygen, water, and nitrogen can significantly affect the electron lifetime and light attenuation, which is a key parameter for accurate charge signal detection. People have done extensive research on this topic in the past to understand better of electron drift in argon \cite{CARUGNO1990580, BETTINI1991177, ZHANG2021165491}. From these studies, we know that the main impurity molecules that affect the electron lifetime are oxygen and water. Even at the level of \ac{ppm}, these impurities can have a significant impact on the performance of the LArTPC.
+
+To control these impurity molecules to the \ac{ppb} level, we have implemented a purification system that to purify the liquid argon that we bought from vendor which claimed to be 99.999\% pure. We have baked a filter that consist of 820g of Copper oxide (CuO) and 400g of Molecular Sieve in a sealed stainless steel canister, see Fig.~\ref{fig:LAr_filter}. For production of the filter, we have used the gas argon flowing through purging to acommplish the dehydration, and gas argon plus hydrogen mixture flowing to perform copper redox. Detailed procedure of the filter regeneration will be published in future work.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/LAr_filter.png}
+    \caption{Liquid argon filter}
+    \label{fig:LAr_filter}
+\end{figure}
+
+\subsubsection{Liquid Argon Filling Procedure Development}
+\label{chap:GRAMS:pGRAMS:RandD:filling}
+
+After the filter is prepared, we have developed a portable stand that can be used to fill liquid argon into the microGRAMS chamber. The entire filling stand design is shown in Fig.~\ref{fig:LAr_filling_setup}. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/filter_setup.png}
+    \noindent\raggedright Top left figure shows the design of the filter stand. Top right photo shows the actual filter stand setup in lab. Bottom figure shows the entire liquid argon filling setup.
+    \caption{Liquid argon filling designs and setup.}
+    \label{fig:LAr_filling_setup}
+\end{figure}
+
+With the setup shown in Fig.~\ref{fig:LAr_filling_setup} top right and bottom, the operation procedure to fill liquid argon into the microGRAMS chamber is as follows:
+\begin{enumerate}[label=\arabic*.]
+    \item With Edwards scroll pump connected to the LAr filter pump line, start the pump and evacuate the first region up to V1. This includes the MKS pressure gauge, so a drop in pressure should be observed.
+    
+    \item After letting the Edwards pump for $\sim 30$ seconds, open V1 and V2 to evacuate all lines to and from the filter. At this point, V3 and V4 will remain closed to isolate the filter.
+    
+    \item Open LAr dewar liquid valve a small amount to start flowing GAr into the filter lines while keeping the Edwards pumping on all lines. Once Edwards audibly starts working on the GAr, the Edwards valve V2 can slowly be closed. Once the Edwards is closed off, adjust the dewar valve to target a rate of $\sim 20$ Torr/second as read out on the MKS gauge.
+    
+    \item With the dewar valve set properly, open the Edwards valve V1 and let it evacuate the system again. While leaving the dewar valve alone, slowly throttle the Edwards valve V1 and bring the pressure up to $\sim 850$ Torr at the target rate of $\sim 20$ Torr/sec. Once the pressure reaches $\sim 750$ Torr, start closing V2 so that it is fully closed once the pressure reaches target of $\sim 850$ Torr.
+    
+    \item Turn off Edwards scroll pump.
+    
+    \item Make sure relief valve knob on UPS chamber relief line passive pressure valve is at its lowest setpoint (typically this turns out to be $\sim 820$ Torr).
+    
+    \item Have one person close the bellows valve to the turbo (V9) and have another person immediately open the fill valve (V6) to the chamber once the turbo is isolated.
+    
+    \item Modulate the fill valve (V6) to gradually bring pressure in the UPS chamber up towards $\sim 850$ Torr via the bypass line.
+    
+    \item Modulate the relief valve knob so that the equilibrium pressure without outward flow reaches $\sim 900$ Torr.
+    
+    \item Close the fill line valve V6 and then immediately close the bypass line V5 on the filter. At this point, the pressure in UPS will drop until the relief check valve closes. Then the UPS will be sealed at positive pressure and should stay relatively stable.
+    
+    \item Now open the top LAr filter valve (V3) and let pressure equalize between inside of filter and LAr dewar.
+    
+    \item Next, open the bottom LAr filter valve V4, and let pressure equalize again, similar to previous step. At this point the UPS chamber filling will be very similar to a direct fill.
+    
+    \item Make sure one person is ready at the dewar valve V0 and another person operating the fill line valve V6 and the main exhaust valve V7.
+    
+    \item LAr fill can now start. Slowly open the fill line valve V6 and flow GAr into the UPS chamber. Allow pressure to build until the passive relief check valve opens. Once the relief valve opens itself, adjust the setpoint to around $\sim 950$ Torr.
+    
+    \item Now the main exhaust V7 can be opened and the iteration between main exhaust and filling line can start.
+    
+    \item Open the main exhaust valve V7 until pressure drops to around $\sim 900$ Torr. At this point, gently increase the flow into the chamber via the fill line valve V6 and bring the pressure close to, but not higher than $\sim 1200$ Torr.
+    
+    \item Repeat last step, until the main exhaust is fully open.
+    
+    \item Monitor the pressure, and use the fill line valve V6 only to maintain pressure around $\sim 1500$ Torr. The chamber is now being cooled by GAr.
+    
+    \item Once the chamber is cold enough to allow LAr to condense, reduce the flow rate by adjusting fill valve V6 so that the equilibrium pressure is maintained around $\sim 900$ Torr. The chamber is now in slow LAr filling mode.
+    
+    \item Maintain conditions until the desired LAr level is achieved.
+    
+    \item Once desired LAr level is reached, close the main exhaust anywhere between 90\%--100\%. Make sure the relief valve is still able to relieve and maintain pressure.
+    
+    \item Once the pressure stabilizes, close the main exhaust and the fill line completely. The chamber is now ready for detector operation and data taking.
+    
+    \item Keep the filter open for 1--2 hrs and allow it to warm up while exposed to the LAr bath in the dewar. This ensures that no LAr is left inside the filter before it is sealed.
+    
+    \item Once the LAr filter is warmed up sufficiently (minimal frost visible on the lines and relatively warm to the touch), the bottom V4 and top valve V5 on the filter can be closed respectively.
+    
+    \item To finish the procedure, close the dewar LAr valve V0.
+\end{enumerate}
 
 \subsubsection{CAEN Commercial \ac{DAQ}}
 \label{chap:GRAMS:pGRAMS:RandD:CAEN}
