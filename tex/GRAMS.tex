@@ -43,7 +43,10 @@ Minimum ionization loss $dE/dx_{\text{min}}$ & 2.12 MeV/cm \\
 
 \section{GRAMS Detection Concept}
 \label{chap:GRAMS:concept}
-\noindent \textbf{GRAMS Detection Concept for MeV Gamma-rays:}
+This thesis focus mainly on the indirect \ac{DM} serarches with antinuclei, as the MeV gamma-ray detection concept has been well explained in \cite{aramaki2020dual}, I will give a brief introduction here in Section.~\ref{chap:GRAMS:concept:gamma}. Indirect \ac{DM} searches with antinuclei detection concept will be explained in Section.~\ref{chap:GRAMS:concept:antimatter} and further analysis will be shown in Section.~\ref{chap:GRAMSresult:antihelium-3}.
+
+\subsection{GRAMS Detection Concept for MeV Gamma-rays}
+\label{chap:GRAMS:concept:gamma}
 
 As Fig.~\ref{fig:GRAMS_Concept} showed, Particles entering the LArTPC detector excite and ionize argon atoms, producing scintillation light and ionization electrons. The scintillation light measured by \ac{SiPM}s is used for triggering and timing of the event. The ionization electrons drift in an applied electric field and are collected at anode planes with a $\sim 2.8$~mm pitch of strips. The signals induced on the anode provide the $x$ and $y$ coordinates of the event, while the drift time of the ionization electrons gives the $z$ position. The ability to reconstruct three-dimensional space points without a multi-layered design is one of the key advantages for GRAMS compared to other gamma-ray detectors with semiconductors or scintillation crystals.
 
@@ -78,7 +81,8 @@ E'_3 &= -\frac{E_2}{2} + \sqrt{ \frac{E_2^2}{4} + \frac{E_2 m_e c^2}{1 - \cos\th
 
 where $E'_3$ is the energy of the gamma ray just after the second Compton scattering. The gamma ray after three or more Compton scatterings may escape from the detector. In each case, the cone angle $\theta$ gives a Compton ``Event Circle'' for each event, and the overlap of three or more ``Event Circles'' pinpoints the direction of the gamma-ray source (see Fig.~\ref{fig:GRAMS_compton_ring}). There are also works to optimize this compton reconstruction efficiency \cite{TAKASHIMA2022166897, YONEDA2023102765}, as it won't be the key focus of this thesis, we won't go into details here.
 
-\noindent \textbf{GRAMS Detection Concept for Antimatter:}
+\subsection{GRAMS Detection Concept for Antimatter}
+\label{chap:GRAMS:concept:antimatter}
 
 The GRAMS antimatter survey involves capturing an antiparticle in a target material with subsequent formation and decay of an exotic atom, similar to the \ac{GAPS} project that is mentioned in Section.~\ref{chap:GAPS} \cite{Mori_2002,aramaki2013measurement,aramaki2016antideuteron}. The TOF plastic scintillators measure the velocity and angle of the incoming antiparticle. The antiparticle slows down and stops inside the LArTPC detector, where it forms an excited exotic atom with an argon atom. Then, the exotic atom emits atomic X-rays as it de-excites.
 
