@@ -178,6 +178,16 @@ The key of the filter for charge readout is reducing noise level and removing th
     \label{fig:pGRAMS_filter}
 \end{figure}
 
+To deal with the peak shift, I have developed a peak shift correction algorithm to further correct the peak location. After the gaussian smoothing, peak location correction is performed to make the peak location more precise. The peak correction result is showed in Fig.~\ref{fig:peak_correction}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/peak_shift.png}
+    \noindent\raggedright 
+    \caption{Peak shift correction.}
+    \label{fig:peak_correction}
+\end{figure}
+
 % TODO: add staticstics for peak shift comparison
 With this software filter, we could then make all the charge signal readout cleaner for track reconstruction. One comparison of the event ID 9483 before and after the filter is shown in Fig.~\ref{fig:filter_comparison}. Left figure shows the raw waveforms for all charge channels for event ID 9483, while right figure shows the filtered waveforms. The charge signals are much cleaner after the filter, making it easier to identify the signal peaks for further 3D track reconstruction. One could already identify a cosmic muon track going through the TPC from the clear shift of the peak on the right figure.
 
@@ -199,96 +209,6 @@ From the filtered waveforms, we could then identify the signal peaks for each ch
     \label{fig:muontest_event}
 \end{figure}
 
-\section{Liquid Argon Detector Efficiency Study}
-\label{chap:GRAMSresult:TPCshape}
-From Section.~\ref{chap:intro:balloon} we know that for balloon experiment, payload weight and power budget are crucial. In order to get the most efficient detector structure with limited mass budget in hand, I have conducted a simulation study to determine the shape of the detector under a series of fixed total weight budget. In this study, I have made the assumption that \ac{PDU}, electronics, and other support systems will not be affected by the detector geometry change, and the mass budget for these systems is fixed. Therefore, the total mass budget for the detector system including \ac{LArTPC} and \ac{TOF} system will be the major element to determine the detector geometry. Chart in table.~\ref{tab:grams_mass_budget} shows the detailed mass breakdown for the total 1270 kg detector mass budget which comes from the preliminary mass estimation for the GRAMS balloon payload based on historical balloon experiments. With this study, I did a series of simulations to evaluate the GRASP for a mass list of 900 kg, 1100 kg, 1300 kg and 1500 kg, fine tuning the liquid argon geometry to find the optimal shape for the detector. Table.~\ref{tab:LArTPC_geometry} shows the detailed geometry configuration for the liquid argon detector under different total mass budget. The length of the liquid argon detector is varied from 50 cm to 600 cm, and the thickness is varied accordingly to fit the total mass budget. The red numbers in the table indicate the configurations where the liquid argon mass becomes negative, which is not physical and therefore not considered in the optimization. With the geometry configuration for each total mass budget, we could then evaluate the GRASP for each configuration to find the optimal shape for the detector under different mass budget. For each configuration, 1 million antihelium-3 events are simulated with the GEANT4 package, and the GRASP is calculated based on the number of events that can be successfully captured.
-
-\begin{table}
-\centering
-\small
-\renewcommand{\arraystretch}{1.2}
-% The table definition has 8 columns defined
-\begin{tabular}{|l|l|c|c|c|c|c|r|}
-\hline
-\multicolumn{8}{|l|}{\textbf{GRAMS Detector Mass Budget}} \\ \hline % Fixed colspan to 8
-\multicolumn{8}{|l|}{\textbf{TOF System}} \\ \hline % Correct colspan for following cells
-& Thickness /m & 0.005 & \multicolumn{5}{l|}{} \\ \cline{2-8}
-& \textbf{Outer TOF} & length [m] & width [m] & \# of faces & area [m$^2$] & density [kg/m$^3$] & mass [kg] \\ \cline{2-8}
-& Top & 3.500 & 3.500 & 1 & 12.250 & 1000.000 & 61.250 \\ \cline{2-8}
-& Side & 3.500 & 1.801 & 4 & 25.211 & 1000.000 & 126.055 \\ \cline{2-8}
-& \textbf{Inner TOF} & length [m] & width [m] & \# of faces & area [m$^2$] & density [kg/m$^3$] & mass [kg] \\ \cline{2-8}
-& Top/Bottom & 1.500 & 1.500 & 2 & 4.500 & 1000.000 & 22.500 \\ \cline{2-8}
-& Side & 1.500 & 0.301 & 4 & 1.805 & 1000.000 & 9.023 \\ \hline
-\multicolumn{7}{|l|}{TOF electronics} & 330.000 \\ \hline
-\multicolumn{7}{|l|}{\textbf{TOF total mass}} & 548.828 \\ \hline
-\multicolumn{8}{|l|}{\textbf{LArTPC System}} \\ \hline
-& & length [m] & width [m] & height & thickness & density [kg/m$^3$] & mass [kg] \\ \cline{2-8}
-& Liquid argon & 1.400 & 1.400 & 0.201 & N/A & 1400.000 & 550.945 \\ \cline{2-8}
-& Chamber & 1.500 & 1.500 & 0.301 & 0.010 & 2700.000 & 170.227 \\ \hline
-\multicolumn{7}{|l|}{\textbf{LArTPC total mass}} & 721.172 \\ \hline
-\multicolumn{7}{|l|}{\textbf{\ac{LArTPC} and TOF mass [kg]}} & \textbf{1270.000} \\ \hline
-\end{tabular}
-\caption{GRAMS detector mass budget breakdown.}
-\label{tab:grams_mass_budget}
-\end{table}
-
-\begin{table}
-\centering
-\small
-\setlength{\tabcolsep}{3pt} % Tighten columns to fit
-\begin{tabularx}{\textwidth}{@{} Xcc | Xcc @{}}
-\toprule
-\multicolumn{3}{c|}{\textbf{\ac{LArTPC} + TOF 900kg}} & \multicolumn{3}{c}{\textbf{\ac{LArTPC} + TOF 1500kg}} \\
-\cmidrule(r){1-3} \cmidrule(l){4-6}
-\textbf{Length [cm]} & \textbf{Thickness [cm]} & \textbf{LAr mass} & \textbf{Length [cm]} & \textbf{Thickness [cm]} & \textbf{LAr mass} \\
-\midrule
-50 & 88.2 & 308.7 & 50 & 213.5 & 747.25 \\
-60 & 62.8 & 316.512 & 60 & 155.5 & 783.72 \\
-70 & 46.2 & 316.932 & 70 & 117.2 & 803.992 \\
-80 & 34.8 & 311.808 & 80 & 90.9 & 814.464 \\
-90 & 26.6 & 301.644 & 90 & 72 & 816.48 \\
-100 & 20.7 & 289.8 & 100 & 58.1 & 813.4 \\
-110 & 16.2 & 274.428 & 110 & 47.5 & 804.65 \\
-120 & 12.7 & 256.032 & 120 & 39.4 & 794.304 \\
-140 & 7.8 & 214.032 & 140 & 27.7 & 760.088 \\
-160 & 4.6 & 164.864 & 160 & 20 & 716.8 \\
-180 & 2.3 & 104.328 & 180 & 14.7 & 666.792 \\
-200 & 0.8 & 44.8 & 200 & 10.8 & 604.8 \\
-300 & \textcolor{red}{-2.9} & \textcolor{red}{-365.4} & 300 & 1.7 & 214.2 \\
-600 & \textcolor{red}{-4.8} & \textcolor{red}{-2419.2} & 600 & \textcolor{red}{-3.7} & \textcolor{red}{-1864.8} \\
-\midrule
-\multicolumn{3}{c|}{\textbf{\ac{LArTPC} + TOF 1100kg}} & \multicolumn{3}{c}{\textbf{\ac{LArTPC} + TOF 1300kg}} \\
-\cmidrule(r){1-3} \cmidrule(l){4-6}
-\textbf{Length [cm]} & \textbf{Thickness [cm]} & \textbf{LAr mass} & \textbf{Length [cm]} & \textbf{Thickness [cm]} & \textbf{LAr mass} \\
-\midrule
-50 & 130 & 455 & 50 & 171.7 & 600.95 \\
-60 & 93.7 & 472.248 & 60 & 124.6 & 627.984 \\
-70 & 69.9 & 479.514 & 70 & 93.6 & 642.096 \\
-80 & 53.5 & 479.36 & 80 & 72.2 & 646.912 \\
-90 & 41.8 & 474.012 & 90 & 56.9 & 645.246 \\
-100 & 33.1 & 463.4 & 100 & 45.6 & 638.4 \\
-110 & 26.6 & 450.604 & 110 & 37.1 & 628.474 \\
-120 & 21.6 & 435.456 & 120 & 30.5 & 614.88 \\
-140 & 14.4 & 395.136 & 140 & 21.1 & 578.984 \\
-160 & 9.7 & 347.648 & 160 & 14.9 & 534.016 \\
-180 & 6.5 & 294.84 & 180 & 10.6 & 480.816 \\
-200 & 4.1 & 229.6 & 200 & 7.5 & 420 \\
-300 & \textcolor{red}{-1.4} & \textcolor{red}{-176.4} & 300 & 0.2 & 25.2 \\
-600 & \textcolor{red}{-4.4} & \textcolor{red}{-2217.6} & 600 & \textcolor{red}{-4} & \textcolor{red}{-2016} \\
-\bottomrule
-\end{tabularx}
-\caption{\ac{LArTPC} geometry varies under fixed total mass budget 900/1100/1300/1500 kg for the \ac{LArTPC} and TOF system}
-\label{tab:LArTPC_geometry}
-\end{table}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=1\linewidth]{fig/LArTPC_shape_geo.png}
-    \noindent\raggedright 
-    \caption{GRAMS \ac{LArTPC} GRASP result with different geometry configuration under fixed total mass budget.}
-    \label{fig:GRAMS_LArTPC_shape_geo}
-\end{figure}
-From Fig.~\ref{fig:GRAMS_LArTPC_shape_geo}, we can see that with larger detector mass budget, the capture efficiency is higher as expected. And the efficiency peak also shift to the right. Based on this result, \ac{GRAMS} has proposed the detector shape to be $ 140cm \times 140cm \times 20cm $ with 1270kg of detector mass budget. Checked with the GRASP result, 140cm lays between 140cm peak from 1100kg mass and 160cm TPC length from 1300kg mass, which is still an optimal choice for the detector geometry. 
 
 \section{GRAMS antihelium-3 Sensitivity Simulation}
 \label{chap:GRAMSresult:antihelium-3}
@@ -509,3 +429,95 @@ GRASP estimation for the GRAMS satellite mission, with a 3.2 m $\times$ 3.2 m $\
 \end{figure}
 
 The Low-energy cosmic-ray antihelium-3 nuclei measurement can be a background-free indirect dark matter search method since the antihelium-3 flux from the dark matter annihilation can be a few orders of magnitude higher than the secondary flux from cosmic-ray interactions at the low-energy range. The GRAMS's unique detector and detection concept are optimized to investigate the low-energy range ($E < 1$ GeV/n). We estimated the GRAMS antihelium-3 sensitivity for three LDB flights (105 days of observation time in total) as $1.47\times10^{-7}$ [m$^2$ s sr GeV/n]$^{-1}$. The future GRAMS satellite mission with the upgraded 3.2 m $\times$ 3.2 m $\times$ 0.2 m LArTPC detector and longer observation time (2 years / 10 years), the antihelium-3 sensitivity can be as low as $ 1.55\times10^{-9}$ [m$^2$ s sr GeV/n]$^{-1}$ / $3.10\times10^{-10}$ [m$^2$ s sr GeV/n]$^{-1}$, allowing GRAMS to explore a variety of dark matter models.
+
+
+\section{Liquid Argon Detector Efficiency Study}
+\label{chap:GRAMSresult:TPCshape}
+From Section.~\ref{chap:intro:balloon} we know that for balloon experiment, payload weight and power budget are crucial. In order to get the most efficient detector structure with limited mass budget in hand, I have conducted a simulation study to determine the shape of the detector under a series of fixed total weight budget. In this study, I have made the assumption that \ac{PDU}, electronics, and other support systems will not be affected by the detector geometry change, and the mass budget for these systems is fixed. Therefore, the total mass budget for the detector system including \ac{LArTPC} and \ac{TOF} system will be the major element to determine the detector geometry. Chart in table.~\ref{tab:grams_mass_budget} shows the detailed mass breakdown for the total 1270 kg detector mass budget which comes from the preliminary mass estimation for the GRAMS balloon payload based on historical balloon experiments. With this study, I did a series of simulations to evaluate the GRASP that using the same method as section.~\ref{chap:GRAMSresult:antihelium-3:GRASP} mentioned, for a mass list of 900 kg, 1100 kg, 1300 kg and 1500 kg, fine tuning the liquid argon geometry to find the optimal shape for the detector. Table.~\ref{tab:LArTPC_geometry} shows the detailed geometry configuration for the liquid argon detector under different total mass budget. The length of the liquid argon detector is varied from 50 cm to 600 cm, and the thickness is varied accordingly to fit the total mass budget. The red numbers in the table indicate the configurations where the liquid argon mass becomes negative, which is not physical and therefore not considered in the optimization. With the geometry configuration for each total mass budget, we could then evaluate the GRASP for each configuration to find the optimal shape for the detector under different mass budget. For each configuration, 1 million antihelium-3 events are simulated with the GEANT4 package, and the GRASP is calculated based on the number of events that can be successfully captured.
+
+\begin{table}
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+% The table definition has 8 columns defined
+\begin{tabular}{|l|l|c|c|c|c|c|r|}
+\hline
+\multicolumn{8}{|l|}{\textbf{GRAMS Detector Mass Budget}} \\ \hline % Fixed colspan to 8
+\multicolumn{8}{|l|}{\textbf{TOF System}} \\ \hline % Correct colspan for following cells
+& Thickness /m & 0.005 & \multicolumn{5}{l|}{} \\ \cline{2-8}
+& \textbf{Outer TOF} & length [m] & width [m] & \# of faces & area [m$^2$] & density [kg/m$^3$] & mass [kg] \\ \cline{2-8}
+& Top & 3.500 & 3.500 & 1 & 12.250 & 1000.000 & 61.250 \\ \cline{2-8}
+& Side & 3.500 & 1.801 & 4 & 25.211 & 1000.000 & 126.055 \\ \cline{2-8}
+& \textbf{Inner TOF} & length [m] & width [m] & \# of faces & area [m$^2$] & density [kg/m$^3$] & mass [kg] \\ \cline{2-8}
+& Top/Bottom & 1.500 & 1.500 & 2 & 4.500 & 1000.000 & 22.500 \\ \cline{2-8}
+& Side & 1.500 & 0.301 & 4 & 1.805 & 1000.000 & 9.023 \\ \hline
+\multicolumn{7}{|l|}{TOF electronics} & 330.000 \\ \hline
+\multicolumn{7}{|l|}{\textbf{TOF total mass}} & 548.828 \\ \hline
+\multicolumn{8}{|l|}{\textbf{LArTPC System}} \\ \hline
+& & length [m] & width [m] & height & thickness & density [kg/m$^3$] & mass [kg] \\ \cline{2-8}
+& Liquid argon & 1.400 & 1.400 & 0.201 & N/A & 1400.000 & 550.945 \\ \cline{2-8}
+& Chamber & 1.500 & 1.500 & 0.301 & 0.010 & 2700.000 & 170.227 \\ \hline
+\multicolumn{7}{|l|}{\textbf{LArTPC total mass}} & 721.172 \\ \hline
+\multicolumn{7}{|l|}{\textbf{\ac{LArTPC} and TOF mass [kg]}} & \textbf{1270.000} \\ \hline
+\end{tabular}
+\caption{GRAMS detector mass budget breakdown.}
+\label{tab:grams_mass_budget}
+\end{table}
+
+\begin{table}
+\centering
+\small
+\setlength{\tabcolsep}{3pt} % Tighten columns to fit
+\begin{tabularx}{\textwidth}{@{} Xcc | Xcc @{}}
+\toprule
+\multicolumn{3}{c|}{\textbf{\ac{LArTPC} + TOF 900kg}} & \multicolumn{3}{c}{\textbf{\ac{LArTPC} + TOF 1500kg}} \\
+\cmidrule(r){1-3} \cmidrule(l){4-6}
+\textbf{Length [cm]} & \textbf{Thickness [cm]} & \textbf{LAr mass} & \textbf{Length [cm]} & \textbf{Thickness [cm]} & \textbf{LAr mass} \\
+\midrule
+50 & 88.2 & 308.7 & 50 & 213.5 & 747.25 \\
+60 & 62.8 & 316.512 & 60 & 155.5 & 783.72 \\
+70 & 46.2 & 316.932 & 70 & 117.2 & 803.992 \\
+80 & 34.8 & 311.808 & 80 & 90.9 & 814.464 \\
+90 & 26.6 & 301.644 & 90 & 72 & 816.48 \\
+100 & 20.7 & 289.8 & 100 & 58.1 & 813.4 \\
+110 & 16.2 & 274.428 & 110 & 47.5 & 804.65 \\
+120 & 12.7 & 256.032 & 120 & 39.4 & 794.304 \\
+140 & 7.8 & 214.032 & 140 & 27.7 & 760.088 \\
+160 & 4.6 & 164.864 & 160 & 20 & 716.8 \\
+180 & 2.3 & 104.328 & 180 & 14.7 & 666.792 \\
+200 & 0.8 & 44.8 & 200 & 10.8 & 604.8 \\
+300 & \textcolor{red}{-2.9} & \textcolor{red}{-365.4} & 300 & 1.7 & 214.2 \\
+600 & \textcolor{red}{-4.8} & \textcolor{red}{-2419.2} & 600 & \textcolor{red}{-3.7} & \textcolor{red}{-1864.8} \\
+\midrule
+\multicolumn{3}{c|}{\textbf{\ac{LArTPC} + TOF 1100kg}} & \multicolumn{3}{c}{\textbf{\ac{LArTPC} + TOF 1300kg}} \\
+\cmidrule(r){1-3} \cmidrule(l){4-6}
+\textbf{Length [cm]} & \textbf{Thickness [cm]} & \textbf{LAr mass} & \textbf{Length [cm]} & \textbf{Thickness [cm]} & \textbf{LAr mass} \\
+\midrule
+50 & 130 & 455 & 50 & 171.7 & 600.95 \\
+60 & 93.7 & 472.248 & 60 & 124.6 & 627.984 \\
+70 & 69.9 & 479.514 & 70 & 93.6 & 642.096 \\
+80 & 53.5 & 479.36 & 80 & 72.2 & 646.912 \\
+90 & 41.8 & 474.012 & 90 & 56.9 & 645.246 \\
+100 & 33.1 & 463.4 & 100 & 45.6 & 638.4 \\
+110 & 26.6 & 450.604 & 110 & 37.1 & 628.474 \\
+120 & 21.6 & 435.456 & 120 & 30.5 & 614.88 \\
+140 & 14.4 & 395.136 & 140 & 21.1 & 578.984 \\
+160 & 9.7 & 347.648 & 160 & 14.9 & 534.016 \\
+180 & 6.5 & 294.84 & 180 & 10.6 & 480.816 \\
+200 & 4.1 & 229.6 & 200 & 7.5 & 420 \\
+300 & \textcolor{red}{-1.4} & \textcolor{red}{-176.4} & 300 & 0.2 & 25.2 \\
+600 & \textcolor{red}{-4.4} & \textcolor{red}{-2217.6} & 600 & \textcolor{red}{-4} & \textcolor{red}{-2016} \\
+\bottomrule
+\end{tabularx}
+\caption{\ac{LArTPC} geometry varies under fixed total mass budget 900/1100/1300/1500 kg for the \ac{LArTPC} and TOF system}
+\label{tab:LArTPC_geometry}
+\end{table}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/LArTPC_shape_geo.png}
+    \noindent\raggedright 
+    \caption{GRAMS \ac{LArTPC} GRASP result with different geometry configuration under fixed total mass budget.}
+    \label{fig:GRAMS_LArTPC_shape_geo}
+\end{figure}
+From Fig.~\ref{fig:GRAMS_LArTPC_shape_geo}, we can see that with larger detector mass budget, the capture efficiency is higher as expected. And the efficiency peak also shift to the right. Based on this result, \ac{GRAMS} has proposed the detector shape to be $ 140cm \times 140cm \times 20cm $ with 1270kg of detector mass budget. Checked with the GRASP result, 140cm lays between 140cm peak from 1100kg mass and 160cm TPC length from 1300kg mass, which is still an optimal choice for the detector geometry. 

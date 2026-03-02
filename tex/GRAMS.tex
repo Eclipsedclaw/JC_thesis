@@ -214,7 +214,16 @@ The eGRAMS mission used 3 CSPs for validation of operation during balloon flight
 
 There are several considerations in the CSP design, including liquid argon purity and low-temperature operation compatibility. The solder masks on fabricated CSPs to be used in pGRAMS will be removed due to purity considerations. Several different op-amp candidates are also being tested for cryogenic compatibility as well. 
 
-The CSP v5 was calibrated with a charge injection board that makes use of a voltage divider, an injection capacitor of 1 pF and a dummy capacitor used to mimic the pGRAMS detector’s assumed 50 pF capacitance. The tests demonstrated that the CSP noise FWHM can be as low as 20~keV in room temperature.
+The CSP v5 was calibrated with a charge injection board that makes use of a voltage divider, an injection capacitor of 1 pF and a dummy capacitor used to mimic the pGRAMS detector’s assumed 50 pF capacitance. The tests demonstrated that the CSP noise FWHM can be as low as 20~keV in room temperature. As Fig.~\ref{fig:CSP_detector_capacitance_effect} shows, we have changed the dummy detector capacitance to simulate possible detector tile strip capacitance. The result shows that the noise performance of the CSP is affected by the detector capacitance, which is expected. With lower detector capacitance, the noise performance is better, which in compare to pGRAMS detector strip capacitance of around 15 pF, we could achieve around 10 keV energy resolution. While under liquid argon cryogenic condition, the changing of the injection capacitor value is the unknown factor that we can't fully trust the conversion relation from equation.~\ref{equ:Charge_conversion}. The result in this figure only shows the asumption that the conversion relation is the same at cryogenic temperature, which is still under testing.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/CSP_detector_capacitance_effiect.png}
+    \noindent\raggedright 
+    A series of bench test for \ac{CSP} noise performance with different dummy capacitance. The result shows that the noise performance of the CSP is affected by the detector capacitance, which is expected. With lower detector capacitance, the noise performance is better, which in compare to pGRAMS detector strip capacitance of around 15 pF, we could achieve around 10 keV energy resolution. While under liquid argon cryogenic condition, the changing of the injection capacitor value is the unknown factor that we can't fully trust the conversion relation from equation.~\ref{equ:Charge_conversion}. The result in this figure only shows the asumption that the conversion relation is the same at cryogenic temperature, which is still under testing.
+    \caption{CSP noise performance with different dummy capacitance.}
+    \label{fig:CSP_detector_capacitance_effect}
+\end{figure}
 
 
 
