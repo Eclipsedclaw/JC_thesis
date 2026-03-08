@@ -516,8 +516,20 @@ From Section.~\ref{chap:intro:balloon} we know that for balloon experiment, payl
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/LArTPC_shape_geo.png}
-    \noindent\raggedright 
+    \noindent\raggedright Y-axis representating the capture power of the detector torwards antihelium-3 nuclei, which is calculated as the number of captured events divided by the total number of simulated events. Based on the results, the efficiency reached maximum at a more cubic shape comparing to thin flat pancake shape and long rod shape.
     \caption{GRAMS \ac{LArTPC} GRASP result with different geometry configuration under fixed total mass budget.}
     \label{fig:GRAMS_LArTPC_shape_geo}
 \end{figure}
 From Fig.~\ref{fig:GRAMS_LArTPC_shape_geo}, we can see that with larger detector mass budget, the capture efficiency is higher as expected. And the efficiency peak also shift to the right. Based on this result, \ac{GRAMS} has proposed the detector shape to be $ 140cm \times 140cm \times 20cm $ with 1270kg of detector mass budget. Checked with the GRASP result, 140cm lays between 140cm peak from 1100kg mass and 160cm TPC length from 1300kg mass, which is still an optimal choice for the detector geometry. 
+
+Aside from the fixed total mass budget of the \ac{LArTPC} and TOF system, I also did a simulation study of the \ac{LArTPC} depth study to evaluate the GRASP with different \ac{LArTPC} depth under the same length and width. This will tell us the events distribution inside our detector to give us better understanding of the detector performance and help us to optimize the detector design. Fig.~\ref{fig:GRAMS_LArTPC_depth} shows the stopped events' GRASP depth distribution for antideuterons. We can see that most of the events are captured within the first 10cm of the detector, which is consistent with the fact that most of the annihilation products are generated within the first few centimeters of the detector. This result also indicates that we can optimize the detector design by focusing on the first 10cm of the detector to maximize the capture efficiency while minimizing the total mass budget.
+
+One major reason that that the GRASP depth distribution has this shape is that the low energy events are annihilated in the atmosphere and only for energy higher than $ 75keV/N $ started to reach the detector. And for events that are higher energy than $ 200keV/N $, they tend to escape from the detector without being captured. The tails of high energy events are the ones with large zelith angle with give a very long trajactory inside the \ac{LArTPC}. But those events are relatively small within all events.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/GRASP_depth.png}
+    \noindent\raggedright 
+    \caption{Antideuteron events GRASP depth distribution inside the \ac{LArTPC} detector.}
+    \label{fig:GRAMS_LArTPC_depth}
+\end{figure}

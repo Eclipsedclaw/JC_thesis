@@ -371,31 +371,38 @@ PDU & 15 & 1.5 \\
 \begin{landscape}
 \begin{table}
 \centering
-\small  % Use tiny instead of footnotesize
-\begin{tabular}{@{}lccccccc@{}}
+\small
+% 1. Remove standard padding to let the fill command handle all spacing
+\setlength{\tabcolsep}{0pt}
+% 2. Use tabular* with \textwidth and the extracolsep fill command
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} lccccccc @{}}
 \toprule
-\textbf{Component} & \textbf{\# Units} & \textbf{\# Chan.} & \textbf{V (V)} & \textbf{Chan. I (A)} & \textbf{Chan. P (W)} & \textbf{PDU I (A)} & \textbf{PDU P (W)} \\
+\textbf{Component} & \textbf{\# of Units} & \textbf{\# of Chan.} & \textbf{Voltage [V]} & \textbf{Chan. I [A]} & \textbf{Chan. P (W)} & \textbf{PDU I [A]} & \textbf{PDU P (W)} \\
 \midrule
-HV & 1 & 1 & 10000 & 0.0000005 & 0.005 & 0.0000005 & 0.005 \\
-Charge PreAmp & 1 & 1 & -5 & 1.00 & 5.00 & 1.00 & 5.00 \\
-SIPM PreAmp & 1 & 3 & 2.5 & 0.09 & 0.675 & 0.27 & 0.675 \\
-SIPM Bias & 1 & 18 & 52 & 0.001 & 0.936 & 0.018 & 0.936 \\
-CAEN-NEVIS ±5V DAQ PDU & 1 & 1 & 5 & 5.10 & 25.50 & 5.10 & 25.50 \\
-CAEN-NEVIS 12V DAQ PDU & 1 & 1 & -5 & 2.47 & 12.35 & 2.47 & 12.35 \\
-CAEN-NEVIS 3.3V DAQ PDU & 1 & 1 & 3.3 & 8.46 & 27.918 & 8.46 & 27.918 \\
-Shaper & 6 & 180 & -3.3 & 0.0025 & 1.485 & 0.45 & 8.91 \\
-Sabertooth & 1 & 1 & 12 & 3.40 & 40.80 & 3.40 & 40.80 \\
-PCIe Bifurcator & 1 & 1 & 12 & 1.20 & 14.40 & 1.20 & 14.40 \\
-Sabertooth IO & 1 & 1 & 3.3 & 0.07 & 0.231 & 0.07 & 0.231 \\
-SSD & 1 & 1 & 5 & 1.30 & 6.50 & 1.30 & 6.50 \\
-TOF / MPD & 1 & 1 & 12 & 2.00 & 24.00 & 2.00 & 24.00 \\
-TOF Bias & 2 & 2 & 5 & 1.50 & 7.50 & 3.00 & 15.00 \\
-Hub Computer & 1 & 1 & 5 & 1.00 & 5.00 & 1.00 & 5.00 \\
+TPC HV                  & 1 & 1   & 10000 & 0.0000005 & 0.005 & 0.0000005 & 0.005 \\
+Charge PreAmp           & 1 & 5   & 15    & 0.15      & 2.25  & 0.75      & 11.25 \\
+SIPM PreAmp             & 1 & 15  & 15    & 0.1       & 1.5   & 1.5       & 22.5  \\
+SIPM Bias               & 1 & 32.5& 0.09  & 0.675     & 0.27  & 0.675     & 13    \\
+CAEN-NEVIS ±5V DAQ PDU  & 1 & 3   & -5    & 0.09      & 1.35  & 0.27      & 1.35  \\
+CAEN-NEVIS 12V DAQ PDU  & 1 & 18  & 52    & 0.001     & 0.936 & 0.018     & 0.936 \\
+CAEN-NEVIS 3.3V DAQ PDU & 1 & 1   & 5     & 5.1       & 25.5  & 5.1       & 25.5  \\
+Shaper                  & 1 & 1   & -5    & 2.47      & 12.35 & 2.47      & 12.35 \\
+Sabertooth              & 1 & 1   & 12    & 3.7       & 44.64 & 3.7       & 44.64 \\
+PCIe Bifurcator         & 1 & 1   & 3.3   & 8.46      & 27.918& 8.46      & 27.918\\
+Sabertooth IO           & 6 & 180 & 3.3   & 0.0025    & 1.485 & 0.45      & 8.91  \\
+SSD                     & 6 & 180 & -3.3  & 0.0025    & 1.485 & 0.45      & 8.91  \\
+TOF / MPD               & 1 & 1   & 12    & 3.44      & 40.8  & 3.44      & 40.8  \\
+TOF Bias                & 1 & 1   & 12    & 1.2       & 14.4  & 1.2       & 14.4  \\
+Hub Computer            & 1 & 1   & 3.3   & 0.07      & 0.231 & 0.07      & 0.231 \\
+Pressure Regulator      & 1 & 1   & 12    & 1.67      & 20    & 1.667     & 20    \\
+Inclinometer            & 1 & 1   & 12    & 0.03      & 0.360 & 0.03      & 0.36  \\
+Solenoid Valve          & 1 & 1   & 24    & 0         & 0     & 0         & 0     \\
+Heaters.                & 5 & 5   & 28    & 1.61      & 44.996& 8.035     & 0     \\
 \midrule
-\multicolumn{7}{l}{\textbf{Estimated total power for nominal operation}} \\
-Pressure Regulator &  &  &  &  &  &  & 273.106W \\
+\multicolumn{7}{l}{\textbf{Estimated total power for nominal operation}} & \textbf{267.125 W} \\
+\multicolumn{7}{l}{\textbf{Power Safety Margin (10\%)}} & \textbf{293.8375 W} \\
 \bottomrule
-\end{tabular}
+\end{tabular*}
 \caption{pGRAMS power budget}
 \label{tab:pGRAMS_powerbudget}
 \end{table}
@@ -758,13 +765,13 @@ The SiPM ADC+FEM and three shaper boards can sit in the same crate as the charge
 
 \subsection{Cryostat and plumbing}
 \label{chap:GRAMS:pGRAMS:cryostats}
-As main medium for \ac{LArTPC} is natually liquid argon which required a cryogenic system to handle the cooling and maintain the liquid state. For pGRAMS flight, we designed a custom cryostat with a vacuum jacket to provide the thermal insulation. The cryostat inner vessel is made of aluminum to hold the miniGRAMS \ac{LArTPC} detector and \ac{LAr} inside. The outer vessel is also made of aluminum to provide vacuum insulation space between inner and outer vessel to minimize the convection heat transfer. Then there are multi-layer of sheets wrapped around the inner cryostats to further reduce the radiation heat transfer. For pGRAMS operation we made cthis cryostat's flange facing downward to reduce the material stacking on top of the detector active volume. See Fig.~\ref{fig:pGRAMS_cryostat}. Left \textbf{(a)} shows cryostat general view. miniGRAMS TPC is mounted inside the inner cryostat. There are kapton heaters installed outside of inner cryostat to help release the argon before descending. Right top \textbf{(b)} shows area that between inner cryostat and outer vacuum jacket. Green cylinders are G10 supporting rods for the purpose of low thermal conductance. Thin blue/red/yellow hoses are plumbing lines for fill/vent/\ac{LLD} respectively. middle-siezd yellow line shows safety rapture disk. Right bottom \textbf{(c)} shows bottom of the cryostat. center KF cross is used for plumbing, while each quadrant has a signal flange for charge and light readout, \ac{HK} sensors, detector power flange and high voltage flange.With this cryostat design, we could maintain the \ac{LAr} state for more than 24 hours without any extra cooling. This is sufficient for the pGRAMS flight that targetting on last for less then one day.
+As main medium for \ac{LArTPC} is natually liquid argon which required a cryogenic system to handle the cooling and maintain the liquid state. For pGRAMS flight, we designed a custom cryostat with a vacuum jacket to provide the thermal insulation. The cryostat inner vessel is made of aluminum to hold the miniGRAMS \ac{LArTPC} detector and \ac{LAr} inside. The outer vessel is also made of aluminum to provide vacuum insulation space between inner and outer vessel to minimize the convection heat transfer. Then there are multi-layer of sheets wrapped around the inner cryostats to further reduce the radiation heat transfer. For pGRAMS operation we made cthis cryostat's flange facing downward to reduce the material stacking on top of the detector active volume. See Fig.~\ref{fig:pGRAMS_cryostat}. Left \textbf{(a)} shows cryostat general view. miniGRAMS TPC is mounted inside the inner cryostat. There are kapton heaters installed outside of inner cryostat to help release the argon before descending. Middle top \textbf{(b)} shows area that between inner cryostat and outer vacuum jacket. Green cylinders are G10 supporting rods for the purpose of low thermal conductance. Thin blue/red/yellow hoses are plumbing lines for fill/vent/\ac{LLD} respectively. middle-siezd yellow line shows safety rapture disk. Middle bottom \textbf{(c)} shows bottom of the cryostat. center KF cross is used for plumbing, while each quadrant has a signal flange for charge and light readout, \ac{HK} sensors, detector power flange and high voltage flange.  \textbf{(d)} Right figure shows the actual pGRAMS cryostat hanging on the stand at \ac{GSFC}. With this cryostat design, we could maintain the \ac{LAr} state for more than 24 hours without any extra cooling. This is sufficient for the pGRAMS flight that targetting on last for less then one day.
 Detailed cryostat design files are listed in appendix.~\ref{app:designs}.
 
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/pGRAMS_cryostat.png}
-    \noindent\raggedright \textbf{(a)} Left figure shows cryostat general view. miniGRAMS TPC is mounted inside the inner cryostat. There are kapton heaters installed outside of inner cryostat to help release the argon before descending. \textbf{(b)} Right top figure shows area that between inner cryostat and outer vacuum jacket. Green cylinders are G10 supporting rods for the purpose of low thermal conductance. Thin blue/red/yellow hoses are plumbing lines for fill/vent/\ac{LLD} respectively. middle-siezd yellow line shows safety rapture disk. \textbf{(c)} Right bottom figure shows bottom of the cryostat. center KF cross is used for plumbing, while each quadrant has a signal flange for charge and light readout, \ac{HK} sensors, detector power flange and high voltage flange.
+    \noindent\raggedright \textbf{(a)} Left figure shows cryostat general view. miniGRAMS TPC is mounted inside the inner cryostat. There are kapton heaters installed outside of inner cryostat to help release the argon before descending. \textbf{(b)} Middle top figure shows area that between inner cryostat and outer vacuum jacket. Green cylinders are G10 supporting rods for the purpose of low thermal conductance. Thin blue/red/yellow hoses are plumbing lines for fill/vent/\ac{LLD} respectively. middle-siezd yellow line shows safety rapture disk. \textbf{(c)} middle bottom figure shows bottom of the cryostat. center KF cross is used for plumbing, while each quadrant has a signal flange for charge and light readout, \ac{HK} sensors, detector power flange and high voltage flange. \textbf{(d)} Right figure shows the actual pGRAMS cryostat hanging on the stand at \ac{GSFC}.
     \caption{pGRAMS cryostat design demonstration.}
     \label{fig:pGRAMS_cryostat}
 \end{figure}
@@ -849,3 +856,32 @@ For holding all the subsystems together, we have designed a custom gondola for p
 \subsection{Power Distribution Unit (PDU)}
 \label{chap:GRAMS:PDU}
 The power distribution unit (PDU) is responsible for distributing power from the battery packs to various subsystems of the pGRAMS payload, including the flight computer system, \ac{DAQ} system, \ac{TOF} system, cryostat heaters, and other electronics. The PDU is designed to handle the high power requirements of the payload while also being robust enough to operate in the harsh conditions of a balloon flight. We have specific control on \ac{PDU} with each devices, while the hub computer will remain always ON since it is the control end of the \ac{PDU}. Detailed design see Fig.~\ref{fig:design_PDU}.
+
+As for the power source we have selected battery stack SR182175\cite{nasa_csbf_sr182175} which was widely used in balloon experiments. Each battery stack has a nominal voltage of 26V (22V - 30V depending on the load) and voltage capacity 50 Ah. With our power budget mentioned in Table.~\ref{tab:pGRAMS_powerbudget}, we could estimate the mission time based on the number of battery stacks. With an total nominal load of 293.8375W and \ac{PDU} efficiency of 85\%, we could estimate the current and flight time for different number of battery stacks. Table.~\ref{tab:pGRAMS_flight_time} shows the estimated flight times for different scenarios. Per battery stack's manual, it could behave as worse as output 22V with load that is not ideal while each battery stacks will have lower probability to fail with lower current. Based on the flight requirement of minimum 12 hours, we will need at least 4 battery stacks to meet the requirement. With 4 battery stacks, we could have around 15 hours of flight time with nominal load, and around 13 hours of flight time with worst load. With more battery stacks, we could have more margin for the flight time, but it will also add more weight to the payload which will affect the flight altitude and also create mechanical stress on the gondola. We will need to balance the flight time and weight to make sure we have a successful flight.
+
+\begin{table}
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}|c|c|c|c|c|}
+\hline
+\multicolumn{5}{|l|}{\textbf{Nominal Load}} \\ \hline
+\textbf{No. of Batteries} & \textbf{Capacity [Ah]} & \textbf{Current [A]} & \textbf{Current per Battery [A]} & \textbf{Flight Time [h]} \\ \hline
+4 & 200 & 13.141 & 3.285 & 15.219 \\ \hline
+5 & 250 & 13.141 & 2.628 & 19.024 \\ \hline
+6 & 300 & 13.141 & 2.190 & 22.829 \\ \hline
+7 & 350 & 13.141 & 1.877 & 26.634 \\ \hline
+8 & 400 & 13.141 & 1.643 & 30.439 \\ \hline
+\multicolumn{5}{c}{} \\ [-1ex] \hline % Spacer
+\multicolumn{5}{|l|}{\textbf{Worst Load}} \\ \hline
+\textbf{No. of Batteries} & \textbf{Capacity [Ah]} & \textbf{Current [A]} & \textbf{Current per Battery [A]} & \textbf{Flight Time [h]} \\ \hline
+4 & 200 & 15.531 & 3.883 & 12.878 \\ \hline
+5 & 250 & 15.531 & 3.106 & 16.097 \\ \hline
+6 & 300 & 15.531 & 2.588 & 19.317 \\ \hline
+7 & 350 & 15.531 & 2.219 & 22.536 \\ \hline
+8 & 400 & 15.531 & 1.941 & 25.756 \\ \hline
+\end{tabular*}
+\noindent\raggedright Top chart shows the flight time estimation for a nominal battery performance of outputing rated 28V with load, while bottom chart shows the flight time estimation for a worst battery performance of outputing 22V with load. With current limit 5A for each battery stack, all of these cases would be within the limit. 
+\caption{Battery performance breakdown for Nominal vs. Worst Load scenarios}
+\label{tab:pGRAMS_flight_time}
+\end{table}
