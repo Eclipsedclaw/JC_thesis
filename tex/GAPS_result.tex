@@ -64,7 +64,7 @@ In the \ac{GFP} testing, a global zero suppression threshold was set for all mod
     \caption{GFP \ac{MIP} spectra}
     \label{fig:GFP_MIP}
 \end{figure}
-Due to the ineluctable electronics fluctuations, it is impossible to make all ASIC readout channels identical with each other. So different ASIC readout channels are expected with different responses to the same energy deposition in the \ac{Si(Li)} strips, as indicated by the various locations in ADC from different modules in Fig. 14. In order to perform the energy calibration, we developed an approach with the so-called transfer function to convert the readout ADC to the deposited energy. In this calibration procedure, with the calibration system mounted on the ASIC FEB, we read out the ASIC outputs with various amounts of injected current and built a relation between the input charge (mV) and ASIC readout (ADC) for all channels, which is defined as the transfer function. Based on the simulations, we extracted the charge yield rate with a given energy deposition in the \ac{Si(Li)} strip. By combining the transfer function (ADC to mV) and the charge yield rate (mV to keV/MeV), the \ac{MIP} spectrum was reconstructed. The histograms in red of Fig.~\ref{fig:GFP_MIP} show the MIP energy spectra in MeV and each spectrum is for one \ac{Si(Li)} module. With energy reconstruction applied, all modules at the \ac{GFP} exhibited consistent \ac{MIP} energy deposition, as expected. This method is also applied for all \ac{GAPS} flight detectors.
+Due to the ineluctable electronics fluctuations, it is impossible to make all ASIC readout channels identical with each other. So different ASIC readout channels are expected with different responses to the same energy deposition in the \ac{Si(Li)} strips, as indicated by the various locations in ADC from different modules in Fig.~\ref{fig:GFP_MIP}. In order to perform the energy calibration, we developed an approach with the so-called transfer function to convert the readout ADC to the deposited energy. In this calibration procedure, with the calibration system mounted on the ASIC FEB, we read out the ASIC outputs with various amounts of injected current and built a relation between the input charge (mV) and ASIC readout (ADC) for all channels, which is defined as the transfer function. Based on the simulations, we extracted the charge yield rate with a given energy deposition in the \ac{Si(Li)} strip. By combining the transfer function (ADC to mV) and the charge yield rate (mV to keV/MeV), the \ac{MIP} spectrum was reconstructed. The histograms in red of Fig.~\ref{fig:GFP_MIP} show the MIP energy spectra in MeV and each spectrum is for one \ac{Si(Li)} module. With energy reconstruction applied, all modules at the \ac{GFP} exhibited consistent \ac{MIP} energy deposition, as expected. This method is also applied for all \ac{GAPS} flight detectors.
 
 To validate the electronics and reconstruction chain, we incorporated the \ac{TOF} system and recorded cosmic-muon events. The \ac{TOF} and tracker readout computers were synchronized via the Network Time Protocol (NTP). When the \ac{TOF} issued a master trigger, an event generator sent the same event ID to both systems. Each recorded event also carried a timestamp for offline analysis. The software then merged the separately recorded \ac{TOF} and tracker events using the event ID and timestamp.
 
@@ -149,7 +149,7 @@ Q_2 = \Delta T \, \rho \, C_V \, \dot{V}
 \dot{V} = \pi \, (D/2)^2 \, u = \dot{m}/\rho
 \end{equation}
 
-where $\dot{V}$ is the volume flow rate. The pressure loss of methanol between outlet and inlet of the chiller, $\Delta P$, is fixed to $0.3\ MPa$, as defined by the discharge pressure of the chiller pump. For the coolant properties, we referred to \cite{Lemmon2013NISTSR}.
+where $\dot{V}$ is the volume flow rate. The pressure loss of methanol between outlet and inlet of the chiller, $\Delta P$, is fixed to $0.3~MPa$, as defined by the discharge pressure of the chiller pump. For the coolant properties, we referred to \cite{Lemmon2013NISTSR}.
 
 The mass flow rate, $\dot{m}$, which is the same for every tube section, is calculated to be 0.042 kg/s. The calculated values of $Re$ are below 2000 throughout the chiller tube in this case. By combining the above equations and substituting the measured temperature difference $\Delta T$ between inlet and outlet of the cold plate, Eq.~\ref{equ:heat_removal} gives the amount of heat removed from the cold plate by the coolant as $Q_2 \approx 183.8 \pm 5.0 \, \text{W}$. This is consistent with $Q_0 + Q_1 \approx 184.9 \, \text{W}$, which is the amount of heat to be removed from the cold plate.
 
@@ -205,12 +205,12 @@ Heat removed from cold plate, $Q_2$, from Eq.~\ref{equ:heat_removal} & $183.8 \p
 
 \subsection{Detector Performance and Particle Tracking}
 \label{chap:GAPSresult:flight:detector}
-We measured the pedestal and noise performance for all \ac{Si(Li)} channels with the full \ac{GAPS} payload at McMurdo, Antarctic. Fig.~\ref{fig:GAPS_flight_detector_performance} shows the ENC resolutions histogram for all \ac{Si(Li)} channels. The majority of channels were below $ 10\ keV $, with an average \ac{ENC} resolution $ 4\ keV $ which meets the design requirement. More calibration runs were performed to confirm the energy is properly reconstructed with the transfer function method. As mentioned in Section.~\ref{chap:GAPS:detectors}, \ac{GAPS} detectors behave differently at various temperatures. So we conducted several calibration runs at different temperatures to validate the energy reconstruction performance. 
+We measured the pedestal and noise performance for all \ac{Si(Li)} channels with the full \ac{GAPS} payload at McMurdo, Antarctic. Fig.~\ref{fig:GAPS_flight_detector_performance} shows the ENC resolutions histogram for all \ac{Si(Li)} channels. The majority of channels were below $ 10~keV $, with an average \ac{ENC} resolution $ 4~keV $ which meets the design requirement. More calibration runs were performed to confirm the energy is properly reconstructed with the transfer function method. As mentioned in Section.~\ref{chap:GAPS:detectors}, \ac{GAPS} detectors behave differently at various temperatures. So we conducted several calibration runs at different temperatures to validate the energy reconstruction performance. 
 
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/ENC_mcmurdo.png}
-    \noindent\raggedright \ac{ENC} resolutions histogram for all \ac{Si(Li)} channels with the full \ac{GAPS} payload at McMurdo, Antarctic. Majority of the channels are below $ 10\ keV $, with an average \ac{ENC} resolution $ 4\ keV $ which meets the design requirement.
+    \noindent\raggedright \ac{ENC} resolutions histogram for all \ac{Si(Li)} channels with the full \ac{GAPS} payload at McMurdo, Antarctic. Majority of the channels are below $ 10~keV $, with an average \ac{ENC} resolution $ 4~keV $ which meets the design requirement.
     \caption{\ac{GAPS} flight detector noise performance}
     \label{fig:GAPS_flight_detector_performance}
 \end{figure}
@@ -231,7 +231,7 @@ Once ground testing at the various facilities was completed, the \ac{GCS} system
 
 Fig.~\ref{fig:GAPS_GCS_performance} shows the \ac{GAPS} detector temperatures during ground testing at McMurdo Station. The left plot shows the temperature readout from each \ac{ASIC}'s thermal sensor in a 3D view. The top edge modules exhibit slightly higher temperatures due to thermal insulation defects. It is very hard to avoid the thermal leak on the ground due to convection. Thermally sealing the entire 4 meter-scale payload is extremely difficult. The right plot shows the temperature readout from each \ac{ASIC}'s thermal sensor in a 2D view with more detailed numerical values. The dark ones are the non-functioning sensors or \ac{ASIC}s. 
 
-Despite these edge effects, the \ac{GCS} maintained the detector system within the required range of $-35\ ^\circ C$ to $-45\ ^\circ C$ as required. 
+Despite these edge effects, the \ac{GCS} maintained the detector system within the required range of $-35~^\circ C$ to $-45~^\circ C$ as required. 
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_ASICs_temperature.png}
@@ -244,7 +244,7 @@ Despite these edge effects, the \ac{GCS} maintained the detector system within t
 \label{chap:GAPSresult:simulation}
 For balloon-borne cosmic antinuclei experiments, it is conventional to project the measured flux at the balloon location back to the top of the atmosphere (\ac{TOA}) for comparison with theoretical models. To study this unfolding, I performed a Geant4 simulation of antiprotons propagating through the atmosphere between the \ac{TOA} and \ac{TOI}. Because this propagation is independent of detector type and geometry, the simulation is more generally applicable to balloon-borne experiments.
 
-For this simulation, antiprotons were used as a representative particle species. I generated antiprotons at \ac{TOA} with various energies and isotropic angular distribution. The selected altitude corresponds to the GAPS mission float altitude, $37\ km$. The energy loss and interaction information were recorded for each particle during the propagation through the atmosphere.
+For this simulation, antiprotons were used as a representative particle species. I generated antiprotons at \ac{TOA} with various energies and isotropic angular distribution. The selected altitude corresponds to the GAPS mission float altitude, $37~km$. The energy loss and interaction information were recorded for each particle during the propagation through the atmosphere.
 
 \begin{figure}
     \centering
@@ -284,7 +284,7 @@ Using this result together with the \ac{GAPS} science results, we can unfold the
 \label{chap:GAPSresult:flight2026:thermal}
 During flight, temperature sensors on the payload transmitted real-time measurements to the ground station via telemetry, and these data were displayed on a near-real-time monitoring dashboard.
 
-Fig.~\ref{fig:GAPS_flight_thermal_performance} shows temperature sensors readout from all \ac{GAPS} all over the payload during the flight at 22:24:16, Jan 8th, 2026, Left angled area demonstrates the radiator section in Fig.~\ref{fig:GAPS_MCHP_concept}, right vertical area demonstrates the tracker section in Fig.~\ref{fig:GAPS_MCHP_concept}. While Fig.~\ref{fig:GAPS_flight_thermal_detector} shows \ac{ASIC}s temperature readout from all detector modules during the flight at 22:24:16, Jan 8th, 2026, at same time as \ac{RTD} temperature sensor plot. First 7 plots show 7 active layers of detectors' temperature. The blank cells show no information for the detector module at that location. The second-to-last plot shows all modules' temperature histogram which stabilized around $ -37.5\ ^\circ C $. The last plot shows the temperature of each detector module over the preceding 24 hours. 
+Fig.~\ref{fig:GAPS_flight_thermal_performance} shows temperature sensors readout from all \ac{GAPS} all over the payload during the flight at 22:24:16, Jan 8th, 2026, Left angled area demonstrates the radiator section in Fig.~\ref{fig:GAPS_MCHP_concept}, right vertical area demonstrates the tracker section in Fig.~\ref{fig:GAPS_MCHP_concept}. While Fig.~\ref{fig:GAPS_flight_thermal_detector} shows \ac{ASIC}s temperature readout from all detector modules during the flight at 22:24:16, Jan 8th, 2026, at same time as \ac{RTD} temperature sensor plot. First 7 plots show 7 active layers of detectors' temperature. The blank cells show no information for the detector module at that location. The second-to-last plot shows all modules' temperature histogram which stabilized around $ -37.5~^\circ C $. The last plot shows the temperature of each detector module over the preceding 24 hours. 
 
 All the detector modules are extremely stable during flight despite the fluctuation of the ambient temperature. A conceptual 3D temperature plot from all detector modules during the flight at 22:24:16, Jan 8th, 2026 is shown in Fig.~\ref{fig:GAPS_flight_thermal_detector_3D}.
 
@@ -299,7 +299,7 @@ All the detector modules are extremely stable during flight despite the fluctuat
 \begin{figure}
     \centering
     \includegraphics[width=0.9\linewidth]{fig/GAPS_flight_detector_thermal_map.png}\\
-    \noindent\raggedright This plot shows \ac{ASIC}s temperature readout from all detector modules during the flight at 22:24:16, Jan 8th, 2026, same time as Fig.~\ref{fig:GAPS_flight_thermal_performance}. First 7 plots show 7 active layers of detectors' temperature. The blank cells shows no information for the detector module at that location. The last second figure shows all modules' temperature histogram which stabilized around $ -37.5\ ^\circ C $. The last plot shows the temperature of each detector modedule in the past 24 hours. All the detector modules are extremely stable during flight despite the fluctuation of the ambient temperature. 
+    \noindent\raggedright This plot shows \ac{ASIC}s temperature readout from all detector modules during the flight at 22:24:16, Jan 8th, 2026, same time as Fig.~\ref{fig:GAPS_flight_thermal_performance}. First 7 plots show 7 active layers of detectors' temperature. The blank cells shows no information for the detector module at that location. The last second figure shows all modules' temperature histogram which stabilized around $ -37.5~^\circ C $. The last plot shows the temperature of each detector modedule in the past 24 hours. All the detector modules are extremely stable during flight despite the fluctuation of the ambient temperature. 
     \caption{\ac{GAPS} detector temperatures during the flight}
     \label{fig:GAPS_flight_thermal_detector}
 \end{figure}
