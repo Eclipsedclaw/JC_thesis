@@ -95,13 +95,17 @@
 % dedication
 
 \input{tex/dedication.tex}
+\input{tex/acknowledgments.tex}
+\input{tex/abstract.tex}
 
 % table of content (add bookmark for convenience)
 
 \pdfbookmark[1]{Table of Contents}{contents}
 \tableofcontents
 
-
+\listoffigures
+\newpage\ssp
+\listoftables
 %% include any of the front matter files that contain text
 %% attention the input does cause a page break, the include on
 %% the other hand does not
@@ -111,8 +115,6 @@
 
 % --- body of the document ---
 \pagestyle{headings}
-
-\input{tex/abstract.tex}
 
 %% include each chapter like below
 \input{tex/intro.tex}
@@ -133,9 +135,7 @@
 % include a list of Acronyms (comment out if no acronyms are specified)
 \input{tex/acronyms.tex}
 
-\listoffigures
-\newpage\ssp
-\listoftables
+
 
 % --- Bibliography ----
 \bibliographystyle{IEEEtran}
@@ -149,8 +149,6 @@
 
 \input{tex/designs}
 \input{tex/software}
-
-\input{tex/acknowledgments.tex}
 
 % --- Index ----
 \printindex

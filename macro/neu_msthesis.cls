@@ -379,32 +379,27 @@
 	\end{center}
 	\vfill
 	\begin{center}
-		\rm A \expandafter{\@workType} Presented\\
 		by \\
 		\vfill
 		{\bf\@author}\\
 		\vfill
-		to\\
-		\vfill
-		\expandafter{\bf The Department of \@dept}\\
-		\vfill
-		in partial fulfillment of the requirements\\ % [-10pt]
-		for the degree of\\
-		\vfill
-		{\bf \@degree}\\
-		\vfill
-		in\\
-		\vfill
-		{\bf \@degreename}
-		\vfill
-%		in the field of\\
-%		\@fieldname\\
-		\vfill
-		\vfill
-		{\bf Northeastern University\\ % [-10pt]
- 		     Boston, Massachusetts}\\
+    P.h.D in Physics, Northeastern University
+    \vfill
+    A dissertation submitted to
+    \vfill
+    The Faculty of\\
+    the College of Science of\\
+    Northeastern University\\
+		in partial fulfillment of the requirements\\
+    for the degree of Doctor of Philosophy\\
 		\vfill
 		\@submitdate\\
+		\vfill
+    Dissertation Committee\\
+    Advisor, \@principaladviser, Chair\\
+    Committee Member, \@firstreader\\
+    Committee Member, \@secondreader\\
+    Committee Member, \@thirdreader\\
                 \end{center}\newpage
 }
 
