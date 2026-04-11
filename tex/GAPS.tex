@@ -4,7 +4,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_instrument_v1.png}
-    \caption{Left figure shows \ac{GAPS} payload design while right figure shows the actual payload hanging from the flight vehicle at McMurdo Station}
+    \caption[GAPS experiment]{Left figure shows \ac{GAPS} payload design while right figure shows the actual payload hanging from the flight vehicle at McMurdo Station}
     \label{fig:GAPS_antarctic}
 \end{figure}
 
@@ -21,8 +21,8 @@ As mentioned in Section.~\ref{chap:intro:GAPS}, \ac{GAPS} is an Antarctic balloo
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_launch.png}
-    \noindent\raggedright Left photo shows NASA \ac{LDB} inflating in preparation for launch. The middle photo shows the moment when the \ac{GAPS} payload left the launch vehicle. The right photo shows the \ac{GAPS} payload ascending into the stratosphere against a clear sky.
-    \caption{GAPS launch on December 16th 2025 at 5:37 am NZDT from McMurdo Station, Antarctica.}
+    \noindent\raggedright 
+    \caption[GAPS launch on December 16th 2025 at 5:37 am NZDT from McMurdo Station]{GAPS launch on December 16th 2025 at 5:37 am NZDT from McMurdo Station. Left photo shows NASA \ac{LDB} inflating in preparation for launch. The middle photo shows the moment when the \ac{GAPS} payload left the launch vehicle. The right photo shows the \ac{GAPS} payload ascending into the stratosphere against a clear sky.}
     \label{fig:GAPS_launch}
 \end{figure}
 
@@ -45,8 +45,7 @@ In addition to the detector subsystems, an integrated thermal system is located 
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/SiLi_module_display.png}
-    \noindent\raggedright Left figure shows \ac{GAPS} \ac{Si(Li)} module which contains 4 detectors, a custom 32-channel ASIC, and a front-end board. Right figure shows a close view of each detector which are wire-bounded from each 8 channels to the front-end board.
-    \caption{GAPS detector module}
+    \caption[GAPS detector module]{GAPS detector module. Left figure shows \ac{GAPS} \ac{Si(Li)} module which contains 4 detectors, a custom 32-channel ASIC, and a front-end board. Right figure shows a close view of each detector which are wire-bounded from each 8 channels to the front-end board.}
     \label{fig:GAPS_detector}
 \end{figure}
 As mentioned in previous section, \ac{GAPS} uses \ac{Si(Li)} detectors as its main tracker and calorimeter. Each detector is $10~cm$ in diameter and $2.5~mm$ thick, segmented into 8 strips. A total of 1008 detectors are arranged in 7 layers to form the tracker system. Each layer contains 36 modules, and each module consists of 4 detectors, as shown in Fig.~\ref{fig:GAPS_detector}. The detectors are fabricated using a novel lithium drifting method to create a thick intrinsic layer with high energy resolution at a relatively high operating temperature of $-40~^\circ C$. The fabrication process is illustrated in Fig.~\ref{fig:GAPS_detector_fab}. This thesis summarizes the key fabrication steps used to achieve the high-quality \ac{Si(Li)} detectors. For the detailed description, readers can refer to \cite{KOZAI2019162695}.
@@ -56,7 +55,7 @@ As mentioned in previous section, \ac{GAPS} uses \ac{Si(Li)} detectors as its ma
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_SiLi_fab.png}
-    \caption{GAPS \ac{Si(Li)} detector fabrication procedure \cite{KOZAI2022166820}.}
+    \caption[GAPS \ac{Si(Li)} detector fabrication procedure]{GAPS \ac{Si(Li)} detector fabrication procedure \cite{KOZAI2022166820}.}
     \label{fig:GAPS_detector_fab}
 \end{figure}
 
@@ -123,8 +122,7 @@ A vacuum-based thermal Li evaporator is used to deposit and diffuse Li into high
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_detector_leakage_current.jpg}\\
-    \noindent\raggedright Profiles of the applied bias voltage (top), heater output (middle), and leakage current (bottom) during the drift of a sample detector. The inset plot in each panel displays each parameter's variation in the first 3 hours of the drift, as the voltage is increased step-wise to the 600 V set-point.
-    \caption{Lithium drift for \ac{GAPS} \ac{Si(Li)} detector fabrication \cite{KOZAI2019162695}.}
+    \caption[Lithium drift for \ac{GAPS} \ac{Si(Li)} detector fabrication]{Lithium drift for \ac{GAPS} \ac{Si(Li)} detector fabrication \cite{KOZAI2019162695}. Profiles of the applied bias voltage (top), heater output (middle), and leakage current (bottom) during the drift of a sample detector. The inset plot in each panel displays each parameter's variation in the first 3 hours of the drift, as the voltage is increased step-wise to the 600 V set-point.}
     \label{fig:Li_drift_stage}
 \end{figure}
 \noindent A uniform Li-drift is achieved by our special \ac{GAPS} drift apparatus, which has been custom-designed for large-area \ac{Si(Li)} detectors. We found that retaining a thin undrifted layer on the p-side effectively suppresses the leakage current. The radial uniformity of the growth of the drifted region during Li drift is key to realizing this thin, uniform undrifted layer. Li drifting is performed in a custom drift apparatus consisting of an electrically grounded heater plate, a pressure contact for applying a bias voltage, a \ac{RTD}, and a controller. The Si wafer is placed on the heater plate with the n-side facing upward, while the p-side remains in contact with the grounded heater plate. The pressure contact and RTD are connected to the n-electrode to apply a positive bias voltage and monitor the wafer's temperature. The controller then automatically executed the sequence described below. Fig.~\ref{fig:Li_drift_stage} depicts an example of the bias voltage, heater output, and leakage current during the $\approx110$ hours of the drifting routine. Our sample detector is a $10~cm$ \ac{Si(Li)} detector. The voltage is increased step-wise, in 100 V intervals every 30 min, to prevent rapid increase of the leakage current. The insets in each panel of Fig.~\ref{fig:Li_drift_stage} display the variations over the first 3 hours of the drift, as the voltage is ramped up to the set-point of 600 V. In the first panel, open arrows indicate the timing of the voltage steps. In the final panel, the leakage current shows a step-like increase corresponding to each voltage step. As Li drifts toward the p-side and the depletion layer expands from the n-side, the leakage current gradually increases. The Joule heat generated by the leakage current also increases. As shown in the middle panel, heater output is automatically reduced to compensate for the Joule heat and keep the wafer at $100^\circ~C$. At the end of the drift, the depletion layer approaches the p-side. At this point, the leakage current rapidly increases, the wafer temperature exceeds $100^\circ~C$ due to the Joule heat, and the heater output decreases to zero. The bias voltage is automatically turned off, i.e., the Li drift is terminated, either when the leakage current reaches 25 mA or when the heater output becomes zero. The wafer is then allowed to naturally cool to room temperature. \cite{KOZAI2019162695}. Under a bias voltage as high as 600 V, the depletion layer expands slightly toward the p-side beyond the "i-p junction" formed between the drifted and undrifted layer. Thus, despite the steep increase in leakage current, a thin undrifted layer is retained on the p-side of our \ac{Si(Li)} detectors after the drifting process. The drift depth, W, increases with drift time, T, as \cite{osti_4532160}
@@ -142,8 +140,7 @@ A vacuum-based thermal Li evaporator is used to deposit and diffuse Li into high
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{fig/leakage_current_comparison.jpg}\\
-    \noindent\raggedright Under $ -35^\circ~C $ condition, for the same detector before and after removing the undrifted layer on p-side, the leakage current shows significant difference.
-    \caption{Leakage current comparison between p-side finishing methods}
+    \caption[Leakage current comparison between p-side finishing methods]{Leakage current comparison between p-side finishing methods. Under $ -35^\circ~C $ condition, for the same detector before and after removing the undrifted layer on p-side, the leakage current shows significant difference.}
     \label{fig:leakage_current_comparison}
 \end{figure}
 
@@ -155,8 +152,7 @@ A vacuum-based thermal Li evaporator is used to deposit and diffuse Li into high
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{fig/GAPS_detector_leakage_current_guard_ring.jpg}\\
-    \noindent\raggedright I-V characteristics of a sample detector at before machining the guard-ring groove (triangles); after machining the groove, with a floated guard-ring (rectangles); and after grounding the guard-ring (circles).
-    \caption{Groove and guarded ring for \ac{GAPS} detector}
+    \caption[Groove and guarded ring for \ac{GAPS} detector]{Groove and guarded ring for \ac{GAPS} detector. I-V characteristics of a sample detector at before machining the guard-ring groove (triangles); after machining the groove, with a floated guard-ring (rectangles); and after grounding the guard-ring (circles).}
     \label{fig:SiLi_guarded_ring}
 \end{figure}
 
@@ -176,8 +172,7 @@ A vacuum-based thermal Li evaporator is used to deposit and diffuse Li into high
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_concept_with_payload.png}
-    \noindent\raggedright Left figure shows \ac{GAPS} payload design while right figure shows the detection concept of \ac{GAPS}. An incoming low-energy antinucleus (antiproton, antideuteron, antihelium) is slowed down by the \ac{TOF} and \ac{Si(Li)} layers until it stops in the tracker volume. It then forms an exotic atom by replacing a shell electron, de-excites by emitting characteristic X-rays, and finally annihilates with the nucleus producing a star of pions and protons.
-    \caption{GAPS payload and detection concept}
+    \caption[GAPS payload and detection concept]{GAPS payload and detection concept. Left figure shows \ac{GAPS} payload design while right figure shows the detection concept of \ac{GAPS}. An incoming low-energy antinucleus (antiproton, antideuteron, antihelium) is slowed down by the \ac{TOF} and \ac{Si(Li)} layers until it stops in the tracker volume. It then forms an exotic atom by replacing a shell electron, de-excites by emitting characteristic X-rays, and finally annihilates with the nucleus producing a star of pions and protons.}
     \label{fig:GAPS_detection_concept}
 \end{figure}
 
@@ -196,7 +191,7 @@ To confirm \ac{GAPS} functionality for the full payload, we have proposed and te
 \begin{figure}
     \centering
     \includegraphics[width=0.9\linewidth]{fig/GFP_system_diagram.png}\\
-    \caption{\ac{GFP} \ac{TOF} system diagram}
+    \caption[GFP \ac{TOF} system diagram]{GFP \ac{TOF} system diagram}
     \label{fig:GFP_TOF_diagram}
 \end{figure}
 
@@ -213,8 +208,7 @@ The \ac{GFP} construction started at Bates Research and Engineering Center of MI
 \begin{figure}
     \centering
     \includegraphics[width=0.95\linewidth]{fig/GAPS_GFP_config.png}
-    \noindent\raggedright Overview of the \ac{GFP} setup: \ac{Si(Li)} tracker, \ac{TOF} and Thermal. Instruments which are not shown in the photo: tracker power system (on the bottom of electronic rack) and tracker DAQ computer.
-    \caption{GAPS \ac{GFP} setup at Bates lab}
+    \caption[GAPS \ac{GFP} setup at Bates lab]{GAPS \ac{GFP} setup at Bates lab. Overview of the \ac{GFP} setup: \ac{Si(Li)} tracker, \ac{TOF} and Thermal. Instruments which are not shown in the photo: tracker power system (on the bottom of electronic rack) and tracker DAQ computer.}
     \label{fig:GAPS_GFP_config}
 \end{figure}
 \end{landscape}
@@ -235,8 +229,7 @@ The \ac{GFP} \ac{TOF} system is designed to provide the capacity of tracking inc
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_GFP_TOF.png}
-    \noindent\raggedright Left photo shows actual \ac{TOF} system geometry at Bates lab, with both top and middle panel mounted on a customized aluminum rack. Right photo shows one paddle that construct the \ac{TOF} panel, with \ac{SiPM} mounted on two side to readout the light signal. Histogram shows timing resolution of one of the paddle.
-    \caption{GFP \ac{TOF} system configuration.}
+    \caption[GFP \ac{TOF} system configuration]{GFP \ac{TOF} system configuration. Left photo shows actual \ac{TOF} system geometry at Bates lab, with both top and middle panel mounted on a customized aluminum rack. Right photo shows one paddle that construct the \ac{TOF} panel, with \ac{SiPM} mounted on two side to readout the light signal. Histogram shows timing resolution of one of the paddle.}
     \label{fig:GFP_TOF}
 \end{figure}
 
@@ -245,7 +238,7 @@ The \ac{GFP} \ac{TOF} system is designed to provide the capacity of tracking inc
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{fig/GAPS_GFP_detector.jpg}
-    \caption{ A \ac{GFP} \ac{Si(Li)} detector module (a top aluminized polypropylene window is not shown).}
+    \caption[A \ac{GFP} \ac{Si(Li)} detector module (a top aluminized polypropylene window is not shown)]{A \ac{GFP} \ac{Si(Li)} detector module (a top aluminized polypropylene window is not shown).}
     \label{fig:GFP_detector}
 \end{figure}
 Both the \ac{GFP} and \ac{GAPS} flight instrument use the same \ac{Si(Li)} detector and module to build the tracker. The \ac{GAPS} \ac{Si(Li)} detector system must provide the absorption depth, energy resolution, tracking efficiency, and active area necessary for the \ac{GAPS} antiparticle identification technique, all within the significant temperature, power, and cost constraints of an Antarctic long-duration balloon (\ac{LDB}) flight. A custom lithium-drifted silicon (\ac{Si(Li)}) detector fabrication method was successfully developed to satisfy the \ac{GAPS} requirements, see Section.~\ref{chap:GAPS:detectors}. The mass-production of $\sim$1100 detectors for \ac{GAPS} initial flight program was completed in March 2020. In addition, a passivation scheme has been established to ensure long-term stability of detector performance. A thermally-cured polyimide (with a silane adhesion promoter) protects the exposed silicon surfaces from environmental degradation and is robust to thermal and mechanical stress \cite{SAFFOLD2021165015}, as confirmed via thermal cycling tests, accelerated environmental exposure trials, and a multi-year detector performance monitoring program.
@@ -256,11 +249,11 @@ An aluminum module frame provides the mechanical, electrical, and thermal interf
 
 On top and bottom of the module, a polypropylene window is placed to seal the detector volume using O-rings. These windows are $0.015''$ thick and the outer surface is aluminized. They provide additional environmental protection while maintaining high transmission efficiency for incoming and outgoing particles (exotic atomic x-rays and charged particles).
 
-To read out the signals from \ac{Si(Li)} detectors, a PCB front-end board (FEB) \cite{Scotti:2019zu} is mounted on the aluminium frame inside the module. The FEB houses a core ASIC chip at center and provides the interface connections between the ASIC chip and back-end electronics via 50-pin ERNI connectors. It is also mounted with one HiRose connector for supplying the \ac{Si(Li)} detectors with the high voltage bias, and assembled with a temperature sensor and electronic calibration system. To reduce the dead materials right above the silicon strips, two thin ($ 3~\mu m$ diameter) aluminium wires are bonded between the FEB and \ac{Si(Li)} strip surface.
+To read out the signals from \ac{Si(Li)} detectors, a \ac{PCB} front-end board (FEB) \cite{Scotti:2019zu} is mounted on the aluminium frame inside the module. The FEB houses a core ASIC chip at center and provides the interface connections between the ASIC chip and back-end electronics via 50-pin ERNI connectors. It is also mounted with one HiRose connector for supplying the \ac{Si(Li)} detectors with the high voltage bias, and assembled with a temperature sensor and electronic calibration system. To reduce the dead materials right above the silicon strips, two thin ($ 3~\mu m$ diameter) aluminium wires are bonded between the FEB and \ac{Si(Li)} strip surface.
 
 \subsection{Si(Li) detector electronics and DAQ}
 \label{chap:GAPS:GFP:DAQ}
-The \ac{Si(Li)} detector electronics consist of three main subsystems: ASIC front-end electronics, back-end DAQ, and power system. The \ac{Si(Li)} detector electronics must provide (i) high-resolution X-ray spectroscopy ($<4~keV $ FWHM with $ 40~pF$ capacitance and $<10~nA$ leakage current) over the range $\sim20-100~keV$, (ii) coarse-resolution spectroscopy ($\sim$10\% FWHM) and tracking capability over the range $ 1-100~MeV $, (iii) coincidences of $ <1~\mu s $ between \ac{TOF} and tracker, and (iv) power consumption of $ <10~mW/channel $ to meet power constraints for the balloon experiment.
+The \ac{Si(Li)} detector electronics consist of three main subsystems: ASIC front-end electronics, back-end DAQ, and power system. The \ac{Si(Li)} detector electronics must provide (i) high-resolution X-ray spectroscopy ($<4~keV $ \ac{FWHM} with $ 40~pF$ capacitance and $<10~nA$ leakage current) over the range $\sim20-100~keV$, (ii) coarse-resolution spectroscopy ($\sim$10\% \ac{FWHM}) and tracking capability over the range $ 1-100~MeV $, (iii) coincidences of $ <1~\mu s $ between \ac{TOF} and tracker, and (iv) power consumption of $ <10~mW/channel $ to meet power constraints for the balloon experiment.
 
 \subsubsection*{Front-end electronics}
 A custom ASIC has been designed, prototyped, and validated to meet the readout requirements above \cite{9564082}. The \ac{GAPS} ASIC is called SLIDER-32 (32 channels \ac{Si(Li)} Detector Readout) while the prototype used for the \ac{GFP} is pSLIDER-32. The ASIC is fabricated with a $ 180~nm $ CMOS technology. The design is optimized for a working temperature of $\sim-40^\circ~C $ and low power consumption. The core of \ac{GAPS} ASIC electronics is a low-noise analog readout channel, featuring a charge-sensitive amplifier, dynamic signal compression, and a semi-Gaussian filter with eight selectable peaking times ($ 0.25-1.8~\mu s$). The digital section of the ASIC communicates with the DAQ system through a \ac{SPI}. It configures the ASIC operation and handles event acquisition through a second interface with the DAQ. For both the \ac{GFP} and flight, six FEBs are chained into one row and provide the ASIC with analog voltage, calibration settings, and digital communication with the back-end DAQ, and propagates signals through the row \cite{RE2023167617}.
@@ -273,7 +266,7 @@ We custom made a low-power consumption power system to meet the requirements for
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GFP_power_schematic.png}
-    \caption{Schematic diagram of the \ac{GFP} power system.}
+    \caption[Schematic diagram of the \ac{GFP} power system]{Schematic diagram of the \ac{GFP} power system.}
     \label{fig:GFP_power_schematic}
 \end{figure}
 
@@ -282,29 +275,27 @@ The \ac{GFP} power system has the same design as the flight system, but the crat
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GFP_module_row.png}
-    \caption{\ac{GFP} \ac{Si(Li)} detector electronics connection in the row configuration.}
+    \caption[\ac{GFP} \ac{Si(Li)} detector electronics connection in the row configuration]{\ac{GFP} \ac{Si(Li)} detector electronics connection in the row configuration.}
     \label{fig:GFP_module_row}
 \end{figure}
 Fig.~\ref{fig:GFP_module_row} illustrates the front-end and back-end electronics connection for one row at the \ac{GFP} setup. Comparing to the flight instrument, the \ac{GFP} electronics connection only adds two patch boards to adapt the connection between the ERNI connection between the \ac{Si(Li)} module and the interface board (IF board). The back-end DAQ communicates with ASICs in the row scheme through SPI. An IF board is attached at the beginning of the row to connect the \ac{Si(Li)} row and back-end electronics (back-end DAQ and low-voltage supplies). For the \ac{GAPS} flight, the IF board is directly mounted on the row via a flex cable which is fabricated with two ERNI connectors. However, the flex cable is not ready during the \ac{GFP}. So a patch board and ribbon cable is made as the solution. Six modules in a row are chained with flex-rigid cables which are made of Kapton ribbon cable with ERNI connector at two ends. At the other end of the row, a terminator with the resistance of $ 100 \Omega $ is mounted to terminate the row connection. Each \ac{Si(Li)} module in the row is assigned with a unique physical address, numbering from 0 (beginning) to 5 (end) regarding the distance between the module and the readout board. In addition, a separate HV cable is attached to the row to provide the HV bias to each \ac{Si(Li)} module individually.
 
 \subsection{GFP Thermal System}
 \label{chap:GAPS:GFP:thermal}
-Due to both \ac{GAPS} project timeline and the pandemic situation, the \ac{GFP} thermal system was designed, fabricated, and tested before the flight system was assembled. The \ac{GAPS} thermal system is tightly integrated with the detector system, making parallel preparation difficult. Then the \ac{GFP} thermal system is designed to validate the novel \ac{OHP} cooling technique for \ac{GAPS} \ac{Si(Li)} tracker before the full payload is ready, see Section.~\ref{chap:GAPS:thermal:OHP}. The \ac{GFP} thermal system is designed to be as close as possible to the flight thermal system in order to provide a representative validation of the \ac{OHP} technique. This section discusses the design of the \ac{GFP} thermal system. The concept of \ac{OHP} and \ac{MCHP} will be discussed in Section.~\ref{chap:GAPS:thermal:OHP} while the performance of the \ac{GFP} thermal system is presented in Section.~\ref{chap:GAPSresult:GFP:thermal}.
+Due to both \ac{GAPS} project timeline and the pandemic situation, the \ac{GFP} thermal system was designed, fabricated, and tested before the flight system was assembled. The \ac{GAPS} thermal system is tightly integrated with the detector system, making parallel preparation difficult. Then the \ac{GFP} thermal system is designed to validate the novel \ac{OHP} cooling technique for \ac{GAPS} \ac{Si(Li)} tracker before the full payload is ready, see Section.~\ref{chap:GAPS:thermal:OHP}. The \ac{GFP} thermal system is designed to be as close as possible to the flight thermal system in order to provide a representative validation of the \ac{OHP} technique. This section discusses the design of the \ac{GFP} thermal system. The concept of \ac{OHP} and \ac{MCHP} will be discussed in Section.~\ref{chap:GAPS:thermal:OHP} while the performance of the \ac{GFP} thermal system using \ac{R23} as coolant is presented in Section.~\ref{chap:GAPSresult:GFP:thermal}.
 
 \begin{landscape}
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GFP_thermal.jpg}
-    \noindent\raggedright Dual-phase trifluoromethane (\ac{R23}) filled in the reservoir and the rest of the swaglok tubings. With heat generated from the detector and electronics on the right side, liquid R23 will vaporize and drive the fluid upward to return to the top and the radiator on the left. Then the R23 will dissipate heat and become liquid again, drop to the bottom of the radiator due to gravity. This will keep the cycle flowing inside each loop.
-    \caption{ The \ac{GFP} thermal system design, with only one \ac{Si(Li)} row shown (left) and the setup (right).}
+    \caption[The \ac{GFP} thermal system design, with only one \ac{Si(Li)} row shown (left) and the setup (right)]{The \ac{GFP} thermal system design, with only one \ac{Si(Li)} row shown (left) and the setup (right).  Dual-phase trifluoromethane (\ac{R23}) filled in the reservoir and the rest of the swaglok tubings. With heat generated from the detector and electronics on the right side, liquid R23 will vaporize and drive the fluid upward to return to the top and the radiator on the left. Then the R23 will dissipate heat and become liquid again, drop to the bottom of the radiator due to gravity. This will keep the cycle flowing inside each loop.}
     \label{fig:GFP_thermal}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GFP_thermal_lines.png}
-    \noindent\raggedright In this photo, two rows of detector L1C2 and L2C2 are tagged. As the time of this picture was taken, only these two rows of detectors are installed and the result from Section.~\ref{chap:GAPSresult:GFP:thermal}, Fig.~\ref{fig:GFP_thermal_result} are based on this configuration dated back on December 1st, 2021.
-    \caption{GFP thermal design with each row of detector tagged.}
+    \caption[GFP thermal design with each row of detector tagged]{GFP thermal design with each row of detector tagged. In this photo, two rows of detector L1C2 and L2C2 are tagged. As the time of this picture was taken, only these two rows of detectors are installed and the result from Section.~\ref{chap:GAPSresult:GFP:thermal}, Fig.~\ref{fig:GFP_thermal_result} are based on this configuration dated back on December 1st, 2021.}
     \label{fig:GFP_thermal_line}
 \end{figure}
 \end{landscape}
@@ -331,8 +322,7 @@ During flight, the payload is exposed to the environment. To avoid potential sun
 \begin{figure}
 \centering
 \includegraphics[width=0.9\linewidth]{fig/GAPS_thermal_design.jpg}
-\noindent\raggedright Conceptual diagram of the \ac{GAPS} instrument. To cool the \ac{Si(Li)} tracker consisting of $ >1000 $ detectors, the heat to be removed is transported to a radiator, which is located outside the \ac{TOF} system and pointed to the anti-solar azimuth direction, and then dissipated to space \cite{FUKE2023168102}.
-\caption{GAPS flight instrument thermal design schematic}
+\caption[GAPS flight instrument thermal design schematic]{GAPS flight instrument thermal design schematic. Conceptual diagram of the \ac{GAPS} instrument. To cool the \ac{Si(Li)} tracker consisting of $ >1000 $ detectors, the heat to be removed is transported to a radiator, which is located outside the \ac{TOF} system and pointed to the anti-solar azimuth direction, and then dissipated to space \cite{FUKE2023168102}.}
 \label{fig:GAPS_flight_thermal}
 \end{figure}
 \end{landscape}
@@ -344,8 +334,7 @@ The heat pipe is a passive heat transfer device that utilizes evaporation and co
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_thermal_concept.png}
-    \noindent\raggedright Left plot shows the concept of a \ac{OHP} system from Akachi's patent \cite{akachi_heatpipe_1990}. Right figure shows the \ac{GAPS} thermal design that embeds the \ac{OHP} system with the entire payload that still shares evaporator(heat generated from detector region), adiabatic section(top and bottom horizontal sections indicated by the arrows) and condenser(radiator) area.
-    \caption{Conventional heat pipe schematic}
+    \caption[Conventional heat pipe schematic]{Conventional heat pipe schematic. Left plot shows the concept of a \ac{OHP} system from Akachi's patent \cite{akachi_heatpipe_1990}. Right figure shows the \ac{GAPS} thermal design that embeds the \ac{OHP} system with the entire payload that still shares evaporator(heat generated from detector region), adiabatic section(top and bottom horizontal sections indicated by the arrows) and condenser(radiator) area.}
     \label{fig:GAPS_thermal_concept}
 \end{figure}
 
@@ -354,8 +343,7 @@ In addition to conventional heat pipes, the oscillating heat pipe (\ac{OHP}) is 
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_OHP_concept.jpg}
-    \noindent\raggedright \textbf{(a)} For each loop, it forms an complete cycle of \ac{OHP} with evaporator, adiabatic section and condenser. With \ac{GAPS} payload, heat generated from the \ac{Si(Li)} detector region will behave as the evaporator (heating section), the top and bottom horizontal sections of the swaglok tubing are the adiabatic section while the radiator is the condenser. The liquid R23 inside the tubing will vaporize when absorbing heat from the detector region, drive the fluid upward to return to the top and the radiator. Then the R23 will dissipate heat through radiator (cooling section) and become liquid again, drop to the bottom of the radiator due to gravity, starting the next cycle again. This will keep the cycle flowing inside each loop. \textbf{(b)} Plot shows temperature of each \ac{MCHP} loop section.
-    \caption{\ac{GAPS} \ac{MCHP} concept}
+    \caption[\ac{GAPS} \ac{MCHP} concept]{\ac{GAPS} \ac{MCHP} concept. \textbf{(a)} For each loop, it forms an complete cycle of \ac{OHP} with evaporator, adiabatic section and condenser. With \ac{GAPS} payload, heat generated from the \ac{Si(Li)} detector region will behave as the evaporator (heating section), the top and bottom horizontal sections of the swaglok tubing are the adiabatic section while the radiator is the condenser. The liquid R23 inside the tubing will vaporize when absorbing heat from the detector region, drive the fluid upward to return to the top and the radiator. Then the R23 will dissipate heat through radiator (cooling section) and become liquid again, drop to the bottom of the radiator due to gravity, starting the next cycle again. This will keep the cycle flowing inside each loop. \textbf{(b)} Plot shows temperature of each \ac{MCHP} loop section.}
     \label{fig:GAPS_MCHP_concept}
 \end{figure}
 
@@ -411,8 +399,7 @@ One example styrofoam piece GAPS-RAD-MEC-049\_Foam\_Section\_33 is shown in Fig.
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS-RAD-MEC-049_Foam_Section_33.png}
-    \noindent\raggedright \textbf{(a)} Shows the design for this styrofoam piece which goes on top of the OHP heat transaction area. Small group of grooves are formed to divide all 36 loops of OHP tubings from tracker to radiator. \textbf{(b)} shows a 3D model of this particular piece. \textbf{(c)} shows the actual piece that I made with styrofoam and router. This design minimizes heat leakage from the tubing by cover all of the cold area.
-    \caption{GAPS payload styrofoam GAPS-RAD-MEC-049 Foam Section 33 design}
+    \caption[GAPS payload styrofoam GAPS-RAD-MEC-049 Foam Section 33 design]{GAPS payload styrofoam GAPS-RAD-MEC-049 Foam Section 33 design. \textbf{(a)} Shows the design for this styrofoam piece which goes on top of the OHP heat transaction area. Small group of grooves are formed to divide all 36 loops of OHP tubings from tracker to radiator. \textbf{(b)} shows a 3D model of this particular piece. \textbf{(c)} shows the actual piece that I made with styrofoam and router. This design minimizes heat leakage from the tubing by cover all of the cold area.}
     \label{fig:foam_33}
 \end{figure}
 
@@ -431,20 +418,17 @@ To roughly estimate $Q_0$, we assume that the \ac{OHP}, the radiator, and the de
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GCS_mount.png}
-    \noindent\raggedright Left figure shows the schematics of \ac{GAPS} \ac{GCS} mounting on the payload. Right picture shows actual \ac{GAPS} \ac{GCS} mounted on the payload at MIT Bates lab.
-    \caption{GAPS \ac{GCS} design and mounting}
+    \caption[GAPS \ac{GCS} design and mounting]{GAPS \ac{GCS} design and mounting. Left figure shows the schematics of \ac{GAPS} \ac{GCS} mounting on the payload. Right picture shows actual \ac{GAPS} \ac{GCS} mounted on the payload at MIT Bates lab.}
     \label{fig:GAPS_GCS_setup}
 \end{figure}
 
 To perform ground testing, the ground cooling system (\ac{GCS}) has been designed and assembled to provide flight-like thermal conditions, see Fig.~\ref{fig:GAPS_GCS_setup}. While at the same time all the detector modules are sealed with aluminum windows and purged with nitrogen gas, the low vacuum condition ($ \sim 3~torr $) throughout the entire payload is not achieved with the \ac{GCS} system. The \ac{GCS} cools the radiator and has a simple design. The payload configuration is not changed for testing, but non-flight items may be attached to the payload. A cold plate is attached to the radiator to cool it. The cold plate is tightened to the radiator with bolts uniformly distributed in the plate so that the two surface planes make good contact. A tube is attached to the cold plate, and a coolant flows through the tube, drawing heat from the plate. Once the radiator is sufficiently cooled, the HPS transfers heat from the detectors to the radiator, bringing the detectors down to operating temperature \cite{Hideyuki_FUKE20232}.
 
-During \ac{GCS}-based cooldown of the \ac{GAPS} detector in preparation for the first flight, we implemented several improvements to enhance system performance and reliability. These improvements include optimizing the coolant flow rate, enhancing the thermal insulation around critical components, and implementing extra chillers to ensure consistent temperature control. These enhancements have significantly improved the efficiency of the cooling process, allowing for more stable and precise temperature regulation of the detectors, see Fig.~\ref{fig:GAPS_GCS}
-
+During \ac{GCS}-based cooldown of the \ac{GAPS} detector in preparation for the first flight, we implemented several improvements to enhance system performance and reliability. These improvements include optimizing the coolant flow rate, enhancing the thermal insulation around critical components, and implementing extra chillers to ensure consistent temperature control. These enhancements have significantly improved the efficiency of the cooling process, allowing for more stable and precise temperature regulation of the detectors, see Fig.~\ref{fig:GAPS_GCS}. Left figure shows schematics of \ac{GAPS} \ac{GCS} with 4 cold panels embedding 36 loops of methanol cooling-line manifold. Each 2 panels are cooled down by a \ac{ACC} circulating methanol. Right picture shows actual \ac{GAPS} \ac{GCS} setup at Columbia University Nevis Laboratory. Red arrows with letters show the methanol line displayed on the left.
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_GCS.png}
-    \noindent\raggedright Left figure shows schematics of \ac{GAPS} \ac{GCS} with 4 cold panels embedding 36 loops of methanol cooling-line manifold. Each 2 panels are cooled down by a \ac{ACC} circulating methanol. Right picture shows actual \ac{GAPS} \ac{GCS} setup at Columbia University Nevis Laboratory. Red arrows with letters show the methanol line displayed on the left.
-    \caption{GAPS Ground Cooling System}
+    \caption[GAPS Ground Cooling System]{GAPS Ground Cooling System. Left figure shows schematics of \ac{GAPS} \ac{GCS} with 4 cold panels embedding 36 loops of methanol cooling-line manifold. Each 2 panels are cooled down by a \ac{ACC} circulating methanol. Right picture shows actual \ac{GAPS} \ac{GCS} setup at Columbia University Nevis Laboratory. Red arrows with letters show the methanol line displayed on the left.}
     \label{fig:GAPS_GCS}
 \end{figure}
 

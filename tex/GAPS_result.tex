@@ -11,8 +11,7 @@ As described in Section.~\ref{chap:GAPS:GFP}, we set up the \ac{GFP} at Bates du
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_GFP_xray.png}
-    \noindent\raggedright Left plot shows the energy resolutions at various peaking times from the \ac{GFP} and the standard calibration bench. \ac{GFP} setup has a slightly lower temperature compared with the bench setup. Right plot shows a X-ray spectrum from one example \ac{Si(Li)} strip when the \ac{OHP} reservoir is on (black) and off (red) at the \ac{GFP}.
-    \caption{Detector noise validation with X-ray calibration}
+    \caption[Detector noise validation with X-ray calibration]{Detector noise validation with X-ray calibration. Left plot shows the energy resolutions at various peaking times from the \ac{GFP} and the standard calibration bench. \ac{GFP} setup has a slightly lower temperature compared with the bench setup. Right plot shows a X-ray spectrum from one example \ac{Si(Li)} strip when the \ac{OHP} reservoir is on (black) and off (red) at the \ac{GFP}.}
     \label{fig:GFP_xray}
 \end{figure}
 At the beginning of the \ac{GFP}, one concern was that the coupling between the \ac{OHP} tubes and the \ac{Si(Li)} modules would introduce noise to the \ac{Si(Li)} tracker. Prior characterization of individual \ac{GAPS} detectors demonstrated excellent energy resolution \cite{KOZAI2019162695,KOZAI2022166820,PEREZ201812}, but not results obtained in the flight-like environment. 
@@ -32,16 +31,14 @@ Fig.~\ref{fig:GAPS_GFP_detector_performance} shows the ENC resolutions of one re
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_GFP_detector_performance.jpeg}
-    \noindent\raggedright Noise suppression by the additional noise shields: ENC resolutions as a function of \ac{ASIC} channel from the testing of a single module without (grey) and with (blue) noise shields; (red) ENCresolutions when the same module is assembled with the noise shields and integrated into the row at the \ac{GFP}.
-    \caption{Single detector module noise performance}
+    \caption[Single detector module noise performance]{Single detector module noise performance. Noise suppression by the additional noise shields: ENC resolutions as a function of \ac{ASIC} channel from the testing of a single module without (grey) and with (blue) noise shields; (red) ENCresolutions when the same module is assembled with the noise shields and integrated into the row at the \ac{GFP}.}
     \label{fig:GAPS_GFP_detector_performance}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GFP_GND_loop.png}
-    \noindent\raggedright Scheme to show the row connection with (top) and without (bottom) the ground loop. Pedestal spectrum before (grey) and after (red) fixing the ground loop issue.
-    \caption{GFP grounding loop demonstrations and solution}
+    \caption[GFP grounding loop demonstrations and solution]{GFP grounding loop demonstrations and solution. Scheme to show the row connection with (top) and without (bottom) the ground loop. Pedestal spectrum before (grey) and after (red) fixing the ground loop issue.}
     \label{fig:GFP_GND_loop}
 \end{figure}
 
@@ -60,8 +57,7 @@ In the \ac{GFP} testing, a global zero suppression threshold was set for all mod
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GFP_MIP_spectra.png}
-    \noindent\raggedright \ac{MIP} spectra before (histograms in blue) and after (histograms in red) the energy calibration. Each spectrum is for a single module. All modules perform more consistent after energy calibration with transfer function method.
-    \caption{GFP \ac{MIP} spectra}
+    \caption[GFP \ac{MIP} spectra]{GFP \ac{MIP} spectra. \ac{MIP} spectra before (histograms in blue) and after (histograms in red) the energy calibration. Each spectrum is for a single module. All modules perform more consistent after energy calibration with transfer function method.}
     \label{fig:GFP_MIP}
 \end{figure}
 Due to the ineluctable electronics fluctuations, it is impossible to make all ASIC readout channels identical with each other. So different ASIC readout channels are expected with different responses to the same energy deposition in the \ac{Si(Li)} strips, as indicated by the various locations in ADC from different modules in Fig.~\ref{fig:GFP_MIP}. In order to perform the energy calibration, we developed an approach with the so-called transfer function to convert the readout ADC to the deposited energy. In this calibration procedure, with the calibration system mounted on the ASIC FEB, we read out the ASIC outputs with various amounts of injected current and built a relation between the input charge (mV) and ASIC readout (ADC) for all channels, which is defined as the transfer function. Based on the simulations, we extracted the charge yield rate with a given energy deposition in the \ac{Si(Li)} strip. By combining the transfer function (ADC to mV) and the charge yield rate (mV to keV/MeV), the \ac{MIP} spectrum was reconstructed. The histograms in red of Fig.~\ref{fig:GFP_MIP} show the MIP energy spectra in MeV and each spectrum is for one \ac{Si(Li)} module. With energy reconstruction applied, all modules at the \ac{GFP} exhibited consistent \ac{MIP} energy deposition, as expected. This method is also applied for all \ac{GAPS} flight detectors.
@@ -71,14 +67,13 @@ To validate the electronics and reconstruction chain, we incorporated the \ac{TO
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GFP_nice_event.png}
-    \caption{Reconstructed event 169965693 from the \ac{GFP}}
+    \caption[Reconstructed event 169965693 from the \ac{GFP}]{Reconstructed event 169965693 from the \ac{GFP}.}
     \label{fig:GFP_nice_event}
 \end{figure}
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GFP_geometry.png}
-    \noindent\raggedright Left picture shows actual \ac{GFP} setup at Bates. Right figure shows the Geant4 simulation geometry for \ac{GFP} setup, including the \ac{Si(Li)} tracker, \ac{TOF} system, and surrounding passive materials.
-    \caption{GFP Geant4 simulation geometry}
+    \caption[GFP Geant4 simulation geometry]{GFP Geant4 simulation geometry. Left picture shows actual \ac{GFP} setup at Bates. Right figure shows the Geant4 simulation geometry for \ac{GFP} setup, including the \ac{Si(Li)} tracker, \ac{TOF} system, and surrounding passive materials.}
     \label{fig:GFP_simulation}
 \end{figure}
 After assembly of the \ac{GFP}, I participated in several cosmic-muon runs at Bates. We successfully merged the \ac{TOF} and tracker data and reconstructed muon tracks at the system level. I also developed the Geant4 simulation geometry for the \ac{GFP} setup, enabling us to check the reconstructed muon tracks with the simulation truth information, see Fig.~\ref{fig:GFP_simulation}. With our track reconstruction algorithm, we have successfully demonstrated our capability of capturing cosmic muons. Fig.~\ref{fig:GFP_nice_event} shows an example of the reconstructed muon track. With the merged muon events, the \ac{GAPS} functional prototype has been demonstrated to work well to reconstruct the track at the system level, which includes synchronization of two DAQ systems, the waveform analysis on \ac{TOF} data, hit finding and alignment in the \ac{Si(Li)} tracker, and the event merge. More details will be discussed in the flight instrument ground testing in Section.~\ref{chap:GAPSresult:flight}.
@@ -183,10 +178,8 @@ Heat removed from cold plate, $Q_2$, from Eq.~\ref{equ:heat_removal} & $183.8 \p
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\linewidth]{fig/GFP_thermal_result.png}
-    \\
-    \noindent\raggedright Top schematic shows configurations of \ac{GFP} while we only installed two rows (Layer 1 Column 2, Layer 2 Column 2) while all other detector empty locations connect to nothing. On those installed detector modules, temperature sensors were installed to track ASICs temperature. Those sensors won't track cooling down process since we need low temperature to provide working condition of electronics. So we also installed 3 addtional \ac{RTD} sensors to track down cooling process. Lower figure shows the cooling process, the entire \ac{GFP} system reached working condition within 6 hours.
-    \caption{GFP thermal performance result}
+    \includegraphics[width=0.7\linewidth]{fig/GFP_thermal_result.png}\\
+    \caption[GFP thermal performance result]{GFP thermal performance result. Top schematic shows configurations of \ac{GFP} while we only installed two rows (Layer 1 Column 2, Layer 2 Column 2) while all other detector empty locations connect to nothing. On those installed detector modules, temperature sensors were installed to track ASICs temperature. Those sensors won't track cooling down process since we need low temperature to provide working condition of electronics. So we also installed 3 addtional \ac{RTD} sensors to track down cooling process. Lower figure shows the cooling process, the entire \ac{GFP} system reached working condition within 6 hours.}
     \label{fig:GFP_thermal_result}
 \end{figure}
 
@@ -198,8 +191,7 @@ Heat removed from cold plate, $Q_2$, from Eq.~\ref{equ:heat_removal} & $183.8 \p
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_GND_TEST.png}
-    \noindent\raggedright Left picture shows author (left) and Kelsey Yee (right) working on the \ac{GAPS} payload Columbia University Nevis Laboratory on the day of Dec 15th, 2023 when the last of the \ac{GAPS} detector module was installed into the tracker successfully. Middle picture shows the full \ac{GAPS} payload suspended at \ac{CSBF} facility for the compatibility testing. The right photograph shows the payload housed at McMurdo Station, operating under the \ac{GCS}.
-    \caption{\ac{GAPS} on-ground testing}
+    \caption[\ac{GAPS} on-ground testing]{\ac{GAPS} on-ground testing. Left picture shows author (left) and Kelsey Yee (right) working on the \ac{GAPS} payload Columbia University Nevis Laboratory on the day of Dec 15th, 2023 when the last of the \ac{GAPS} detector module was installed into the tracker successfully. Middle picture shows the full \ac{GAPS} payload suspended at \ac{CSBF} facility for the compatibility testing. The right photograph shows the payload housed at McMurdo Station, operating under the \ac{GCS}.}
     \label{fig:GAPS_GND_TEST}
 \end{figure}
 
@@ -210,8 +202,7 @@ We measured the pedestal and noise performance for all \ac{Si(Li)} channels with
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/ENC_mcmurdo.png}
-    \noindent\raggedright \ac{ENC} resolutions histogram for all \ac{Si(Li)} channels with the full \ac{GAPS} payload at McMurdo, Antarctic. Majority of the channels are below $ 10~keV $, with an average \ac{ENC} resolution $ 4~keV $ which meets the design requirement.
-    \caption{\ac{GAPS} flight detector noise performance}
+    \caption[\ac{GAPS} flight detector noise performance]{\ac{GAPS} flight detector noise performance. \ac{ENC} resolutions histogram for all \ac{Si(Li)} channels with the full \ac{GAPS} payload at McMurdo, Antarctic. Majority of the channels are below $ 10~keV $, with an average \ac{ENC} resolution $ 4~keV $ which meets the design requirement.}
     \label{fig:GAPS_flight_detector_performance}
 \end{figure}
 
@@ -220,8 +211,7 @@ With the reconstructed energy, we have successfully captured cosmic muon events 
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_event_display.png}
-    \noindent\raggedright This is one typical single track event that \ac{GAPS} detected with ground testing, activated \ac{TOF} and \ac{Si(Li)} system provided information for us to reconstruct the charge particle track.
-    \caption{3D event display of single track event 241213 0949 5452, recorded at LDB at 9:49am GMT, 24/12/13}
+    \caption[3D event display of single track event 241213 0949 5452, recorded at LDB at 9:49am GMT, 24/12/13]{3D event display of single track event 241213 0949 5452, recorded at LDB at 9:49am GMT, 24/12/13. This is one typical single track event that \ac{GAPS} detected with ground testing, activated \ac{TOF} and \ac{Si(Li)} system provided information for us to reconstruct the charge particle track.}
     \label{fig:GAPS_event_display}
 \end{figure}
 
@@ -235,8 +225,7 @@ Despite these edge effects, the \ac{GCS} maintained the detector system within t
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_ASICs_temperature.png}
-    \noindent\raggedright The left plot shows the temperature readout from each \ac{ASIC}'s thermal sensor in a 3D view. You can clearly see the top edge modules have slightly higher temperature due to thermal insulation defects. It is very hard to avoid the thermal leak on the ground due to convection. Thermally sealing the entire 4-meter-scale payload is extremely difficult. The right plot shows the temperature readout from each \ac{ASIC}'s thermal sensor in a 2D view with more detailed numerical values. The dark ones are the non-functioning sensors or \ac{ASIC}s. 
-    \caption{\ac{GAPS} detector temperatures during ground testing at McMurdo station}
+    \caption[\ac{GAPS} detector temperatures during ground testing at McMurdo station]{\ac{GAPS} detector temperatures during ground testing at McMurdo station. The left plot shows the temperature readout from each \ac{ASIC}'s thermal sensor in a 3D view. You can clearly see the top edge modules have slightly higher temperature due to thermal insulation defects. It is very hard to avoid the thermal leak on the ground due to convection. Thermally sealing the entire 4-meter-scale payload is extremely difficult. The right plot shows the temperature readout from each \ac{ASIC}'s thermal sensor in a 2D view with more detailed numerical values. The dark ones are the non-functioning sensors or \ac{ASIC}s. }
     \label{fig:GAPS_GCS_performance}
 \end{figure}
 
@@ -249,16 +238,14 @@ For this simulation, antiprotons were used as a representative particle species.
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/Survival_general.png}
-    \noindent\raggedright Left plot shows the general survival probability of antiproton from \ac{TOA} to \ac{TOI} at 37 km as a function of kinetic energy. As expected, the survival probability increases with energy since high energy antiprotons will be less likely captured by the atmosphere nuclei. The right plot shows the survival probability binned in different zenith angle.
-    \caption{Antiproton survival probability from \ac{TOA} to \ac{TOI} (37 km)}
+    \caption[Antiproton survival probability from \ac{TOA} to \ac{TOI} (37 km)]{Antiproton survival probability from \ac{TOA} to \ac{TOI} (37 km). Left plot shows the general survival probability of antiproton from \ac{TOA} to \ac{TOI} at 37 km as a function of kinetic energy. As expected, the survival probability increases with energy since high energy antiprotons will be less likely captured by the atmosphere nuclei. The right plot shows the survival probability binned in different zenith angle.}
     \label{fig:atmospheric_unfolding}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/Survival_zenith.png}
-    \noindent\raggedright \textbf{(a)} shows the zenith angle remains relevant for \ac{TOA} and \ac{TOI}, indicating no major angular deflection during the propagation through atmosphere. \textbf{(b)} shows the zenith angle survival probability relation with kinetic energy. Here, is shows the major cutoff element is kinetic energy instead of zenith angle. \textbf{c} shows the energy loss versus kinetic energy for different zenith angle initial states. \textbf{(d)} shows the survive probability versus kinetic energy for different zenith angle initial states.
-    \caption{Antiproton atmospheric effect binned in zenith angle}
+    \caption[Antiproton atmospheric effect binned in zenith angle]{Antiproton atmospheric effect binned in zenith angle. \textbf{(a)} shows the zenith angle remains relevant for \ac{TOA} and \ac{TOI}, indicating no major angular deflection during the propagation through atmosphere. \textbf{(b)} shows the zenith angle survival probability relation with kinetic energy. Here, is shows the major cutoff element is kinetic energy instead of zenith angle. \textbf{c} shows the energy loss versus kinetic energy for different zenith angle initial states. \textbf{(d)} shows the survive probability versus kinetic energy for different zenith angle initial states.}
     \label{fig:atmospheric_unfolding_zenith}
 \end{figure}
 
@@ -275,8 +262,7 @@ Using this result together with the \ac{GAPS} science results, we can unfold the
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_trajectory.png}\\
-    \noindent\raggedright \ac{GAPS} balloon trajectory during the flight. In figure, blue trakectory shows the flight path from launch until first circle back to near McMurdo station. Red trajectory shows the second circle path before landing nearby McMurdo station \cite{csbf_flight_759n_status, jaxa_gaps_flight_2026}.
-    \caption{\ac{GAPS} flight trajectory and altitude}
+    \caption[\ac{GAPS} flight trajectory and altitude]{\ac{GAPS} flight trajectory and altitude. \ac{GAPS} balloon trajectory during the flight. In figure, blue trakectory shows the flight path from launch until first circle back to near McMurdo station. Red trajectory shows the second circle path before landing nearby McMurdo station \cite{csbf_flight_759n_status, jaxa_gaps_flight_2026}.}
     \label{fig:GAPS_flight_trajectory}
 \end{figure}
 
@@ -291,23 +277,20 @@ All the detector modules are extremely stable during flight despite the fluctuat
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GAPS_flight_thermal_map.png}
-    \noindent\raggedright This plot shows \ac{RTD} temperature sensors readout from all \ac{GAPS} all over then payload during the flight at 22:24:16, Jan 8th, 2026, same time as Fig.~\ref{fig:GAPS_flight_thermal_detector}. Left angled area demonstrates the radiator section in Fig.~\ref{fig:GAPS_MCHP_concept}, right vertical area demonstrates the tracker section in Fig.~\ref{fig:GAPS_MCHP_concept}. 
-    \caption{\ac{GAPS} payload temperatures during the flight}
+    \caption[\ac{GAPS} payload temperatures during the flight]{\ac{GAPS} payload temperatures during the flight. This plot shows \ac{RTD} temperature sensors readout from all \ac{GAPS} all over then payload during the flight at 22:24:16, Jan 8th, 2026, same time as Fig.~\ref{fig:GAPS_flight_thermal_detector}. Left angled area demonstrates the radiator section in Fig.~\ref{fig:GAPS_MCHP_concept}, right vertical area demonstrates the tracker section in Fig.~\ref{fig:GAPS_MCHP_concept}. }
     \label{fig:GAPS_flight_thermal_performance}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.9\linewidth]{fig/GAPS_flight_detector_thermal_map.png}\\
-    \noindent\raggedright This plot shows \ac{ASIC}s temperature readout from all detector modules during the flight at 22:24:16, Jan 8th, 2026, same time as Fig.~\ref{fig:GAPS_flight_thermal_performance}. First 7 plots show 7 active layers of detectors' temperature. The blank cells shows no information for the detector module at that location. The last second figure shows all modules' temperature histogram which stabilized around $ -37.5~^\circ C $. The last plot shows the temperature of each detector modedule in the past 24 hours. All the detector modules are extremely stable during flight despite the fluctuation of the ambient temperature. 
-    \caption{\ac{GAPS} detector temperatures during the flight}
+    \caption[\ac{GAPS} detector temperatures during the flight]{\ac{GAPS} detector temperatures during the flight. This plot shows \ac{ASIC}s temperature readout from all detector modules during the flight at 22:24:16, Jan 8th, 2026, same time as Fig.~\ref{fig:GAPS_flight_thermal_performance}. First 7 plots show 7 active layers of detectors' temperature. The blank cells shows no information for the detector module at that location. The last second figure shows all modules' temperature histogram which stabilized around $ -37.5~^\circ C $. The last plot shows the temperature of each detector modedule in the past 24 hours. All the detector modules are extremely stable during flight despite the fluctuation of the ambient temperature.}
     \label{fig:GAPS_flight_thermal_detector}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.95\linewidth]{fig/3D_2026-01-08_092416.824000.png}\\
-    \noindent\raggedright 3D temperature plot from all detector modules during the flight at 22:24:16, Jan 8th, 2026, same time as Fig.~\ref{fig:GAPS_flight_thermal_performance}.
-    \caption{3D visual of \ac{GAPS} detector temperatures during the flight}
+    \caption[3D visual of \ac{GAPS} detector temperatures during the flight]{3D visual of \ac{GAPS} detector temperatures during the flight. 3D temperature plot from all detector modules during the flight at 22:24:16, Jan 8th, 2026, same time as Fig.~\ref{fig:GAPS_flight_thermal_performance}.}
     \label{fig:GAPS_flight_thermal_detector_3D}
 \end{figure}

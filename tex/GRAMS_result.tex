@@ -70,8 +70,7 @@ ch21 & X1 & CSP\_X & ch43 & -- & GND & & & \\
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/pedestal_comparison_version_cryo.png}
-    \noindent\raggedright The top figure shows \ac{CSP} and \ac{SiPM} pedestals for each channel under room conditions. The bottom figure shows \ac{CSP} and \ac{SiPM} pedestals for each channel under liquid argon conditions. The green box shows \ac{CSP} v5 channels with the mapping shown earlier in Table~\ref{tab:microGRAMS_channel_map_run34}. One can easily see the performance difference between the \ac{CSP} versions. \ac{CSP} v5 behaves slightly better in both room and cryogenic conditions.
-    \caption{Signal pedestal result}
+    \caption[Signal pedestal result]{Signal pedestal result. The top figure shows \ac{CSP} and \ac{SiPM} pedestals for each channel under room conditions. The bottom figure shows \ac{CSP} and \ac{SiPM} pedestals for each channel under liquid argon conditions. The green box shows \ac{CSP} v5 channels with the mapping shown earlier in Table~\ref{tab:microGRAMS_channel_map_run34}. One can easily see the performance difference between the \ac{CSP} versions. \ac{CSP} v5 behaves slightly better in both room and cryogenic conditions.}
     \label{fig:CSP_noise_comparison}
 \end{figure}
 
@@ -129,8 +128,7 @@ We use one typical cosmic muon track event to demonstrate the reconstruction alg
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/microGRAMS_run26_config.png}
-    \noindent\raggedright The left photo shows the Run26 TPC mounted on the flange with sideways mounting to maximize the active channels through which the cosmic muon flux passes. The middle photo shows the TPC without the sensing tile to show the anode E-field shaping mesh. The right photo shows a customized mesh made with 32-gauge copper wire (202~$\mu$m diameter) with a 5~mm pitch to form the E-field shaping cage. The flight-version anode mesh will be fabricated with CNC techniques to enhance precision and uniformity.
-    \caption{microGRAMS Run26 configuration}
+    \caption[microGRAMS Run26 configuration]{microGRAMS Run26 configuration. The left photo shows the Run26 TPC mounted on the flange with sideways mounting to maximize the active channels through which the cosmic muon flux passes. The middle photo shows the TPC without the sensing tile to show the anode E-field shaping mesh. The right photo shows a customized mesh made with 32-gauge copper wire (202~$\mu$m diameter) with a 5~mm pitch to form the E-field shaping cage. The flight-version anode mesh will be fabricated with CNC techniques to enhance precision and uniformity.}
     \label{fig:microGRAMS_run26_config}
 \end{figure}
 
@@ -165,16 +163,14 @@ The key goal of the filter for charge readout is to reduce the noise level and r
 \begin{figure}
     \centering
     \includegraphics[width=0.9\linewidth]{fig/microGRAMS_9483_raw.png}\\
-    \noindent\raggedright Top figure shows event ID 9483 raw waveforms for all 34 channels including charge and light signals. Bottom figure shows baseline corrected raw waveform for all 34 channels. The rising peak of each charge channels shows the particle energy deposit depth information corresponding to the negative light peak at $ 160~\mu$s pre-trigger time. Detailed analysis of this event is shown in Fig.~\ref{fig:filter_comparison} and Fig.~\ref{fig:muontest_event}.
-    \caption{Run26 acquisition0 event ID 9483 raw waveforms}
+    \caption[Run26 acquisition0 event ID 9483 raw waveforms]{Run26 acquisition0 event ID 9483 raw waveforms. Top figure shows event ID 9483 raw waveforms for all 34 channels including charge and light signals. Bottom figure shows baseline corrected raw waveform for all 34 channels. The rising peak of each charge channels shows the particle energy deposit depth information corresponding to the negative light peak at $ 160~\mu$s pre-trigger time. Detailed analysis of this event is shown in Fig.~\ref{fig:filter_comparison} and Fig.~\ref{fig:muontest_event}.}
     \label{fig:microGRAMS_raw_plot}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.9\linewidth]{fig/microGRAMS_9483_filter.png}\\
-    \noindent\raggedright The blue line shows the raw waveform from one charge channel (Ch57, Y19) for event ID 9483. The orange line shows the waveform after applying the high-pass filter. The signal's long tails are removed while the peak location is still kept. The red line shows the waveform after applying the Gaussian smoothing filter. The noise level is significantly reduced.
-    \caption{microGRAMS software charge signal filtering}
+    \caption[microGRAMS software charge signal filtering]{microGRAMS software charge signal filtering. The blue line shows the raw waveform from one charge channel (Ch57, Y19) for event ID 9483. The orange line shows the waveform after applying the high-pass filter. The signal's long tails are removed while the peak location is still kept. The red line shows the waveform after applying the Gaussian smoothing filter. The noise level is significantly reduced.}
     \label{fig:pGRAMS_filter}
 \end{figure}
 
@@ -183,8 +179,7 @@ To address the peak shift, a peak-shift correction algorithm was developed to fu
 \begin{figure}
     \centering
     \includegraphics[width=0.9\linewidth]{fig/peak_shift.png}\\
-    \noindent\raggedright 
-    \caption{Peak shift correction.}
+    \caption[Peak shift correction]{Peak shift correction.}
     \label{fig:peak_correction}
 \end{figure}
 
@@ -195,8 +190,7 @@ From the filtered waveforms, signal peaks can be identified for each channel to 
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GRAMS_run26_muons.png}
-    \noindent\raggedright Examples of reconstructed cosmic muon track events inside the pGRAMS LArTPC detector are shown. The same event ID 9483, with raw and filtered waveforms shown in Fig.~\ref{fig:filter_comparison}, is displayed at the top, taken from Run 26 data on Sep 4, 2024. The left figure shows the X-Z plot, while the right one shows the Y-Z plot. The color bar indicates the charge deposition in each voxel. The Z-axis is the drift direction, converted from drift time. The bottom two panels show another event, ID 4934, taken from the same run dataset.
-    \caption{Examples of reconstructed cosmic muon track event inside microGRAMS LArTPC detector}
+    \caption[Examples of reconstructed cosmic muon track event inside microGRAMS LArTPC detector]{Examples of reconstructed cosmic muon track event inside microGRAMS LArTPC detector. Examples of reconstructed cosmic muon track events inside the pGRAMS LArTPC detector are shown. The same event ID 9483, with raw and filtered waveforms shown in Fig.~\ref{fig:filter_comparison}, is displayed at the top, taken from Run 26 data on Sep 4, 2024. The left figure shows the X-Z plot, while the right one shows the Y-Z plot. The color bar indicates the charge deposition in each voxel. The Z-axis is the drift direction, converted from drift time. The bottom two panels show another event, ID 4934, taken from the same run dataset.}
     \label{fig:muontest_event}
 \end{figure}
 
@@ -204,8 +198,7 @@ From the filtered waveforms, signal peaks can be identified for each channel to 
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GRAMS_reconstruct_digital_filter.png}
-    \noindent\raggedright Left figure shows the raw waveforms for all charge channels for event ID 9483, while right figure shows the filtered waveforms. The charge signals are much cleaner after the filter, making it easier to identify the signal peaks for further 3D track reconstruction. A cosmic muon track can already be identified going through the TPC from the clear shift of the peak on the right figure.
-    \caption{Run26 acquisition0 event ID 9483 charge signal comparison before and after filter}
+    \caption[Run26 acquisition0 event ID 9483 charge signal comparison before and after filter]{Run26 acquisition0 event ID 9483 charge signal comparison before and after filter. Left figure shows the raw waveforms for all charge channels for event ID 9483, while right figure shows the filtered waveforms. The charge signals are much cleaner after the filter, making it easier to identify the signal peaks for further 3D track reconstruction. A cosmic muon track can already be identified going through the TPC from the clear shift of the peak on the right figure.}
     \label{fig:filter_comparison}
 \end{figure}
 \end{landscape}
@@ -226,8 +219,7 @@ Since antiprotons also form exotic atoms in the LAr detector and generate annihi
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GRAMS_simulation.jpg}
-    \noindent\raggedright GEANT4 simulation with the GRAMS geometry for the GRASP estimation. We generated antiparticles on a 20 m $\times$ 20 m plane located above a thin layer of compressed air and the GRAMS payload. Antiparticles pass through the compressed air to simulate the atmospheric effect. Two green boxes are the outer and inner TOF paddles, and the red cube inside the inner TOF box is the LArTPC detector (140 cm $\times$ 140 cm $\times$ 20 cm). The red lines are the example tracks of the generated antihelium-3 nuclei.
-    \caption{Simulated GRAMS detector with GEANT4}
+    \caption[Simulated GRAMS detector with GEANT4]{Simulated GRAMS detector with GEANT4. GEANT4 simulation with the GRAMS geometry for the GRASP estimation. We generated antiparticles on a 20 m $\times$ 20 m plane located above a thin layer of compressed air and the GRAMS payload. Antiparticles pass through the compressed air to simulate the atmospheric effect. Two green boxes are the outer and inner TOF paddles, and the red cube inside the inner TOF box is the LArTPC detector (140 cm $\times$ 140 cm $\times$ 20 cm). The red lines are the example tracks of the generated antihelium-3 nuclei.}
     \label{fig:GEANT4}
 \end{figure}
 
@@ -248,8 +240,7 @@ Here, $ A $ represents the area for the antiparticle generation, which is a 20 m
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/GRASP_0_1000_v5.png}
-    \noindent\raggedright GRASP estimation for the proposed GRAMS detector with a 140 cm $\times$ 140 cm $\times$ 20 cm LArTPC detector. Solid lines show annihilation at rest events, while dashed lines show annihilation in-flight events. For the lower-than-$100~\text{MeV}/n$ energy range, the GRASP is limited by atmospheric annihilation above the detector. The tails at high energy for the stopped events are due to incoming antiparticles at diagonal angles with longer path lengths inside the LArTPC detector.
-    \caption{GRASP for proposed GRAMS detector}
+    \caption[GRASP for proposed GRAMS detector]{GRASP for proposed GRAMS detector. GRASP estimation for the proposed GRAMS detector with a 140 cm $\times$ 140 cm $\times$ 20 cm LArTPC detector. Solid lines show annihilation at rest events, while dashed lines show annihilation in-flight events. For the lower-than-$100~\text{MeV}/n$ energy range, the GRASP is limited by atmospheric annihilation above the detector. The tails at high energy for the stopped events are due to incoming antiparticles at diagonal angles with longer path lengths inside the LArTPC detector.}
     \label{fig:GRAMS_GRASP}
 \end{figure}
 
@@ -262,8 +253,7 @@ Fig.~\ref{fig:GRAMS_GRASP} shows the GRASP simulation results. Antiparticles wit
 \begin{center} 
 \includegraphics*[width=1\linewidth]{fig/3D_v2.png}
 \end{center}
-The x-axis is the energy deposition in the outer TOF paddle, and the y-axis is the energy deposition in the inner paddle. The z-axis is the timing difference between the outer and inner paddle hits, which is related to the kinetic energy of the incoming charge particles. We can clearly see antiproton and antihelium-3 event clusters well separated from each other.
-\caption{3D plot of antiparticles' deposited energy and timing in \ac{TOF} system}
+\caption[3D plot of antiparticles' deposited energy and timing in \ac{TOF} system]{3D plot of antiparticles' deposited energy and timing in \ac{TOF} system. The x-axis is the energy deposition in the outer TOF paddle, and the y-axis is the energy deposition in the inner paddle. The z-axis is the timing difference between the outer and inner paddle hits, which is related to the kinetic energy of the incoming charge particles. We can clearly see antiproton and antihelium-3 event clusters well separated from each other.}
 \label{fig:3D}
 \end{figure}
 
@@ -276,8 +266,7 @@ Since antihelium-3 nuclei have a charge of -2e and roughly three times the antip
 \begin{center} 
 \includegraphics*[width=0.65\linewidth]{fig/slice_v5.png}
 \end{center}
-An example of the sliced 2D plot for the TOF timing between 12 ns and 13 ns. We removed the light green shaded area at the bottom left to keep the rest of the region accepted. For this particular timing range, 98.6 \% of antihelium-3 events can be accepted while rejecting all antiproton events.
-\caption{An example of \ac{TOF} selection cut}
+\caption[An example of \ac{TOF} selection cut]{An example of \ac{TOF} selection cut. An example of the sliced 2D plot for the TOF timing between 12 ns and 13 ns. We removed the light green shaded area at the bottom left to keep the rest of the region accepted. For this particular timing range, 98.6 \% of antihelium-3 events can be accepted while rejecting all antiproton events.}
 \label{fig:cut}
 \end{figure}
 
@@ -288,9 +277,8 @@ To evaluate antihelium-3 selection cuts, we sliced the 3D plot with a time windo
 \begin{center} 
 \includegraphics*[width=1\linewidth]{fig/cut_efficiency_v2.png}
 \end{center}
-Selection efficiency for antihelium-3 events under each one ns time window. Combining all simulation data gives an antihelium-3 nuclei selection cut
-efficiency $\varepsilon_{TOF}^{^3\overline{He}}=0.965$, while we reject all antiprotons and provide an upper limit on the antiproton cut efficiency $\varepsilon_{TOF}^{\bar{p}}=0.000142$ (99\% C.L)
-\caption{TOF 3D selection cut efficiency}
+\caption[TOF 3D selection cut efficiency]{TOF 3D selection cut efficiency. Selection efficiency for antihelium-3 events under each one ns time window. Combining all simulation data gives an antihelium-3 nuclei selection cut
+efficiency $\varepsilon_{TOF}^{^3\overline{He}}=0.965$, while we reject all antiprotons and provide an upper limit on the antiproton cut efficiency $\varepsilon_{TOF}^{\bar{p}}=0.000142$ (99\% C.L)}
 \label{fig:cut efficiency}
 \end{figure}
 
@@ -318,8 +306,7 @@ Fig.~\ref{fig:Simulated Charged pion multiplicity} shows GEANT4 simulation resul
 \begin{center} 
 \includegraphics*[width=1\linewidth]{fig/charged_pion_multiplicity_v3.png}
 \end{center}
-GEANT4 simulation results of charged pion multiplicities for antiproton and antihelium-3 events are shown in red and blue bars. We could apply a cut of $N\geq9$ (vertical black dashed line) to reject antiproton events while still keeping $91.2\%$ of antihelium-3 events. The dashed red line shows the model prediction of the pion multiplicity for 1 GeV/n antiproton in-flight annihilation events, indicating the selection cut of $N\geq9$ is still valid with the antiproton selection efficiency of $\varepsilon_\pi^{\bar{p}}=1.25\times10^{-5}$.
-\caption{GRAMS simulated charged pion multiplicity}
+\caption[GRAMS simulated charged pion multiplicity]{GRAMS simulated charged pion multiplicity. GEANT4 simulation results of charged pion multiplicities for antiproton and antihelium-3 events are shown in red and blue bars. We could apply a cut of $N\geq9$ (vertical black dashed line) to reject antiproton events while still keeping $91.2\%$ of antihelium-3 events. The dashed red line shows the model prediction of the pion multiplicity for 1 GeV/n antiproton in-flight annihilation events, indicating the selection cut of $N\geq9$ is still valid with the antiproton selection efficiency of $\varepsilon_\pi^{\bar{p}}=1.25\times10^{-5}$.}
 \label{fig:Simulated Charged pion multiplicity}
 \end{figure}
 
@@ -411,8 +398,7 @@ GRAMS can be expanded to the satellite mission, providing a significantly improv
 \begin{center} 
 \includegraphics*[width=1\linewidth]{fig/antihelium3_sensitivity_with_inflight_satellite_v7.png}
 \end{center}
-The red and brown (coral) lines show the GRAMS antihelium-3 sensitivities for three LDB flights and the satellite missions in comparison with other missions' reported sensitivities  \cite{SAFFOLD2021102580}. GRAMS would be able to explore various dark matter models that could produce two orders of magnitude higher antihelium-3 fluxes than standard astrophysical background models \cite{PhysRevD.99.023016, PhysRevD.102.063004, Kachelrie_2020, PhysRevLett.126.101101, PhysRevD.97.103011, PhysRevD.96.083020,  Ding_2019}. The AMS sensitivity and the BESS upper limit to the antihelium flux were estimated based on the $ \overline{He}/He$ ratios \cite{PhysRevLett.108.131301, Kounine:2011bkq} and the precision measurement of the $ He $ flux \cite{PhysRevLett.115.211101, SANUKI2001761} while converting the rigidity to the corresponding kinetic energy for each BESS/AMS rigidity bin.
-\caption{Antihelium-3 flux, background and sensitivity}
+\caption[Antihelium-3 flux, background and sensitivity]{Antihelium-3 flux, background and sensitivity. The red and brown (coral) lines show the GRAMS antihelium-3 sensitivities for three LDB flights and the satellite missions in comparison with other missions' reported sensitivities  \cite{SAFFOLD2021102580}. GRAMS would be able to explore various dark matter models that could produce two orders of magnitude higher antihelium-3 fluxes than standard astrophysical background models \cite{PhysRevD.99.023016, PhysRevD.102.063004, Kachelrie_2020, PhysRevLett.126.101101, PhysRevD.97.103011, PhysRevD.96.083020,  Ding_2019}. The AMS sensitivity and the BESS upper limit to the antihelium flux were estimated based on the $ \overline{He}/He$ ratios \cite{PhysRevLett.108.131301, Kounine:2011bkq} and the precision measurement of the $ He $ flux \cite{PhysRevLett.115.211101, SANUKI2001761} while converting the rigidity to the corresponding kinetic energy for each BESS/AMS rigidity bin.}
 \label{fig:antihelium3_sensitivity}
 \end{figure}
 
@@ -422,8 +408,7 @@ The AMS sensitivity and the BESS upper limit to the antihelium flux were estimat
 \begin{center} 
 \includegraphics*[width=1\linewidth]{fig/GRASP_comparison_v5.png}
 \end{center}
-GRASP estimation for the GRAMS satellite mission, with a 3.2 m $\times$ 3.2 m $\times$ 0.2 m LArTPC detector, considering the satellite fairing size \cite{7943833}. Solid lines show annihilation at rest events, while dashed lines show annihilation in-flight events. Compared to Fig.~\ref{fig:GRAMS_GRASP}, the GRASP is significantly improved due to the enlarged detector size.
-\caption{GRASP estimation for future GRAMS satellite mission}
+\caption[GRASP estimation for future GRAMS satellite mission]{GRASP estimation for future GRAMS satellite mission. GRASP estimation for the GRAMS satellite mission, with a 3.2 m $\times$ 3.2 m $\times$ 0.2 m LArTPC detector, considering the satellite fairing size \cite{7943833}. Solid lines show annihilation at rest events, while dashed lines show annihilation in-flight events. Compared to Fig.~\ref{fig:GRAMS_GRASP}, the GRASP is significantly improved due to the enlarged detector size.}
 \label{fig:GRASP for MAX design}
 \end{figure}
 
@@ -515,8 +500,7 @@ From Section~\ref{chap:intro:balloon}, we know that for balloon experiments, pay
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/LArTPC_shape_geo.png}
-    \noindent\raggedright The y-axis represents the detector capture power for antihelium-3 nuclei, calculated as the number of captured events divided by the total number of simulated events. Based on the results, the efficiency reaches a maximum for a more cubic shape compared with a thin, flat pancake shape and a long rod shape.
-    \caption{GRAMS \ac{LArTPC} GRASP result with different geometry configurations under a fixed total mass budget.}
+    \caption[GRAMS \ac{LArTPC} GRASP result with different geometry configurations under a fixed total mass budget]{GRAMS \ac{LArTPC} GRASP result with different geometry configurations under a fixed total mass budget. The y-axis represents the detector capture power for antihelium-3 nuclei, calculated as the number of captured events divided by the total number of simulated events. Based on the results, the efficiency reaches a maximum for a more cubic shape compared with a thin, flat pancake shape and a long rod shape.}
     \label{fig:GRAMS_LArTPC_shape_geo}
 \end{figure}
 From Fig.~\ref{fig:GRAMS_LArTPC_shape_geo}, it can be seen that with a larger detector mass budget, the capture efficiency is higher as expected. The efficiency peak also shifts to the right. Based on this result, \ac{GRAMS} has proposed a detector shape of $140~\text{cm} \times 140~\text{cm} \times 20~\text{cm}$ with a 1270~kg detector mass budget. Compared with the GRASP result, 140~cm lies between the 140~cm peak for 1100~kg mass and the 160~cm TPC length for 1300~kg mass, which is still an optimal choice for detector geometry. 
@@ -529,6 +513,6 @@ One major reason that the GRASP depth distribution has this shape is that low-en
     \centering
     \includegraphics[width=1\linewidth]{fig/GRASP_depth.png}
     \noindent\raggedright 
-    \caption{Antideuteron events GRASP depth distribution inside the \ac{LArTPC} detector.}
+    \caption[Antideuteron events GRASP depth distribution inside the \ac{LArTPC} detector]{Antideuteron events GRASP depth distribution inside the \ac{LArTPC} detector.}
     \label{fig:GRAMS_LArTPC_depth}
 \end{figure}
