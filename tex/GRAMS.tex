@@ -103,6 +103,7 @@ The detection concept and particle-identification techniques were validated and 
 
 \section{Engineer Flight eGRAMS}
 \label{chap:GRAMS:eGRAMS}
+This section describes the engineering flight operation led by the \ac{GRAMS} Japanese team.
 
 An engineering balloon flight with a small-scale LArTPC (eGRAMS) was conducted on July 27, 2023, to establish a system for safely operating an LArTPC at balloon altitudes and to obtain cosmic-ray data from the LArTPC. The flight was launched from the Japan Aerospace Exploration Agency’s (JAXA) Taiki Aerospace Research Field in Hokkaido, Japan. The total flight duration was 3 hours and 12 minutes, including a level flight of 44 minutes at a maximum altitude of 28.9 km. The flight system landed at sea and was successfully recovered.
 
@@ -221,6 +222,8 @@ The \ac{CSP} v5 was calibrated with a charge-injection board that makes use of a
 
 \section{Antiproton Beam Test}
 \label{chap:GRAMS:beamtest}
+This section describes the antiproton beam test operation led by the \ac{GRAMS} Japanese team.
+
 To confirm the antiparticle-capture capability of the GRAMS detector, an antiproton beam test was conducted at J-PARC in 2023. The main goals of the beam test were to validate the GRAMS LArTPC detector's ability to capture antiprotons, form exotic atoms, and detect the resulting annihilation products. This section provides an overview of the beam-test setup and the detectors used; see Fig.~\ref{fig:GRAMS_beamtest_setup}. Since this is not the main focus of this thesis, the results of the antiproton beam test will be shown only briefly here, and more detailed analysis and results will be published in future work.
 
 \begin{figure}
@@ -247,6 +250,7 @@ The eGRAMS mission mentioned in Section~\ref{chap:GRAMS:eGRAMS} had a limited ma
 
 \subsection{Time-of-Flight (TOF) Beam Test}
 \label{chap:GRAMS:beamtest:TOF}
+This section describes the pGRAMS \ac{TOF} paddle test at J-PARC led by the \ac{GSFC}.
 Two \ac{TOF} paddles were prepared for the test, both $750~\text{mm}$ length and $27~\text{mm}$ width, but one with $8~\text{mm}$ thickness, and the other with $10~\text{mm}$ thickness to compare the performance. The TOF was located downstream of the beam line, one paddle was located horizontally and the other paddle was located vertically as shown in the right Figure. The paddles were set so that the center of the beam crossed the intersection of the two paddles. The number of coincident events in both paddles was about 11,000 per hour, slightly higher than $3~\text{Hz}$. The particles detected were remnant pions in the $\bar{p}$ beam at a momentum of $-0.7~\text{GeV}/c$. Time resolutions obtained from the test are shown in the Fig.~\ref{fig:GRAMS_TOF_beamtest}. The histograms were created by plotting the time difference between the time information obtained from one side of SiPM and the opposite side of SiPMs, then applying a Gaussian fit. The resultant time resolution was about the same, $233~\text{ps}$ for the $10~\text{mm}$ TOF and $236~\text{ps}$ for the $8~\text{mm}$ TOF. The results were consistent with our expectations \cite{makoto_2025_ICRC}. 
 
 \begin{figure}
@@ -295,7 +299,7 @@ The data analysis is still ongoing, and more detailed results will be published 
 
 \section{Prototype Flight pGRAMS}
 \label{chap:GRAMS:pGRAMS}
-pGRAMS is a precursor mission to the future GRAMS Science Mission, which will simultaneously target MeV gamma-ray observations and indirect dark matter searches through antimatter detection, and will serve as the first liquid argon Compton camera to be launched. It is funded by NASA's \ac{APRA} program and is led by Northeastern University, Columbia University, and \ac{GSFC}.
+pGRAMS is a precursor mission to the future GRAMS Science Mission, which will simultaneously target MeV gamma-ray observations and indirect dark matter searches through antimatter detection, and will serve as the first liquid argon Compton camera to be launched. It is funded by NASA's \ac{APRA} program and is led by Northeastern University, Columbia University, and \ac{GSFC}. The content from this section would be preliminary, the designs are still being optimized, and the final design may differ from what is described here. The pGRAMS flight is scheduled for year 2026.
 
 As the follow-on project to the 2023 GRAMS engineering flight (eGRAMS, Section~\ref{chap:GRAMS:eGRAMS}), pGRAMS builds on the knowledge gained there and advances the program in several directions. The pGRAMS payload is intended to verify the performance of a scaled GRAMS detector for MeV gamma-ray and cosmic charged-particle detection, validate the cryostat design and its thermal performance, demonstrate the combined particle-tracking capability of the time-of-flight (TOF) and multiplicity detector (MPD) systems, and test the flight firmware and software. These accomplishments from the pGRAMS flight will directly inform the future science flight, enabling exploration of both the MeV-gap region and the low-energy cosmic-antiparticle region ($\leq 0.2~\text{GeV}/n$), which is directly relevant to dark matter searches.
 
@@ -498,55 +502,46 @@ After the filter was prepared, we developed a portable stand that can be used to
 
 With the setup shown in Fig.~\ref{fig:LAr_filling_setup} top right and bottom, the operation procedure to fill liquid argon into the microGRAMS chamber is as follows:
 \begin{enumerate}[label=\arabic*.]
-    \item With Edwards scroll pump connected to the LAr filter pump line, start the pump and evacuate the first region up to V1. This includes the MKS pressure gauge, so a drop in pressure should be observed.
+    \item Connect the fill line hose to the chamber (between V5 and V6).
+    \item Set the adjustable pressure relief valve at the lowest point (typically $\sim$800 Torr / $\sim$1.05 ATM).
+    \item Make sure V5 is closed, and slowly open V1 until gas begins to flow, and then open V2.
+    \item Check that the analog gauge shows a similar pressure value (100--300 PSI) to the dewar pressure.
+    \item Open V5 to release the GAr to clean up the bypass line for 1 min.
+    \item Open V3 and V4, and then close V2 to clean up the filter line for 1 min.
+    \item Close V5.
+    \item Make sure V9 is open.
+    \item Have one person close V10, and another person slowly open V6 once the turbo is isolated.
+    \item Modulate V6 to gradually increase pressure inside the chamber toward $\sim$900 Torr.
+    \item Once the pressure reaches $\sim$900 Torr, open V8 and release the gas via V9.
+    \item Slowly close V9 and let the chamber purge through the adjustable relief valve.
+    \item Completely close V9, and purge through the relief valve for 1 min.
+    \item Modulate the adjustable relief valve knob so the equilibrium pressure without outward flow reaches $\sim$950 Torr ($\sim$1.25 ATM).
+    \item The pressure may continue to increase; open V7 to release GAr until the pressure drops to around $\sim$900 Torr ($\sim$1.18 ATM).
     
-    \item After letting the Edwards pump for $\sim 30$ seconds, open V1 and V2 to evacuate all lines to and from the filter. At this point, V3 and V4 will remain closed to isolate the filter.
+    \item \textbf{Start the LAr filling}
     
-    \item Open LAr dewar liquid valve a small amount to start flowing GAr into the filter lines while keeping the Edwards pumping on all lines. Once Edwards audibly starts working on the GAr, the Edwards valve V2 can slowly be closed. Once the Edwards is closed off, adjust the dewar valve to target a rate of $\sim 20$ Torr/second as read out on the MKS gauge.
+    \item Gently increase the flow into the chamber by slowly opening V6, bringing the pressure to $\sim$1200 Torr ($\sim$1.58 ATM) or lower while modulating/opening V7.
+    \item Repeat the step above until V7 is fully open.
+    \item Monitor the pressure and modulate V6 only to maintain pressure around $\sim$1200 Torr ($\sim$1.58 ATM). 
+    \begin{quote}
+        \textit{Note: The chamber is now being cooled by GAr/LAr.}
+    \end{quote}
+    \item Once the chamber is cold enough for LAr to condense, reduce the flow rate to maintain the equilibrium pressure at $\sim$900 Torr ($\sim$1.18 ATM).
     
-    \item With the dewar valve set properly, open the Edwards valve V1 and let it evacuate the system again. While leaving the dewar valve alone, slowly throttle the Edwards valve V1 and bring the pressure up to $\sim 850$ Torr at the target rate of $\sim 20$ Torr/sec. Once the pressure reaches $\sim 750$ Torr, start closing V2 so that it is fully closed once the pressure reaches target of $\sim 850$ Torr.
-    
-    \item Turn off Edwards scroll pump.
-    
-    \item Make sure relief valve knob on UPS chamber relief line passive pressure valve is at its lowest setpoint (typically this turns out to be $\sim 820$ Torr).
-    
-    \item Have one person close the bellows valve to the turbo (V9) and have another person immediately open the fill valve (V6) to the chamber once the turbo is isolated.
-    
-    \item Modulate the fill valve (V6) to gradually bring pressure in the UPS chamber up towards $\sim 850$ Torr via the bypass line.
-    
-    \item Modulate the relief valve knob so that the equilibrium pressure without outward flow reaches $\sim 900$ Torr.
-    
-    \item Close the fill line valve V6 and then immediately close the bypass line V5 on the filter. At this point, the pressure in UPS will drop until the relief check valve closes. Then the UPS will be sealed at positive pressure and should stay relatively stable.
-    
-    \item Now open the top LAr filter valve (V3) and let pressure equalize between inside of filter and LAr dewar.
-    
-    \item Next, open the bottom LAr filter valve V4, and let pressure equalize again, similar to previous step. At this point the UPS chamber filling will be very similar to a direct fill.
-    
-    \item Make sure one person is ready at the dewar valve V0 and another person operating the fill line valve V6 and the main exhaust valve V7.
-    
-    \item LAr fill can now start. Slowly open the fill line valve V6 and flow GAr into the UPS chamber. Allow pressure to build until the passive relief check valve opens. Once the relief valve opens itself, adjust the setpoint to around $\sim 950$ Torr.
-    
-    \item Now the main exhaust V7 can be opened and the iteration between main exhaust and filling line can start.
-    
-    \item Open the main exhaust valve V7 until pressure drops to around $\sim 900$ Torr. At this point, gently increase the flow into the chamber via the fill line valve V6 and bring the pressure close to, but not higher than $\sim 1200$ Torr.
-    
-    \item Repeat last step, until the main exhaust is fully open.
-    
-    \item Monitor the pressure, and use the fill line valve V6 only to maintain pressure around $\sim 1500$ Torr. The chamber is now being cooled by GAr.
-    
-    \item Once the chamber is cold enough to allow LAr to condense, reduce the flow rate by adjusting fill valve V6 so that the equilibrium pressure is maintained around $\sim 900$ Torr. The chamber is now in slow LAr filling mode.
+    \item \textbf{The chamber is now in slow LAr filling mode}
     
     \item Maintain conditions until the desired LAr level is achieved.
-    
-    \item Once desired LAr level is reached, close the main exhaust anywhere between 90\%--100\%. Make sure the relief valve is still able to relieve and maintain pressure.
-    
-    \item Once the pressure stabilizes, close the main exhaust and the fill line completely. The chamber is now ready for detector operation and data taking.
-    
-    \item Keep the filter open for 1--2 hrs and allow it to warm up while exposed to the LAr bath in the dewar. This ensures that no LAr is left inside the filter before it is sealed.
-    
-    \item Once the LAr filter is warmed up sufficiently (minimal frost visible on the lines and relatively warm to the touch), the bottom V4 and top valve V5 on the filter can be closed respectively.
-    
-    \item To finish the procedure, close the dewar LAr valve V0.
+    \item Once the desired LAr level is reached, close V7 anywhere between 90\%--100\%. Make sure the adjustable relief valve can still relieve and maintain pressure.
+    \item Once the pressure stabilizes, close V6 and V7 completely. The chamber is now ready for detector operation and data taking.
+    \item Keep V3 and V4 open overnight to warm up the filter line while V1 is open to the GAr back to the LAr bath in the dewar.
+    \begin{quote}
+        \textit{This ensures that no LAr is left inside the filter before it is sealed.}
+    \end{quote}
+    \item Once the LAr filter is warmed up sufficiently, close V3 and V4 to close the filter line.
+    \item Close V1.
+    \item Open V2, and then slowly open V5 to release the GAr outside.
+    \item Disconnect the fill line hose from the chamber.
+    \item Close V2 and V5.
 \end{enumerate}
 
 \subsubsection{CAEN Commercial \ac{DAQ}}
